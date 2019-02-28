@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.protontech.ch:proton/design-system.git"
+    "url": "git@github.com:ProtonMail/design-system.git"
   },
   "keywords": [
     "Design System",
