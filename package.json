@@ -1,0 +1,26 @@
+{
+  "name": "design-system",
+  "version": "1.3.4",
+  "description": "Proton Design system, for all Proton Projects: https://design-system-beta.netlify.com/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.protontech.ch:proton/design-system.git"
+  },
+  "keywords": [
+    "Design System",
+    "CSS guidelines",
+    "Flexbox",
+    "a11y",
+    "ProtonMail",
+    "SVG"
+  ],
+  "author":  {
+      "name": "Nicolas Hoffmann",
+      "email": "nico.hoffmann@protonmail.com"
+  },
+  "license": "ISC"
+}
