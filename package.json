@@ -18,9 +18,6 @@
     "ProtonMail",
     "SVG"
   ],
-  "author":  {
-      "name": "Nicolas Hoffmann",
-      "email": "nico.hoffmann@protonmail.com"
-  },
+  "author": "Proton Technologies AG",
   "license": "ISC"
 }
