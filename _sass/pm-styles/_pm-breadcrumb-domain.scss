@@ -19,7 +19,8 @@
   padding: .4em;
   opacity: .3;
 }
-[aria-current="step"].breadcrumb-button {
+[disabled][aria-current="step"].breadcrumb-button {
   font-weight: bold;
   opacity: 1;
+  color: inherit;
 }
