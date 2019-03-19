@@ -65,11 +65,26 @@
 .message-attachments {
   @extend .p1;
   border-top: 1px solid $pm-global-border;
+  font-size: 1.4rem;
 }
 
 .message-attachment {
   line-height: 1.3;
+  padding: 0;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  } 
+}
+.message-attachmentIcon {
+  width: 2.6em;
 }
 .message-attachmentInfo {
   border-left: 1px solid $pm-global-border;
+  padding: .3em .7em;
+}
+.message-attachmentSize {
+  font-size: 1.2rem;
+  opacity: .5;
 }

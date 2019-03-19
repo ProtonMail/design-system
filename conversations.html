@@ -2,15 +2,15 @@
 layout: default
 lang: en
 pageId: conversations
-title: Conversations
+title: Conversations (WIP)
 description: Example of styles in conversations.
 keywords: conversations, proton, examples
 section: design
 ---
 
-<h2>Container with border</h2>
+<h2>Collapsed</h2>
 
-<!-- <div class="message-container">
+<div class="message-container">
   <div class="message-header is-inbound">
     Loremp ipsum
   </div>
@@ -22,15 +22,16 @@ section: design
   </div>
 </div>
 
-<br><br> -->
+<h2 class="mt1">Expanded</h2>
+
 <div class="message-container is-opened">
   <div class="message-header is-inbound">
     Loremp ipsum
   </div>
   <div class="message-content">
     Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. <br><br>Cras in tortor laoreet, dapibus mi elementum, cursus ligula. Cras eget purus fringilla, congue eros rutrum, faucibus mauris. Donec condimentum ligula a nibh scelerisque, quis tincidunt erat luctus.<br><br>
-    <button class="pm-button message-expand">…</button>
-    <div class="">
+    <button class="pm-button message-expand js-seemore-email">…</button>
+    <div class="" hidden>
       Plop
     </div>
   </div>
@@ -38,24 +39,36 @@ section: design
 
     <div class="flex flex-spacebetween mb1">
       <span>2 Attachments (2.1 MB)</span>
-      <button class="link">Download all</button>      
+      <button class="link strong">Download all</button>      
     </div>
 
-    <ul class="unstyled flex">
+    <ul class="unstyled flex mb0">
       <li class="mr1">
-        <a class="message-attachment bordered-container inline-flex color-global-grey nodecoration">
-          <span class="flex pl0-5 pr0-5 aligncenter">
+        <a class="message-attachment inline-flex pm-button">
+          <span class="flex message-attachmentIcon">
             <svg viewBox="0 0 16 16" class="mauto icon-16p" role="img" focusable="false">
               <use xlink:href="#shape-file-image"></use>
             </svg>  
           </span>
-          <span class="pt0-25 pb0-25 pl0-5 pr0-5 inbl message-attachmentInfo">
+          <span class="inbl message-attachmentInfo">
             <span class="bl">Attachmentname.jpg</span>
-            <span class="bl">JPG - 1 MB</span>
+            <span class="bl message-attachmentSize">JPG - 1 MB</span>
           </span>
         </a>
       </li>
-      <li class="ml1"><a class="message-attachment bordered-container"></a></li>
+      <li class="mr1">
+        <a class="message-attachment inline-flex pm-button">
+          <span class="flex message-attachmentIcon">
+            <svg viewBox="0 0 16 16" class="mauto icon-16p" role="img" focusable="false">
+              <use xlink:href="#shape-file-image"></use>
+            </svg>  
+          </span>
+          <span class="inbl message-attachmentInfo">
+            <span class="bl">Wozaaaaaaa.jpg</span>
+            <span class="bl message-attachmentSize">JPG - 1.2 MB</span>
+          </span>
+        </a>
+      </li>
     </ul>
     
   </div>
