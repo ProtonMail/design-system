@@ -257,6 +257,8 @@ $list-paddings-values: 0, 0.25, 0.5, 1, 2; // specify 2.5 if needed
 }
 .nonvisible { visibility: hidden; }
 
+.opacity-50 { opacity: .5; }
+
 .hidden, [hidden]  { display: none; } /* hidden everywhere */
 .nodesktop { display: none; } /* hidden on desktop */
 /*.noprint   {} /* hidden on print */
