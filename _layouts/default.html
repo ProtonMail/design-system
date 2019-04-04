@@ -88,7 +88,7 @@
 
                 {% include sub-nav.html %}                
 
-                <main class="main-area-content flex-item-fluid">
+                <main class="main-area-content {% if page.pageId <> 'conversations' %} p2 {% endif %} flex-item-fluid">
               
                   <h1>{{ page.title }}</h1>
 

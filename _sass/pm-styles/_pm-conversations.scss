@@ -1,6 +1,28 @@
 /*
  * Conversations
  */
+
+.conversations-column {
+  width: calc( (100% + #{$width-sidebar}) * #{$conversations-column-width/1%/100} );
+  height: calc(100vh - #{$header-height} );
+}
+
+.conversation-container {
+  padding: em(16) em(12);
+}
+$conversation-icon-size: 3.5rem;
+.conversation-icon {
+  width: $conversation-icon-size;
+  height: $conversation-icon-size;
+  font-size: 1.2rem;
+  border: 1px solid $pm-global-border;
+  margin-right: 2rem;
+}
+
+
+/*
+ * Conversations messages
+ */
 .message-container {
   border: 1px solid $pm-global-border;
   border-radius: $global-border-radius;
