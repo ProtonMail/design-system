@@ -2,9 +2,14 @@
  * Conversations
  */
 
-.conversations-column {
+.conversations-column-list {
   width: calc( (100% + #{$width-sidebar}) * #{$conversations-column-width/1%/100} );
-  height: calc(100vh - #{$header-height} );
+  border-right: 1px solid $pm-global-border;
+}
+
+.conversations-column-list,
+.conversation-column-detail {
+  height: calc(100vh - #{$header-height} - #{$toolbar-height} );
 }
 
 .conversation-container {

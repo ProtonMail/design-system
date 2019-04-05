@@ -8,19 +8,19 @@ keywords: conversations, proton, examples
 section: design
 ---
 
-<div class="flex flew-nowrap">
-  <div class="conversations-column">
+<div class="flex flex-nowrap">
+  <div class="conversations-column-list scroll-if-needed">
 
     <div class="conversation-container flex bg-global-light">
         <div class="conversation-icon rounded50 bg-white inline-flex">
           <span class="mauto">AY</span>
         </div>
         <div class="flex-item-fluid flex flex-column flex-spacebetween conversation-titlesender">
-          <div class="flex flex-nowrap">
+          <div class="flex">
             <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis">Meetup Ring blah blah</span></div>
             <div class="conversation-date">Apr. 08 2018</div>
           </div>
-          <div class="flex flex-nowrap">
+          <div class="flex">
             <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis">Bilbo, Frodo</span></div>
               <div class="conversation-icons">
                 <svg viewBox="0 0 16 16" class="icon-16p fill-global-success" role="img" focusable="false">
@@ -43,13 +43,14 @@ section: design
           <span class="mauto">SA</span>
         </div>
         <div class="flex-item-fluid flex flex-column flex-spacebetween conversation-titlesender">
-          <div class="flex flex-nowrap">
+          <div class="flex">
             <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis">Palantir specs</span></div>
             <div class="conversation-date">Apr. 08 2018</div>
           </div>
-          <div class="flex flex-nowrap">
+          <div class="flex">
             <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis">Saruman</span></div>
               <div class="conversation-icons">
+                <span class="badgeLabel-success">ToDo</span>
                 <svg viewBox="0 0 16 16" class="icon-16p fill-global-warning" role="img" focusable="false">
                   <use xlink:href="#shape-expiration"></use>
                 </svg>
@@ -73,11 +74,11 @@ section: design
           <span class="mauto">SA</span>
         </div>
         <div class="flex-item-fluid flex flex-column flex-spacebetween conversation-titlesender">
-          <div class="flex flex-nowrap">
+          <div class="flex">
             <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis bold">Helm meetup</span></div>
             <div class="conversation-date">Apr. 06 2018</div>
           </div>
-          <div class="flex flex-nowrap">
+          <div class="flex">
             <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis bold">Saruman</span></div>
               <div class="conversation-icons">
                 <svg viewBox="0 0 16 16" class="icon-16p fill-global-success" role="img" focusable="false">
@@ -100,11 +101,11 @@ section: design
           <span class="mauto">SA</span>
         </div>
         <div class="flex-item-fluid flex flex-column flex-spacebetween conversation-titlesender">
-          <div class="flex flex-nowrap">
+          <div class="flex">
             <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis bold">Tr. Spec for huruk-haïs</span></div>
             <div class="conversation-date">Apr. 05 2018</div>
           </div>
-          <div class="flex flex-nowrap">
+          <div class="flex">
             <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis bold">Saruman, Sauron, Morgot</span></div>
               <div class="conversation-icons">
                 <svg viewBox="0 0 16 16" class="icon-16p fill-global-success" role="img" focusable="false">
@@ -122,9 +123,112 @@ section: design
           </div>
         </div>
     </div>
+    <div class="conversation-container flex bg-global-light">
+        <div class="conversation-icon rounded50 bg-white inline-flex">
+          <span class="mauto">GA</span>
+        </div>
+        <div class="flex-item-fluid flex flex-column flex-spacebetween conversation-titlesender">
+          <div class="flex">
+            <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis">Tr. Gondor, Arnor </span></div>
+            <div class="conversation-date">Apr. 04 1213</div>
+          </div>
+          <div class="flex">
+            <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis">GrandPa, Ellessar, Aragorn</span></div>
+              <div class="conversation-icons">
+                <span class="badgeLabel-warning">Complicated</span>
+                <button class="starbutton relative starbutton--is-stared js-starbutton">
+                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+                        <use xlink:href="#shape-star"></use>
+                      </svg>
+                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+                    <use xlink:href="#shape-starfull"></use>
+                  </svg>
+                </button>
+              </div>
+          </div>
+        </div>
+    </div>
+    <div class="conversation-container flex bg-global-light flex-nowrap">
+        <div class="conversation-icon flex-item-noshrink rounded50 bg-white inline-flex">
+          <span class="mauto">JT</span>
+        </div>
+        <div class="flex-item-fluid flex flex-column flex-spacebetween conversation-titlesender">
+          <div class="flex">
+            <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis">A very loooooooooooooooooooong subject, for example Silmarillion story, blablablabla </span></div>
+            <div class="conversation-date flex-item-noflex">Apr. 01 1000</div>
+          </div>
+          <div class="flex">
+            <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis">Test</span></div>
+              <div class="conversation-icons">
+
+                <button class="starbutton relative starbutton--is-stared js-starbutton">
+                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+                        <use xlink:href="#shape-star"></use>
+                      </svg>
+                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+                    <use xlink:href="#shape-starfull"></use>
+                  </svg>
+                </button>
+              </div>
+          </div>
+        </div>
+    </div>
+    <div class="conversation-container flex bg-global-light flex-nowrap">
+        <div class="conversation-icon flex-item-noshrink rounded50 bg-white inline-flex">
+          <span class="mauto">AB</span>
+        </div>
+        <div class="flex-item-fluid flex flex-column flex-spacebetween conversation-titlesender">
+          <div class="flex">
+            <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis">Love story</span></div>
+            <div class="conversation-date">Apr. 01 999</div>
+          </div>
+          <div class="flex">
+            <div class="flex-item-fluid w0 pr1"><span class="inbl mw100 ellipsis">Luthien, Beren and all their friends, looong topic to see ellipsis, lorem dolor ipsum dolor si frodon</span></div>
+              <div class="conversation-icons">
+
+                <button class="starbutton relative starbutton--is-stared js-starbutton">
+                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+                        <use xlink:href="#shape-star"></use>
+                      </svg>
+                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+                    <use xlink:href="#shape-starfull"></use>
+                  </svg>
+                </button>
+              </div>
+          </div>
+        </div>
+    </div>
+    {% for i in (1..5) %}
+    <div class="conversation-container flex bg-global-light">
+        <div class="conversation-icon rounded50 bg-white inline-flex">
+          <span class="mauto">PM</span>
+        </div>
+        <div class="flex-item-fluid flex flex-column flex-spacebetween conversation-titlesender">
+          <div class="flex">
+            <div class="flex-item-fluid pr1"><span class="inbl mw100 ellipsis">Another for scrolling</span></div>
+            <div class="conversation-date">Apr. 08 998</div>
+          </div>
+          <div class="flex">
+              <div class="conversation-icons">
+                <svg viewBox="0 0 16 16" class="icon-16p fill-global-success" role="img" focusable="false">
+                  <use xlink:href="#shape-attach"></use>
+                </svg> 
+                <button class="starbutton relative js-starbutton">
+                    <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-star" role="img" focusable="false">
+                        <use xlink:href="#shape-star"></use>
+                      </svg>
+                   <svg viewBox="0 0 16 16" class="icon-16p starbutton-icon-starred" role="img" focusable="false">
+                    <use xlink:href="#shape-starfull"></use>
+                  </svg>
+                </button>
+              </div>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
     
   </div>
-  <div class="p2 flex-item-fluid">
+  <div class="conversation-column-detail p2 flex-item-fluid scroll-if-needed">
     <h2>Collapsed</h2>
 
     <div class="message-container">
@@ -317,7 +421,7 @@ section: design
     </div>
     
     <br><br>
-    <div class="message-container is-opened" id="pweet">
+    <div class="message-container is-opened mb2" id="pweet">
       <div class="message-header is-inbound">
     
         <div class="flex flex-spacebetween flex-nowrap">
