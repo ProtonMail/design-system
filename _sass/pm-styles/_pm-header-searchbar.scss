@@ -2,7 +2,7 @@
   width: $conversations-column-width;
 }
 .searchbox-container input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, .6);
 }
 .searchbox-field[type="search"] {
   height: 4rem;

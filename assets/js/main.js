@@ -460,14 +460,17 @@ var whiteModeClass = 'is-whitemode';
 function resizeWindow(){
     var breakpoint = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/['"]+/g, '');
     var sidebar = document.body.querySelector('.js-sidebar');
-    sidebar.classList.remove('nomobile');
 
-    if ( breakpoint === 'mobile' ||  breakpoint === 'tinymobile' ){
-        sidebar.setAttribute('aria-hidden', true);
+    if ( sidebar ) {
+      sidebar.classList.remove('nomobile');
+
+      if ( breakpoint === 'mobile' ||  breakpoint === 'tinymobile' ){
+          sidebar.setAttribute('aria-hidden', true);
+      }
+      else { 
+          sidebar.removeAttribute('aria-hidden');
+          }
     }
-    else { 
-        sidebar.removeAttribute('aria-hidden');
-        }
 }
 
 resizeWindow();
@@ -479,19 +482,23 @@ function togglemenu(){
     var burger_nav = document.body.querySelector('.js-togglemenu');
     var sidebar = document.body.querySelector('.js-sidebar');
 
-    if (sidebar.getAttribute('aria-hidden') === null) {
+    if ( sidebar ) {
+      if (sidebar.getAttribute('aria-hidden') === null) {
         sidebar.setAttribute('aria-hidden', true);
         burger_nav.setAttribute('aria-expanded', false);
-    }
-    else { 
-        sidebar.removeAttribute('aria-hidden'); 
-        burger_nav.setAttribute('aria-expanded', true);
+      }
+      else { 
+          sidebar.removeAttribute('aria-hidden'); 
+          burger_nav.setAttribute('aria-expanded', true);
+      }
     }
 
 }
 
 var burger_nav = document.body.querySelector('.js-togglemenu');
-burger_nav.addEventListener('click', togglemenu);
+if ( burger_nav ){
+  burger_nav.addEventListener('click', togglemenu);
+}
 
 
 
@@ -920,4 +927,35 @@ var starButtons = [].slice.call(document.body.querySelectorAll('.js-starbutton')
 
 starButtons.forEach(function(elem) {
     elem.addEventListener("click", starUnstar );
+});
+
+
+/**
+ * Theme preview
+ */
+function themePreview( e ) {
+  var values = e.currentTarget.dataset;
+  if ( values.mainBgColor ) {
+    document.documentElement.style.setProperty('--main-bg-color', values.mainBgColor);
+    document.documentElement.style.setProperty('--secondary-bg-color', values.secondaryBgColor);
+    document.documentElement.style.setProperty('--background-searchbox-field', values.backgroundSearchboxField);
+    document.documentElement.style.setProperty('--background-aside-link', values.backgroundAsideLink);
+    document.documentElement.style.setProperty('--background-spacebar', values.backgroundSpacebar);    
+    document.documentElement.style.setProperty('--color-nav-active', values.colorNavActive);
+  }
+  else { 
+    document.documentElement.style.removeProperty('--main-bg-color');
+    document.documentElement.style.removeProperty('--secondary-bg-color');
+    document.documentElement.style.removeProperty('--background-searchbox-field');
+    document.documentElement.style.removeProperty('--background-aside-link');
+    document.documentElement.style.removeProperty('--background-spacebar');    
+    document.documentElement.style.removeProperty('--color-nav-active');
+   }
+
+}
+
+var previewThemeButtons = [].slice.call(document.body.querySelectorAll('.js-previewThemeButton'));
+
+previewThemeButtons.forEach(function(elem) {
+    elem.addEventListener("click", themePreview );
 });

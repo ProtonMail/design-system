@@ -1,0 +1,72 @@
+---
+layout: default
+lang: en
+pageId: themes
+title: Theme previsualisation
+description: All color references and rules for Proton Products
+keywords: themes, color, proton, custom theme
+section: design
+---
+
+<p>Click on an image to preview a theme: </p>
+
+<button title="Activate dark theme" type="button" class="js-previewThemeButton"><img src="/assets/img/pm-images/theme-dark.svg" alt="Activate dark theme"></button>
+
+<button 
+    title="Activate blue theme" 
+    type="button" 
+    class="js-previewThemeButton" 
+    data-main-bg-color="#526ee0" 
+    data-secondary-bg-color="#788ee8" 
+    data-background-searchbox-field="rgba(0, 0, 0, .2)"
+    data-background-aside-link="rgba(0, 0, 0, .3)" 
+    data-background-spacebar="rgba(255, 255, 255, .1)"
+    data-color-nav-active="#fff">
+    <img src="/assets/img/pm-images/theme-blue.svg" alt="Activate blue theme">
+</button>
+
+
+<pre class=" language-css"><code>.toolbar {
+  background: var(--secondary-bg-color, #3c414e); 
+}
+  
+.content {
+  background-image: -webkit-linear-gradient(top, var(--main-bg-color, #262a33), var(--secondary-bg-color, #3c414e));
+  background-image: linear-gradient(to bottom, var(--main-bg-color, #262a33), var(--secondary-bg-color, #3c414e));
+}
+  
+[aria-expanded="true"].animated-expandmore__button,
+[aria-current="page"].navigation__link,
+.animated-expandmore__button:active {
+  background: var(--main-bg-color, #262a33);
+  color: var(--color-nav-active, #657ee4); 
+}
+  
+.has-scroll-inside-navigation > .spacebar-container::before {
+  background: linear-gradient(to top, var(--main-bg-color, rgba(0, 0, 0, 0.4)) 0, rgba(0, 0, 0, 0) 2em);
+}
+  
+.aside-link {
+  background: var(--background-aside-link, #3c414e);
+}
+  
+.searchbox-field[type="search"] {
+  background-color: var(--background-searchbox-field, #000);
+  border-color: var(--main-bg-color, #000);
+}
+  
+.spacebar {
+  background: var(--background-spacebar, #000); 
+}
+  
+.spacebar::-webkit-meter-bar {
+    background: var(--background-spacebar, #000); }
+  
+  .topnav-link {
+    color: var(--color-nav-active, #fff); }
+    .topnav-link:focus, .topnav-link:hover, .topnav-link:active, .topnav-link[aria-current="true"] {
+      color: var(--color-nav-active, #657ee4); }
+      .topnav-link:focus > .topnav-icon, .topnav-link:hover > .topnav-icon, .topnav-link:active > .topnav-icon, .topnav-link[aria-current="true"] > .topnav-icon {
+        fill: var(--color-nav-active, #657ee4); }
+    .topnav-link[aria-current="true"] {
+      border-color: var(--color-nav-active, #657ee4); }</code></pre>

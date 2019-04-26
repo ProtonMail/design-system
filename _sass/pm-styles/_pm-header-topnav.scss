@@ -8,13 +8,15 @@
   &[aria-current="true"] {
     color: $pm-blue;
     text-decoration: none;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.35);
     
     > .topnav-icon {
        fill: $pm-blue;
     }
   }
   &[aria-current="true"] {
-    border: 1px solid $pm-blue;
+    border-color: $pm-blue;
+    box-shadow: none;
     font-weight: bold;
   }
 }
