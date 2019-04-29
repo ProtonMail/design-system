@@ -8,6 +8,23 @@ keywords: themes, color, proton, custom theme
 section: design
 ---
 
+<style>
+:root {
+     --main-bg-color: #526ee0;
+     --secondary-bg-color: #788ee8;
+  
+     --bgcolor-searchbox-field: rgba(0, 0, 0, .2);
+     --bgcolor-spacebar: rgba(0, 0, 0, .3);
+     --bgcolor-aside-link: rgba(255, 255, 255, .1);
+     --bgcolor-toolbar: #788ee8;
+  
+     --fillcolor-logo: #f6f7fa;
+     --fillcolor-icons: #f6f7fa;
+  
+     --color-nav-link: #fff;
+     --color-nav-active: #fff;
+}
+</style>
 <p>Click on an image to preview a theme: </p>
 
 <button title="Activate dark theme" type="button" class="js-previewThemeButton"><img src="/assets/img/pm-images/theme-dark.svg" alt="Activate dark theme"></button>
@@ -18,13 +35,42 @@ section: design
     class="js-previewThemeButton" 
     data-main-bg-color="#526ee0" 
     data-secondary-bg-color="#788ee8" 
-    data-background-searchbox-field="rgba(0, 0, 0, .2)"
-    data-background-aside-link="rgba(0, 0, 0, .3)" 
-    data-background-spacebar="rgba(255, 255, 255, .1)"
+
+    data-bgcolor-searchbox-field="rgba(0, 0, 0, .2)"
+    data-bgcolor-aside-link="rgba(0, 0, 0, .3)" 
+    data-bgcolor-spacebar="rgba(255, 255, 255, .1)"
+    data-bgcolor-toolbar="#788ee8"
+    
+    data-fillcolor-logo="#f6f7fa"
+    data-fillcolor-icons="#fff"
+
+    data-color-nav-link="#fff"
     data-color-nav-active="#fff">
     <img src="/assets/img/pm-images/theme-blue.svg" alt="Activate blue theme">
 </button>
 
+<button 
+    title="Activate light theme" 
+    type="button" 
+    class="js-previewThemeButton" 
+    data-main-bg-color="#f6f7fa" 
+    data-secondary-bg-color="#fff" 
+
+    data-bgcolor-searchbox-field="#fff"
+    data-bgcolor-aside-link="#e3e4e7" 
+    data-bgcolor-spacebar="rgba(0, 0, 0, 0.05)"
+    data-bgcolor-toolbar="rgba(0, 0, 0, 0.05)"
+    
+    data-fillcolor-logo="#262a33"
+    data-fillcolor-icons="#262a33"
+
+    data-color-nav-link="#262a33"
+    data-color-nav-active="#526ee0">
+    <img src="/assets/img/pm-images/theme-light.svg" alt="Activate light theme">
+</button>
+
+
+<h2 class="mt1">CSS code for custom theme</h2>
 
 <pre class=" language-css"><code>.toolbar {
   background: var(--secondary-bg-color, #3c414e); 
@@ -40,6 +86,10 @@ section: design
 .animated-expandmore__button:active {
   background: var(--main-bg-color, #262a33);
   color: var(--color-nav-active, #657ee4); 
+}
+
+.navigation__link {
+  color:  var(--color-nav-active, $pm-global-light);
 }
   
 .has-scroll-inside-navigation > .spacebar-container::before {
@@ -60,13 +110,25 @@ section: design
 }
   
 .spacebar::-webkit-meter-bar {
-    background: var(--background-spacebar, #000); }
+  background: var(--background-spacebar, #000); 
+}
   
-  .topnav-link {
-    color: var(--color-nav-active, #fff); }
-    .topnav-link:focus, .topnav-link:hover, .topnav-link:active, .topnav-link[aria-current="true"] {
-      color: var(--color-nav-active, #657ee4); }
-      .topnav-link:focus > .topnav-icon, .topnav-link:hover > .topnav-icon, .topnav-link:active > .topnav-icon, .topnav-link[aria-current="true"] > .topnav-icon {
-        fill: var(--color-nav-active, #657ee4); }
-    .topnav-link[aria-current="true"] {
-      border-color: var(--color-nav-active, #657ee4); }</code></pre>
+.topnav-link {
+  color: var(--color-nav-active, #fff);
+}
+.topnav-link:focus, 
+.topnav-link:hover, 
+.topnav-link:active, 
+.topnav-link[aria-current="true"] {
+  color: var(--color-nav-active, #657ee4);
+}
+.topnav-link:focus > .topnav-icon, 
+.topnav-link:hover > .topnav-icon, 
+.topnav-link:active > .topnav-icon, 
+.topnav-link[aria-current="true"] > .topnav-icon {
+  fill: var(--color-nav-active, #657ee4);
+}
+.topnav-link[aria-current="true"] {
+   border-color: var(--color-nav-active, #657ee4); 
+}
+</code></pre>

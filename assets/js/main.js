@@ -938,21 +938,35 @@ function themePreview( e ) {
   if ( values.mainBgColor ) {
     document.documentElement.style.setProperty('--main-bg-color', values.mainBgColor);
     document.documentElement.style.setProperty('--secondary-bg-color', values.secondaryBgColor);
-    document.documentElement.style.setProperty('--background-searchbox-field', values.backgroundSearchboxField);
-    document.documentElement.style.setProperty('--background-aside-link', values.backgroundAsideLink);
-    document.documentElement.style.setProperty('--background-spacebar', values.backgroundSpacebar);    
+
+    document.documentElement.style.setProperty('--bgcolor-searchbox-field', values.bgcolorSearchboxField);
+    document.documentElement.style.setProperty('--bgcolor-aside-link', values.bgcolorAsideLink);
+    document.documentElement.style.setProperty('--bgcolor-spacebar', values.bgcolorSpacebar);
+    document.documentElement.style.setProperty('--bgcolor-toolbar', values.bgcolorToolbar);
+    
+    document.documentElement.style.setProperty('--fillcolor-logo', values.fillcolorLogo);
+    document.documentElement.style.setProperty('--fillcolor-icons', values.fillcolorIcons);
+
+    document.documentElement.style.setProperty('--color-nav-link', values.colorNavLink); 
     document.documentElement.style.setProperty('--color-nav-active', values.colorNavActive);
   }
   else { 
     document.documentElement.style.removeProperty('--main-bg-color');
     document.documentElement.style.removeProperty('--secondary-bg-color');
-    document.documentElement.style.removeProperty('--background-searchbox-field');
-    document.documentElement.style.removeProperty('--background-aside-link');
-    document.documentElement.style.removeProperty('--background-spacebar');    
+
+    document.documentElement.style.removeProperty('--bgcolor-searchbox-field');
+    document.documentElement.style.removeProperty('--bgcolor-aside-link');
+    document.documentElement.style.removeProperty('--bgcolor-spacebar');  
+    document.documentElement.style.removeProperty('--bgcolor-toolbar');   
+    
+    document.documentElement.style.removeProperty('--fillcolor-logo');
+
+    document.documentElement.style.removeProperty('--color-nav-link');  
     document.documentElement.style.removeProperty('--color-nav-active');
    }
 
 }
+
 
 var previewThemeButtons = [].slice.call(document.body.querySelectorAll('.js-previewThemeButton'));
 

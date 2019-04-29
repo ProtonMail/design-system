@@ -1,24 +1,43 @@
-// :root {
-//   --main-bg-color: #{$pm-blue-dark};
-//   --secondary-bg-color: #{$pm-blue-light};
-//   --background-searchbox-field: rgba(0, 0, 0, .2);
-//   --background-spacebar: rgba(0, 0, 0, .3);
-//   --background-aside-link: rgba(255, 255, 255, .1);
-//   --color-nav-active: #{$white};
-// }
- 
+:root {
+  //   --main-bg-color: #{$pm-blue-dark};
+  //   --secondary-bg-color: #{$pm-blue-light};
+  
+  //   --bgcolor-searchbox-field: rgba(0, 0, 0, .2);
+  //   --bgcolor-spacebar: rgba(0, 0, 0, .3);
+  //   --bgcolor-aside-link: rgba(255, 255, 255, .1);
+  //   --bgcolor-toolbar
+  
+  //   --fillcolor-logo
+  //   --fillcolor-icons: $pm-global-grey;
+  
+  //   --color-nav-link
+  //   --color-nav-active: #{$white};
+  //
+  
+}
 
 .aside {
   background: var(--main-bg-color, $pm-global-grey);
 }
 
+.logo g {
+  fill: var(--fillcolor-logo, $pm-global-light);
+}
+
 .toolbar {
-  background: var(--secondary-bg-color, $pm-global-altgrey);
+  background: var(--bgcolor-toolbar, $pm-global-altgrey);
 }
 
 .content {
   background-image: -webkit-linear-gradient(top, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) ); 
   background-image: linear-gradient(to bottom, var(--main-bg-color, $pm-global-grey), var(--secondary-bg-color, $pm-global-altgrey) );
+}
+
+.navigation__link,
+.navigation__link:focus,
+.navigation__link:hover,
+.animated-expandmore__button {
+  color:  var(--color-nav-link, $pm-global-light);
 }
 
 [aria-expanded="true"].animated-expandmore__button,
@@ -33,26 +52,26 @@
 }
 
 .aside-link {
-  background: var(--background-aside-link, $pm-global-altgrey);
+  background: var(--bgcolor-aside-link, $pm-global-altgrey);
 }
 
 .searchbox-field[type="search"] {
-  background-color: var(--background-searchbox-field, $black);
+  background-color: var(--bgcolor-searchbox-field, $black);
   border-color: var(--main-bg-color, $black);
 }
 
 
 .spacebar {
-  background: var(--background-spacebar, $black);
+  background: var(--bgcolor-spacebar, $black);
 }
 .spacebar {
   &::-webkit-meter-bar {
-    background: var(--background-spacebar, $black);
+    background: var(--bgcolor-spacebar, $black);
   }  
 }
 
 .topnav-link {
-  color: var(--color-nav-active, $white);
+  color: var(--color-nav-link, $white);
 
   &:focus,
   &:hover,
@@ -67,4 +86,16 @@
   &[aria-current="true"] {
     border-color: var(--color-nav-active, $pm-blue);
   }
+}
+
+
+.searchbox-advanced-search-button svg,
+.topnav-link svg,
+.toolbar svg {
+  fill: var(--fillcolor-icons, $white);
+}
+
+// if light theme, add drop shadow
+.main {
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
 }
