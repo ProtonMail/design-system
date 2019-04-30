@@ -1,20 +1,6 @@
-:root {
-  //   --main-bg-color: #{$pm-blue-dark};
-  //   --secondary-bg-color: #{$pm-blue-light};
-  
-  //   --bgcolor-searchbox-field: rgba(0, 0, 0, .2);
-  //   --bgcolor-spacebar: rgba(0, 0, 0, .3);
-  //   --bgcolor-aside-link: rgba(255, 255, 255, .1);
-  //   --bgcolor-toolbar
-  
-  //   --fillcolor-logo
-  //   --fillcolor-icons: $pm-global-grey;
-  
-  //   --color-nav-link
-  //   --color-nav-active: #{$white};
-  //
-  
-}
+/*
+ * styles only useful for theming
+ */
 
 .aside {
   background: var(--main-bg-color, $pm-global-grey);
@@ -58,6 +44,7 @@
 .searchbox-field[type="search"] {
   background-color: var(--bgcolor-searchbox-field, $black);
   border-color: var(--main-bg-color, $black);
+  background-image: var(--img-searchbox-path, url("#{$path-images}sprite-for-css-only.svg#css-search-white"));
 }
 
 
@@ -89,6 +76,8 @@
 }
 
 
+
+// icons
 .searchbox-advanced-search-button svg,
 .topnav-link svg,
 .toolbar svg {
@@ -97,5 +86,14 @@
 
 // if light theme, add drop shadow
 .main {
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: var(--boxshadow-main, none);
 }
+
+.spacebar-container,
+.searchbox-field[type="search"] {
+  color: var(--color-standard-text, $white);
+}
+.searchbox-container input::placeholder {
+  color: var(--color-standard-text, rgba(255, 255, 255, .6) );
+}
+

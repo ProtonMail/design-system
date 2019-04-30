@@ -16,10 +16,10 @@
 
   height: 6px;
   border-radius: 3px;
-  background: $black;
+  background: var(--bgcolor-spacebar, $black);
 
   &::-webkit-meter-bar {
-    background: $black;
+    background: var(--bgcolor-spacebar, $black);
     border-radius: 3px;
   }
 

@@ -8,7 +8,7 @@ keywords: themes, color, proton, custom theme
 section: design
 ---
 
-<style>
+<!-- <style>
 :root {
      --main-bg-color: #526ee0;
      --secondary-bg-color: #788ee8;
@@ -23,8 +23,9 @@ section: design
   
      --color-nav-link: #fff;
      --color-nav-active: #fff;
+     --boxshadow-main: none;
 }
-</style>
+</style> -->
 <p>Click on an image to preview a theme: </p>
 
 <button title="Activate dark theme" type="button" class="js-previewThemeButton"><img src="/assets/img/pm-images/theme-dark.svg" alt="Activate dark theme"></button>
@@ -45,7 +46,11 @@ section: design
     data-fillcolor-icons="#fff"
 
     data-color-nav-link="#fff"
-    data-color-nav-active="#fff">
+    data-color-nav-active="#fff"
+    data-color-standard-text="#fff"
+
+    data-boxshadow-main="none"
+    data-img-searchbox="url(/assets/img/shared/sprite-for-css-only.svg#css-search-white)">
     <img src="/assets/img/pm-images/theme-blue.svg" alt="Activate blue theme">
 </button>
 
@@ -59,76 +64,22 @@ section: design
     data-bgcolor-searchbox-field="#fff"
     data-bgcolor-aside-link="#e3e4e7" 
     data-bgcolor-spacebar="rgba(0, 0, 0, 0.05)"
-    data-bgcolor-toolbar="rgba(0, 0, 0, 0.05)"
+    data-bgcolor-toolbar="#f6f7fa"
     
     data-fillcolor-logo="#262a33"
     data-fillcolor-icons="#262a33"
 
     data-color-nav-link="#262a33"
-    data-color-nav-active="#526ee0">
+    data-color-nav-active="#526ee0"
+    data-color-standard-text="#262a33"
+
+    data-boxshadow-main="0 0 15px 0 rgba(0, 0, 0, 0.1)"
+    data-img-searchbox="url(/assets/img/shared/sprite-for-css-only.svg#css-search-black)">
     <img src="/assets/img/pm-images/theme-light.svg" alt="Activate light theme">
 </button>
 
 
 <h2 class="mt1">CSS code for custom theme</h2>
 
-<pre class=" language-css"><code>.toolbar {
-  background: var(--secondary-bg-color, #3c414e); 
-}
-  
-.content {
-  background-image: -webkit-linear-gradient(top, var(--main-bg-color, #262a33), var(--secondary-bg-color, #3c414e));
-  background-image: linear-gradient(to bottom, var(--main-bg-color, #262a33), var(--secondary-bg-color, #3c414e));
-}
-  
-[aria-expanded="true"].animated-expandmore__button,
-[aria-current="page"].navigation__link,
-.animated-expandmore__button:active {
-  background: var(--main-bg-color, #262a33);
-  color: var(--color-nav-active, #657ee4); 
-}
-
-.navigation__link {
-  color:  var(--color-nav-active, $pm-global-light);
-}
-  
-.has-scroll-inside-navigation > .spacebar-container::before {
-  background: linear-gradient(to top, var(--main-bg-color, rgba(0, 0, 0, 0.4)) 0, rgba(0, 0, 0, 0) 2em);
-}
-  
-.aside-link {
-  background: var(--background-aside-link, #3c414e);
-}
-  
-.searchbox-field[type="search"] {
-  background-color: var(--background-searchbox-field, #000);
-  border-color: var(--main-bg-color, #000);
-}
-  
-.spacebar {
-  background: var(--background-spacebar, #000); 
-}
-  
-.spacebar::-webkit-meter-bar {
-  background: var(--background-spacebar, #000); 
-}
-  
-.topnav-link {
-  color: var(--color-nav-active, #fff);
-}
-.topnav-link:focus, 
-.topnav-link:hover, 
-.topnav-link:active, 
-.topnav-link[aria-current="true"] {
-  color: var(--color-nav-active, #657ee4);
-}
-.topnav-link:focus > .topnav-icon, 
-.topnav-link:hover > .topnav-icon, 
-.topnav-link:active > .topnav-icon, 
-.topnav-link[aria-current="true"] > .topnav-icon {
-  fill: var(--color-nav-active, #657ee4);
-}
-.topnav-link[aria-current="true"] {
-   border-color: var(--color-nav-active, #657ee4); 
-}
-</code></pre>
+<pre><code class=" language-css" id="css-preview">Default theme! No additional/custom styles.</code></pre>
+<p>SHA-256 of CSS theme: <strong id="hash-theme"></strong></p>
