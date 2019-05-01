@@ -19,6 +19,9 @@
     box-shadow: none;
     font-weight: bold;
   }
+  & > svg {
+  fill: var(--fillcolor-icons, $white);
+  }
 }
 
 @if $rtl-option == true {
@@ -29,3 +32,5 @@
     }
   }
 }
+
+

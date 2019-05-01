@@ -1,5 +1,7 @@
 /*
  * styles only useful for theming
+ * THIS FILE IS ONLY USED TO ACTIVATE QUICKLY AND TEST RULES TO UPDATE
+ * ONCE TESTED, PLEASE UPDATE CSS FILES ACCORDINGLY
  */
 
 .aside {
@@ -44,7 +46,7 @@
 .searchbox-field[type="search"] {
   background-color: var(--bgcolor-searchbox-field, $black);
   border-color: var(--main-bg-color, $black);
-  background-image: var(--img-searchbox-path, url("#{$path-images}sprite-for-css-only.svg#css-search-white"));
+  background-image: var(--img-searchbox-path, url(#{$path-images}sprite-for-css-only.svg#css-search-white));
 }
 
 

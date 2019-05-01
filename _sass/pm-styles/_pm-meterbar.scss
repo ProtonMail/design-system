@@ -3,8 +3,8 @@
  */
 
 .spacebar-container {
-    padding: 1rem 2rem;
-    color: $white;
+  padding: 1rem 2rem;
+  color: var(--color-standard-text, $white);
 }
 
 .spacebar { /* factor with .spacebar-gauge for IE11, but f*** IE11 */
