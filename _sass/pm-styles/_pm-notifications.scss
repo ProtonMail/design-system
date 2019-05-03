@@ -73,3 +73,14 @@
     margin-bottom: 0;
   }
 }
+
+
+@include respond-to($breakpoint-small) { 
+
+  .notifications-container {
+    left: 1em;
+    right: 1em;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
