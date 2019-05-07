@@ -64,11 +64,6 @@ $modal-smaller-width: 22em !default;
   max-height: $modal-max-height;
   max-width: 100%;
   flex: 0 1 auto;
-  /*
-  If you have problems with vh units 
-  top: 5%;
-  max-height: 90%;
-  */
   background: $white;
   color: $pm-global-grey;
   padding: 0;
@@ -126,8 +121,8 @@ $modal-smaller-width: 22em !default;
 
 .pm-modalClose {
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: .5rem;
+  top: .5rem;
   background: transparent;
   border-radius: 1em;
   color: $pm-global-grey;
@@ -148,7 +143,7 @@ $modal-smaller-width: 22em !default;
 @if $rtl-option == true {
   [dir="rtl"] {
     .pm-modalClose {
-      left: 1rem;
+      left: .5rem;
       right: auto;
     }
   }
@@ -169,10 +164,11 @@ $modal-smaller-width: 22em !default;
   font-size: 2.2rem;
   line-height: 1.5;
   margin-bottom: 0;
+  padding-right: 1em;
 }
 .pm-modalFooter {
   padding: rem(15) rem(30) rem(30);
-  flex-shrink: 0;
+  flex: 0;
 } 
 
 .pm-modalContentInner {
@@ -204,11 +200,17 @@ $modal-smaller-width: 22em !default;
   margin-bottom: 0;
 }
 
-
-
-
+// single button on right
 .pm-modalFooter [class*="pm-button"]:only-of-type {
   margin-left: auto;
+}
+@if $rtl-option == true {
+  [dir="rtl"] {
+    .pm-modalFooter [class*="pm-button"]:only-of-type {
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
 }
 
 @media (max-width: $modal-min-width) {
