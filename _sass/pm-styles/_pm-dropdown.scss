@@ -1,6 +1,6 @@
 /* dropdown examples */
 $dropDown-width: 200px !default;
-$dropDown-pagination-width: 8em !default;
+$dropDown-narrow-width: 8em !default;
 
 .dropDown,
 .dropDown-leftArrow,
@@ -25,11 +25,12 @@ $dropDown-pagination-width: 8em !default;
   background: $white;
   border-radius: $global-border-radius;
   box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
+  color: $pm-global-grey;
 }
 
-.dropDown-content--pagination {
-  left: calc(50% - #{$dropDown-pagination-width/2});
-  width: $dropDown-pagination-width;
+.dropDown-content--narrow {
+  left: calc(50% - #{$dropDown-narrow-width/2});
+  width: $dropDown-narrow-width;
   padding: 0 1rem;
 }
 
@@ -107,6 +108,9 @@ $dropDown-pagination-width: 8em !default;
 }
 
 /* pagination caret */
-.pagination-expand-button[aria-expanded="true"] > .pagination-expand-caret {
+.expand-caret {
+  fill: currentColor;
+}
+.dropDown [aria-expanded="true"] .expand-caret {
   @extend .rotateX-180;
 }
