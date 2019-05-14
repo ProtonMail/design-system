@@ -104,10 +104,8 @@ section: design
   <ul class="alignleft">
     <li>For pagination, you may use <code>nav</code> tag.</li>
     <li>For “icons only” buttons, please add <code>pm-button--for-icon</code> modifier, and do not forget to add text using <code>sr-only</code> class.</li>
-    <li>When there is text + caret icon in the button, please wrap them in a <code>span class="mauto"</code> (fixes vertical centering issues).</li>
     <li>For the SVG caret icon, please add <code>expand-caret</code> class on it, this will manage the rotation when expanded/not expanded.</li>
-    <li></li>
-    <li></li>
+    <li>Expand can contains links or buttons.</li>
   </ul>
 
   </div>
@@ -126,7 +124,7 @@ section: design
     &lt;button <strong>class="increase-surface-click"</strong> aria-expanded="false/true" type="button" title="Open pagination"&gt;
       &lt;span class="mauto"&gt;
         1 
-        &lt;svg viewBox="0 0 16 16" <strong>class="icon-12p expand-caret"</strong> role="img" aria-hidden="true" focusable="false"&gt;
+        &lt;svg viewBox="0 0 16 16" class="icon-12p <strong>expand-caret</strong>" role="img" aria-hidden="true" focusable="false"&gt;
           &lt;use xlink:href="#shape-caret"&gt;&lt;/use&gt;
         &lt;/svg&gt;
       &lt;/span&gt;
@@ -137,7 +135,7 @@ section: design
           &lt;button class="w100 pt0-5 pb0-5" <strong>aria-current="page"</strong>&gt;1&lt;/button&gt;
         &lt;/li&gt;
         &lt;li class="dropDown-item"&gt;
-          <strong>&lt;button class="w100 pt0-5 pb0-5"&gt;2&lt;/button&gt;</strong>
+          &lt;button class="w100 pt0-5 pb0-5"&gt;2&lt;/button&gt;
         &lt;/li&gt;
         &lt;li class="dropDown-item"&gt;
           &lt;button class="w100 pt0-5 pb0-5"&gt;3&lt;/button&gt;
@@ -160,8 +158,12 @@ section: design
 </div>
 
 
-<p>Other example</p>
-<nav class="pm-group-buttons">
+<h2 class="mt2" id="pagination-dropdown">Other example (edit button group)</h2>
+
+<div class="flex flex-spacebetween mb2 onmobile-flex-column">
+  <div class="w49 aligncenter">
+
+  <div class="pm-group-buttons">
     <button class="pm-button pm-group-button">
       Edit
     </button>
@@ -182,7 +184,66 @@ section: design
         </ul>
       </div>
     </div>
-  </nav> 
+  </div> 
+
+  <ul class="alignleft">
+    <li>If the drop down does not need to be wide, you may use <code>dropDown-content--narrow</code> modifier in order to make it… narrower (!).</li>
+    <li>Even if it is designed for “icons only” buttons, you may add <code>pm-button--for-icon</code> modifier in order to reduce the padding in these buttons.</li>
+    <li>When there is text + caret icon in the button, please add a <code>flex</code> class on the button, and wrap text + caret icon in a <code>span class="mauto"</code> (fixes vertical centering issues, CSS is great).</li>
+  </ul>
+
+  <p class="alignleft">Color may also be applied to buttons groups, the caret icon will take automatically the same color thanks to <code>fill: currentColor</code>:</p>
+
+  <div class="pm-group-buttons">
+      <button class="pm-button-blueborder pm-group-button">
+        Edit
+      </button>
+      <div class="dropDown pm-button-blueborder pm-group-button pm-button--for-icon">
+        <button class="increase-surface-click flex js-dropDown-button" aria-expanded="false" type="button" title="Open pagination">
+          <span class="mauto">
+            Other
+            <svg viewBox="0 0 16 16" class="icon-12p expand-caret" role="img" aria-hidden="true" focusable="false">
+              <use xlink:href="#shape-caret"></use>
+            </svg>
+          </span>
+        </button>
+        <div class="js-dropDown-content unstyled dropDown-content dropDown-content--narrow" hidden>
+          <ul class="unstyled mt0-5 mb0-5 aligncenter">
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
+            <li class="dropDown-item"><button class="w100 pt0-5 pb0-5">Blah</button></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+
+  </div>
+  <div class="w49 aligncenter flex-self-vcenter">
+    <pre class=" language-markup"><code>&lt;div class="pm-group-buttons"&gt;
+  &lt;button class="pm-button pm-group-button"&gt;
+    Edit
+  &lt;/button&gt;
+  &lt;div class="dropDown pm-button pm-group-button <strong>pm-button--for-icon</strong>"&gt;
+    &lt;button class="increase-surface-click flex js-dropDown-button" aria-expanded="false" type="button" title="Open pagination"&gt;
+      <strong>&lt;span class="mauto"&gt;</strong>
+        Other
+        &lt;svg viewBox="0 0 16 16" class="icon-12p expand-caret" role="img" aria-hidden="true" focusable="false"&gt;
+          &lt;use xlink:href="#shape-caret"&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+      <strong>&lt;/span&gt;</strong>
+    &lt;/button&gt;
+    &lt;div class="js-dropDown-content unstyled dropDown-content <strong>dropDown-content--narrow</strong>" hidden&gt;
+      &lt;ul class="unstyled mt0-5 mb0-5 aligncenter"&gt;
+        &lt;li class="dropDown-item"&gt;&lt;button class="w100 pt0-5 pb0-5"&gt;Blah&lt;/button&gt;&lt;/li&gt;
+        …
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+</div>
+
 
 <h2 class="mt2">Drop down code (simple buttons)</h2>
 
