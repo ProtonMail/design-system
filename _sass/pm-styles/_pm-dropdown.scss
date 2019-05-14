@@ -2,9 +2,7 @@
 $dropDown-width: 200px !default;
 $dropDown-narrow-width: 8em !default;
 
-.dropDown,
-.dropDown-leftArrow,
-.dropDown-rightArrow {
+.dropDown {
   @extend .relative;
 }
 .dropDown-content {
@@ -44,21 +42,21 @@ $dropDown-narrow-width: 8em !default;
 }
 
 /* position of dropDown variations */
-.dropDown-leftArrow .dropDown-content {
+.dropDown--leftArrow .dropDown-content {
   left: 0;
 }
-.dropDown-rightArrow .dropDown-content {
+.dropDown--rightArrow .dropDown-content {
   left: auto;
   right: 0;
 }
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .dropDown-leftArrow .dropDown-content {
+    .dropDown--leftArrow .dropDown-content {
       right: 0;
       left: auto;
     }
-    .dropDown-rightArrow .dropDown-content {
+    .dropDown--rightArrow .dropDown-content {
       left: 0;
       right: auto;
     }
@@ -77,21 +75,21 @@ $dropDown-narrow-width: 8em !default;
   border-bottom: 1rem solid $white;
 }
 
-.dropDown-leftArrow .dropDown-content::before {
+.dropDown--leftArrow .dropDown-content::before {
   left: 1rem;
 }
-.dropDown-rightArrow .dropDown-content::before {
+.dropDown--rightArrow .dropDown-content::before {
   left: auto;
   right: 1rem;
 }
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .dropDown-leftArrow .dropDown-content::before {
+    .dropDown--leftArrow .dropDown-content::before {
       right: 1rem;
       left: auto;
     }
-    .dropDown-rightArrow .dropDown-content::before {
+    .dropDown--rightArrow .dropDown-content::before {
       right: auto;
       left: 1rem;
     }
