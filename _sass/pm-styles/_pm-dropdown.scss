@@ -19,13 +19,10 @@ $dropDown-narrow-width: 8em !default;
   visibility: visible;
   transition-delay: 0s;
   width: $dropDown-width; 
-  //padding: 1rem;
   background: $white;
   border-radius: $global-border-radius;
   box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
   color: $pm-global-grey;
-  //max-height: 30vh;
-  // @extend .scroll-if-needed;
 }
 
 .dropDown-content--narrow {
