@@ -1,6 +1,6 @@
 {
   "name": "design-system",
-  "version": "1.6.18",
+  "version": "1.7.0",
   "description": "Proton Design system, for all Proton Projects: https://design-system-beta.netlify.com/",
   "main": "index.js",
   "scripts": {
