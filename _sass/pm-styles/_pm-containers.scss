@@ -24,6 +24,7 @@
 .row--orderable {
   z-index: 666; /* In case the modal is open */
   background-color: $white;
+  color: $pm-global-grey;
 }
 
 $block-info-border-width: 3px !default;
