@@ -9,21 +9,22 @@ $dropDown-narrow-width: 8em !default;
 .dropDown-content {
   position: absolute;
   z-index: 10;
-  left: calc(50% - #{$dropDown-width/2});
-  top: 100%;
-  margin-top: 2rem;
   display: block;
   opacity: 1;
-  transition: visibility 0s ease, transform .15s ease, opacity .15s ease ;
+  transition: visibility 0s ease, transform 0.15s ease, opacity 0.15s ease;
   transform-origin: top center;
-  transform: scale(1,1);
+  transform: scale(1, 1);
   visibility: visible;
   transition-delay: 0s;
-  width: $dropDown-width; 
+  width: $dropDown-width;
   background: $white;
   border-radius: $global-border-radius;
   box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.16);
   color: $pm-global-grey;
+}
+
+.dropDown-content--above {
+  transform-origin: bottom center;
 }
 
 .dropDown-content--narrow {
@@ -77,7 +78,7 @@ $dropDown-narrow-width: 8em !default;
 }
 
 /* position of dropDown variations */
-.dropDown--leftArrow .dropDown-content {
+.dropDown-content--leftArrow {
   left: 0;
 }
 .dropDown--rightArrow .dropDown-content {
@@ -87,11 +88,11 @@ $dropDown-narrow-width: 8em !default;
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .dropDown--leftArrow .dropDown-content {
+    .dropDown-content--leftArrow {
       right: 0;
       left: auto;
     }
-    .dropDown--rightArrow .dropDown-content {
+    .dropDown-content--rightArrow {
       left: 0;
       right: auto;
     }
@@ -110,21 +111,21 @@ $dropDown-narrow-width: 8em !default;
   border-bottom: 1rem solid $white;
 }
 
-.dropDown--leftArrow .dropDown-content::before {
+.dropDown-content--leftArrow::before {
   left: 1rem;
 }
-.dropDown--rightArrow .dropDown-content::before {
+.dropDown-content--rightArrow::before {
   left: auto;
   right: 1rem;
 }
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .dropDown--leftArrow .dropDown-content::before {
+    .dropDown-content--leftArrow::before {
       right: 1rem;
       left: auto;
     }
-    .dropDown--rightArrow .dropDown-content::before {
+    .dropDown-content--rightArrow::before {
       right: auto;
       left: 1rem;
     }
