@@ -7,7 +7,7 @@ $dropDown-narrow-width: 8em !default;
   @extend .relative;
 }
 .dropDown-content {
-  position: fixed;
+  position: absolute;
   z-index: 10;
   display: block;
   opacity: 1;
@@ -47,7 +47,6 @@ $dropDown-narrow-width: 8em !default;
 .dropDown-contentInner {
   position: relative;
   overflow: auto;
-  min-height: 4em;
   max-height: 30vh;
   padding: 0; // no padding for the drop shadow :-\
   margin: 0 0 0 1em;
