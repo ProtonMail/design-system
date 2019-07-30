@@ -9,7 +9,6 @@ $dropDown-narrow-width: 8em !default;
   display: block;
   opacity: 1;
   transition: visibility 0s ease, transform 0.15s ease, opacity 0.15s ease;
-  transform-origin: top center;
   transform: scale(1, 1);
   visibility: visible;
   transition-delay: 0s;
@@ -27,10 +26,23 @@ $dropDown-narrow-width: 8em !default;
   width: $dropDown-wide-width;
 }
 
-.dropDown--top,
-.dropdown--top-left,
-.dropdown--top-right {
+.dropDown--top {
   transform-origin: bottom center;
+}
+.dropDown--top-left {
+  transform-origin: bottom left;
+}
+.dropDown--top-right {
+  transform-origin: bottom right;
+}
+.dropDown--bottom {
+  transform-origin: top center;
+}
+.dropDown--bottom-left {
+  transform-origin: top left;
+}
+.dropDown--bottom-right {
+  transform-origin: top right;
 }
 .dropDown--left {
   transform-origin: right center;
@@ -111,7 +123,7 @@ $dropDown-narrow-width: 8em !default;
   left: 1rem;
 }
 .dropDown--top-right::before,
-.dropdown--bottom-right::before {
+.dropDown--bottom-right::before {
   left: auto;
   right: 1rem;
 }
