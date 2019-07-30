@@ -6,7 +6,7 @@ $arrow-width: 0.5em;
 
 /* tooltip styles */
 /* factorisation */
-[class*="tooltip-"] {
+.tooltip {
   position: absolute;
   z-index: 666;
   width: $tooltip-width;
@@ -19,7 +19,7 @@ $arrow-width: 0.5em;
 
 /* used pseudo-element to make arrows */
 /* factorisation */
-[class*="tooltip-"]::before {
+.tooltip::before {
   content: "";
   speak: none;
   position: absolute;
@@ -29,25 +29,25 @@ $arrow-width: 0.5em;
   pointer-events: none;
 }
 
-.tooltip-top::before {
+.tooltip--top::before {
   top: 100%;
   left: calc(50% - #{$arrow-width});
   border: $arrow-width solid transparent;
   border-top: $arrow-width solid $pm-global-grey;
 }
-.tooltip-right::before {
+.tooltip--right::before {
   top: calc(50% - #{$arrow-width});
   left: -#{$arrow-width * 2};
   border: $arrow-width solid transparent;
   border-right: $arrow-width solid $pm-global-grey;
 }
-.tooltip-bottom::before {
+.tooltip--bottom::before {
   bottom: 100%;
   left: calc(50% - #{$arrow-width});
   border: $arrow-width solid transparent;
   border-bottom: $arrow-width solid $pm-global-grey;
 }
-.tooltip-left::before {
+.tooltip--left::before {
   top: calc(50% - #{$arrow-width});
   right: -#{$arrow-width * 2};
   border: $arrow-width solid transparent;

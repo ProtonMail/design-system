@@ -3,7 +3,7 @@ $dropDown-width: 200px !default;
 $dropDown-wide-width: 450px !default;
 $dropDown-narrow-width: 8em !default;
 
-.dropDown-content {
+.dropDown {
   position: absolute;
   z-index: 10;
   display: block;
@@ -20,20 +20,20 @@ $dropDown-narrow-width: 8em !default;
   color: $pm-global-grey;
 }
 
-.dropDown-content--above {
+.dropDown--above {
   transform-origin: bottom center;
 }
 
-.dropDown-content--narrow {
+.dropDown--narrow {
   width: $dropDown-narrow-width;
 }
 
-.dropDown-content--wide {
+.dropDown--wide {
   width: $dropDown-wide-width;
 }
 
 /* This is the hidden state */
-[hidden].dropDown-content {
+[hidden].dropDown {
   display: block;
   opacity: 0;
   visibility: hidden;
@@ -41,7 +41,7 @@ $dropDown-narrow-width: 8em !default;
   transition-delay: 0.15s, 0s, 0s;
 }
 
-.dropDown-contentInner {
+.dropDown-content {
   position: relative;
   overflow: auto;
   max-height: 30vh;
@@ -62,7 +62,7 @@ $dropDown-narrow-width: 8em !default;
     margin-right: 0.5em;
   }
 }
-.dropDown-contentInner {
+.dropDown-content {
   &::before,
   &::after {
     content: "";
@@ -75,21 +75,21 @@ $dropDown-narrow-width: 8em !default;
 }
 
 /* position of dropDown variations */
-.dropDown-content--leftArrow {
+.dropDown--leftArrow {
   left: 0;
 }
-.dropDown-content--rightArrow {
+.dropDown--rightArrow {
   left: auto;
   right: 0;
 }
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .dropDown-content--leftArrow {
+    .dropDown--leftArrow {
       right: 0;
       left: auto;
     }
-    .dropDown-content--rightArrow {
+    .dropDown--rightArrow {
       left: 0;
       right: auto;
     }
@@ -97,7 +97,7 @@ $dropDown-narrow-width: 8em !default;
 }
 
 /* arrow on top of dropdown */
-.dropDown-content::before {
+.dropDown::before {
   content: "";
   position: absolute;
   top: -2rem;
@@ -108,25 +108,25 @@ $dropDown-narrow-width: 8em !default;
   border-bottom: 1rem solid $white;
 }
 
-.dropDown-content--above::before {
+.dropDown--above::before {
   top: 100%;
   transform: rotate(180deg);
 }
-.dropDown-content--leftArrow::before {
+.dropDown--leftArrow::before {
   left: 1rem;
 }
-.dropDown-content--rightArrow::before {
+.dropDown--rightArrow::before {
   left: auto;
   right: 1rem;
 }
 
 @if $rtl-option == true {
   [dir="rtl"] {
-    .dropDown-content--leftArrow::before {
+    .dropDown--leftArrow::before {
       right: 1rem;
       left: auto;
     }
-    .dropDown-content--rightArrow::before {
+    .dropDown--rightArrow::before {
       right: auto;
       left: 1rem;
     }
