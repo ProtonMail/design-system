@@ -10,9 +10,11 @@ Be sure to have Ruby on your computer.
 ```
 gem install jekyll bundler
 
+# if livereloading does not work
 gem uninstall eventmachine
 gem install eventmachine --platform ruby
 
+# to check versions
 jekyll -v
 ruby -v
 gem -v
@@ -24,6 +26,8 @@ gem -v
 ```
 jekyll serve --livereload
 ```
+
+You may prefix command by `bundle exec`, example: ` bundle exec jekyll serve --livereload`
 
 ## build for prod
 
