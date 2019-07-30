@@ -4,19 +4,9 @@
 $tooltip-width: 14em;
 $arrow-width: 0.5em;
 
-[class*="tooltip-"][aria-hidden="true"]:not(.tooltip-container) {
-  display: none;
-}
-
-/* position relative for containers */
-.tooltip-container {
-  @extend .relative;
-  @extend .inbl;
-}
-
 /* tooltip styles */
 /* factorisation */
-[class*="tooltip-"]:not(.tooltip-container) {
+[class*="tooltip-"] {
   position: absolute;
   z-index: 666;
   width: $tooltip-width;
@@ -29,7 +19,7 @@ $arrow-width: 0.5em;
 
 /* used pseudo-element to make arrows */
 /* factorisation */
-[class*="tooltip-"]:not(.tooltip-container)::before {
+[class*="tooltip-"]::before {
   content: "";
   speak: none;
   position: absolute;

@@ -3,9 +3,6 @@ $dropDown-width: 200px !default;
 $dropDown-wide-width: 450px !default;
 $dropDown-narrow-width: 8em !default;
 
-.dropDown {
-  @extend .relative;
-}
 .dropDown-content {
   position: absolute;
   z-index: 10;
@@ -144,7 +141,4 @@ $dropDown-narrow-width: 8em !default;
 /* pagination caret */
 .expand-caret {
   fill: currentColor;
-}
-.dropDown [aria-expanded="true"] .expand-caret {
-  @extend .rotateX-180;
 }
