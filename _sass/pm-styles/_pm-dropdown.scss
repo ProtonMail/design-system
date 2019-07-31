@@ -60,28 +60,6 @@ $dropDown-narrow-width: 8em !default;
   transition-delay: 0.15s, 0s, 0s;
 }
 
-/* position of dropDown variations */
-.dropDown--leftArrow {
-  left: 0;
-}
-.dropDown--rightArrow {
-  left: auto;
-  right: 0;
-}
-// TODO: RTL handling
-@if $rtl-option == true {
-  [dir="rtl"] {
-    .dropDown--leftArrow {
-      right: 0;
-      left: auto;
-    }
-    .dropDown--rightArrow {
-      left: 0;
-      right: auto;
-    }
-  }
-}
-
 /* arrow on top of dropdown */
 .dropDown::before {
   content: "";
@@ -128,26 +106,13 @@ $dropDown-narrow-width: 8em !default;
   right: 1rem;
 }
 
-@if $rtl-option == true {
-  [dir="rtl"] {
-    .dropDown--leftArrow::before {
-      right: 1rem;
-      left: auto;
-    }
-    .dropDown--rightArrow::before {
-      right: auto;
-      left: 1rem;
-    }
-  }
-}
-
 /* scrollable insides of the dropdown */
 .dropDown-content {
   position: relative;
   overflow: auto;
   max-height: 30vh;
   padding: 0; // no padding for the drop shadow :-\
-  margin: 0 0 0 1em;
+  margin: 0 1em;
 
   background: $white no-repeat;
   background-image: radial-gradient(
@@ -158,10 +123,6 @@ $dropDown-narrow-width: 8em !default;
     radial-gradient(farthest-side at 50% 100%, #acb0bf, transparent);
   background-position: 50% 0, 0 100%;
   background-size: calc(100% - 20px) 3px;
-
-  > * {
-    margin-right: 0.5em;
-  }
 }
 .dropDown-content {
   &::before,
