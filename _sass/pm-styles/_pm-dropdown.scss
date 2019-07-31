@@ -83,7 +83,7 @@ $dropDown-narrow-width: 8em !default;
 }
 .dropDown--left::before {
   top: calc(50% - 1rem);
-  left: calc(100% + 2rem);
+  left: 100%;
   border-left: 1rem solid $white;
 }
 .dropDown--right::before {
