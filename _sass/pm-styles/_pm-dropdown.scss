@@ -108,11 +108,9 @@ $dropDown-narrow-width: 8em !default;
 
 /* scrollable insides of the dropdown */
 .dropDown-content {
-  position: relative;
   overflow: auto;
   max-height: 30vh;
-  padding: 0; // no padding for the drop shadow :-\
-  margin: 0 1em;
+  border-radius: $global-border-radius;
 
   background: $white no-repeat;
   background-image: radial-gradient(
