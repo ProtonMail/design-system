@@ -27,7 +27,7 @@ gem -v
 jekyll serve --livereload
 ```
 
-You may prefix command by `bundle exec`, example: ` bundle exec jekyll serve --livereload`
+You may prefix command by `bundle exec`, example: `bundle exec jekyll serve --livereload`
 
 ## build for prod
 
