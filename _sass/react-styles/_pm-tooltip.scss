@@ -3,7 +3,7 @@ $arrow-width: 0.5em;
 
 /* basic tooltip styles */
 .tooltip {
-  position: absolute;
+  position: fixed;
   z-index: 666;
   width: $tooltip-width;
   border-radius: $global-border-radius;

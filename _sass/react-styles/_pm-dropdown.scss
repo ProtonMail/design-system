@@ -3,7 +3,7 @@ $dropDown-wide-width: 450px !default;
 $dropDown-narrow-width: 8em !default;
 
 .dropDown {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   display: block;
   opacity: 1;
