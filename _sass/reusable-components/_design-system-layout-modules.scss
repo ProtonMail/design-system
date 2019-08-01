@@ -469,7 +469,15 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 2 !default; // specify 2.5 if need
   -webkit-transform: rotateZ(270deg);
   transform: rotateZ(270deg);
 }
-
+/* increase surface click/tap */
+.increase-surface-click::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .no-pointer-events,
 .no-pointer-events-children * {
   pointer-events: none;
