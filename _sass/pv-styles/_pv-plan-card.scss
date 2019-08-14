@@ -1,0 +1,5 @@
+.plan-card:hover,
+.plan-card--active {
+  border: 1px solid $pm-global-border;
+  border-radius: $global-border-radius;
+}
