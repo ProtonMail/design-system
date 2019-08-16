@@ -1,3 +1,9 @@
+.plan-card {
+  display: flex;
+  flex: 1 1 auto;
+  padding: 1em;
+}
+
 .plan-card:hover,
 .plan-card--active {
   border: 1px solid $pm-global-border;
