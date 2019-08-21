@@ -9,3 +9,10 @@
   border: 1px solid $pm-global-border;
   border-radius: $global-border-radius;
 }
+
+.selected-plan {
+  width: 285px;
+  position: sticky;
+  top: 20px;
+  right: 0;
+}
