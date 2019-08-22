@@ -2,16 +2,13 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Sidebar } from 'react-components';
 
-const AppSidebar = ({
-    match: {
-        params: { path }
-    }
-}) => (
+const AppSidebar = () => (
     <Sidebar
         list={[
-            { link: `/${path}/colors`, text: 'Colors' },
-            { link: `/${path}/typography`, text: 'Typography' },
-            { link: `/${path}/buttons`, text: 'Buttons' }
+            { link: '/colors', text: 'Colors' },
+            { link: '/typography', text: 'Typography' },
+            { link: '/buttons', text: 'Buttons' },
+            { link: '/tables', text: 'Tables' }
         ]}
     />
 );

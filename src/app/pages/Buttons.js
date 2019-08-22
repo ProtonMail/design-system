@@ -1,13 +1,9 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Icon, Copy, classnames } from 'react-components';
-import CodeExample from '../components/CodeExample';
+import { CodeExample } from '../components';
 
-const Buttons = ({
-    match: {
-        params: { path }
-    }
-}) => (
+const Buttons = () => (
     <>
         <div id="button-states" className="container-section-sticky container-section-sticky--fullwidth">
             <h2>Button States</h2>
@@ -474,11 +470,10 @@ const Buttons = ({
 
             <h3 className="mt1">Loading button</h3>
             <p>
-                For loading content, you may have a look at{' '}
-                <Link to={`${path}/loading-content`}>loading content section</Link>.
+                For loading content, you may have a look at <Link to="/loading-content">loading content section</Link>.
             </p>
         </div>
     </>
 );
 
-export default withRouter(Buttons);
+export default Buttons;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { format } from 'prettier/standalone';
 import html from 'prettier/parser-html';
 
-const options = { parser: 'html', plugins: [html], htmlWhitespaceSensitivity: 'ignore' };
+const options = { parser: 'html', plugins: [html], htmlWhitespaceSensitivity: 'ignore', printWidth: 120 };
 
 const simplyfyTags = (content, tags) =>
     tags.reduce(

@@ -1,4 +1,6 @@
 import React from 'react';
+import { format } from 'prettier/standalone';
+import css from 'prettier/parser-postcss';
 
 const Typography = () => (
     <>
@@ -9,11 +11,14 @@ const Typography = () => (
             helping performance by eliminating the need to download font files.
         </p>
 
-        <pre className="language-css">
-            <code>
-                {`body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-}`}
+        <pre>
+            <code className="language-css">
+                {format(
+                    `body {
+                        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+                    }`,
+                    { parser: 'css', plugins: [css] }
+                )}
             </code>
         </pre>
 
