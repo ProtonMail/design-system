@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { Icons } from 'react-components';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Content from './Content';
@@ -12,6 +13,7 @@ const AppLayout = () => (
                 <Sidebar />
                 <Content />
             </div>
+            <Icons />
         </>
     </Route>
 );
