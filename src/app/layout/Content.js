@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { ErrorBoundary } from 'react-components';
-import { Colors, Typography, Buttons, Tables } from '../pages';
+import { Colors, Typography, Buttons, Tables, Containers } from '../pages';
 
 const Content = () => (
     <div className="main flex-item-fluid">
@@ -15,6 +15,7 @@ const Content = () => (
                             <Route path="/typography" component={Typography} />
                             <Route path="/buttons" component={Buttons} />
                             <Route path="/tables" component={Tables} />
+                            <Route path="/containers" component={Containers} />
                         </Switch>
                     </ErrorBoundary>
                 </div>

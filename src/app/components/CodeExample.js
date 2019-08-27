@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import PropTypes from 'prop-types';
+import { highlightAll } from 'prismjs';
 import { format } from 'prettier/standalone';
 import html from 'prettier/parser-html';
 
@@ -13,16 +14,22 @@ const simplyfyTags = (content, tags) =>
         content
     );
 
-const CodeExample = ({ children, className, render = true, tagsToSimplify = [] }) => (
-    <>
-        {render && <div className={className}>{children}</div>}
-        <pre>
-            <code className="language-markup">
-                {format(simplyfyTags(renderToStaticMarkup(children), tagsToSimplify), options)}
-            </code>
-        </pre>
-    </>
-);
+const CodeExample = ({ children, className, render = true, tagsToSimplify = [] }) => {
+    useEffect(() => {
+        highlightAll();
+    });
+
+    return (
+        <>
+            {render && <div className={className}>{children}</div>}
+            <pre>
+                <code className="language-markup">
+                    {format(simplyfyTags(renderToStaticMarkup(children), tagsToSimplify), options)}
+                </code>
+            </pre>
+        </>
+    );
+};
 
 CodeExample.propTypes = {
     children: PropTypes.node,
