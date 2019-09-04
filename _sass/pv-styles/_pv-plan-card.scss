@@ -7,6 +7,18 @@
   z-index: 5;
 }
 
+.plan-card {
+  margin-right: 2em;
+}
+.plan-card:nth-of-type(3) {
+  margin-right: 0;
+}
+.plan-card:last-of-type {
+  margin-left: 2em;
+  margin-right: 0;
+}
+
+
 .plan-price {
   min-height: 8em;
 }
