@@ -60,7 +60,7 @@ opacity: .3;
   <use id="css-caret-close" xlink:href="#symbol-caret" class="black rotated-180" />
   <use id="css-greater" xlink:href="#symbol-caret" class="black rotated-right" />
   <use id="css-lesser" xlink:href="#symbol-caret" class="black rotated-left" />
-  <use id="css-dash" xlink:href="#symbol-dash" class="black low-opacity dash" />
+  <use id="css-dash" xlink:href="#symbol-dash" class="black low-opacity" />
   <use id="css-on" xlink:href="#symbol-on" class="white" />
   <use id="css-check" xlink:href="#symbol-on" class="success" />
   <use id="css-minus" xlink:href="#symbol-dash" class="black" />
