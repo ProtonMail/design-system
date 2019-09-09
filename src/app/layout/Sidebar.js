@@ -11,7 +11,8 @@ const AppSidebar = () => (
                     { link: '/typography', text: 'Typography' },
                     { link: '/buttons', text: 'Buttons' },
                     { link: '/tables', text: 'Tables' },
-                    { link: '/containers', text: 'Containers' }
+                    { link: '/containers', text: 'Containers' },
+                    { link: '/badges', text: 'Badges' }
                 ]}
             />
         </nav>

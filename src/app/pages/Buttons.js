@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Icon, Copy, classnames, IntlTelInput } from 'react-components';
+import { Icon, Copy, classnames } from 'react-components';
 import { CodeExample } from '../components';
 
 const Buttons = () => (
@@ -8,7 +8,6 @@ const Buttons = () => (
         <div id="button-states" className="container-section-sticky container-section-sticky--fullwidth">
             <h2>Button States</h2>
 
-            <IntlTelInput />
             <table className="noborder border-collapse">
                 <caption className="sr-only">Standard buttons</caption>
                 <thead>

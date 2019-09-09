@@ -1,2 +1,9 @@
 export { default as CustomScrollbars } from './CustomScrollbars';
 export { default as Tabs } from './Tabs';
+export { default as Wizard } from './Wizard';
+export { default as StyledContainers } from './StyledContainers';
+export { default as Breadcrumb } from './Breadcrumb';
+export { default as InformationPanels } from './InformationPanels';
+export { default as InformationBlocks } from './InformationBlocks';
+export { default as DetailsSummary } from './DetailsSummary';
+export { default as Figure } from './Figure';
