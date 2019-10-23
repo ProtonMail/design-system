@@ -6,6 +6,10 @@
   width: calc( (100% + var(--width-sidebar, #{$width-sidebar}) ) * #{$conversations-column-width/1%/100} );
   border-right: 1px solid $pm-global-border;
 }
+.items-column-list--mobile {
+  @extend .items-column-list;
+  width: calc( (100% + var(--width-sidebar, #{$width-sidebar}) ) );
+}
 
 .items-column-list,
 .view-column-detail {
