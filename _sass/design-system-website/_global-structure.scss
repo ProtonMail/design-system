@@ -104,8 +104,6 @@ body {
 }
 .main-area--withToolbar.no-scroll {
   overflow: hidden;
-  height: calc(100vh - #{$toolbar-height} );
-  max-height: calc(100vh - #{$toolbar-height} );
 }
 .main-area--noHeader {
   @extend .main-area;
