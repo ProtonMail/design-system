@@ -83,7 +83,8 @@ body {
 .main-area--withToolbar{
   background: $white;
   color: $pm-global-grey;
-  height: calc(100vh - #{$header-height} );
+  height: calc(100vh - #{$header-height} - #{$toolbar-height} );
+  max-height: calc(100vh - #{$header-height} - #{$toolbar-height} );
   overflow: auto;
   
   &.no-scroll {
@@ -93,17 +94,10 @@ body {
 .main-area {
   border-radius: 4px 4px 0 0;
 }
-.main-area--withToolbar {
-  height: calc(100vh - #{$header-height} - #{$toolbar-height} );
-  max-height: calc(100vh - #{$header-height} - #{$toolbar-height} );
-}
 .main-full {
   height: 100vh;
   overflow: auto;
   @extend .bg-global-altgrey-gradient;
-}
-.main-area--withToolbar.no-scroll {
-  overflow: hidden;
 }
 .main-area--noHeader {
   @extend .main-area;
