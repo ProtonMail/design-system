@@ -6,7 +6,7 @@
 
 // fix "autofill state"
 input:-webkit-autofill{
-  box-shadow: 200px 200px 100px $pm-input-background inset;
+  box-shadow: 200px 200px 100px var(--bgcolor-input, $pm-input-background) inset;
 }
 
 /* removes X in input when typing in IE/EDGE */
@@ -31,15 +31,16 @@ $field-container: 26rem !default;
 
 .pm-field {
   filter: none; // fixes Firefox autofill color
-  border: $input-defaut-border;
+  border: 1px solid var(--bordercolor-input, $input-defaut-border);
   padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
-  background-color: $pm-input-background;
+  background-color: var(--bgcolor-input, $pm-input-background);
   border-radius: $global-border-radius;
+  color: var(--color-input, $pm-global-grey);
   outline: 0;
   &:focus,
   &.focus,
   &:focus-within {
-    background-color: $white;
+    background-color: var(--bgcolor-main-area, $white);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
   &[aria-invalid="true"]:not(:focus),
@@ -81,7 +82,7 @@ $field-container: 26rem !default;
 }
 
 select.pm-field {
-  background: $pm-input-background url("#{$path-images}sprite-for-css-only.svg#css-caret") calc(100% - 6px) 50% no-repeat;
+  background: var(--bgcolor-input, $pm-input-background) url("#{$path-images}sprite-for-css-only.svg#css-caret") calc(100% - 6px) 50% no-repeat;
   background-size: 1.5rem;
   padding-left: 1em;
   height: 3.5rem;

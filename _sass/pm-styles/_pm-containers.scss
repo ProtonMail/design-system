@@ -53,8 +53,8 @@
 $block-info-border-width: 3px !default;
 [class*="block-info"] {
   padding: 0.5em 1.2em;
-  color: $pm-global-grey;
-  background-color: $pm-global-light;
+  color: var(--color-main-area, $pm-global-grey);
+  background-color: var(--bgcolor-main-area, $pm-global-light);
   border-left-width: $block-info-border-width;
   border-left-style: solid;
 }

@@ -1,0 +1,20 @@
+@media (prefers-color-scheme: dark) {
+
+    
+    .fill-global-grey { fill: $white; }
+
+    :root {
+        --bgcolor-item-column-list: #{$pm-global-grey};
+        --bgcolor-view-column-detail: #{$pm-secondary-grey};
+        --bgcolor-main-area: #{$pm-secondary-grey};
+        --bgcolor-subnav: #{$pm-global-grey};
+        --color-subnav-link: #{$white};
+        --color-main-area: #{$white};
+
+        --bordercolor-input: #{$pm-tertiary-grey};
+        --bgcolor-input: #{$pm-global-altgrey};
+        --color-input: #{$white}
+
+    }
+
+}

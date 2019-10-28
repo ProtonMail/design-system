@@ -5,6 +5,7 @@
 .items-column-list {
   width: calc( (100% + var(--width-sidebar, #{$width-sidebar}) ) * #{$conversations-column-width/1%/100} );
   border-right: 1px solid $pm-global-border;
+  background: var(--bgcolor-item-column-list, $white);
 }
 .items-column-list--mobile {
   width: 100%;
@@ -14,6 +15,10 @@
 .items-column-list--mobile,
 .view-column-detail {
   height: calc(100vh - #{$header-height} - #{$toolbar-height} );
+}
+
+.view-column-detail {
+  background: var(--bgcolor-view-column-detail, $white);
 }
 
 .item-container,
