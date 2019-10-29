@@ -1,6 +1,6 @@
 /* input design */
 ::placeholder {
-  color: rgba($pm-global-grey, .65);
+  color: var(--color-input, rgba($pm-global-grey, .65));
   font-style: italic;
 }
 
@@ -147,7 +147,7 @@ textarea[required].pm-field.field-pristine:invalid {
 /* checkboxes */
 .pm-checkbox-fakecheck {
   display: inline-flex;
-  border: 1px solid $pm-global-border;
+  border: 1px solid var(--bordercolor-input, $pm-global-border);
   border-radius: 2px;
   min-width: 1.6rem;
   width: 1.6rem;
@@ -232,7 +232,7 @@ $width: 5.5em !default;
   // height: 2em;
   width: $width;
   display: inline-flex;
-  border: 1px solid $pm-global-border;
+  border: 1px solid var(--bordercolor-input, $pm-global-border);
   background: #fcfdff;
   border-radius: 2rem;
   padding: 2px;

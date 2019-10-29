@@ -70,6 +70,16 @@
 }
 
 
+.bg-colors {
+  background-color: $pm-global-border;
+}
+@media (prefers-color-scheme: dark) {
+  .bg-colors {
+    background-color: $pm-global-altgrey;
+  }
+}
+
+
 [aria-hidden="true"].tabs-tabcontent {
   display: none;
 }

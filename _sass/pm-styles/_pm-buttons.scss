@@ -20,7 +20,6 @@
   }
 }
 
-
 .pm-button {
   border-color: $pm-global-border;
   background: $white;
@@ -59,7 +58,7 @@
 
 }
 
-.pm-button-dark {
+@mixin pm-button-dark {
   color: $white;
   background-color: $pm-global-grey;
   border-color: $pm-global-border;
@@ -83,6 +82,14 @@
   /* just to cancel examples  */
   &.is-hover:hover {
     background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+.pm-button-dark {
+  @include pm-button-dark;
+}
+@media (prefers-color-scheme: dark) {
+  .pm-button {
+      @include pm-button-dark;
   }
 }
 
@@ -147,7 +154,7 @@
   }
 }
 
-.pm-button-blueborder-dark {
+@mixin pm-button-blueborder-dark {
   border-color: $pm-primary-light;
   color: $pm-primary-light;
   background-color: $pm-global-grey;
@@ -158,11 +165,11 @@
   &.is-hover,
   &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
-    background-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
     border-color: $pm-primary-light;
     color: $pm-primary-dark;
   }
-  &:active,
+  &:not(div):active, // not(div) prevents active state in case of button groups with dropdowns
   &.is-active {
     background: rgba(0, 0, 0, 0.5);
   }
@@ -172,6 +179,14 @@
     color: rgba( $pm-global-grey, .3 );
     border-color: $pm-global-border;
     pointer-events: none;
+  }
+}
+.pm-button-blueborder-dark {
+  @include pm-button-blueborder-dark;
+}
+@media (prefers-color-scheme: dark) {
+  .pm-button-blueborder {
+      @include pm-button-blueborder-dark;
   }
 }
 
@@ -236,7 +251,7 @@
   }
 }
 
-.pv-button-greenborder-dark {
+@mixin pv-button-greenborder-dark {
   border: 1px solid $pv-green-light;
   color: $pv-green-light;
   background-color: $pm-global-grey;
@@ -261,6 +276,14 @@
     color: rgba( $pm-global-grey, .3 );
     border-color: $pm-global-border;
     pointer-events: none;
+  }
+}
+.pv-button-greenborder-dark {
+  @include pv-button-greenborder-dark;
+}
+@media (prefers-color-scheme: dark) {
+  .pv-button-greenborder {
+      @include pv-button-greenborder-dark;
   }
 }
 

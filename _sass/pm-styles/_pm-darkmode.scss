@@ -1,7 +1,10 @@
 @media (prefers-color-scheme: dark) {
 
-
     .fill-global-grey { fill: $white; } // dirty, I know
+
+    .bg-white { background-color: $black; }
+
+    // .color-global-grey { color: $white; }
 
     :root {
         --bgcolor-item-column-list: #{$pm-global-grey};
