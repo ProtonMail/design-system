@@ -61,7 +61,7 @@
 @mixin pm-button-dark {
   color: $white;
   background-color: $pm-global-grey;
-  border-color: $pm-global-border;
+  border-color: var(--bordercolor-input, $pm-global-border);
 
   &:focus,
   &:hover,
