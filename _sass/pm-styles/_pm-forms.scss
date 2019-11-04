@@ -233,7 +233,7 @@ $width: 5.5em !default;
   width: $width;
   display: inline-flex;
   border: 1px solid var(--bordercolor-input, $pm-global-border);
-  background: #fcfdff;
+  background: var(--bgcolor-input, #fcfdff);
   border-radius: 2rem;
   padding: 2px;
   position: relative;
@@ -243,12 +243,12 @@ $width: 5.5em !default;
     width: calc( #{$width/2} - 2px);
     transition: transform .25s ease, background-color .25s ease, border-color .25s linear;
     border-radius: 2rem;
-    background: $pm-global-muted;
+    background: var(--bgcolor-input, $pm-global-muted);
     top: 2px;
     left: 0;
     bottom: 2px;
     transform: translateX(2px);
-    border: 1px solid $pm-global-border;
+    border: 1px solid var(--bordercolor-input, $pm-global-border);
   }
   & > .pm-toggle-label-text {
     align-self: center;

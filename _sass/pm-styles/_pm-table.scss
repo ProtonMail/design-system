@@ -41,6 +41,10 @@
   }
 }
 
+.pm-plans-table-row--highlighted {
+  background-color: var(--bgcolor-input, $pm-global-light);
+}
+
 /* simple dirty fix */
 .pm-simple-table button svg {
   @extend .relative;
