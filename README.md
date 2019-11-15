@@ -1,44 +1,53 @@
 # Design system
 
-Proton Design system, for all Proton Projects: https://design-system-beta.netlify.com/ 
+Proton Design system, for all Proton Projects: https://design-system-beta.netlify.com/
 
+You will need:
 
-## To install
+-   bash
+-   node (mini latest LTS)
+-   npm (latest too, it's better)
 
-Be sure to have Ruby on your computer.
+## How to dev 1
 
-```
-gem install jekyll bundler
+1. Clone this repository
+2. Run `$ npm i`
+3. `$ npm start`
 
-# if livereloading does not work
-gem uninstall eventmachine
-gem install eventmachine --platform ruby
+It will give you the URL where it's available.
 
-# to check versions
-jekyll -v
-ruby -v
-gem -v
+## Sync translations [App to crowdin]
 
-```
+You can sync them via `$ npm run i18n:upgrade`, it will:
 
-## to dev
+-   Extract translations
+-   Push them to crowndin
+-   Create a commit with them on the repo
 
-```
-jekyll serve --livereload
-```
+## How to deploy
 
-You may prefix command by `bundle exec`, example: `bundle exec jekyll serve --livereload`
+-   `$ npm run deploy -- --branch=<deploy-X> --api=<target>` _Deploy the app as /\$config_
 
-## build for prod
+`$config`: See package.json config.publicPathFlag
 
-```
-jekyll build --config _config_prod.yml
-```
+-   `$ npm run deploy:standalone -- --branch=<deploy-X> --api=<target>` _Deploy the app as deploy + /login_
 
-Goes to `_site` and can be exported to NetLify.
+Based on [proton-bundler](https://github.com/ProtonMail/proton-bundler)
+
+## Sync translations [Crowdin to our App]
+
+To get latest translations available on crowdin, you can run `$ npm run i18n:getlatest`. It will:
+
+-   Get list of translations available (default same as proton-i18n crowdin --list --type --limit=95)
+-   Upgrade our translations with ones from crowdin
+-   Store a cache of translations available in the app
+-   Export translations as JSON
+-   Commit everything
+
+> :warning: If you want to get only a **custom** list of translations, configure it inside `po/i18n.txt` and run `$ npm run i18n:getlatest -- --custom`
 
 ## CSS structure
 
-- __reusable-components__: a set of files/framework/etc. that can be used __on every project__.
-- __pm-styles__: styles used __for ProtonMail V4 only__.</li>
-- __design-system-website__: extra-styles only needed to make this website work properly.
+-   **reusable-components**: a set of files/framework/etc. that can be used **on every project**.
+-   **pm-styles**: styles used **for ProtonMail V4 only**.</li>
+-   **design-system-website**: extra-styles only needed to make this website work properly.
