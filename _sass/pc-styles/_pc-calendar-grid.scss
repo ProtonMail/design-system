@@ -5,7 +5,8 @@ $calendar-grid-border: var(--bordercolor-input, $calendar-grid-color) 1px solid 
 $gridcell-right-margin: 1.5em;
 $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 
-.calendar-grid-heading {
+.calendar-grid-heading,
+.calendar-monthgrid-day {
     color: var(--color-main-area, $pm-global-grey);
 }
 
