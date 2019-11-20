@@ -172,7 +172,7 @@ textarea[required].pm-field.field-pristine:invalid {
   }
   &[disabled] + .pm-checkbox-fakecheck,
   &:indeterminate + .pm-checkbox-fakecheck {
-    background: $pm-global-muted;
+    background: var(--bgcolor-disabled-checkboxes-radios, $pm-global-muted);
   }
   &:indeterminate + .pm-checkbox-fakecheck {
       content: '';
@@ -220,7 +220,7 @@ textarea[required].pm-field.field-pristine:invalid {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
   }
   &[disabled] + .pm-radio-fakeradio {
-    background: $pm-global-muted;
+    background: var(--bgcolor-disabled-checkboxes-radios, $pm-global-muted);
   }
 }
 

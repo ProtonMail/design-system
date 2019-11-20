@@ -159,7 +159,7 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2);
 // secondary timezone
 .calendar-secondary-timezone-cell {
     border-right: $calendar-grid-border;
-    background-color: $pm-global-light;
+    background-color: var(--bgcolor-subnav, $pm-global-light);
 }
 .calendar-secondary-timezone-cell--header {
     border-top: $calendar-grid-border;

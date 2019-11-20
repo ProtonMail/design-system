@@ -1,26 +1,77 @@
-@media (prefers-color-scheme: dark) {
+$darkmode: true; 
 
-    .fill-global-grey { fill: $white; } // dirty, I know
+// forms
+@import "pm-buttons";
 
-    .bg-white { background-color: $black; }
-
-    // .color-global-grey { color: $white; }
-
-    :root {
-        --bgcolor-item-column-list: #{$pm-global-grey};
-        --bgcolor-view-column-detail: #{$pm-secondary-grey};
-        --bgcolor-main-area: #{$pm-secondary-grey};
-        --bgcolor-subnav: #{$pm-global-grey};
-        --color-subnav-link: #{$white};
-        --color-main-area: #{$white};
-        --fillcolor-icons: #{$white};
-
-        --bgcolor-item-column-active: #{$pm-blue-dark};
-
-        --bordercolor-input: #{$pm-tertiary-grey};
-        --bgcolor-input: #{$pm-global-altgrey};
-        --color-input: #{$white};
-
+.pm-field {
+    &[type="search"] {
+      background-image: url("#{$path-images}sprite-for-css-only.svg#css-search-white");
     }
+}
+@if $rtl-option == true {
+  [dir="rtl"] {
+    [type="search"].pm-field {
+      background-image: url("#{$path-images}sprite-for-css-only.svg#css-search-rtl-white");
+    }
+  }
+}
+
+select.pm-field {
+    background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-white");
+}
+.pm-checkbox {
+    &:indeterminate + .pm-checkbox-fakecheck {
+        background-image: url("#{$path-images}sprite-for-css-only.svg#css-dash-white");
+    }
+}
+.pm-toggle-checkbox {
+    &[aria-busy="true"] + .pm-toggle-label  {
+      &::before {
+        background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
+      }
+    }
+}
+
+
+
+// loading
+[aria-busy="true"] {
+    background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
+}
+
+button[aria-busy="true"] {
+    background-image: url(#{$path-images}loading-atom-smaller-disabled.svg);
+}
+td[aria-busy="true"] {
+  position: relative;
+  background-image: none;
+  &::before {
+    background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
+  }
+}
+
+
+// quick and dirty
+.fill-global-grey { fill: $white; } // dirty, I know
+
+.bg-white { background-color: $black; }
+
+
+// global
+:root {
+    --bgcolor-item-column-list: #{$pm-global-grey};
+    --bgcolor-view-column-detail: #{$pm-secondary-grey};
+    --bgcolor-main-area: #{$pm-secondary-grey};
+    --bgcolor-subnav: #{$pm-global-grey};
+    --color-subnav-link: #{$white};
+    --color-main-area: #{$white};
+    --fillcolor-icons: #{$white};
+    --bgcolor-disabled-checkboxes-radios: rgb(79, 79, 79);
+
+    --bgcolor-item-column-active: #{$pm-blue-dark};
+
+    --bordercolor-input: #{$pm-tertiary-grey};
+    --bgcolor-input: #{$pm-global-altgrey};
+    --color-input: #{$white};
 
 }

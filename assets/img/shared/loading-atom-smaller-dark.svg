@@ -11,7 +11,7 @@
 
 .loadingAnimation-circle {
   fill: transparent;
-  stroke: #262a33;
+  stroke: #fff;
   stroke-width: 4;
   transform-origin: 50%; }
 

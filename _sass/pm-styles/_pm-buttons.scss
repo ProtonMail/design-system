@@ -2,6 +2,7 @@
 /*
  * Buttons
  */
+$darkmode: false !default;
 [class*="pm-button"],
 [class*="pv-button"] {
   border-radius: $global-border-radius;
@@ -87,7 +88,7 @@
 .pm-button-dark {
   @include pm-button-dark;
 }
-@media (prefers-color-scheme: dark) {
+@if ($darkmode) {
   .pm-button {
       @include pm-button-dark;
   }
