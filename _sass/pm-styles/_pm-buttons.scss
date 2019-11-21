@@ -2,7 +2,7 @@
 /*
  * Buttons
  */
-$darkmode: false !default;
+
 [class*="pm-button"],
 [class*="pv-button"] {
   border-radius: $global-border-radius;
@@ -88,11 +88,7 @@ $darkmode: false !default;
 .pm-button-dark {
   @include pm-button-dark;
 }
-@if ($darkmode) {
-  .pm-button {
-      @include pm-button-dark;
-  }
-}
+
 
 .pm-button-blue {
   color: $white;
@@ -185,11 +181,6 @@ $darkmode: false !default;
 .pm-button-blueborder-dark {
   @include pm-button-blueborder-dark;
 }
-@media (prefers-color-scheme: dark) {
-  .pm-button-blueborder {
-      @include pm-button-blueborder-dark;
-  }
-}
 
 .pv-button-green {
   color: $white;
@@ -281,11 +272,6 @@ $darkmode: false !default;
 }
 .pv-button-greenborder-dark {
   @include pv-button-greenborder-dark;
-}
-@media (prefers-color-scheme: dark) {
-  .pv-button-greenborder {
-      @include pv-button-greenborder-dark;
-  }
 }
 
 

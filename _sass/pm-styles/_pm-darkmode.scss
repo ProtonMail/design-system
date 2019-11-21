@@ -1,7 +1,14 @@
-$darkmode: true; 
+// forms/buttons
+.pm-button {
+  @extend .pm-button-dark;
+}
+.pm-button-blueborder {
+  @extend .pm-button-blueborder-dark;
+}
+.pv-button-greenborder {
+  @extend .pv-button-greenborder-dark;
+}
 
-// forms
-@import "pm-buttons";
 
 .pm-field {
     &[type="search"] {
@@ -15,6 +22,7 @@ $darkmode: true;
     }
   }
 }
+
 
 select.pm-field {
     background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-white");
@@ -30,6 +38,11 @@ select.pm-field {
         background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
       }
     }
+}
+
+
+.searchbox-field[type="search"] {
+  background-image: none;
 }
 
 
