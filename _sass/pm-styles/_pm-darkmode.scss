@@ -1,12 +1,19 @@
 // forms/buttons
 .pm-button {
-  @extend .pm-button-dark;
+  @include pm-button-dark;
 }
 .pm-button-blueborder {
-  @extend .pm-button-blueborder-dark;
+  @include pm-button-blueborder-dark;
 }
 .pv-button-greenborder {
-  @extend .pv-button-greenborder-dark;
+  @include pv-button-greenborder-dark;
+}
+.pm-button--link,
+.pm-button.pm-button--link {
+  &[disabled],
+  &.is-disabled {
+    color:  rgba( $white, .5 );
+  }
 }
 
 
@@ -40,12 +47,9 @@ select.pm-field {
     }
 }
 
-
 .searchbox-field[type="search"] {
   background-image: none;
 }
-
-
 
 // loading
 [aria-busy="true"] {
@@ -62,6 +66,17 @@ td[aria-busy="true"] {
     background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
   }
 }
+
+// others
+details {
+  &[open] > summary {
+    background-image: url(#{$path-images}sprite-for-css-only.svg#css-caret-close-white);
+  }
+}
+summary {
+  background-image: url(#{$path-images}sprite-for-css-only.svg#css-caret-white);
+}
+
 
 
 // quick and dirty

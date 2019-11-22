@@ -56,8 +56,8 @@
   &.p0 {
     padding: 0;
   }
-
 }
+
 
 @mixin pm-button-dark {
   color: $white;
@@ -90,7 +90,8 @@
 }
 
 
-.pm-button-blue {
+.pm-button-blue,
+.pm-button.pm-button-blue {
   color: $white;
   background-color: $pm-primary;
   border: 1px solid $pm-primary;
@@ -182,7 +183,8 @@
   @include pm-button-blueborder-dark;
 }
 
-.pv-button-green {
+.pv-button-green,
+.pm-button.pv-button-green {
   color: $white;
   background-color: $pv-green;
   border: 1px solid $pv-green;
@@ -244,7 +246,7 @@
 }
 
 @mixin pv-button-greenborder-dark {
-  border: 1px solid $pv-green-light;
+  border-color: $pv-green-light;
   color: $pv-green-light;
   background-color: $pm-global-grey;
 
@@ -357,7 +359,8 @@
     @extend .pv-button-greenborder-dark;
   }
 }
-.pm-button--link {
+.pm-button--link,
+.pm-button.pm-button--link {
   color: $color-links;
   border-width: 0;
   box-shadow: none;
@@ -376,7 +379,7 @@
   }
   &[disabled],
   &.is-disabled {
-    color: rgba( $pm-global-grey, .5 );
+    color:  rgba( $pm-global-grey, .5 );
     pointer-events: none;
     text-decoration: none;
     background-color: transparent; // to avoid heriting from other classes
@@ -409,9 +412,9 @@
 }
 
 /* other aliases requested */
-.pm-button--redborder {
+.pm-button--redborder.pm-button--redborder { // for darkmode... again
   @extend .pm-button;
-  border: 1px solid $pm-global-warning;
+  border-color: $pm-global-warning;
   color: $pm-global-warning;
 }
 
