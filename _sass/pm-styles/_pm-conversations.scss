@@ -4,7 +4,7 @@
 
 .items-column-list {
   width: calc( (100% + var(--width-sidebar, #{$width-sidebar}) ) * #{$conversations-column-width/1%/100} );
-  border-right: 1px solid $pm-global-border;
+  border-right: 1px solid var(--bordercolor-input, $pm-global-border);
   background: var(--bgcolor-item-column-list, $white);
 }
 .items-column-list--mobile {
