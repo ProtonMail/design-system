@@ -19,8 +19,8 @@
   padding: 7px;
   background: var(--bgcolor-aside-link, $pm-global-altgrey);
 
-  &:focus, 
-  &:hover, 
+  &:focus,
+  &:hover,
   &:active,
   &[aria-current="true"] {
     background: $white;
@@ -29,11 +29,20 @@
     .aside-linkIcon {
       fill: $pm-primary;
     }
-
   }
 }
 .aside-linkIcon {
   width: 17px;
   height: 17px;
   fill: var(--fillcolor-icons, $pm-global-light);
+}
+
+.aside-link-highlight {
+  position: absolute;
+  background-color: var($pm-global-warning);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  right: 6px;
+  top: -1px;
 }
