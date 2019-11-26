@@ -39,10 +39,10 @@
 
 .aside-link-highlight {
   position: absolute;
-  background-color: var($pm-global-warning);
+  background-color: $pm-primary;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  right: 6px;
-  top: -1px;
+  right: 5px;
+  top: 0px;
 }
