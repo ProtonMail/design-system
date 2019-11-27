@@ -177,5 +177,5 @@ $dropDown-narrow-width: 8em !default;
 
 /* border on items */
 .dropDown-item + .dropDown-item {
-  border-top: 1px solid $pm-global-border;
+  border-top: 1px solid var(--bordercolor-input, $pm-global-border);
 }
