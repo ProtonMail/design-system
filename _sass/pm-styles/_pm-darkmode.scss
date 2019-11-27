@@ -9,7 +9,14 @@
   @include pv-button-greenborder-dark;
 }
 .pm-button--link,
+a, .link,
 .pm-button.pm-button--link {
+  &:focus,
+  &:hover,
+  &:not(div):active,
+  &:active {
+    color: currentColor;
+  }
   &[disabled],
   &.is-disabled {
     color:  rgba( $white, .5 );
