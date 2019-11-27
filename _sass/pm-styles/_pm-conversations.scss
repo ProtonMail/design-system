@@ -41,12 +41,8 @@
   background: var(--bgcolor-item-column-active, $conversation-selected-bg);
 }
 
-.item-container:not(.read):not(.active) {
-  background: var(--bgcolor-input, $white);
-}
-
 .item-container:not(.item-is-selected):not(.item-contact):not(.read):not(.active) {
-  background: $white;
+  background: var(--color-nav-active, $white);
 }
 
 $conversation-icon-size: 4rem !default;
