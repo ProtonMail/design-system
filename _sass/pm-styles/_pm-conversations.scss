@@ -248,7 +248,7 @@ $conversation-icon-size: 4rem !default;
   opacity: .5;
 }
 .message-infobox {
-  background: $white;
+  background: var(--bgcolor-main-area, $white);
 }
 
 .container-to {
