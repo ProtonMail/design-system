@@ -26,7 +26,7 @@
 }
 
 .pm-plans-table-row--highlighted {
-  background: $pm-global-light;
+  background-color: var(--bgcolor-input, $pm-global-light);
 }
 
 /* alternate bg for rows */
@@ -39,10 +39,6 @@
   th:last-child {
     text-align: right;
   }
-}
-
-.pm-plans-table-row--highlighted {
-  background-color: var(--bgcolor-input, $pm-global-light);
 }
 
 /* simple dirty fix */
