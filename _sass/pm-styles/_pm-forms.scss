@@ -186,7 +186,7 @@ textarea[required].pm-field.field-pristine:invalid {
 // exception for toolbar
 .pm-select-all {
   .pm-checkbox-fakecheck {
-    border: 1px solid var(--fillcolor-icons, #585C67);
+    border: 1px solid #585C67;
     background-color: var(--bgcolor-aside-link, #484E59);
   }
   .pm-checkbox-fakecheck-img {

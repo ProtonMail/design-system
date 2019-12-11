@@ -59,7 +59,7 @@
 }
 
 .bg-white-dm {
-  background-color: $white;
+  background-color: var(--bgcolor-main-area, $white);
 }
 
 .bg-visionary {
