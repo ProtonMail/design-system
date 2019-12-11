@@ -1,5 +1,5 @@
 // these mixins are present to be called from pm-buttons and pm-darkmode
-
+@import "../reusable-components/design-system-config";
 @mixin pm-button-dark {
   color: $white;
   background-color: $pm-global-grey;
