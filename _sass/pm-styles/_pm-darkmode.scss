@@ -14,6 +14,17 @@
 .pv-button-greenborder {
   @include pv-button-greenborder-dark;
 }
+
+.pm-button-blue,
+.pm-button.pm-button-blue,
+.pv-button-green,
+.pm-button.pv-button-green {
+  &[disabled],
+  &.is-disabled {
+    @include button-disabled-state-dm;
+  }
+}
+
 .pm-button--link,
 a, .link,
 .pm-button.pm-button--link {
@@ -43,6 +54,11 @@ a, .link,
   }
 }
 
+.pm-field[disabled] {
+  color:  rgba( $white, .5);
+  opacity: .6;
+}
+
 
 select.pm-field {
     background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-white");
@@ -58,7 +74,12 @@ select.pm-field {
         background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
       }
     }
+    &[disabled] + .pm-toggle-label  {
+      background-color: transparent;
+      opacity: .6;
+    }
 }
+  
 
 .searchbox-field[type="search"] {
   background-image: none;
@@ -66,12 +87,15 @@ select.pm-field {
 
 // loading
 [aria-busy="true"] {
-    background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
+  background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
 }
 
 button[aria-busy="true"] {
-    background-image: url(#{$path-images}loading-atom-smaller-disabled.svg);
+  background-image: url(#{$path-images}loading-atom-smaller-disabled-dark.svg);
 }
+
+
+
 td[aria-busy="true"] {
   position: relative;
   background-image: none;
@@ -107,7 +131,7 @@ summary {
     --color-subnav-link: #{$white};
     --color-main-area: #{$white};
     --fillcolor-icons: #{$white};
-    --bgcolor-disabled-checkboxes-radios: rgb(79, 79, 79);
+    --bgcolor-disabled-checkboxes-radios: #{$pm-global-altgrey};
 
     --bgcolor-item-column-active: #{$pm-blue-dark};
 

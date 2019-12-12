@@ -1,5 +1,15 @@
 // these mixins are present to be called from pm-buttons and pm-darkmode
 @import "../reusable-components/design-system-config";
+
+
+@mixin button-disabled-state-dm {
+  opacity: .6;
+  background-color: $pm-global-grey;
+  color: rgba( $pm-global-muted, .6 );
+  border-color: rgba( $pm-global-muted, .6 );
+  pointer-events: none;
+}
+
 @mixin pm-button-dark {
   color: $white;
   background-color: $pm-global-grey;
@@ -17,9 +27,7 @@
   }
   &[disabled],
   &.is-disabled {
-    background-color: $pm-global-muted;
-    color: rgba( $pm-global-grey, .3 );
-    pointer-events: none;
+    @include button-disabled-state-dm;
   }
   /* just to cancel examples  */
   &.is-hover:hover {
@@ -49,10 +57,7 @@
   }
   &[disabled],
   &.is-disabled {
-    background-color: $pm-global-muted;
-    color: rgba( $pm-global-grey, .3 );
-    border-color: $pm-global-border;
-    pointer-events: none;
+    @include button-disabled-state-dm;
   }
 }
 
@@ -77,9 +82,6 @@
   }
   &[disabled],
   &.is-disabled {
-    background-color: $pm-global-muted;
-    color: rgba( $pm-global-grey, .3 );
-    border-color: $pm-global-border;
-    pointer-events: none;
+    @include button-disabled-state-dm;
   }
 }
