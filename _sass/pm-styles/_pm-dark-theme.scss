@@ -15,13 +15,16 @@
   @include pv-button-greenborder-dark;
 }
 
+// standalone button
 .pm-button-blue,
 .pm-button.pm-button-blue,
 .pv-button-green,
 .pm-button.pv-button-green {
   &[disabled],
   &.is-disabled {
+  &:not(.pm-group-button) {
     @include button-disabled-state-dm;
+  }
   }
 }
 

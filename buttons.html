@@ -327,6 +327,13 @@ subsection: buttons
     Add <code>pm-group-buttons</code> on the container and <code>pm-group-button</code> to each button:
 </p>
 
+<div class="pm-group-buttons mb1">
+    <button class="pm-group-button pm-button">button</button>
+    <button class="pm-group-button pm-button">button</button>
+    <button class="pm-group-button pm-button">button</button>
+    <button class="pm-group-button pm-button" disabled>button</button>
+</div>
+
 <pre class=" language-markup"><code>&lt;div class="<strong>pm-group-buttons</strong>"&gt;
   &lt;button class="<strong>pm-group-button</strong>"&gt;button&lt;/button&gt;
   &lt;button class="<strong>pm-group-button</strong>"&gt;button&lt;/button&gt;
@@ -340,7 +347,7 @@ subsection: buttons
     <button class="pm-group-button pm-button-blueborder">button</button>
     <button class="pm-group-button pm-button-blueborder">button</button>
     <button class="pm-group-button pm-button-blueborder">button</button>
-    <button class="pm-group-button pm-button-blueborder">button</button>
+    <button class="pm-group-button pm-button-blueborder" disabled>button</button>
 </div>
 
 <pre class=" language-markup"><code>&lt;div class="<strong>pm-group-buttons</strong>"&gt;
@@ -358,7 +365,7 @@ subsection: buttons
     <button class="pm-group-button pv-button-greenborder">button</button>
     <button class="pm-group-button pv-button-greenborder is-active">button</button>
     <button class="pm-group-button pv-button-greenborder">button</button>
-    <button class="pm-group-button pv-button-greenborder">button</button>
+    <button class="pm-group-button pv-button-greenborder" disabled>button</button>
 </div>
 
 <pre class=" language-markup"><code>&lt;div class="pm-group-buttons"&gt;
@@ -398,7 +405,7 @@ subsection: buttons
         <use xlink:href="#shape-label"></use>
       </svg>
     </button>
-    <button class="pm-group-button pm-button pm-button--for-icon pm-group-button">
+    <button class="pm-group-button pm-button pm-button--for-icon pm-group-button" disabled>
       <svg viewBox="0 0 16 16" class="icon-16p fill-global-grey mtauto mbauto" role="img" aria-hidden="true" focusable="false">
         <use xlink:href="#shape-caret"></use>
       </svg>

@@ -3,12 +3,26 @@
 
 
 @mixin button-disabled-state-dm {
-  opacity: .6;
+  //opacity: .6;
   background-color: $pm-global-grey;
-  color: rgba( $pm-global-muted, .6 );
-  border-color: rgba( $pm-global-muted, .6 );
+  color: rgba( $pm-global-muted, .3 );
   pointer-events: none;
+  border-color: rgba( $pm-global-muted, .3 );
+  & svg { 
+    fill: rgba( $pm-global-muted, .3 );
+  }
 }
+
+// @mixin button-disabled-state-dm {
+//   //opacity: .6;
+//   background-color: $pm-global-grey;
+//   color: rgba( $pm-global-muted, .6 );
+//   pointer-events: none;
+//   border-color: rgba( $pm-global-muted, .6 );
+//   & svg { 
+//     fill: rgba( $pm-global-muted, .6 );
+//   }
+// }
 
 @mixin pm-button-dark {
   color: $white;
