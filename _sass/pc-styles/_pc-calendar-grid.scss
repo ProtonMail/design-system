@@ -195,7 +195,6 @@ $calendar-dayevent-cell-height: 28px !default; // careful when updating this (de
     padding-right: $gridcell-right-margin;
     padding-top: 3px;
     white-space: nowrap;
-    overflow: hidden;
     height: $calendar-dayevent-cell-height;
 }
 
@@ -220,6 +219,19 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
 }
 .calendar-dayeventcell-inner--notAllDay {
     border: 0;
+}
+.calendar-dayeventcell-inner--isOutsideStart::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 3px;
+    left: 0;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $border-event-cells;
+    background: linear-gradient(45deg, currentColor 0%, currentColor 50%, transparent 50%, transparent 100%);
+    transform: rotate(45deg);
 }
 
 .calendar-eventcell {
