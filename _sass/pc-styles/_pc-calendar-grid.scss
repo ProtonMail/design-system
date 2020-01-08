@@ -191,9 +191,10 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2) !default;
 
 // events
 $calendar-dayevent-cell-height: 28px !default; // careful when updating this (depends also on JS calculations)
+$calendar-dayevent-padding-top: 3px !default;
 .calendar-dayeventcell {
     padding-right: $gridcell-right-margin;
-    padding-top: 3px;
+    padding-top: $calendar-dayevent-padding-top;
     white-space: nowrap;
     height: $calendar-dayevent-cell-height;
 }
@@ -210,6 +211,7 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
     overflow: hidden;
     min-height: 100%;
     border: $border-event-cells;
+    position: relative;
     cursor: pointer;
     color: var(--color-main-area, $pm-global-grey);
     &:focus,
@@ -220,18 +222,43 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
 .calendar-dayeventcell-inner--notAllDay {
     border: 0;
 }
-.calendar-dayeventcell-inner--isOutsideStart::before {
-    content: '';
+
+.calendar-dayeventcell-inner--isOutsideStart {
+    clip-path: polygon(12px 0%, 100% 0, 100% 100%, 12px 100%, 0 50%);
+    padding-left: 1em;
+}
+.calendar-dayeventcell-inner-isOutsideStart {
     position: absolute;
-    z-index: 1;
-    top: 3px;
-    left: 0;
+    z-index: 2;
+    top: $calendar-dayevent-padding-top;
+    left: 3px;
     bottom: 0;
-    width: 20px;
-    height: 20px;
-    border: 1px solid $border-event-cells;
-    background: linear-gradient(45deg, currentColor 0%, currentColor 50%, transparent 50%, transparent 100%);
-    transform: rotate(45deg);
+    width: 18px;
+    height: 18px;
+    border: $border-event-cells;
+    transform: rotate(135deg);
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.calendar-dayeventcell-inner--isOutsideEnd {
+    clip-path: polygon( calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%, 0 0);
+    padding-right: 1em;
+}
+.calendar-dayeventcell-inner-isOutsideEnd {
+    position: absolute;
+    z-index: 2;
+    top: $calendar-dayevent-padding-top;
+    right: 3px;
+    bottom: 0;
+    width: 18px;
+    height: 18px;
+    border: $border-event-cells;
+    transform: rotate(-45deg);
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.calendar-dayeventcell-inner--isOutsideStart.calendar-dayeventcell-inner--isOutsideEnd {
+    clip-path: polygon( calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%, 12px 0);
 }
 
 .calendar-eventcell {
