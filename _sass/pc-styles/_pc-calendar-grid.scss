@@ -208,7 +208,6 @@ $calendar-dayevent-padding-top: 3px !default;
 $calendar-dayeventcell-hover-color: #F1F3F4 !default;
 .calendar-dayeventcell-inner {
     border-radius: 2px;
-    overflow: hidden;
     min-height: 100%;
     border: $border-event-cells;
     position: relative;
@@ -223,42 +222,37 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
     border: 0;
 }
 
-.calendar-dayeventcell-inner--isOutsideStart {
-    clip-path: polygon(12px 0%, 100% 0, 100% 100%, 12px 100%, 0 50%);
+.calendar-dayeventcell--isOutsideStart {
     padding-left: 1em;
 }
-.calendar-dayeventcell-inner-isOutsideStart {
-    position: absolute;
-    z-index: 2;
-    top: $calendar-dayevent-padding-top;
-    left: 3px;
-    bottom: 0;
-    width: 18px;
-    height: 18px;
-    border: $border-event-cells;
-    transform: rotate(135deg);
-    clip-path: polygon(100% 0, 0 100%, 100% 100%);
-}
-
-.calendar-dayeventcell-inner--isOutsideEnd {
-    clip-path: polygon( calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%, 0 0);
+.calendar-dayeventcell--isOutsideEnd {
     padding-right: 1em;
 }
+
+.calendar-dayeventcell-inner--isOutsideStart {
+    border-left: 0;
+}
+.calendar-dayeventcell-inner--isOutsideEnd {
+    border-right: 0;
+}
+.calendar-dayeventcell-inner-isOutsideStart,
 .calendar-dayeventcell-inner-isOutsideEnd {
     position: absolute;
     z-index: 2;
-    top: $calendar-dayevent-padding-top;
-    right: 3px;
+    top: calc(#{$calendar-dayevent-padding-top} - 0.5px); // tricky stuff
     bottom: 0;
     width: 18px;
     height: 18px;
     border: $border-event-cells;
-    transform: rotate(-45deg);
-    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    clip-path: polygon(calc(100% - 2px) 1px, 100% 0, 100% 100%, 0 100%, 1px calc(100% - 2px)); // to avoid some whitespaces
 }
-
-.calendar-dayeventcell-inner--isOutsideStart.calendar-dayeventcell-inner--isOutsideEnd {
-    clip-path: polygon( calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0 50%, 12px 0);
+.calendar-dayeventcell-inner-isOutsideStart {
+    left: -8px;
+    transform: rotate(135deg);
+}
+.calendar-dayeventcell-inner-isOutsideEnd {
+    right: -8px;
+    transform: rotate(-45deg);
 }
 
 .calendar-eventcell {
