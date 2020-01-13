@@ -1,0 +1,7 @@
+// Approximate square root
+@function sqrt($square, $tolerance: .001, $estimate: $square/2) {
+  @if abs($square - $estimate*$estimate) < $tolerance {
+    @return $estimate;
+  }
+  @return sqrt($square, $tolerance, ($estimate + $square/$estimate)/2);
+}
