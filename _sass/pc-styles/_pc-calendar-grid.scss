@@ -192,9 +192,8 @@ $border-event-cells: 1px solid rgba(0, 0, 0, .2) !default;
 // events
 $calendar-dayevent-cell-height: 28px !default; // careful when updating this (depends also on JS calculations)
 $calendar-dayevent-padding-top: 3px !default;
-$calendar-dayevent-full-day-side-margin: $gridcell-right-margin;
 .calendar-dayeventcell {
-    padding-right: $calendar-dayevent-full-day-side-margin;
+    padding-right: $gridcell-right-margin;
     padding-top: $calendar-dayevent-padding-top;
     white-space: nowrap;
     height: $calendar-dayevent-cell-height;
