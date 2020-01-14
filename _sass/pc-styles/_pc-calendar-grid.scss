@@ -217,6 +217,7 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
     position: relative;
     cursor: pointer;
     color: var(--color-main-area, $pm-global-grey);
+    padding: 0 0.5em;
     &:focus,
     &:hover {
         background-color: var(--bgcolor-input, $calendar-dayeventcell-hover-color);
@@ -226,52 +227,11 @@ $calendar-dayeventcell-hover-color: #F1F3F4 !default;
     border: 0;
 }
 
-.calendar-dayeventcell--isOutsideStart {
-    padding-left: $calendar-dayevent-full-day-side-margin;
+.calendar-dayeventcell--isOutsideStart, .calendar-dayeventcell-inner--isOutsideStart {
+    padding-left: 0;
 }
-.calendar-dayeventcell--isOutsideEnd {
-    padding-right: $calendar-dayevent-full-day-side-margin;
-}
-
-.calendar-dayeventcell-inner--isOutsideStart {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-left: 0;
-}
-.calendar-dayeventcell-inner--isOutsideEnd {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: 0;
-}
-
-$halfSqrt2: sqrt(2)/2;
-// The size of the element as a square, basically calculating the `.calendar-dayeventcell-inner` height
-$outside-square-size: $calendar-dayevent-cell-height - $calendar-dayevent-padding-top;
-// The size of the element after the 45 degree rotation to keep the correct height as a new triangle
-$outside-triangle-size: $outside-square-size * $halfSqrt2;
-// The top position of the element so that it's centered after the new height
-$outside-top-center: ($outside-square-size - $outside-triangle-size - $border-event-cells-size) / 2;
-$outside-wanted-triangle-width: $gridcell-right-margin - $border-event-cells-size;
-$outside-triangle-scale-fraction: ($outside-wanted-triangle-width + ($outside-wanted-triangle-width / 2)) / $outside-triangle-size;
-
-.calendar-dayeventcell-inner-isOutsideStart,
-.calendar-dayeventcell-inner-isOutsideEnd {
-    position: absolute;
-    z-index: -1;
-    top: $outside-top-center;
-    bottom: 0;
-    height: $outside-triangle-size;
-    width: $outside-triangle-size;
-    border: $border-event-cells;
-    border-radius: 1px;
-}
-.calendar-dayeventcell-inner-isOutsideStart {
-    left: -$outside-triangle-size / 2;
-    transform: scaleX($outside-triangle-scale-fraction) rotate(135deg);
-}
-.calendar-dayeventcell-inner-isOutsideEnd {
-    right: -$outside-triangle-size / 2;
-    transform: scaleX($outside-triangle-scale-fraction) rotate(-45deg);
+.calendar-dayeventcell--isOutsideEnd, .calendar-dayeventcell-inner--isOutsideEnd {
+    padding-right: 0;
 }
 
 .calendar-eventcell {
