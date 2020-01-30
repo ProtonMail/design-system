@@ -1,13 +1,13 @@
 # Design system
 
-Proton Design system, for all Proton Projects: https://design-system-beta.netlify.com/ 
+Proton Design system, for all Proton Projects: https://design-system-beta.netlify.com/
 
 
-## To install
+## Installation
 
 Be sure to have Ruby on your computer.
 
-```
+```sh
 gem install jekyll bundler
 
 # if livereloading does not work
@@ -21,21 +21,24 @@ gem -v
 
 ```
 
-## to dev
+For installing Jekyll on Windows, you can [follow this tutorial](https://jekyllrb.com/docs/installation/windows/).
+You may encounter an issue using `gem` without `sudo`. In this case, [this should solve the problem](https://github.com/jekyll/jekyll/issues/7594#issuecomment-509839929).
 
-```
+## Development
+
+```sh
 jekyll serve --livereload
 ```
 
 You may prefix command by `bundle exec`, example: `bundle exec jekyll serve --livereload`
 
-## build for prod
+## Building for prod
 
-```
+```sh
 jekyll build --config _config_prod.yml
 ```
 
-Goes to `_site` and can be exported to NetLify.
+Goes to `_site` and can be exported to Netlify.
 
 ## CSS structure
 
