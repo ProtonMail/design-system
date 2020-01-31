@@ -43,5 +43,7 @@ Goes to `_site` and can be exported to Netlify.
 ## CSS structure
 
 - __reusable-components__: a set of files/framework/etc. that can be used __on every project__.
-- __pm-styles__: styles used __for ProtonMail V4 only__.</li>
-- __design-system-website__: extra-styles only needed to make this website work properly.
+- __pm-styles__: styles used __for ProtonMail V4-style only__.
+- __pv-styles__: styles coming from <strong>ProtonVPN</strong>.
+- __react-styles__: styles coming from <strong>ProtonVPN</strong>.
+- __design-system-website__: styles for global interface, including styles only needed to make this website work properly
