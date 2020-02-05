@@ -1,103 +1,99 @@
-$loader-size-big: 200px !default;
-$stroke-width-big: 4 !default;
-
-.loadingAnimation {  
-  animation: protonRotate 3s linear infinite;
-  will-change: transform;
-}
-
-
 @keyframes protonRotate {
-  0% {
+  from {
     transform: rotate(0);
   }
 
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 
-
-.loadingAnimation-circle {
-  fill: transparent;
-  stroke: var(--fillcolor-icons, $pm-global-grey);
-  stroke-width: $stroke-width-big;
-  transform-origin: 50%;
-  will-change: transform;
-}
-
-.loadingAnimation-circle--pm-primary {
-  stroke: $pm-primary;
-}
-.loadingAnimation-circle--global-light {
-  stroke: $pm-global-light;
-}
-
-.loadingAnimation-orbit1 {
-  animation: protonOrbit1 3s linear infinite;
-}
-.loadingAnimation-orbit2 {
-  animation: protonOrbit2 3s linear infinite;
-}
-
-
 // Generates orbit animation function
-// @author Nicolas Hoffmann
-// @param {String} $name - animation name
+// @author Nicolas Hoffmann, modified by Matthieu Bué
+// @param {String} $name - Animation name
 // @param {String} $stroke-width - Default stroke-width of your circle
-// @param {Float} $stroke-width-ratioplus - ratio to increase $stroke-width value (mitigates disparition effect during rotation)
-// @param {String} $type-rotate
-@mixin orbit( $name, $stroke-width, $stroke-width-ratioplus, $type-rotate ){
-  
+// @param {Float} $stroke-width-ratio - Ratio to increase $stroke-width value (mitigates disparition effect during rotation)
+// @param {String} $type - Type of rotation, X or Y
+@mixin orbit($name, $stroke-width, $stroke-width-ratio, $type) {
+
   @keyframes #{$name} {
     0% {
-      transform: unquote("#{$type-rotate}(0)");
+      transform: unquote("#{$type}(0)");
       stroke-width: $stroke-width;
     }
-  
+
     25% {
-      stroke-width: $stroke-width*$stroke-width-ratioplus;
+      stroke-width: $stroke-width * $stroke-width-ratio;
     }
-  
+
     50% {
       stroke-width: $stroke-width;
     }
-  
+
     75% {
-      stroke-width: $stroke-width*$stroke-width-ratioplus;
+      stroke-width: $stroke-width * $stroke-width-ratio;
     }
-  
+
     100% {
-      transform: unquote("#{$type-rotate}(360deg)");
+      transform: unquote("#{$type}(360deg)");
       stroke-width: $stroke-width;
     }
   }
-
 }
 
-@include orbit('protonOrbit1', $stroke-width-big, 2.5, 'rotateX');
-@include orbit('protonOrbit2', $stroke-width-big, 2.5, 'rotateY');
 
+// We need to adjust animation for small size.
+$stroke-width-default: 4 !default;
+$stroke-width-small  : 1.5 !default;
 
+.loadingAnimation {
+  animation: protonRotate 3s ease-in-out infinite;
+  will-change: transform;
 
-/* smaller version */
-$loader-size-smaller: 20px !default;
-$stroke-width-smaller: 1 !default;
+  &-circle {
+    fill: transparent;
+    stroke: var(--fillcolor-icons, $pm-global-grey);
+    stroke-width: $stroke-width-default;
+    transform-origin: 50%;
+    will-change: transform;
 
-.loadingAnimation-circle--smaller {
-  stroke-width: $stroke-width-smaller;
+    &--smaller {
+      stroke-width: $stroke-width-small;
+    }
+
+    &--pm-primary {
+      stroke: $pm-primary;
+    }
+
+    &--global-light {
+      stroke: $pm-global-light;
+    }
+  }
+
+  &-orbit {
+    &1 {
+      animation: protonOrbit1 3s linear infinite;
+
+      &--smaller {
+        animation: protonOrbit1-small 3s linear infinite;
+      }
+    }
+
+    &2 {
+      animation: protonOrbit2 3s linear infinite .1s;
+
+      &--smaller {
+        animation: protonOrbit2-small 3s linear infinite .1s;
+      }
+    }
+  }
 }
 
-.loadingAnimation-orbit1--smaller {
-  animation: protonOrbit1-smaller 3s linear infinite;
-}
-.loadingAnimation-orbit2--smaller {
-  animation: protonOrbit2-smaller 3s linear infinite;
-}
+@include orbit('protonOrbit1', $stroke-width-default, 2, 'rotateX');
+@include orbit('protonOrbit2', $stroke-width-default, 2, 'rotateY');
 
-@include orbit('protonOrbit1-smaller', $stroke-width-smaller, 2, 'rotateX');
-@include orbit('protonOrbit2-smaller', $stroke-width-smaller, 2, 'rotateY');
-
+@include orbit('protonOrbit1-small', $stroke-width-small, 1.5, 'rotateX');
+@include orbit('protonOrbit2-small', $stroke-width-small, 1.5, 'rotateY');
 
 
 .atomLoader-text::after {
