@@ -4,7 +4,7 @@
   }
 
   to {
-    transform: rotate(720deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -47,7 +47,7 @@ $stroke-width-default: 4 !default;
 $stroke-width-small  : 1.5 !default;
 
 .loadingAnimation {
-  animation: protonRotate 5s ease-in-out infinite;
+  animation: protonRotate 3s ease-in-out infinite;
   will-change: transform;
 
   &-circle {
