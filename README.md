@@ -38,7 +38,9 @@ You may prefix command by `bundle exec`, example: `bundle exec jekyll serve --li
 jekyll build --config _config_prod.yml
 ```
 
-Goes to `_site` and can be exported to Netlify.
+Goes to `_site` and can be exported to Netlify if you want to do it manually.
+
+Actually, each commit/merge on `master` is deployed automatically to Netlify.
 
 ## CSS structure
 
