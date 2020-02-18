@@ -20,11 +20,5 @@
   ],
   "author": "Proton Technologies AG",
   "license": "ISC",
-<<<<<<< HEAD
   "dependencies": {}
-=======
-  "dependencies": {
-    "react-components": "github:ProtonMail/react-components#master"
-  }
->>>>>>> All calendar styles in design system
 }
