@@ -6,8 +6,7 @@ $breakpoint-tiny       : 520;
 
 
 // include components that are shared across all Proton Products
-@import '~react-components/styles/index';
-
+@import '../react-styles/rc-main';
 
 // project specific components
 @import 'pc-calendar-grid';
