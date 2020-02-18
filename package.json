@@ -20,7 +20,5 @@
   ],
   "author": "Proton Technologies AG",
   "license": "ISC",
-  "dependencies": {
-    "react-components": "github:ProtonMail/react-components#master"
-  }
+  "dependencies": {}
 }
