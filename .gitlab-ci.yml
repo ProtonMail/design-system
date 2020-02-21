@@ -1,0 +1,11 @@
+default:
+    image: node:lts-slim
+
+stages:
+    - test
+
+lint:
+    stage: test
+    script:
+        - ./tasks/lint.sh
+
