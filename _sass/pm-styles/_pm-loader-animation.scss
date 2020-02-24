@@ -42,12 +42,18 @@
 }
 
 
-// We need to adjust animation for small size.
-$stroke-width-default: 4 !default;
-$stroke-width-small  : 1.5 !default;
+$animation-duration       : 3;
+$second-circle-time-offset: .125;
+
+// We need to adjust animation for each size.
+$stroke-width-default: 4.5;
+$stroke-width-medium : 6.5;
+$stroke-width-small  : 1.5;
 
 .loadingAnimation {
-  animation: protonRotate 3s ease-in-out infinite;
+  // We need a different animation than each circle for the whole loader
+  // to have an animation that seems visually "random", so here, duration +20% and ease.
+  animation: protonRotate #{$animation-duration + ($animation-duration / 100 * 20)}s ease-in-out infinite;
   will-change: transform;
 
   &-circle {
@@ -56,6 +62,10 @@ $stroke-width-small  : 1.5 !default;
     stroke-width: $stroke-width-default;
     transform-origin: 50%;
     will-change: transform;
+
+    &--medium {
+      stroke-width: $stroke-width-medium;
+    }
 
     &--smaller {
       stroke-width: $stroke-width-small;
@@ -72,18 +82,26 @@ $stroke-width-small  : 1.5 !default;
 
   &-orbit {
     &1 {
-      animation: protonOrbit1 3s linear infinite;
+      animation: protonOrbit1 #{$animation-duration}s linear infinite;
+
+      &--medium {
+        animation: protonOrbit1-medium #{$animation-duration}s linear infinite;
+      }
 
       &--smaller {
-        animation: protonOrbit1-small 3s linear infinite;
+        animation: protonOrbit1-small #{$animation-duration}s linear infinite;
       }
     }
 
     &2 {
-      animation: protonOrbit2 3s linear infinite .1s;
+      animation: protonOrbit2 #{$animation-duration}s linear infinite #{$second-circle-time-offset}s;
+
+      &--medium {
+        animation: protonOrbit2-medium #{$animation-duration}s linear infinite #{$second-circle-time-offset}s;
+      }
 
       &--smaller {
-        animation: protonOrbit2-small 3s linear infinite .1s;
+        animation: protonOrbit2-small #{$animation-duration}s linear infinite #{$second-circle-time-offset}s;
       }
     }
   }
@@ -91,6 +109,9 @@ $stroke-width-small  : 1.5 !default;
 
 @include orbit('protonOrbit1', $stroke-width-default, 2, 'rotateX');
 @include orbit('protonOrbit2', $stroke-width-default, 2, 'rotateY');
+
+@include orbit('protonOrbit1-medium', $stroke-width-medium, 2, 'rotateX');
+@include orbit('protonOrbit2-medium', $stroke-width-medium, 2, 'rotateY');
 
 @include orbit('protonOrbit1-small', $stroke-width-small, 1.5, 'rotateX');
 @include orbit('protonOrbit2-small', $stroke-width-small, 1.5, 'rotateY');
