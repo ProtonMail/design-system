@@ -1,134 +1,93 @@
-@keyframes protonRotate {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-// Generates orbit animation function
-// @author Nicolas Hoffmann, modified by Matthieu Bué
-// @param {String} $name - Animation name
-// @param {String} $stroke-width - Default stroke-width of your circle
-// @param {Float} $stroke-width-ratio - Ratio to increase $stroke-width value (mitigates disparition effect during rotation)
-// @param {String} $type - Type of rotation, X or Y
-@mixin orbit($name, $stroke-width, $stroke-width-ratio, $type) {
-
-  @keyframes #{$name} {
-    0% {
-      transform: unquote("#{$type}(0)");
-      stroke-width: $stroke-width;
-    }
-
-    25% {
-      stroke-width: $stroke-width * $stroke-width-ratio;
-    }
-
-    50% {
-      stroke-width: $stroke-width;
-    }
-
-    75% {
-      stroke-width: $stroke-width * $stroke-width-ratio;
-    }
-
-    100% {
-      transform: unquote("#{$type}(360deg)");
-      stroke-width: $stroke-width;
-    }
-  }
-}
-
-
+// Init values
 $animation-duration       : 3;
 $second-circle-time-offset: .125;
 
 // We need to adjust animation for each size.
-$stroke-width-default: 4.5;
-$stroke-width-medium : 6.5;
-$stroke-width-small  : 1.5;
+$stroke-map: (
+	default: 4.5,
+	medium : 6.5,
+	small  : 15
+);
 
 .loadingAnimation {
-  // We need a different animation than each circle for the whole loader
-  // to have an animation that seems visually "random", so here, duration +20% and ease.
-  animation: protonRotate #{$animation-duration + ($animation-duration / 100 * 20)}s ease-in-out infinite;
-  will-change: transform;
+	// We need a different duration than each circle for the whole loader
+	// to have an animation that seems visually "random", so here, duration +20% and ease.
+	animation: loaderRotation #{($animation-duration / 100 * 120) + 's'} ease-in-out infinite;
+	will-change: transform;
 
-  &-circle {
-    fill: transparent;
-    stroke: var(--fillcolor-icons, $pm-global-grey);
-    stroke-width: $stroke-width-default;
-    transform-origin: 50%;
-    will-change: transform;
+	@keyframes loaderRotation {
+		from { transform: rotate(0); }
+		to   { transform: rotate(360deg); }
+	}
 
-    &--medium {
-      stroke-width: $stroke-width-medium;
-    }
+	&-circle {
+		transform-origin: 50%;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: map-get($stroke-map, default);
+		will-change: transform;
+		animation: #{$animation-duration + 's'} linear infinite;
 
-    &--smaller {
-      stroke-width: $stroke-width-small;
-    }
+		&:nth-child(1) {
+			animation-name: loaderOrbitX;
+		}
 
-    &--pm-primary {
-      stroke: $pm-primary;
-    }
+		&:nth-child(2) {
+			animation-name: loaderOrbitY;
+			animation-delay: #{$second-circle-time-offset + 's'};
+		}
+	}
 
-    &--global-light {
-      stroke: $pm-global-light;
-    }
-  }
+	@each $name, $value in $stroke-map {
 
-  &-orbit {
-    &1 {
-      animation: protonOrbit1 #{$animation-duration}s linear infinite;
+		@if $name != 'default' {
+			&.is-#{$name} &-circle {
+				stroke-width: $value;
 
-      &--medium {
-        animation: protonOrbit1-medium #{$animation-duration}s linear infinite;
-      }
+				&:nth-child(1) {
+					animation-name: #{'loaderOrbitX-' + $name};
+				}
 
-      &--smaller {
-        animation: protonOrbit1-small #{$animation-duration}s linear infinite;
-      }
-    }
+				&:nth-child(2) {
+					animation-name: #{'loaderOrbitY-' + $name};
+				}
+			}
+		}
 
-    &2 {
-      animation: protonOrbit2 #{$animation-duration}s linear infinite #{$second-circle-time-offset}s;
-
-      &--medium {
-        animation: protonOrbit2-medium #{$animation-duration}s linear infinite #{$second-circle-time-offset}s;
-      }
-
-      &--smaller {
-        animation: protonOrbit2-small #{$animation-duration}s linear infinite #{$second-circle-time-offset}s;
-      }
-    }
-  }
+		@each $axis in (X,Y) {
+			@keyframes #{'loaderOrbit' + $axis + if($name == 'default', '', '-' + $name)} {
+				from {
+					transform: #{'rotate' + $axis + '(0)'};
+					stroke-width: $value;
+				}
+				25% {
+					stroke-width: $value * 2;
+				}
+				50% {
+					stroke-width: $value;
+				}
+				75% {
+					stroke-width: $value * 2;
+				}
+				to {
+					transform: #{'rotate' + $axis + '(360deg)'};
+					stroke-width: $value;
+				}
+			}
+		}
+	}
 }
-
-@include orbit('protonOrbit1', $stroke-width-default, 2, 'rotateX');
-@include orbit('protonOrbit2', $stroke-width-default, 2, 'rotateY');
-
-@include orbit('protonOrbit1-medium', $stroke-width-medium, 2, 'rotateX');
-@include orbit('protonOrbit2-medium', $stroke-width-medium, 2, 'rotateY');
-
-@include orbit('protonOrbit1-small', $stroke-width-small, 1.5, 'rotateX');
-@include orbit('protonOrbit2-small', $stroke-width-small, 1.5, 'rotateY');
 
 
 .atomLoader-text::after {
-  position: absolute;
-  overflow: hidden;
-  display: inline-block;
-  animation: ellipsis steps(4,end) 900ms infinite;
-  content: "\2026"; /* ascii code for the ellipsis character */
-  width: 0;
+	position: absolute;
+	overflow: hidden;
+	display: inline-block;
+	animation: ellipsis steps(4,end) 900ms infinite;
+	content: "\2026"; /* ascii code for the ellipsis character */
+	width: 0;
 }
 
 @keyframes ellipsis {
-  to { width: 1.25em }
+	to { width: 1.25em }
 }
-
-
-
