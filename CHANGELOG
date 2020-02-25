@@ -17,6 +17,7 @@
 - add `fill-white-dm` and `fill-global-highlight` aliases (dark mode)
 - refactor `<Icon/>` fill
 - set default color of labels, buttons, inputs and selects to `currentColor`
+- loader animation rework for less blury effect and more customization / random feeling
 
 ## Updated/fixes
 
