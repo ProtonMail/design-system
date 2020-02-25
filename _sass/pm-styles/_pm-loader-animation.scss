@@ -5,8 +5,8 @@ $second-circle-time-offset: .125;
 // We need to adjust animation for each size.
 $stroke-map: (
 	default: 4.5,
-	medium : 6.5,
-	small  : 15
+	bold   : 6.5,
+	xbold : 15
 );
 
 .loadingAnimation {
