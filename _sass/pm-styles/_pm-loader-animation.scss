@@ -1,13 +1,13 @@
 // Init values
-$animation-duration       : 3s;
-$second-circle-time-offset: .125s;
+$animation-duration       : 3s !default;
+$second-circle-time-offset: .125s !default;
 
 // We need to adjust animation for each size.
 $stroke-map: (
 	default: 4.5,
 	bold   : 6.5,
 	xbold : 15
-);
+) !default;
 
 .loadingAnimation {
 	// We need a different duration than each circle for the whole loader
