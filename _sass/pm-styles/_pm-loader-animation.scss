@@ -1,6 +1,6 @@
 // Init values
 $animation-duration       : 3;
-$second-circle-time-offset: .125;
+$second-circle-time-offset: .125s;
 
 // We need to adjust animation for each size.
 $stroke-map: (
@@ -34,7 +34,7 @@ $stroke-map: (
 
 		&:nth-of-type(2) {
 			animation-name: loaderOrbitY;
-			animation-delay: #{$second-circle-time-offset + 's'};
+			animation-delay: $second-circle-time-offset;
 		}
 	}
 
