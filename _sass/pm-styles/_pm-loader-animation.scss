@@ -1,5 +1,5 @@
 // Init values
-$animation-duration       : 3;
+$animation-duration       : 3s;
 $second-circle-time-offset: .125s;
 
 // We need to adjust animation for each size.
@@ -12,7 +12,7 @@ $stroke-map: (
 .loadingAnimation {
 	// We need a different duration than each circle for the whole loader
 	// to have an animation that seems visually "random", so here, duration +20% and ease.
-	animation: loaderRotation #{($animation-duration / 100 * 120) + 's'} ease-in-out infinite;
+	animation: loaderRotation #{$animation-duration * 1.2} ease-in-out infinite;
 	will-change: transform;
 
 	@keyframes loaderRotation {
@@ -26,7 +26,7 @@ $stroke-map: (
 		stroke: currentColor;
 		stroke-width: map-get($stroke-map, default);
 		will-change: transform;
-		animation: #{$animation-duration + 's'} linear infinite;
+		animation: $animation-duration linear infinite;
 
 		&:nth-of-type(1) {
 			animation-name: loaderOrbitX;
