@@ -28,11 +28,11 @@ $stroke-map: (
 		will-change: transform;
 		animation: #{$animation-duration + 's'} linear infinite;
 
-		&:nth-child(1) {
+		&:nth-of-type(1) {
 			animation-name: loaderOrbitX;
 		}
 
-		&:nth-child(2) {
+		&:nth-of-type(2) {
 			animation-name: loaderOrbitY;
 			animation-delay: #{$second-circle-time-offset + 's'};
 		}
@@ -44,11 +44,11 @@ $stroke-map: (
 			&.is-#{$name} &-circle {
 				stroke-width: $value;
 
-				&:nth-child(1) {
+				&:nth-of-type(1) {
 					animation-name: #{'loaderOrbitX-' + $name};
 				}
 
-				&:nth-child(2) {
+				&:nth-of-type(2) {
 					animation-name: #{'loaderOrbitY-' + $name};
 				}
 			}
