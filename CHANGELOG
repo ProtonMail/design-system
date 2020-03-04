@@ -17,6 +17,7 @@
 - add `fill-white-dm` and `fill-global-highlight` aliases (dark mode)
 - refactor `<Icon/>` fill
 - set default color of labels, buttons, inputs and selects to `currentColor`
+- added `shape-file-edit`, `shape-file-upload`, `shape-folder-new`, `shape-folder-upload` icons
 - loader animation rework for less blury effect and more customization / random feeling
 
 ## Updated/fixes
@@ -33,6 +34,8 @@
 - add hover state for `dropDown-item`
 - fixed dark mode stuf
 - fixed Angular star issue
+- fixed `.toolbar-select` issue in Dark Mode
+- fix arrow colors (mini-calendar)
 
 
 # [1.8.1] - 2019-01-31
