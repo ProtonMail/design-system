@@ -7,8 +7,14 @@ Proton Design system, for all Proton Projects: https://design-system-beta.netlif
 
 Be sure to have Ruby on your computer.
 
+For installing Jekyll on Windows, you can [follow this tutorial](https://jekyllrb.com/docs/installation/windows/).
+You may encounter an issue using `gem` without `sudo`. In this case, [this should solve the problem](https://github.com/jekyll/jekyll/issues/7594#issuecomment-509839929).
+
+Then:
+
 ```sh
-gem install jekyll bundler
+gem install bundler
+bundle install
 
 # if livereloading does not work
 gem uninstall eventmachine
@@ -20,9 +26,6 @@ ruby -v
 gem -v
 
 ```
-
-For installing Jekyll on Windows, you can [follow this tutorial](https://jekyllrb.com/docs/installation/windows/).
-You may encounter an issue using `gem` without `sudo`. In this case, [this should solve the problem](https://github.com/jekyll/jekyll/issues/7594#issuecomment-509839929).
 
 ## Development
 
