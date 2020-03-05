@@ -7,7 +7,8 @@ Proton Design system, for all Proton Projects: https://design-system-beta.netlif
 
 Be sure to have Ruby on your computer.
 
-For installing Jekyll on Windows, you can [follow this tutorial](https://jekyllrb.com/docs/installation/windows/).
+For installing Jekyll on Windows, you can [follow this tutorial](https://jekyllrb.com/docs/installation/windows/#installation-via-bash-on-windows-10), but stop before installing Jekyll: it won't install the right version according to needed dependency.
+
 You may encounter an issue using `gem` without `sudo`. In this case, [this should solve the problem](https://github.com/jekyll/jekyll/issues/7594#issuecomment-509839929).
 
 Then:
