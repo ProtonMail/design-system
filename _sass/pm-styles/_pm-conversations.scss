@@ -42,6 +42,9 @@
 .item-secondline {
 	margin-bottom: .25em;
 }
+.item-secondline:empty {
+	min-height: 1.5em;
+}
 
 /* Compact view */
 .is-shown-when-compact {
