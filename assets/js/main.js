@@ -1480,6 +1480,19 @@ starButtons.forEach(function(elem) {
 });
 
 
+function collapseSidebar( e ) {
+	var body = document.querySelector("body");
+	body.classList.toggle('sidebar-is-collapsed');
+}
+
+var collapseSidebarButtons = [].slice.call(document.body.querySelectorAll('.js-collapse-sidebar'));
+
+collapseSidebarButtons.forEach(function(elem) {
+    elem.addEventListener("click", collapseSidebar );
+});
+
+
+
 /**
  * Toogle message view button
  */

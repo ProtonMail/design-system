@@ -10,19 +10,19 @@
 }
 
 .navigation__link {
-  padding: 1.1rem 1em 1.1rem 3rem;
+  padding: 0;
 }
 
 .animated-expandmore__button {
   color:  var(--color-nav-link, $pm-global-light);
-  padding: 1.1rem 1rem 1.1rem 2rem;
+  padding: .85rem 1em .85rem $padding-left-link;
   width: 100%;
   text-align: left;
 }
 @if $rtl-option == true {
   [dir="rtl"] {
     .animated-expandmore__button {
-      padding: 1.1rem 2rem 1.1rem 1rem;
+      padding: .85rem $padding-left-link .85rem 1rem;
       text-align: right;
     }
   }

@@ -11,15 +11,16 @@
   padding-top: 1.7em;
 }
 
+$aside-link-width: 4rem !default;
 .aside-link {
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: $aside-link-width;
+  height: $aside-link-width;
   padding: 7px;
   background: var(--bgcolor-aside-link, $pm-global-altgrey);
 
-  &:focus, 
-  &:hover, 
+  &:focus,
+  &:hover,
   &:active,
   &[aria-current="true"] {
     background: $white;
@@ -31,8 +32,10 @@
 
   }
 }
+
+$aside-linkIcon-width: 2rem !default;
 .aside-linkIcon {
-  width: 17px;
-  height: 17px;
+  width: $aside-linkIcon-width;
+  height: $aside-linkIcon-width;
   fill: var(--fillcolor-icons, $pm-global-light);
 }

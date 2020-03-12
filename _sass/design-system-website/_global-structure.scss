@@ -35,13 +35,40 @@ body {
   width: var(--width-sidebar, $width-sidebar);
   max-width: 22rem; // design request
   visibility: visible;
-  transition: visibility 0s ease, transform 1s ease, width .6s ease , opacity 1s ease ;
+  transition: visibility 0s ease, transform 1s ease, width .6s ease , opacity 1s ease, width .15s ease ;
   transition-delay: 0s;
   overflow: auto;
 }
 
+.collapse-button {
+	border: 3px solid var(--bgcolor-aside-link, $pm-global-altgrey);
+	border-radius: 50%;
+	width: 3.2rem;
+	height: 3.2rem;
+	&:hover {
+		background: rgba(255,255,255,.05);
+	}
+}
+
+.sidebar-is-collapsed {
+	--width-sidebar: 8rem;
+
+	.is-hidden-when-sidebar-is-collapsed {
+		display: none;
+	}
+	.is-shown-when-sidebar-is-collapsed {
+		display: flex;
+	}
+
+	.collapse-button-container {
+       width: var(--width-sidebar, $width-sidebar-collapsed);
+	}
+
+
+
+}
+
 .logo-container {
-  padding-left: 2rem;
   width: var(--width-sidebar, #{$width-sidebar});
   max-width: 22rem; // design request
 }

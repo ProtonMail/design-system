@@ -20,7 +20,15 @@
   <body>
     <div class="body flex flex-nowrap no-scroll">
 
-    <aside class="aside flex flex-column noprint" id="aside-bar">
+    <aside class="aside flex flex-column noprint is-hidden-when-sidebar-is-collapsed" id="aside-bar">
+
+	<div class="flex mb2">
+		<button class="collapse-button flex center js-collapse-sidebar" title="Collapse">
+			<svg viewBox="0 0 16 16" class="icon-16p mauto fill-white mirror" role="img" focusable="false" aria-hidden="true">
+				<use xlink:href="#shape-arrow-right"></use>
+			</svg>
+		</button>
+	</div>
 
       <ul class="unstyled flex flex-column flex-item-fluid m0 aligncenter">
         <li class="mb0-5 nodesktop notablet ">
