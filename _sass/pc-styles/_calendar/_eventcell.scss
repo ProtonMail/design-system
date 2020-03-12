@@ -8,18 +8,23 @@
 		position: relative;
 		min-height: 100%;
 		padding: 0 0.5em;
+		background-color: rgba($pm-global-altgrey, .25);
 		border: $border-event-cells;
 		border-radius: 2px;
-		color: var(--color-main-area, $pm-global-grey);
+		color: $black;
 		cursor: pointer;
 
-		&:hover,
-		&:focus {
-			background-color: var(--bgcolor-input, #F1F3F4);
-		}
+		&,
+		&--isLoaded {
+			&.isNotAllDay {
+				background: none;
+				border: none;
 
-		&--notAllDay {
-			border: 0;
+				&:hover,
+				&:focus {
+					background-color: var(--bgcolor-input, #F1F3F4);
+				}
+			}
 		}
 	}
 
@@ -32,6 +37,14 @@
 	&-inner--isOutsideEnd {
 		padding-right: 0;
 	}
+
+	&-circle {
+		color: rgba($pm-global-altgrey, .25);
+	}
+
+	&-inner--isLoaded &-circle {
+		color: var(--background);
+	}
 }
 
 .calendar-eventcell {
@@ -39,10 +52,9 @@
 	z-index: 5;
 	border: $border-event-cells;
 	border-radius: 2px;
-	background: #0074D9;
+	background: rgba($pm-global-altgrey, .25);
 	color: $black;
 	cursor: pointer;
-	transition: opacity .5s ease;
 
 	&::after {
 		content: '';
@@ -65,7 +77,34 @@
 	}
 }
 
+.calendar-dayeventcell,
+.calendar-eventcell {
+	--opacity: 1;
+}
+
 .calendar-dayeventcell--isBefore,
 .calendar-eventcell--isBefore {
-	opacity: .7;
+	--opacity: .6;
+}
+
+.calendar-dayeventcell-inner,
+.calendar-eventcell {
+	opacity: var(--opacity);
+	transition: opacity .5s ease-out, background-color .15s ease-in-out;
+	animation: loadingEvent 1s cubic-bezier(0.755, 0.05, 0.855, 0.06) infinite alternate;
+
+	&--isLoaded {
+		background-color: var(--background);
+		color: var(--foreground);
+		animation: none;
+	}
+}
+
+@keyframes loadingEvent {
+	from {
+		opacity: var(--opacity);
+	}
+	to {
+		opacity: calc(var(--opacity) - .4);
+	}
 }

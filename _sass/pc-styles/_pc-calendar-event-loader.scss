@@ -10,28 +10,3 @@ $width-calendar-loader-container: 25rem !default;
     color: $white;
     border-radius: $global-border-radius;
 }
-
-.calendar-skeleton-loading {
-    height: $l-h * 1em;
-    background-color: inherit;
-    margin-top: 1px;
-    border-radius: $global-border-radius;
-	animation: calendarSkeletonLoading 1s ease-in infinite alternate;
-
-	&::after {
-		margin-left: .25em;
-		content: '…';
-	}
-}
-
-@keyframes calendarSkeletonLoading {
-    from {
-        filter: brightness(100%);
-	}
-	80% {
-		filter: brightness(70%);
-	}
-    to {
-        filter: brightness(100%);
-    }
-}
