@@ -95,13 +95,13 @@ $padding-left-link: 2rem !default;
   }
 }
 
-$navigation-marker-size: 3px !default;
+$navigation-marker-size: 7px !default;
 .navigation__markerItem {
 	display: none;
     position: absolute;
     bottom: 1px;
 	left: calc(50% + 12px);
-	bottom: calc(50% + 12px);
+	bottom: calc(50% + 2px);
     height: $navigation-marker-size;
     width: $navigation-marker-size;
     background-color: $pm-primary;
