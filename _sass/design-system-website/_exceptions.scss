@@ -36,6 +36,29 @@
   background: var(--main-bg-color, $pm-global-grey);
   color: var(--color-nav-active, $pm-primary);
   font-weight: bold;
+  .navigation__icon {
+	fill: var(--color-nav-active, $pm-primary);
+  }
+
+}
+
+
+.navigation__link,
+.navigation__link:focus,
+.navigation__link:hover,
+.navigation__link:active {
+	[aria-expanded="true"].animated-expandmore__button {
+		.navigation__icon {
+			fill: var(--color-nav-active, $pm-primary);
+		  }
+	}
+}
+
+
+.sidebar-is-collapsed {
+	.animated-expandmore__button {
+		padding-left: .85rem;
+	}
 }
 
 

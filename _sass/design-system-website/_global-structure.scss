@@ -64,6 +64,11 @@ body {
        width: var(--width-sidebar, $width-sidebar-collapsed);
 	}
 
+	.navigation__icon {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
 
 
 }

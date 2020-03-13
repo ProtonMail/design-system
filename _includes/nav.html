@@ -1,9 +1,9 @@
     <nav class="navigation mw100 flex-item-fluid scroll-if-needed customScrollBar-container js-navigation">
 
-        <p class="navigation__link mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">
+        <p class="navigation__link mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated" title="Design">
 			<span class="flex flex-nowrap">
-				<svg role="img" focusable="false" data-name="drafts" fill="currentColor" class="mr0-5 flex-item-centered-vert icon-16p fill-currentColor" viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#shape-drafts"></use></svg>
-				<span class="navigationItem-title flex-item-fluid">Design</span>
+				<svg role="img" focusable="false" data-name="drafts" fill="currentColor" class="mr0-5 navigation__icon flex-item-centered-vert icon-16p fill-currentColor" viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#shape-file-image"></use></svg>
+				<span class="navigationItem-title is-hidden-when-sidebar-is-collapsed flex-item-fluid">Design</span>
 			</span>
 		</p>
         <ul class="navigation__sublist is-hidden-when-sidebar-is-collapsed mt0 unstyled js-to_expand{% if page.section == 'design' %} is-opened{% endif %}">
@@ -29,7 +29,12 @@
           </li>
 		</ul>
 
-		<p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Page mockups</p>
+		<p class="navigation__link mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated" title="Page mockups">
+			<span class="flex flex-nowrap">
+				<svg role="img" focusable="false" data-name="drafts" fill="currentColor" class="mr0-5 navigation__icon flex-item-centered-vert icon-16p fill-currentColor" viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#shape-layout-rows2"></use></svg>
+				<span class="navigationItem-title is-hidden-when-sidebar-is-collapsed flex-item-fluid">Page mockups</span>
+			</span>
+		</p>
 		<ul class="navigation__sublist is-hidden-when-sidebar-is-collapsed mt0 unstyled js-to_expand{% if page.section == 'mockups' %} is-opened{% endif %}">
 			<li class="navigation__subitem">
 				<a href="/conversations/" class="navigation__sublink"{% if page.pageId == 'conversations' %} aria-current="page"{% endif %}>
@@ -43,7 +48,12 @@
 			</li>
 		</ul>
 
-		<p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Components</p>
+		<p class="navigation__link mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated" title="Components">
+			<span class="flex flex-nowrap">
+				<svg role="img" focusable="false" data-name="drafts" fill="currentColor" class="mr0-5 navigation__icon flex-item-centered-vert icon-16p fill-currentColor" viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#shape-apps"></use></svg>
+				<span class="navigationItem-title is-hidden-when-sidebar-is-collapsed flex-item-fluid">Components</span>
+			</span>
+		</p>
 		<ul class="navigation__sublist is-hidden-when-sidebar-is-collapsed mt0 unstyled js-to_expand{% if page.section == 'components' %} is-opened{% endif %}">
 			<li class="navigation__subitem">
 				<a href="/buttons/" class="navigation__sublink"{% if page.pageId == 'buttons' %} aria-current="page"{% endif %}>
@@ -92,7 +102,12 @@
 			</li>
 		</ul>
 
-		<p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Front-end Conventions</p>
+		<p class="navigation__link mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated" title="Front-end Conventions">
+			<span class="flex flex-nowrap">
+				<svg role="img" focusable="false" data-name="drafts" fill="currentColor" class="mr0-5 navigation__icon flex-item-centered-vert icon-16p fill-currentColor" viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#shape-selectall"></use></svg>
+				<span class="navigationItem-title is-hidden-when-sidebar-is-collapsed flex-item-fluid">Front-end Conventions</span>
+			</span>
+		</p>
 		<ul class="navigation__sublist is-hidden-when-sidebar-is-collapsed mt0 unstyled js-to_expand{% if page.section == 'fe-conventions' %} is-opened{% endif %}">
 			<li class="navigation__subitem">
 				<a href="/how-to-use-design-system/" class="navigation__sublink"{% if page.pageId == 'how-to-use-design-system' %} aria-current="page"{% endif %}>
@@ -116,7 +131,12 @@
 			</li>
 		</ul>
 
-        <p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">Front-end Helpers</p>
+		<p class="navigation__link mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated" title="Front-end Helpers">
+			<span class="flex flex-nowrap">
+				<svg role="img" focusable="false" data-name="drafts" fill="currentColor" class="mr0-5 navigation__icon flex-item-centered-vert icon-16p fill-currentColor" viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#shape-info"></use></svg>
+				<span class="navigationItem-title is-hidden-when-sidebar-is-collapsed flex-item-fluid">Front-end Helpers</span>
+			</span>
+		</p>
         <ul class="navigation__sublist is-hidden-when-sidebar-is-collapsed mt0 unstyled js-to_expand{% if page.section == 'fe-guidelines' %} is-opened{% endif %}">
           <li class="navigation__subitem">
             <a href="/flexbox-helpers/" class="navigation__sublink"{% if page.pageId == 'flexbox-helpers' %} aria-current="page"{% endif %}>
@@ -186,7 +206,12 @@
 		  </li>
 		</ul>
 
-		<p class="navigation__title mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated">MISC</p>
+		<p class="navigation__link mb0 mt0 js-expandmore" data-hideshow-prefix-class="animated" title="MISC">
+			<span class="flex flex-nowrap">
+				<svg role="img" focusable="false" data-name="drafts" fill="currentColor" class="mr0-5 navigation__icon flex-item-centered-vert icon-16p fill-currentColor" viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#shape-tutorial"></use></svg>
+				<span class="navigationItem-title is-hidden-when-sidebar-is-collapsed flex-item-fluid">MISC</span>
+			</span>
+		</p>
 		<ul class="navigation__sublist is-hidden-when-sidebar-is-collapsed mt0 unstyled js-to_expand{% if page.section == 'misc' %} is-opened{% endif %}">
 			<li class="navigation__subitem">
 				<a href="/loading-content/" class="navigation__sublink"{% if page.pageId == 'loading-content' %} aria-current="page"{% endif %}>
