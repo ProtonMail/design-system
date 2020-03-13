@@ -11,6 +11,7 @@ $padding-left-link: 2rem !default;
   color: var(--color-nav-link, $white);
   text-decoration: none;
   display: block;
+  position: relative;
 }
 
 @if $rtl-option == true {
@@ -92,6 +93,19 @@ $padding-left-link: 2rem !default;
   &:empty {
       display: none; // removes a bug on Webkit
   }
+}
+
+$navigation-marker-size: 3px !default;
+.navigation__markerItem {
+	display: none;
+    position: absolute;
+    bottom: 1px;
+	left: calc(50% + 12px);
+	bottom: calc(50% + 12px);
+    height: $navigation-marker-size;
+    width: $navigation-marker-size;
+    background-color: $pm-primary;
+    border-radius: 50%;
 }
 
 

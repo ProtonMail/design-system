@@ -42,7 +42,7 @@ $aside-linkIcon-width: 2rem !default;
   fill: var(--fillcolor-icons, $pm-global-light);
 }
 
-
+/* labels */
 [class*="aside-link-label-"] {
 	position: absolute;
 	bottom: -5px;
@@ -61,3 +61,4 @@ $aside-linkIcon-width: 2rem !default;
 .aside-link-label-success {
 	background: $pm-global-success;
 }
+
