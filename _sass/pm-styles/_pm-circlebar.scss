@@ -2,6 +2,14 @@ $stroke-width: 3px !default; // be careful to udpate SVG if you want to update t
 
 // this component is used for VPN
 // and for the moment on Angular/React sidebar
+.circle-chart {
+	border-radius: 50%;
+}
+.circle-chart:hover {
+    background: radial-gradient(circle, $navigation-link-background-hover 0, $navigation-link-background-hover 16px, transparent 16px, transparent 100%);
+}
+
+
 .circle-chart__background {
   stroke: var(--color-main-area, $pm-global-grey);
   opacity: .2;

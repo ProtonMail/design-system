@@ -6,7 +6,6 @@
 
 .togglemenu {
   margin-top: 1.8rem;
-  padding-bottom: 1rem;
 }
 
 .navigation__link {
@@ -29,7 +28,7 @@
 }
 .animated-expandmore__button:focus,
 .animated-expandmore__button:hover {
-  background: rgba(255,255,255,.05);
+  background: $navigation-link-background-hover;
 }
 [aria-expanded="true"].animated-expandmore__button,
 .animated-expandmore__button:active {

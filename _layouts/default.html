@@ -22,7 +22,7 @@
 
     <aside class="aside flex flex-column noprint is-hidden-when-sidebar-is-collapsed" id="aside-bar">
 
-	<div class="flex mb2">
+	<div class="flex mb2 nomobile">
 		<button class="collapse-button flex center js-collapse-sidebar" title="Collapse">
 			<svg viewBox="0 0 16 16" class="icon-16p mauto fill-white" role="img" focusable="false" aria-hidden="true">
 				<use xlink:href="#shape-caret-double-left"></use>
@@ -33,8 +33,8 @@
 
       <ul class="unstyled flex flex-column flex-item-fluid m0 aligncenter">
         <li class="mb0-5 nodesktop notablet ">
-          <button type="button" class="togglemenu w100 center color-global-light js-togglemenu aside-link" title="Navigation">
-            <svg viewBox="0 0 16 16" class="aside-linkIcon fill-global-light" role="img" focusable="false" aria-hidden="true">
+          <button type="button" class="togglemenu flex w100 center color-global-light js-togglemenu aside-link" title="Navigation">
+            <svg viewBox="0 0 16 16" class="aside-linkIcon mauto fill-global-light" role="img" focusable="false" aria-hidden="true">
               <use xlink:href="#shape-burger"></use>
             </svg>
             <span class="sr-only">navigation</span>
@@ -78,13 +78,10 @@
 
 
         <li class="mtauto">
-            <svg class="circle-chart" viewbox="0 0 35.83098862 35.83098862" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <svg class="circle-chart" viewbox="0 0 35.83098862 35.83098862" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
               <circle class="circle-chart__background" cx="17.91549431" cy="17.91549431" r="15.91549431" />
               <circle class="circle-chart__circle" stroke-dasharray="30,100" stroke-linecap="butt" cx="17.91549431" cy="17.91549431" r="15.91549431" />
-              <g class="circle-chart__info">
-                  <rect x="17" y="14" width="1.55" height="9.1" class="circle-chart__percent fill-white"/>
-                  <rect x="17" y="11" width="1.55" height="1.53" class="circle-chart__percent fill-white"/>
-              </g>
+			  <path d="M18 9.155c-3.735 0-6.552 1.352-6.552 3.159v11.372c0 1.795 2.817 3.16 6.552 3.16 3.735 0 6.552-1.365 6.552-3.16V12.314c0-1.807-2.817-3.16-6.552-3.16zm0 1.263c3.197 0 5.241 1.125 5.241 1.896 0 .77-2.044 1.895-5.241 1.895-3.197 0-5.241-1.124-5.241-1.895 0-.771 2.044-1.896 5.241-1.896zm0 15.164c-3.197 0-5.241-1.125-5.241-1.896v-1.895A9.71 9.363 0 0018 23.054a9.71 9.363 0 005.241-1.263v1.895c0 .771-2.044 1.896-5.241 1.896zm0-3.791c-3.197 0-5.241-1.125-5.241-1.896V18A9.71 9.363 0 0018 19.264 9.71 9.363 0 0023.241 18v1.895c0 .771-2.044 1.896-5.241 1.896zM18 18c-3.197 0-5.241-1.125-5.241-1.895v-1.896A9.71 9.363 0 0018 15.473a9.71 9.363 0 005.241-1.264v1.896c0 .77-2.044 1.895-5.241 1.895z" class="circle-chart__icon fill-white"/>
             </svg>
             <span class="smallest mt0 mb0-5 lh100 circle-chart-info opacity-40 bl">1.3GB</span>
         </li>

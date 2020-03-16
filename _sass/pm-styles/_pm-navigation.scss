@@ -33,7 +33,7 @@ $padding-left-link: 2rem !default;
 
 .navigation__link:focus,
 .navigation__link:hover {
-  background: rgba(255,255,255,.05);
+  background: $navigation-link-background-hover;
   color: var(--color-nav-link, $pm-global-light);
   text-decoration: none;
   .navigation__icon:not(.navigation__icon--expand) {
@@ -153,7 +153,7 @@ $navigation-marker-size: 7px !default;
   color:  var(--color-nav-link, $white);
   &:focus,
   &:hover {
-    background: rgba(255,255,255,.05);
+    background: $navigation-link-background-hover;
     color:  var(--color-nav-link, $pm-global-light);
     text-decoration: none;
   }
