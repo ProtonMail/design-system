@@ -35,7 +35,7 @@ body {
   width: var(--width-sidebar, $width-sidebar);
   max-width: 22rem; // design request
   visibility: visible;
-  transition: visibility 0s ease, transform 1s ease, width .6s ease , opacity 1s ease, width .15s ease ;
+  transition: visibility 0s ease, transform .15s ease, width .6s ease , opacity 1s ease ;
   transition-delay: 0s;
   overflow: auto;
 }
@@ -50,31 +50,12 @@ body {
 	}
 }
 
-.sidebar-is-collapsed {
-	--width-sidebar: 8rem;
 
-	.is-hidden-when-sidebar-is-collapsed {
-		display: none;
-	}
-	.is-shown-when-sidebar-is-collapsed {
-		display: flex;
-	}
-
-	.collapse-button-container {
-       width: var(--width-sidebar, $width-sidebar-collapsed);
-	}
-
-	.navigation__icon {
-		margin-right: auto;
-		margin-left: auto;
-	}
-
-
-
-}
 
 .logo-container {
   width: var(--width-sidebar, #{$width-sidebar});
+  transition: .5s max-width ease, opacity .15s ease;
+  transition-delay: 0s;
   max-width: 22rem; // design request
 }
 .logo {
@@ -92,6 +73,33 @@ body {
 }
 
 
+
+.sidebar-is-collapsed {
+	--width-sidebar: 8rem;
+
+	.is-hidden-when-sidebar-is-collapsed {
+		display: none;
+	}
+	.is-shown-when-sidebar-is-collapsed {
+		display: flex;
+	}
+
+	.logo-container {
+		max-width: 0;
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	.collapse-button-container {
+       width: var(--width-sidebar, $width-sidebar-collapsed);
+	}
+
+	.navigation__icon {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+}
 
 
 
