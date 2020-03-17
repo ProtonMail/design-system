@@ -45,6 +45,10 @@
 	&-inner--isLoaded &-circle {
 		color: var(--background);
 	}
+
+	&-lock-icon {
+		margin-top: .25em;
+	}
 }
 
 .calendar-eventcell {
@@ -74,6 +78,10 @@
 		&-timestring {
 			font-size: 1.2rem;
 		}
+	}
+
+	&-lock-icon {
+		margin-top: -.125em;
 	}
 }
 
