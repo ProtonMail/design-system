@@ -8,7 +8,7 @@
 		position: relative;
 		min-height: 100%;
 		padding: 0 0.5em;
-		background-color: rgba($pm-global-altgrey, .25);
+		background-color: rgba(lighten($pm-global-altgrey, 30%), .5);
 		border: $border-event-cells;
 		border-radius: 2px;
 		color: $black;
@@ -19,6 +19,7 @@
 			&.isNotAllDay {
 				background: none;
 				border: none;
+				color: inherit;
 
 				&:hover,
 				&:focus {
@@ -39,7 +40,7 @@
 	}
 
 	&-circle {
-		color: rgba($pm-global-altgrey, .25);
+		color: rgba(lighten($pm-global-altgrey, 30%), .5);
 	}
 
 	&-inner--isLoaded &-circle {
@@ -56,7 +57,7 @@
 	z-index: 5;
 	border: $border-event-cells;
 	border-radius: 2px;
-	background: rgba($pm-global-altgrey, .25);
+	background: rgba(lighten($pm-global-altgrey, 30%), .5);
 	color: $black;
 	cursor: pointer;
 
