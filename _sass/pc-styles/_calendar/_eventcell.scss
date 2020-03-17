@@ -14,17 +14,15 @@
 		color: $black;
 		cursor: pointer;
 
-		&,
-		&--isLoaded {
-			&.isNotAllDay {
-				background: none;
-				border: none;
-				color: inherit;
+		&#{&}--isNotAllDay,
+		&--isLoaded#{&}--isNotAllDay {
+			background: none;
+			border: none;
+			color: inherit;
 
-				&:hover,
-				&:focus {
-					background-color: var(--bgcolor-input, #F1F3F4);
-				}
+			&:hover,
+			&:focus {
+				background-color: var(--bgcolor-input, #F1F3F4);
 			}
 		}
 	}
