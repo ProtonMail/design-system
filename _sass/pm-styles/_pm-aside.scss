@@ -62,3 +62,10 @@ $aside-linkIcon-width: 2rem !default;
 	background: $pm-global-success;
 }
 
+
+.aside-listIcons {
+	min-height: calc(100% - #{$collapse-button-size} - 2em ); // 100% - button collapse - margin
+	> li:last-child {
+		margin-top: auto;
+	}
+}

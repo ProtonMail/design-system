@@ -43,8 +43,8 @@ body {
 .collapse-button {
 	border: 3px solid var(--bgcolor-aside-link, $pm-global-altgrey);
 	border-radius: 50%;
-	width: 3.2rem;
-	height: 3.2rem;
+	width: $collapse-button-size;
+	height: $collapse-button-size;
 	&:hover {
 		background: $navigation-link-background-hover;
 	}
