@@ -40,6 +40,7 @@ body {
   overflow: auto;
 }
 
+
 .collapse-button {
 	border: 3px solid var(--bgcolor-aside-link, $pm-global-altgrey);
 	border-radius: 50%;
@@ -97,6 +98,17 @@ body {
 	.navigation__icon {
 		margin-right: auto;
 		margin-left: auto;
+	}
+
+	.sidebar-composeButton {
+	   padding-left: 0;
+	   padding-right: 0;
+	   &-icon {
+		   margin: 0 auto;
+	   }
+	   &-text {
+		   margin-right: 0;
+	   }
 	}
 
 }
