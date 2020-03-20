@@ -13,12 +13,14 @@ $dropDown-narrow-width: 9em !default;
 	transform: scale(1, 1);
 	visibility: visible;
 	transition-delay: 0s;
-	width: $dropDown-width;
+	min-width: 6em;
+	max-width: 15em;
 	background: var(--bgcolor-main-area, $white);
 	border-radius: $global-border-radius;
 	box-shadow: 0 0 16px 3px $input-shadow-color;
 	color: var(--color-main-area, $pm-global-grey);
 
+	/*
 	&--narrow {
 		width: $dropDown-narrow-width;
 	}
@@ -28,6 +30,7 @@ $dropDown-narrow-width: 9em !default;
 	&--auto {
 		width: auto;
 	}
+	*/
 
 	// Hidden dropdown state
 	&[hidden] {
@@ -142,7 +145,7 @@ $dropDown-narrow-width: 9em !default;
 	/* scrollable insides of the dropdown */
 	&-content {
 		overflow: auto;
-		max-height: 30vh;
+		max-height: 20em;
 		border-radius: $global-border-radius;
 		background: var(--bgcolor-main-area, $white) no-repeat;
 		background-image:
