@@ -58,52 +58,53 @@ $dropDown-narrow-width: 9em !default;
 		}
 	}
 
-	/* arrow on top of dropdown */
+	/* Dropdown arrow */
 	&::before {
-		content: "";
+		--size: 1.5rem;
+		--offset: #{2.12rem - 1.5rem}; // Pythagore powa for line middle alignement!
+
+		content: '';
 		position: absolute;
-		width: 1rem;
-		height: 1rem;
-		border: 1rem solid transparent;
+		z-index: -1;
+		width: var(--size);
+		height: var(--size);
+		transform: rotate(45deg);
+		background-color: var(--bgcolor-main-area, $white);
 	}
 
 	&--top,
 	&--top-left,
 	&--top-right {
 		&::before {
-			top: 100%;
-			border-top: 1rem solid var(--bgcolor-main-area, $white);
+			bottom: calc(var(--size) / -2);
 		}
 	}
 	&--bottom,
 	&--bottom-left,
 	&--bottom-right {
 		&::before {
-			top: -2rem;
-			border-bottom: 1rem solid var(--bgcolor-main-area, $white);
+			top: calc(var(--size) / -2);
 		}
 	}
 	&--left,
 	&--left-top,
 	&--left-bottom {
 		&::before {
-			left: 100%;
-			border-left: 1rem solid var(--bgcolor-main-area, $white);
+			right: calc(var(--size) / -2);
 		}
 	}
 	&--right,
 	&--right-top,
 	&--right-bottom {
 		&::before {
-			left: -2rem;
-			border-right: 1rem solid var(--bgcolor-main-area, $white);
+			left: calc(var(--size) / -2);
 		}
 	}
 
 	&--top,
 	&--bottom {
 		&::before {
-			left: calc(50% - 1rem);
+			left: calc(50% - (var(--size) / 2));
 		}
 	}
 	&--top-left,
@@ -115,7 +116,6 @@ $dropDown-narrow-width: 9em !default;
 	&--top-right,
 	&--bottom-right {
 		&::before {
-			left: auto;
 			right: 1rem;
 		}
 	}
@@ -123,20 +123,19 @@ $dropDown-narrow-width: 9em !default;
 	&--left,
 	&--right {
 		&::before {
-			top: calc(50% - 1rem);
+			top: calc(50% - (var(--size) / 2));
 		}
 	}
 	&--left-top,
 	&--right-top {
 		&::before {
-			top: 1rem;
+			top: var(--offset);
 		}
 	}
 	&--left-bottom,
 	&--right-bottom {
 		&::before {
-			top: auto;
-			bottom: 1rem;
+			bottom: var(--offset);
 		}
 	}
 
