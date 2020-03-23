@@ -24,7 +24,7 @@ $padding-left-link: 2rem !default;
 }
 
 .navigation__icon {
-  fill: var(--fillcolor-icons, $navigation-fillcolor-icons);
+  color: var(--fillcolor-icons, $navigation-fillcolor-icons);
 }
 
 .navigation__refresh {
