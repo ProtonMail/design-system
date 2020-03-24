@@ -51,9 +51,15 @@ body {
 	border-radius: 50%;
 	width: $collapse-button-size;
 	height: $collapse-button-size;
+	animation: rotateIconOut .5s ease forwards;
 	&:hover {
 		background: $navigation-link-background-hover;
 	}
+}
+
+.collapse-button.before-first-click {
+	// before any clic, no animation
+	animation-duration: 0s;
 }
 
 
@@ -126,6 +132,11 @@ body {
 	0% { transform: rotateZ(0); }
 	100% { transform: rotateZ(-180deg); }
 }
+@keyframes rotateIconOut {
+	0% { transform: rotateZ(-180deg); }
+	100% { transform: rotateZ(0); }
+}
+
 
 
 
