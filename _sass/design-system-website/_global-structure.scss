@@ -41,6 +41,11 @@ body {
 }
 
 
+.collapse-button-container {
+	width: var(--width-sidebar, #{$width-sidebar});
+    transition: .5s width ease;
+}
+
 .collapse-button {
 	border: 3px solid var(--bgcolor-aside-link, $pm-global-altgrey);
 	border-radius: 50%;
@@ -55,7 +60,7 @@ body {
 
 .logo-container {
   width: var(--width-sidebar, #{$width-sidebar});
-  transition: .5s max-width ease, opacity .15s ease;
+  transition: .5s max-width ease, .5s width ease, opacity .15s ease;
   transition-delay: 0s;
   max-width: 22rem; // design request
 }
