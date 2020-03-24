@@ -116,7 +116,17 @@ body {
 	   }
 	}
 
+	.collapse-button-container .collapse-button--expandButton {
+		animation: rotateIconIn .5s ease forwards;
+	}
+
 }
+
+@keyframes rotateIconIn {
+	0% { transform: rotateZ(0); }
+	100% { transform: rotateZ(-180deg); }
+  }
+
 
 
 
