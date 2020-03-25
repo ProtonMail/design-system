@@ -13,7 +13,7 @@ $dropDown-narrow-width: 9em !default;
 	transform: scale(1, 1);
 	visibility: visible;
 	transition-delay: 0s;
-	min-width: 6em;
+	min-width: 8em;
 	max-width: 15em;
 	background: var(--bgcolor-main-area, $white);
 	border-radius: $global-border-radius;
@@ -64,7 +64,7 @@ $dropDown-narrow-width: 9em !default;
 	/* Dropdown arrow */
 	&::before {
 		--size: 1.5rem;
-		--offset: #{2.12rem - 1.5rem}; // Pythagore powa for line middle alignement!
+		--offset: #{2.12rem - 1.5rem}; // Pythagore powa for middle line alignement!
 
 		content: '';
 		position: absolute;
@@ -160,7 +160,7 @@ $dropDown-narrow-width: 9em !default;
 				transparent
 			);
 		background-position: 50% 0, 0 100%;
-		background-size: calc(100% - 20px) 3px;
+		background-size: calc(100% - 2rem) .3rem;
 
 		&::before,
 		&::after {
@@ -169,7 +169,7 @@ $dropDown-narrow-width: 9em !default;
 			display: block;
 			z-index: 1;
 			background: var(--bgcolor-main-area, $white);
-			height: 10px;
+			height: 1rem;
 		}
 
 		button {
