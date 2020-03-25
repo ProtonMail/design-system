@@ -1,0 +1,126 @@
+@import "reusable-components/design-system-config";
+@import "reusable-components/design-system-reset";
+
+// D R A C U L A  T H E M E
+$dracula-background: hsl(231, 15%, 18%) ;
+$dracula-current-line: hsl(232, 14%, 31%) ;
+$dracula-selection: hsl(232, 14%, 31%) ;
+$dracula-foreground: hsl(60, 30%, 96%) ;
+$dracula-comment: hsl(225, 27%, 51%) ;
+$dracula-cyan: hsl(191, 97%, 77%) ;
+$dracula-green: hsl(135, 94%, 65%) ;
+$dracula-orange: hsl(31, 100%, 71%) ;
+$dracula-pink: hsl(326, 100%, 74%) ;
+$dracula-purple: hsl(265, 89%, 78%) ;
+$dracula-red: hsl(0, 100%, 67%);
+$dracula-yellow: hsl(65, 92%, 76%);
+
+$pm-global-grey        : $dracula-background ;
+$pm-global-altgrey     : $dracula-current-line ;
+$pm-global-light       : $dracula-comment ;
+$pm-global-border      : $dracula-comment ;
+$pm-global-muted       : $dracula-comment ;
+$pm-global-success     : $dracula-green ;
+$pm-global-warning     : $dracula-red ;
+$pm-global-attention   : $dracula-orange ;
+$pm-blue               : $dracula-cyan ;
+$pm-blue-dark          : $dracula-comment ;
+$pm-blue-light         : $dracula-cyan ;
+
+$white                 : $dracula-comment ;
+$black                 : $dracula-background ;
+
+$pv-green              : $dracula-green ;
+$pv-green-dark         : $dracula-green ;
+$pv-green-light        : $dracula-green ;
+
+// plans
+$visionary             : $dracula-cyan ;
+$plus                  : $dracula-yellow ;
+$professional          : $dracula-orange ;
+$vpnbasic              : $dracula-red ;
+$vpnplus               : $dracula-green ;
+
+// primary
+$pm-primary            : $pm-blue ;
+$pm-primary-light      : $pm-blue-light ;
+$pm-primary-dark       : $pm-blue-dark ;
+
+// not approved colors
+$pm-input-background   : $dracula-comment ;
+$plan-logo-color       : $dracula-green ;
+$conversation-selected-bg: rgba($pm-blue, .5) ;
+$input-shadow-color    : rgba(0, 0, 0, 0.16) ;
+$autocomplete-bg-color-hover : $dracula-comment ;
+
+// needed for darkmode
+$pm-secondary-grey     : $dracula-background ;
+$pm-tertiary-grey      : $dracula-current-line ; // border input
+
+// needed globally
+$calendar-selected-day-color: $pm-blue-light ;
+$calendar-today-color: $pm-primary-dark ;
+
+// colors
+$color-links           : $pm-primary ;
+$color-hover           : $black ;
+$color-hr              : $pm-global-border ;
+$hr-height             : 1px ;
+$color-alert           : $pm-global-warning ;
+$color-bg-button       : $white ;
+$color-txt-button      : $black ;
+
+// inputs
+$input-defaut-border   : $pm-global-border ;
+
+@import "design-system-website/webfonts-hx";
+@import "reusable-components/design-system-colors";
+@import "reusable-components/design-system-util-typo-fix";
+@import "reusable-components/design-system-links-icons";
+@import "reusable-components/design-system-layout-modules";
+@import "reusable-components/design-system-forms";
+@import "pm-styles/pm-buttons";
+@import "pm-styles/pm-cursors";
+@import "pm-styles/pm-badges";
+@import "pm-styles/pm-containers";
+@import "pm-styles/pm-dropdown-logout";
+@import "pm-styles/pm-forms";
+@import "pm-styles/pm-tabs";
+@import "pm-styles/pm-loadingcontent";
+@import "pm-styles/pm-loader-animation";
+@import "pm-styles/pm-layout";
+@import "pm-styles/pm-modal";
+@import "pm-styles/pm-notifications";
+@import "pm-styles/pm-table";
+@import "pm-styles/pm-meterbar";
+@import "pm-styles/pm-breadcrumb-domain";
+@import "pm-styles/pm-panels";
+@import "pm-styles/pm-header-searchbar";
+@import "pm-styles/pm-header-topnav";
+@import "pm-styles/pm-settings-home";
+@import "pm-styles/pm-wizard";
+@import "pm-styles/pm-sticky-header";
+@import "pm-styles/pm-conversations.scss";
+@import "pm-styles/pm-progress-contact";
+@import "pm-styles/pm-table-plans";
+@import "pm-styles/pm-circlebar";
+@import "pm-styles/pm-mini-calendar";
+@import "pm-styles/pm-custom-scrollbar";
+
+@import "pm-styles/pm-aside";
+@import "pm-styles/pm-toolbar";
+@import "pm-styles/pm-navigation";
+@import "pm-styles/pm-subnav";
+
+@import "design-system-website/global-structure";
+@import "design-system-website/inside-content";
+
+@import "react-styles/pm-dropdown";
+@import "react-styles/pm-tooltip";
+// @import "reusable-components/design-system-responsive";
+// @import "design-system-website/responsive";
+
+// // others
+// @import "reusable-components/design-system-print";
+// @import "reusable-components/design-system-viewport-fix";
+// @import "reusable-components/design-system-reduced-motion";

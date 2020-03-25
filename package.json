@@ -4,6 +4,7 @@
   "description": "Proton Design system, for all Proton Projects: https://design-system-beta.netlify.com/",
   "main": "index.js",
   "scripts": {
+    "build-theme": "rm -rf build && mkdir -p build && node-sass _sass/custom-theme.scss --output build/", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
     "SVG"
   ],
   "author": "Proton Technologies AG",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
 }
