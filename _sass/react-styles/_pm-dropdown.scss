@@ -1,6 +1,8 @@
+/*
 $dropDown-width: 230px !default;
 $dropDown-wide-width: 450px !default;
 $dropDown-narrow-width: 9em !default;
+*/
 
 .dropDown {
 	position: fixed;
@@ -8,17 +10,17 @@ $dropDown-narrow-width: 9em !default;
 	left: calc(var(--left) * 1px);
 	z-index: 666;
 	display: block;
-	opacity: 1;
-	transition: visibility 0s ease, transform 0.15s ease, opacity 0.15s ease;
-	transform: scale(1, 1);
-	visibility: visible;
-	transition-delay: 0s;
 	min-width: 8em;
 	max-width: 15em;
-	background: var(--bgcolor-main-area, $white);
+	transform: scale(1, 1);
 	border-radius: $global-border-radius;
 	box-shadow: 0 0 16px 3px $input-shadow-color;
+	background: var(--bgcolor-main-area, $white);
 	color: var(--color-main-area, $pm-global-grey);
+	opacity: 1;
+	visibility: visible;
+	transition: visibility 0s ease, transform 0.15s ease, opacity 0.15s ease;
+	transition-delay: 0s;
 
 	/*
 	&--narrow {
@@ -35,9 +37,9 @@ $dropDown-narrow-width: 9em !default;
 	// Hidden dropdown state
 	&[hidden] {
 		display: block;
+		transform: scale(0, 0);
 		opacity: 0;
 		visibility: hidden;
-		transform: scale(0, 0);
 		transition-delay: 0s, 0s;
 	}
 
@@ -144,8 +146,8 @@ $dropDown-narrow-width: 9em !default;
 
 	/* scrollable insides of the dropdown */
 	&-content {
-		overflow: auto;
 		max-height: 20em;
+		overflow: auto;
 		border-radius: $global-border-radius;
 		background: var(--bgcolor-main-area, $white) no-repeat;
 		background-image:
@@ -164,12 +166,12 @@ $dropDown-narrow-width: 9em !default;
 
 		&::before,
 		&::after {
-			content: "";
+			content: '';
 			position: relative;
-			display: block;
 			z-index: 1;
-			background: var(--bgcolor-main-area, $white);
+			display: block;
 			height: 1rem;
+			background: var(--bgcolor-main-area, $white);
 		}
 
 		button {
@@ -177,20 +179,23 @@ $dropDown-narrow-width: 9em !default;
 		}
 	}
 
-	&-link {
-		&,
-		&:hover,
-		&:focus,
-		&:active {
-			color: currentColor;
-			text-decoration: none;
-		}
-	}
-
 	&-item {
-		&:focus-within,
-		&:hover {
-			background-color: var(--bgcolor-input, $pm-global-light);
+		&-button,
+		&-link {
+			&:hover,
+			&:focus {
+				background-color: var(--bgcolor-input, $pm-global-light);
+			}
+		}
+
+		&-link {
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				color: currentColor;
+				text-decoration: none;
+			}
 		}
 	}
 
@@ -199,4 +204,7 @@ $dropDown-narrow-width: 9em !default;
 		border-top: 1px solid var(--bordercolor-input, $pm-global-border);
 	}
 
+	&-backdrop {
+		display: none;
+	}
 }
