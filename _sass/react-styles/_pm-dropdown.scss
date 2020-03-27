@@ -24,7 +24,7 @@
 		left: calc(var(--left) * 1px);
 		transform: scale(1);
 		border-radius: $global-border-radius;
-		box-shadow: 0 0 16px 3px $input-shadow-color;
+		box-shadow: 0 0 1.5rem .3rem $input-shadow-color;
 		background: var(--bgcolor-main-area, $white);
 		transition-property: opacity, transform;
 
