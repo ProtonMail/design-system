@@ -45,11 +45,3 @@
     }
   }
 }
-
-.userDropdown {
-	.dropDown-content {
-		@include respond-to($breakpoint-small, 'min') {
-			max-height: none;
-		}
-	}
-}
