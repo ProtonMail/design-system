@@ -2,7 +2,7 @@
 	position: fixed;
 	z-index: 666;
 	color: var(--color-main-area, $pm-global-grey);
-	transition: .15s ease-out;
+	transition: .1s ease-out;
 
 	@include respond-to($breakpoint-small, 'max') {
 		top: 0;
@@ -16,7 +16,7 @@
 		justify-content: center;
 		align-items: center;
 		background-color: rgba(black, .4);
-		transition-property: all;
+		transition-property: opacity, visibility;
 	}
 
 	@include respond-to($breakpoint-small, 'min') {
@@ -65,7 +65,7 @@
 		}
 	}
 
-	/* scrollable insides of the dropdown */
+	/* Scrollable insides of the dropdown */
 	&-content {
 		overflow: auto;
 		border-radius: $global-border-radius;
@@ -84,10 +84,13 @@
 		background-position: 50% 0, 0 100%;
 		background-size: calc(100% - 2rem) .3rem;
 
-		@include respond-to($breakpoint-small, 'max') {
+		@include respond-to($breakpoint-tiny, 'min') {
 			min-width: 15em;
+		}
+
+		@include respond-to($breakpoint-small, 'max') {
 			box-shadow: 0 0 5rem 0 rgba(black, .3);
-			transition: transform .15s ease-out;
+			transition: transform .1s ease-out;
 		}
 
 		@include respond-to($breakpoint-small, 'min') {
@@ -143,10 +146,7 @@
 	}
 
 
-	/*
-	  Arrow for wide screens
-	*/
-
+	/* Arrow for wide screens */
 	@include respond-to($breakpoint-small, 'min') {
 
 		&::before {
