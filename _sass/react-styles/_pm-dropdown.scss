@@ -94,14 +94,14 @@
 		}
 
 		@include respond-to($breakpoint-small, 'min') {
-			min-width: 10em;
-
-			&--mw {
-				max-width: 15em;
+			&:not(#{&}--noMaxSize) {
+				min-width: 10em;
+				max-width: 20em;
+				max-height: 20em;
 			}
 
-			&--mh {
-				max-height: 20em;
+			&--noMaxSize {
+				min-width: initial;
 			}
 		}
 
@@ -111,7 +111,7 @@
 			position: relative;
 			z-index: 1;
 			display: block;
-			height: 1rem;
+			height: .3rem;
 			background: var(--bgcolor-main-area, $white);
 		}
 
@@ -142,6 +142,17 @@
 			&:active {
 				color: currentColor;
 				text-decoration: none;
+			}
+		}
+
+		& &--isSelected { // Specificity -_-v
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: $pm-blue;
+				color: $white;
+				pointer-events: none;
 			}
 		}
 	}
