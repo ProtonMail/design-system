@@ -1,7 +1,8 @@
-$scrollbar-width: 6px !default;
-$scrollbar-color: $black !default;
-$scrollbar-thumb-color: #586065 !default;
-$scrollbar-thumb-height: 40px !default;
+$scrollbar-thumb-color       : rgba(black, .35);
+$scrollbar-thumb-hover-color : rgba(black, .5);
+$scrollbar-track-color       : transparent;
+$scrollbar-size              : .6rem;
+$scrollbar-margin            : .2rem;
 
 $selector-custom-scroll: '.customScrollBar-container' !default;
 @if ($custom-scroll) {
@@ -9,52 +10,34 @@ $selector-custom-scroll: '.customScrollBar-container' !default;
 }
 
 #{$selector-custom-scroll} {
-	scrollbar-color: $scrollbar-thumb-color $scrollbar-color;
+
+	$real-size: $scrollbar-size + ($scrollbar-margin * 2);
+
+	// W3C, Firefox
 	scrollbar-width: thin;
+	scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
 
+	// webkit specific
 	&::-webkit-scrollbar {
-		width: $scrollbar-width;
-		height: $scrollbar-width;
+		width: $real-size;
+		height: $real-size;
 	}
-	&::-webkit-scrollbar-button:start:decrement,
-	&::-webkit-scrollbar-button:end:increment,
-	&::-webkit-scrollbar-button:vertical:start:increment,
-	&::-webkit-scrollbar-button:vertical:end:decrement {
-		display: none;
+
+	&::-webkit-scrollbar-thumb {
+		border: $scrollbar-margin solid transparent; // Margin
+		background-clip: padding-box; // Booyah!
+		border-radius: $real-size/2;
+		background-color: $scrollbar-thumb-color;
 	}
-	&::-webkit-scrollbar-track:vertical,
-	&::-webkit-scrollbar-track:horizontal,
-	&::-webkit-scrollbar-track-piece {
-		background-color: $scrollbar-color;
-		border: 0;
-		border-radius: #{$scrollbar-width/2};
+
+	&::-webkit-scrollbar-track {
+		background-color: $scrollbar-track-color;
 	}
-	&::-webkit-scrollbar {
-		width: $scrollbar-width;
-		height: $scrollbar-width;
-	}
-	&::-webkit-scrollbar-button:start:decrement,
-	&::-webkit-scrollbar-button:end:increment,
-	&::-webkit-scrollbar-button:vertical:start:increment,
-	&::-webkit-scrollbar-button:vertical:end:decrement {
-		display: none;
-	}
-	&::-webkit-scrollbar-track:vertical,
-	&::-webkit-scrollbar-track:horizontal,
-	&::-webkit-scrollbar-track-piece {
-		background-color: $scrollbar-color;
-		border: 0;
-		border-radius: #{$scrollbar-width/2};
-	}
+
+	&::-webkit-scrollbar-thumb:horizontal,
 	&::-webkit-scrollbar-thumb:vertical {
-		height: $scrollbar-thumb-height;
-		background-color: $scrollbar-thumb-color;
-		border-radius: #{$scrollbar-width/2};
+		&:hover {
+			background-color: $scrollbar-thumb-hover-color;
+		}
 	}
-	&::-webkit-scrollbar-thumb:horizontal {
-		height: $scrollbar-width/2;
-		background-color: $scrollbar-thumb-color;
-		border-radius: #{$scrollbar-width/2};
-	}
-
 }
