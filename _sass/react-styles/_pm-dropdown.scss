@@ -10,13 +10,17 @@
 		bottom: 0;
 		left: 0;
 		display: flex;
-		padding: 15%;
+		padding: 15% 25%;
 		overflow: hidden;
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
 		background-color: rgba(black, .4);
 		transition-property: opacity, visibility;
+	}
+
+	@include respond-to($breakpoint-tiny, 'max') {
+		padding: 15%;
 	}
 
 	@include respond-to($breakpoint-small, 'min') {
@@ -84,11 +88,8 @@
 		background-position: 50% 0, 0 100%;
 		background-size: calc(100% - 2rem) .3rem;
 
-		@include respond-to($breakpoint-tiny, 'min') {
-			min-width: 15em;
-		}
-
 		@include respond-to($breakpoint-small, 'max') {
+			width: 100%;
 			box-shadow: 0 0 5rem 0 rgba(black, .3);
 			transition: transform .1s ease-out;
 		}
@@ -98,10 +99,6 @@
 				min-width: 10em;
 				max-width: 20em;
 				max-height: 20em;
-			}
-
-			&--noMaxSize {
-				min-width: initial;
 			}
 		}
 
