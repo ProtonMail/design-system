@@ -132,6 +132,13 @@
 			&:hover,
 			&:focus {
 				background-color: var(--bgcolor-input, $pm-global-light);
+				color: $pm-blue;
+			}
+
+			&[disabled],
+			&.is-disabled {
+				@include button-disabled-state;
+				border: none;
 			}
 		}
 
