@@ -3,35 +3,58 @@ $scrollbar-color: $black !default;
 $scrollbar-thumb-color: #586065 !default;
 $scrollbar-thumb-height: 40px !default;
 
-.customScrollBar-container {
-  scrollbar-color: $scrollbar-thumb-color $scrollbar-color;
-  scrollbar-width: thin;
+$selector-custom-scroll: '.customScrollBar-container' !default;
+@if ($custom-scroll) {
+	$selector-custom-scroll: '*';
 }
 
-.customScrollBar-container::-webkit-scrollbar {
-  width: $scrollbar-width;
-  height: $scrollbar-width;
-}
-.customScrollBar-container::-webkit-scrollbar-button:start:decrement,
-.customScrollBar-container::-webkit-scrollbar-button:end:increment,
-.customScrollBar-container::-webkit-scrollbar-button:vertical:start:increment,
-.customScrollBar-container::-webkit-scrollbar-button:vertical:end:decrement {
-  display: none;
-}
-.customScrollBar-container::-webkit-scrollbar-track:vertical,
-.customScrollBar-container::-webkit-scrollbar-track:horizontal,
-.customScrollBar-container::-webkit-scrollbar-track-piece {
-  background-color: $scrollbar-color;
-  border: 0;
-  border-radius: #{$scrollbar-width/2};
-}
-.customScrollBar-container::-webkit-scrollbar-thumb:vertical {
-  height: $scrollbar-thumb-height;
-  background-color: $scrollbar-thumb-color;
-  border-radius: #{$scrollbar-width/2};
-}
-.customScrollBar-container::-webkit-scrollbar-thumb:horizontal {
-  height: $scrollbar-width/2;
-  background-color: $scrollbar-thumb-color;
-  border-radius: #{$scrollbar-width/2};
+#{$selector-custom-scroll} {
+	scrollbar-color: $scrollbar-thumb-color $scrollbar-color;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		width: $scrollbar-width;
+		height: $scrollbar-width;
+	}
+	&::-webkit-scrollbar-button:start:decrement,
+	&::-webkit-scrollbar-button:end:increment,
+	&::-webkit-scrollbar-button:vertical:start:increment,
+	&::-webkit-scrollbar-button:vertical:end:decrement {
+		display: none;
+	}
+	&::-webkit-scrollbar-track:vertical,
+	&::-webkit-scrollbar-track:horizontal,
+	&::-webkit-scrollbar-track-piece {
+		background-color: $scrollbar-color;
+		border: 0;
+		border-radius: #{$scrollbar-width/2};
+	}
+	&::-webkit-scrollbar {
+		width: $scrollbar-width;
+		height: $scrollbar-width;
+	}
+	&::-webkit-scrollbar-button:start:decrement,
+	&::-webkit-scrollbar-button:end:increment,
+	&::-webkit-scrollbar-button:vertical:start:increment,
+	&::-webkit-scrollbar-button:vertical:end:decrement {
+		display: none;
+	}
+	&::-webkit-scrollbar-track:vertical,
+	&::-webkit-scrollbar-track:horizontal,
+	&::-webkit-scrollbar-track-piece {
+		background-color: $scrollbar-color;
+		border: 0;
+		border-radius: #{$scrollbar-width/2};
+	}
+	&::-webkit-scrollbar-thumb:vertical {
+		height: $scrollbar-thumb-height;
+		background-color: $scrollbar-thumb-color;
+		border-radius: #{$scrollbar-width/2};
+	}
+	&::-webkit-scrollbar-thumb:horizontal {
+		height: $scrollbar-width/2;
+		background-color: $scrollbar-thumb-color;
+		border-radius: #{$scrollbar-width/2};
+	}
+
 }
