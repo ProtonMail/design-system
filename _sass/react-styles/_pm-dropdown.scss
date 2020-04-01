@@ -124,6 +124,16 @@
 	}
 
 	&-item {
+		&-link {
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				color: currentColor;
+				text-decoration: none;
+			}
+		}
+
 		&-button,
 		&-link {
 			&:hover,
@@ -136,16 +146,6 @@
 			&.is-disabled {
 				@include button-disabled-state;
 				border: none;
-			}
-		}
-
-		&-link {
-			&,
-			&:hover,
-			&:focus,
-			&:active {
-				color: currentColor;
-				text-decoration: none;
 			}
 		}
 
