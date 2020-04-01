@@ -1,17 +1,19 @@
-$scrollbar-track-color            : transparent !default;
-$scrollbar-size                   : .6rem !default;
-$scrollbar-margin                 : .2rem !default;
+$scrollbar-track-color: transparent !default;
+$scrollbar-size       : .6rem !default;
+$scrollbar-margin     : .2rem !default;
 
 @if $custom-scroll {
 
-	body:not(.isDarkMode) {
-		--scrollbar-thumb-color       : #{rgba($black, .35)};
-		--scrollbar-thumb-hover-color : #{rgba($black, .5)};
-	}
+	body {
+		&:not(.isDarkMode) {
+			--scrollbar-thumb-color      : #{rgba(black, .35)};
+			--scrollbar-thumb-hover-color: #{rgba(black, .5)};
+		}
 
-	body.isDarkMode {
-		--scrollbar-thumb-color       : #{rgba($white, .2)};
-		--scrollbar-thumb-hover-color : #{rgba($white, .5)};
+		&.isDarkMode {
+			--scrollbar-thumb-color      : #{rgba(white, .2)};
+			--scrollbar-thumb-hover-color: #{rgba(white, .5)};
+		}
 	}
 
 	* {
