@@ -7,6 +7,7 @@
 - add `protondrive`, `nospam` icon
 - add new lock icons (18×18)
 - add new selected state on calendar events
+- new URL for accessing Design System: https://design-system.protontech.ch/  🎉
 - enabled custom scrollbar design everywhere (can be activated/not via `$custom-scroll`)
 
 

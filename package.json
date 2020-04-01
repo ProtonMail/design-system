@@ -1,7 +1,7 @@
 {
   "name": "design-system",
   "version": "1.8.1",
-  "description": "Proton Design system, for all Proton Projects: https://design-system-beta.netlify.com/",
+  "description": "Proton Design system, for all Proton Projects: https://design-system.protontech.ch/",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

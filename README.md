@@ -1,6 +1,6 @@
 # Design system
 
-Proton Design system, for all Proton Projects: https://design-system-beta.netlify.com/
+Proton Design system, for all Proton Projects: https://design-system.protontech.ch/
 
 
 ## Installation
