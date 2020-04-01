@@ -42,4 +42,8 @@ body.isDarkMode {
 			background-color: var(--scrollbar-thumb-hover-color);
 		}
 	}
+
+	&::-webkit-scrollbar-corner {
+		visibility: hidden;
+	}
 }
