@@ -1,21 +1,23 @@
-$scrollbar-thumb-color       : rgba(black, .35);
-$scrollbar-thumb-hover-color : rgba(black, .5);
-$scrollbar-track-color       : transparent;
-$scrollbar-size              : .6rem;
-$scrollbar-margin            : .2rem;
+$scrollbar-track-color            : transparent;
+$scrollbar-size                   : .6rem;
+$scrollbar-margin                 : .2rem;
 
-$selector-custom-scroll: '.customScrollBar-container' !default;
-@if ($custom-scroll) {
-	$selector-custom-scroll: '*';
+body:not(.isDarkMode) {
+	--scrollbar-thumb-color       : #{rgba(black, .35)};
+	--scrollbar-thumb-hover-color : #{rgba(black, .5)};
 }
 
-#{$selector-custom-scroll} {
+body.isDarkMode {
+	--scrollbar-thumb-color       : #{rgba(white, .2)};
+	--scrollbar-thumb-hover-color : #{rgba(white, .5)};
+}
 
+* {
 	$real-size: $scrollbar-size + ($scrollbar-margin * 2);
 
 	// W3C, Firefox
 	scrollbar-width: thin;
-	scrollbar-color: $scrollbar-thumb-color $scrollbar-track-color;
+	scrollbar-color: var(--scrollbar-thumb-color) $scrollbar-track-color;
 
 	// webkit specific
 	&::-webkit-scrollbar {
@@ -27,7 +29,7 @@ $selector-custom-scroll: '.customScrollBar-container' !default;
 		border: $scrollbar-margin solid transparent; // Margin
 		background-clip: padding-box; // Booyah!
 		border-radius: $real-size/2;
-		background-color: $scrollbar-thumb-color;
+		background-color: var(--scrollbar-thumb-color);
 	}
 
 	&::-webkit-scrollbar-track {
@@ -37,7 +39,7 @@ $selector-custom-scroll: '.customScrollBar-container' !default;
 	&::-webkit-scrollbar-thumb:horizontal,
 	&::-webkit-scrollbar-thumb:vertical {
 		&:hover {
-			background-color: $scrollbar-thumb-hover-color;
+			background-color: var(--scrollbar-thumb-hover-color);
 		}
 	}
 }
