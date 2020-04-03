@@ -29,21 +29,32 @@ body {
 
 }
 
+$transition-collapse-speed: .5s;
 .sidebar {
   min-height: calc(100vh - #{$header-height});
   max-height: calc(100vh - #{$header-height});
   width: var(--width-sidebar, $width-sidebar);
   max-width: 22rem; // design request
   visibility: visible;
-  transition: visibility 0s ease, transform .15s ease, width .6s ease , opacity 1s ease ;
+  transition: visibility 0s ease, transform .15s ease, width $transition-collapse-speed ease, opacity 1s ease ;
   transition-delay: 0s;
   overflow: auto;
+  transition-delay: #{$transition-collapse-speed/8}; // tiny compensation for delay to appear
 }
 
 
 .collapse-button-container {
 	width: var(--width-sidebar, #{$width-sidebar});
-    transition: .5s width ease;
+	animation: collaspeButtonIn $transition-collapse-speed ease;
+	animation-fill-mode: forwards;
+}
+@keyframes collaspeButtonIn {
+	0% {
+		width: #{$width-sidebar};
+	}
+	100% {
+		--width-sidebar: $width-sidebar-collapsed;
+	}
 }
 
 .collapse-button {
@@ -63,10 +74,9 @@ body {
 }
 
 
-
 .logo-container {
   width: var(--width-sidebar, #{$width-sidebar});
-  transition: .5s max-width ease, .5s width ease, opacity .15s ease;
+  transition: $transition-collapse-speed max-width ease, $transition-collapse-speed width ease, opacity .15s ease;
   transition-delay: 0s;
   max-width: 22rem; // design request
 }
@@ -84,10 +94,31 @@ body {
   font-size: 1rem;
 }
 
+.sidebar-composeButton {
+	&-text {
+		animation: textComposeButtonIn $transition-collapse-speed;
+	}
+}
 
+// to avoid compose button be too tall at the beginning of expanding
+@keyframes textComposeButtonIn {
+	0% {
+		overflow: hidden;
+		width: 0;
+		height: 0;
+	}
+	60% {
+		overflow: hidden;
+		width: 0;
+		height: 0;
+	}
+	100% {
+		width: auto;
+		height: auto;
+	}
+}
 
 .sidebar-is-collapsed {
-	--width-sidebar: 8rem;
 
 	.is-hidden-when-sidebar-is-collapsed {
 		display: none;
@@ -98,12 +129,15 @@ body {
 
 	.logo-container {
 		max-width: 0;
-		visibility: hidden;
-		opacity: 0;
+		transition: 0s max-width ease, 0s width ease, opacity .15s ease;
+		// visibility: hidden;
+		// opacity: 0;
 	}
 
-	.collapse-button-container {
-       width: var(--width-sidebar, $width-sidebar-collapsed);
+	.collapse-button-container,
+	.sidebar {
+	   width: $width-sidebar-collapsed;
+	   transition-delay: 0s;
 	}
 
 	.navigation__icon {
