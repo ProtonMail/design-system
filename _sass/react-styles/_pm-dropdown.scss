@@ -277,3 +277,18 @@
 		}
 	}
 }
+
+
+/* REMOVE THIS!! */
+/* REMOVE THIS!! */
+/* REMOVE THIS!! */
+.isDarkMode .dropDown-item {
+	&-button,
+	&-link {
+		&[disabled],
+		&.is-disabled {
+			@include button-disabled-state-dm;
+			border: none;
+		}
+	}
+}
