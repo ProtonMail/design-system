@@ -101,12 +101,12 @@
 		background-image:
 			radial-gradient(
 				farthest-side at 50% 0,
-				#acb0bf,
+				rgba(black, .25),
 				transparent
 			),
 			radial-gradient(
 				farthest-side at 50% 100%,
-				#acb0bf,
+				rgba(black, .25),
 				transparent
 			);
 		background-position: 50% 0, 0 100%;
