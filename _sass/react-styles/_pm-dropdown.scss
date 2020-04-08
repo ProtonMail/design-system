@@ -95,7 +95,7 @@
 
 	/* Scrollable insides of the dropdown */
 	&-content {
-		overflow: auto;
+		min-height: 1em; overflow: auto;
 		border-radius: $global-border-radius;
 		background: var(--bgcolor-main-area, $white) no-repeat;
 		background-image:
@@ -121,6 +121,10 @@
 		}
 
 		@include respond-to($breakpoint-small, 'min') {
+			&#{&}--noMaxSize {
+				min-width: 1.5em;
+			}
+
 			&:not(#{&}--noMaxSize) {
 				min-width: 10em;
 				max-width: 20em;
