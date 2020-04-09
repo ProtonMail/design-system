@@ -2,7 +2,7 @@
 	position: fixed;
 	z-index: 666;
 	color: var(--color-main-area, $pm-global-grey);
-	transition: .1s ease-out;
+	animation: .1s ease-out both;
 
 	@include respond-to($breakpoint-small, 'max') {
 		top: 0;
@@ -16,7 +16,11 @@
 		justify-content: center;
 		align-items: center;
 		background-color: rgba(black, .4);
-		transition-property: opacity, visibility;
+		animation-name: dropdownInSmall;
+
+		&.is-dropdownOut {
+			animation-name: dropdownOutSmall;
+		}
 	}
 
 	@include respond-to($breakpoint-tiny, 'max') {
@@ -30,7 +34,11 @@
 		border-radius: $global-border-radius;
 		box-shadow: 0 0 1.5rem .3rem $input-shadow-color;
 		background: var(--bgcolor-main-area, $white);
-		transition-property: opacity, transform;
+		animation-name: dropdownInLarge;
+
+		&.is-dropdownOut {
+			animation-name: dropdownOutLarge;
+		}
 
 		// Transform origins regarding dropDown position
 		@each $position, $origin in (
@@ -53,19 +61,43 @@
 		}
 	}
 
-	// Hidden dropdown state
-	&[hidden] {
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
-
-		@include respond-to($breakpoint-small, 'max') {
-			display: flex;
+	@keyframes dropdownInSmall {
+		from {
+			opacity: 0;
 		}
+		to {
+			opacity: 1;
+		}
+	}
 
-		@include respond-to($breakpoint-small, 'min') {
-			display: block;
+	@keyframes dropdownOutSmall {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+
+	@keyframes dropdownInLarge {
+		from {
 			transform: scale(.75);
+			opacity: 0;
+		}
+		to {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	@keyframes dropdownOutLarge {
+		from {
+			transform: scale(1);
+			opacity: 1;
+		}
+		to {
+			transform: scale(.75);
+			opacity: 0;
 		}
 	}
 
