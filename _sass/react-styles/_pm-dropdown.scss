@@ -169,7 +169,7 @@
 			&:hover,
 			&:focus {
 				background-color: var(--bgcolor-input, $pm-global-light);
-				color: $pm-blue;
+				color: $pm-primary;
 			}
 
 			&[disabled],
@@ -184,7 +184,7 @@
 			&:hover,
 			&:focus,
 			&:active {
-				background-color: $pm-blue;
+				background-color: $pm-primary;
 				color: $white;
 				pointer-events: none;
 			}
@@ -283,9 +283,9 @@
 }
 
 
-/* REMOVE THIS!! */
-/* REMOVE THIS!! */
-/* REMOVE THIS!! */
+/* TODO: REMOVE THIS!! */
+/* TODO: REMOVE THIS!! */
+/* TODO: REMOVE THIS!! */
 .isDarkMode .dropDown-item {
 	&-button,
 	&-link {
