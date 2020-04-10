@@ -2,7 +2,7 @@
 	position: fixed;
 	z-index: 666;
 	color: var(--color-main-area, $pm-global-grey);
-	animation: .1s ease-out both;
+	animation: .15s ease-out both;
 
 	@include respond-to($breakpoint-small, 'max') {
 		top: 0;
@@ -18,8 +18,27 @@
 		background-color: rgba(black, .4);
 		animation-name: dropdownInSmall;
 
+		@keyframes dropdownInSmall {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
+		// Out animation
 		&.is-dropdownOut {
 			animation-name: dropdownOutSmall;
+
+			@keyframes dropdownOutSmall {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0;
+				}
+			}
 		}
 	}
 
@@ -36,8 +55,31 @@
 		background: var(--bgcolor-main-area, $white);
 		animation-name: dropdownInLarge;
 
+		@keyframes dropdownInLarge {
+			from {
+				transform: scale(.75);
+				opacity: 0;
+			}
+			to {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+
+		// Out animation
 		&.is-dropdownOut {
 			animation-name: dropdownOutLarge;
+
+			@keyframes dropdownOutLarge {
+				from {
+					transform: scale(1);
+					opacity: 1;
+				}
+				to {
+					transform: scale(.75);
+					opacity: 0;
+				}
+			}
 		}
 
 		// Transform origins regarding dropDown position
@@ -58,46 +100,6 @@
 			&--#{$position} {
 				transform-origin: $origin;
 			}
-		}
-	}
-
-	@keyframes dropdownInSmall {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	@keyframes dropdownOutSmall {
-		from {
-			opacity: 1;
-		}
-		to {
-			opacity: 0;
-		}
-	}
-
-	@keyframes dropdownInLarge {
-		from {
-			transform: scale(.75);
-			opacity: 0;
-		}
-		to {
-			transform: scale(1);
-			opacity: 1;
-		}
-	}
-
-	@keyframes dropdownOutLarge {
-		from {
-			transform: scale(1);
-			opacity: 1;
-		}
-		to {
-			transform: scale(.75);
-			opacity: 0;
 		}
 	}
 
@@ -179,9 +181,31 @@
 		}
 	}
 
-	&[hidden] &-content {
-		@include respond-to($breakpoint-small, 'max') {
-			transform: scale(.8);
+	@include respond-to($breakpoint-small, 'max') {
+		&-content {
+			animation: dropdownContentScaleIn .15s ease-out both;
+
+			@keyframes dropdownContentScaleIn {
+				from {
+					transform: scale(.8);
+				}
+				to {
+					transform: scale(1);
+				}
+			}
+		}
+
+		&.is-dropdownOut &-content {
+			animation-name: dropdownContentScaleOut;
+
+			@keyframes dropdownContentScaleOut {
+				from {
+					transform: scale(1);
+				}
+				to {
+					transform: scale(.8);
+				}
+			}
 		}
 	}
 
