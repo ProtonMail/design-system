@@ -160,6 +160,10 @@ $transition-collapse-speed: .5s;
 		animation: rotateIconIn .5s ease forwards;
 	}
 
+	.navigation__link--groupHeader-link {
+		text-align: center;
+	}
+
 }
 
 @keyframes rotateIconIn {
