@@ -145,6 +145,10 @@ $transition-collapse-speed: .5s;
 		margin-left: auto;
 	}
 
+	.navigation__item [data-level] {
+		padding-left: 0;
+	}
+
 	.sidebar-composeButton {
 	   padding-left: 0;
 	   padding-right: 0;
