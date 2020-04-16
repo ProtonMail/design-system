@@ -227,6 +227,7 @@ $conversation-icon-size: 3.2rem !default;
 }
 .message-header {
   background-color: var(--bgcolor-item-column-list, $pm-global-light);
+  border-radius: $global-border-radius; // Can't overflow 'cause of ::before, so repeat radius
   @extend .p1;
   @extend .relative;
 
