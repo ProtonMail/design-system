@@ -33,6 +33,10 @@ $badges-max-width: 15em !default;
 		margin-left: .25em;
 		padding-bottom: .2rem;
 	}
+	.pm-badgeLabel-button {
+		position: relative;
+		top: .1rem; // sh**
+	}
   	.pm-badgeLabel-link,
 	.pm-badgeLabel-link:active,
 	.pm-badgeLabel-link:hover,
