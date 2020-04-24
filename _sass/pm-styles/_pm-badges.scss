@@ -25,11 +25,13 @@ $badges-max-width: 15em !default;
 		flex-wrap: nowrap;
 		min-width: 1em; // if really short label ^^
 		border-color: currentColor;
+		font-size: rem(12);
 	}
 	.badgeLabel {
 		background: currentColor;
 		color: currentColor;
 		margin-left: .25em;
+		padding-bottom: .2rem;
 	}
   	.pm-badgeLabel-link,
 	.pm-badgeLabel-link:active,
