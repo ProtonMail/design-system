@@ -62,14 +62,13 @@
 				right: 0;
 				z-index: -1;
 				height: 1rem;
-				background: linear-gradient(to bottom, rgba(black, .1) 0%, transparent 100%);
 				pointer-events: none;
 				transition: background .25s ease-out;
 			}
 		}
 	}
 
-	tr#{&}-stickyRow#{&}--isSticked {
+	tr#{&}-stickyRow#{&}-stickyRow--isSticked {
 		&::after {
 			background: linear-gradient(to bottom, rgba(black, .1) 0%, transparent 100%);
 		}
