@@ -25,6 +25,7 @@ $badges-max-width: 15em !default;
 		flex-wrap: nowrap;
 		min-width: 1em; // if really short label ^^
 		border-color: currentColor;
+		border-width: $border-width;
 		font-size: rem(12);
 	}
 	.badgeLabel {
@@ -51,10 +52,13 @@ $badges-max-width: 15em !default;
 	}
 }
 // collapsed version
+$label-border-width: 2px !default;
+$label-border-color: var(--bgcolor-view-column-detail, $white) !default;
 .pm-badgeLabel-container--collapsed {
 	.badgeLabel {
 		position: relative;
 		margin-left: 0;
+		border: $border-width solid $label-border-color;
 
 		&:not(:first-child) {
 			border-top-left-radius: 0;
@@ -64,8 +68,14 @@ $badges-max-width: 15em !default;
 				content: '';
 				background: currentColor;
 				position: absolute;
-				top: -$border-width;
-				bottom: -$border-width;
+				top: -$label-border-width;
+				bottom: -$label-border-width;
+				border-top-width: $label-border-width;
+				border-bottom-width: $label-border-width;
+				border-style: solid;
+				border-color: $label-border-color;
+				border-left: 0;
+				border-right: 0;
 				left: calc(-0.2rem - 1rem);
 				width: 1em;
 			}
@@ -100,7 +110,31 @@ $badges-max-width: 15em !default;
 	}
 
 }
-
+.item-container.read,
+.message-header-expanded {
+		.pm-badgeLabel-container--collapsed {
+			.badgeLabel {
+				border-color: var(--bgcolor-item-column-list, $pm-global-muted);
+				&:not(:first-child) {
+					&::before {
+						border-color: var(--bgcolor-item-column-list, $pm-global-muted);
+					}
+				}
+			}
+		}
+	&.item-is-selected {
+		.pm-badgeLabel-container--collapsed {
+			.badgeLabel {
+				border-color: var(--bgcolor-item-column-active, #b2bef1); // ???
+				&:not(:first-child) {
+					&::before {
+						border-color: var(--bgcolor-item-column-active, #b2bef1); // ???
+					}
+				}
+			}
+		}
+	}
+}
 
 .badgeLabel-success {
   @extend .bg-global-success;
