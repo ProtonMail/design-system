@@ -34,17 +34,14 @@ $badges-max-width: 15em !default;
 		margin-left: .25em;
 		padding-bottom: .2rem;
 	}
-	.pm-badgeLabel-button {
-		position: relative;
-		top: .1rem; // sh**
-	}
   	.pm-badgeLabel-link,
 	.pm-badgeLabel-link:active,
 	.pm-badgeLabel-link:hover,
 	.pm-badgeLabel-link:focus {
-			color: $white;
-			text-decoration: none;
-			text-align: center;
+		height: 1.4rem;
+		color: $white;
+		text-decoration: none;
+		text-align: center;
 
 		&:not(:last-child) {
 			padding-right: .4rem;
