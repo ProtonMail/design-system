@@ -135,6 +135,9 @@
         align-self: center;
       }
 	}
+	&flex-shrink {
+		flex-shrink: 1;
+	}
     &wauto {
       width: auto;
     }
