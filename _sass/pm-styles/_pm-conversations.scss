@@ -257,12 +257,16 @@ $conversation-icon-size: 3.2rem !default;
 // alignements when expanded/details
 .message-header--showDetails {
     .message-show-hide-link {
-       	align-self: flex-end;
-	   	padding-bottom: .4em;
-	   	@include respond-to($breakpoint-small) {
-			padding-left: $container-to-width*2;
+	   	padding: .25em 0 .4em $container-to-width*2;
+	}
+	// show/hide details should go below otherwise it will be strangely place depending of recipients
+	.message-header-recipients {
+		flex-direction: column;
+		& > * {
+			width: 100%;
+			flex-basis: auto;
 		}
-    }
+	}
 
     > :not(.message-detailed-header-extra) {
         .container-to:not(.container-to--item) {
