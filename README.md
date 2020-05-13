@@ -48,8 +48,16 @@ Actually, each commit/merge on `master` is deployed automatically to Netlify.
 
 ## CSS structure
 
-- __reusable-components__: a set of files/framework/etc. that can be used __on every project__.
-- __pm-styles__: styles used __for ProtonMail V4-style only__.
-- __pv-styles__: styles coming from <strong>ProtonVPN</strong>.
-- __react-styles__: styles coming from <strong>ProtonVPN</strong>.
-- __design-system-website__: styles for global interface, including styles only needed to make this website work properly
+-   **reusable-components**: a set of files/framework/etc. that can be used **on every project**.
+-   **pm-styles**: styles used **for ProtonMail V4-style only**.
+-   **pv-styles**: styles coming from <strong>ProtonVPN</strong>.
+-   **react-styles**: styles coming from <strong>ProtonVPN</strong>.
+-   **design-system-website**: styles for global interface, including styles only needed to make this website work properly
+
+## Custom themes
+
+-   update `custom-theme.scss` to your preference
+-   build theme
+    -   `npm run build-theme` and open `build/custom-theme.css` OR
+    -   commit & push to use the GitHub Actions and to CI/CD [https://atable.github.io/design-system/index.html](https://atable.github.io/design-system/index.html). Note if you fork this repo you will need to update the url with your repository name.
+-   copy paste into the protonmail appearance CSS setting. You must be using the beta version. 
