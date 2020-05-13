@@ -258,7 +258,8 @@ $conversation-icon-size: 3.2rem !default;
 // alignements when expanded/details
 .message-header--showDetails {
     .message-show-hide-link {
-	   	padding: .25em 0 .4em $container-to-width*2;
+		padding: .25em 0 .4em $container-to-width*2;
+		margin-top: .5em;
 	}
 	// show/hide details should go below otherwise it will be strangely place depending of recipients
 	.message-header-recipients {
