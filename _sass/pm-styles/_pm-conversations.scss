@@ -246,6 +246,7 @@ $conversation-icon-size: 3.2rem !default;
 
 // when expanded but no full details
 .message-header-expanded {
+	padding: .6em .6em 0 .6em;
 	@include respond-to($breakpoint-small) {
 		.message-show-hide-link,
 		.message-header-expanded-label-container {
