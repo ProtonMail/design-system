@@ -112,10 +112,11 @@
 
   .hamburger {
 	color: $white;
-	flex-shrink: 0;
+	flex-shrink: 0; // this has to stay
   }
   .topnav-container {
-	  flex-shrink: 0;
+	  flex-shrink: 0;    // this has to stay
+	  margin-left: auto; // case of mail display
   }
 
   /**
