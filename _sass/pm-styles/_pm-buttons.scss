@@ -85,7 +85,7 @@
   }
   &[disabled],
   &.is-disabled {
-    @include button-disabled-state;
+    @include button-disabled-state($pm-primary);
   }
   /* just to cancel examples  */
   &.is-hover:hover {
@@ -146,7 +146,7 @@
   }
   &[disabled],
   &.is-disabled {
-    @include button-disabled-state;
+    @include button-disabled-state($pv-green);
   }
   /* just to cancel examples  */
   &.is-hover:hover {
