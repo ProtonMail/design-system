@@ -45,6 +45,13 @@ body {
   width: var(--width-sidebar, #{$width-sidebar});
   max-width: 22rem; // design request
 }
+.logo-link {
+  padding: .375em;
+  &:hover,
+  &:focus {
+    background-color: rgba(white, .05);
+  }
+}
 .logo {
   width: 148px;
   height: 48px;
