@@ -103,7 +103,26 @@ select.pm-field {
   > optgroup {
 	background-color: var(--bgcolor-highlight, $pm-global-light);
   }
+  &.pm-field--linkSelect {
+		border: 1px solid transparent;
+		padding-left: 0;
+		color: $pm-primary;
+		@if ($pm-primary == $pm-blue) {
+			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-primary-blue");
+		}
+		@else {
+			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-primary-green");
+		}
+		&,
+		&:focus,
+		&.focus,
+		&:focus-within {
+			background-color: transparent;
+			box-shadow: none;
+		}
+  }
 }
+
 
 
 
