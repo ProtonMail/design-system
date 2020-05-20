@@ -106,6 +106,7 @@ select.pm-field {
   &.pm-field--linkSelect {
 		border: 1px solid transparent;
 		padding-left: 0;
+		width: auto;
 		color: $pm-primary;
 		@if ($pm-primary == $pm-blue) {
 			background-image: url("#{$path-images}sprite-for-css-only.svg#css-caret-primary-blue");
