@@ -1,116 +1,132 @@
 /*
  * Space remaining bar
  */
-$meterbar-height: 6px !default;
 
-.spacebar-container {
-  padding: 1rem 2rem;
-  color: var(--color-standard-text, $white);
+@mixin meterbar-size($size: 1.5rem) {
+	height: $size;
+	border-radius: #{$size/2};
+
+	&::-webkit-meter-bar {
+		border-radius: #{$size/2};
+	}
+
+	//&::-webkit-meter-optimum-value {
+	//	border-radius: #{$size/2};
+	//}
+
+	&::-webkit-meter-optimum-value {
+		border-radius: #{$size/2};
+	}
+	&:-moz-meter-optimum::-moz-meter-bar {
+		border-radius: #{$size/2};
+	}
 }
 
-.spacebar {
-  /* Reset the default appearance */
-  //-webkit-appearance: none; // well, because Chrome.
-  -moz-appearance: none;
-  //-ms-appearance: none;
-  /* autoprefixer: ignore next */
-  appearance: none;
+.meterbar {
+	/* Reset the default appearance */
+	//-webkit-appearance: none; // well, because Chrome.
+	-moz-appearance: none;
+	//-ms-appearance: none;
+	/* autoprefixer: ignore next */
+	appearance: none;
+	display: block;
+	width: 100%;
+	@include meterbar-size;
+	background: var(--bgcolor-spacebar, $black);
 
-  height: $meterbar-height;
-  border-radius: #{$meterbar-height/2};
-  background: var(--bgcolor-spacebar, $black);
+	&::-webkit-meter-bar {
+		background: var(--bgcolor-spacebar, $black);
+	}
 
-  &::-webkit-meter-bar {
-    background: var(--bgcolor-spacebar, $black);
-    border-radius: #{$meterbar-height/2};
-  }
+	//&::-webkit-meter-optimum-value {
+	//	background: $pm-primary;
+	//}
 
-  // &::-webkit-meter-optimum-value {
-  //   background: $pm-primary;
-  //   border-radius: #{$meterbar-height/2};
-  // }
-  &::-webkit-meter-optimum-value {
-    background: $pm-primary;
-    border-radius: #{$meterbar-height/2};
-  }
-  &:-moz-meter-optimum::-moz-meter-bar {
-    border-radius: #{$meterbar-height/2};
-    background: $pm-primary;
-  }
+	&::-webkit-meter-optimum-value {
+		background: $pm-primary;
+	}
+
+	&:-moz-meter-optimum::-moz-meter-bar {
+		background: $pm-primary;
+	}
+
+	&.is-thin {
+		@include meterbar-size(.25em);
+	}
 
 }
 
-// .spacebar-percent {
-//   border-radius: 3px;
-//   background: $pm-primary;
-//   height: 6px;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// }
+//.spacebar-percent {
+//	border-radius: 3px;
+//	background: $pm-primary;
+//	height: 6px;
+//	position: absolute;
+//	top: 0;
+//	left: 0;
+//}
 
 /* to target IE/EDGE: hack */
 // _:-ms-input-placeholder, :root {
-//   .spacebar {
-//     visibility: hidden;
-//   }
-//   .spacebar-gauge {
-//     visibility: visible;
-//   }
+//	.spacebar {
+//		visibility: hidden;
+//	}
+//	.spacebar-gauge {
+//		visibility: visible;
+//	}
 // }
 
 // .spacebar-version {
-//   color: rgba($white, .3);
+//	color: rgba($white, .3);
 // }
 
 
 .setting-meterbar {
-  //-webkit-appearance: none;
-  -moz-appearance: none;
-  //-ms-appearance: none;
-  /* autoprefixer: ignore next */
-  appearance: none;
-  height: 1.5rem;
-  padding: 0;
-  background: var(--bordercolor-input, $pm-global-muted);
-  box-shadow: 0 3px 6px 0 $input-shadow-color;
-
-  &::-webkit-meter-bar {
-	display: inherit;
-	border: 0; // For Edge
+	//-webkit-appearance: none;
+	-moz-appearance: none;
+	//-ms-appearance: none;
+	/* autoprefixer: ignore next */
+	appearance: none;
+	display: block;
+	width: 100%;
 	height: 1.5rem;
-	border-radius: 0;
-  }
-  &::-moz-meter-bar {
-    display: inherit;
-  }
-  &::-webkit-meter-optimum-value {
-    background: $pm-global-success;
-  }
-  &::-webkit-meter-suboptimum-value {
-    background: $pm-global-attention;
-  }
-  &::-webkit-meter-even-less-good-value {
-    background: $pm-global-warning;
-  }
+	background: var(--bordercolor-input, $pm-global-muted);
+	box-shadow: 0 3px 6px 0 $input-shadow-color;
 
-  &:-moz-meter-optimum::-moz-meter-bar {
-    background: $pm-global-success;
-  }
-  &:-moz-meter-sub-optimum::-moz-meter-bar {
-    background: $pm-global-attention;
-  }
-  &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
-    background: $pm-global-warning;
-  }
+	&::-webkit-meter-bar {
+		background: none; /* Required to get rid of the default background property */
+		display: inherit;
+		border: 0; // For Edge
+	}
+	&::-moz-meter-bar {
+		display: inherit;
+	}
+	&::-webkit-meter-optimum-value {
+		background: $pm-global-success;
+	}
+	&::-webkit-meter-suboptimum-value {
+		background: $pm-global-attention;
+	}
+	&::-webkit-meter-even-less-good-value {
+		background: $pm-global-warning;
+	}
+
+	&:-moz-meter-optimum::-moz-meter-bar {
+		background: $pm-global-success;
+	}
+	&:-moz-meter-sub-optimum::-moz-meter-bar {
+		background: $pm-global-attention;
+	}
+	&:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+		background: $pm-global-warning;
+	}
 
 }
 
-.setting-meterbar--high {
-  &::-webkit-meter-suboptimum-value {
-    background: $pm-global-warning;
-  }
-  &:-moz-meter-sub-optimum::-moz-meter-bar {
-    background-color: $pm-global-warning;
-  }
+.is-high {
+	&::-webkit-meter-suboptimum-value {
+		background: $pm-global-warning;
+	}
+	&:-moz-meter-sub-optimum::-moz-meter-bar {
+		background-color: $pm-global-warning;
+	}
 }
