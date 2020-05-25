@@ -1,4 +1,6 @@
 .dropDown {
+	--dropdown-border-color: var(--bordercolor-input, transparent);
+
 	position: fixed;
 	z-index: 666;
 	color: var(--color-main-area, $pm-global-grey);
@@ -51,7 +53,7 @@
 		left: calc(var(--left) * 1px);
 		transform: scale(1);
 		border-radius: $global-border-radius;
-		box-shadow: 0 .5rem 1.5rem 0 rgba(black, .75);
+		box-shadow: 0 .5rem 1.5rem 0 var(--dropdown-box-shadow, $input-shadow-color);
 		background: var(--bgcolor-main-area, $white);
 		animation-name: dropdownInLarge;
 
@@ -75,7 +77,8 @@
 			bottom: 0;
 			left: 0;
 			z-index: -2;
-			border: 1px solid var(--bordercolor-input, transparent);
+			margin: -1px;
+			border: 1px solid var(--dropdown-border-color);
 			border-radius: $global-border-radius;
 			pointer-events: none;
 		}
@@ -250,6 +253,7 @@
 			}
 		}
 
+		& [aria-current='true']
 		& &--isSelected { // Specificity -_-v
 			&,
 			&:hover,
@@ -281,7 +285,7 @@
 			width: var(--size);
 			height: var(--size);
 			transform: rotate(45deg);
-			border: 1px solid var(--bordercolor-input, transparent);
+			border: 1px solid var(--dropdown-border-color);
 			background-color: var(--bgcolor-main-area, $white);
 			pointer-events: none;
 		}
