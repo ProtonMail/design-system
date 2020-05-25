@@ -41,29 +41,29 @@ body {
 }
 
 .logo-container {
-  padding-left: 2rem;
+  padding: 0 1rem;
   width: var(--width-sidebar, #{$width-sidebar});
   max-width: 22rem; // design request
 }
 .logo-link {
-  padding: .375em;
+  padding: .5em .75em;
+  box-sizing: initial;
+  flex-basis: 120px;
+  border-radius: $global-border-radius;
   &:hover,
   &:focus {
     background-color: rgba(white, .05);
   }
 }
 .logo {
-  width: 148px;
-  height: 48px;
-}
-.logo--withoutPlan {
-  height: 37px;
+  width: 100%;
+  // height: 25px;
 }
 .logo g {
   fill: var(--fillcolor-logo, $pm-global-light);
 }
 .logo .plan {
-  font-size: 1rem;
+  font-size: .625rem;
 }
 
 
