@@ -32,13 +32,13 @@
 	}
 
 	&--mini {
-		#startDate {
+		[id='startDate'] {
 			flex: 2;
 		}
-		#startTime {
+		[id='startTime'] {
 			flex: 1;
 		}
-		#endTime {
+		[id='endTime'] {
 			flex: 1;
 		}
 		footer {
