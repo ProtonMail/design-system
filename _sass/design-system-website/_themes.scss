@@ -41,6 +41,9 @@
   background-image: var(--img-searchbox-path, url(#{$path-images}sprite-for-css-only.svg#css-search-white));
 }
 
+.aside-link {
+  background: var(--bgcolor-aside-link, $pm-global-altgrey);
+}
 
 .spacebar {
   background: var(--bgcolor-spacebar, $black);
