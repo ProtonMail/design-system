@@ -370,7 +370,7 @@ svg {
 }
 
 /* here you may add px widths */
-$list-width-px: 40, 50, 150, 200, 500 !default;
+$list-width-px: 40, 50, 70, 150, 200, 500 !default;
 // ex .w500p { width: 500px; }
 
 @each $width in $list-width-px {
