@@ -5,7 +5,7 @@
 
 /**
  * Proton Design System
- * 
+ *
  * Based on Röcssti: a CSS base by Nicolas Hoffmann https://rocssti.net/en/
  * Builder: https://rocssti.net/en/builder-css
  * inspired by https://www.knacss.com/
@@ -27,12 +27,12 @@
  *
  *
  * summary
- * 
+ *
  * reusable-components: can be re-used on every project
  * pm-styles: styles for V4.0
  * design-system-website: styles only needed for the design system website
- * 
- * 
+ *
+ *
  */
 
 /*
@@ -85,7 +85,6 @@ $rtl-option: true;
 @import "pm-styles/pm-header-searchbar";
 @import "pm-styles/pm-header-topnav";
 
-@import "pm-styles/pm-aside";
 @import "pm-styles/pm-toolbar";
 @import "pm-styles/pm-navigation";
 @import "pm-styles/pm-subnav";
@@ -94,7 +93,7 @@ $rtl-option: true;
 @import "design-system-website/prism";
 //@import "design-system-website/themes"; // only useful for having all styles updated in real time
 // DO NOT USE IT IN PRODUCTION
-@import "design-system-website/inside-content"; 
+@import "design-system-website/inside-content";
 
 // DO NOT USE THIS ONE, ONLY FOR DESIGN SYSTEM WEBSITE
 @import "design-system-website/exceptions";
