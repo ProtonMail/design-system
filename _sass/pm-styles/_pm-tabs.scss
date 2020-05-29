@@ -3,7 +3,6 @@
   padding: 0;
   @extend .unstyled;
   @extend .flex;
-  border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 }
 
 .tabs-list-item {
@@ -13,7 +12,7 @@
 .tabs-list-link {
   @extend .flex;
   color: var(--color-main-area, $pm-global-grey);
-  border-bottom: 2px solid var(--bordercolor-input, $pm-global-border); 
+  border-bottom: 2px solid transparent;
   padding: .5em;
   @extend .nodecoration;
   @extend .relative;
@@ -21,23 +20,40 @@
   &:focus,
   &:hover {
     color: var(--color-main-area, $pm-global-grey);
-    font-weight: bold;
     @extend .nodecoration;
   }
   &[disabled] {
     opacity: .4;
     cursor: default;
     pointer-events: none;
-    &:focus,
-    &:hover {
-      font-weight: normal;
-    } 
+  }
+  &:hover {
+    border-bottom: 2px solid var(--bordercolor-input, $pm-global-border);
   }
 }
 
 [aria-selected="true"].tabs-list-link {
-  font-weight: bold;
   border-bottom: 2px solid $pm-primary;
 }
 
+.tabs-container ul {
+  @extend .relative;
+  user-select: none;
+}
+
+.tab-switcher-container {
+  border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+}
+
+.tab-switcher-indicator {
+  position: absolute;
+  border-bottom: 2px solid $pm-primary;
+  content: "";
+  height: 0;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  transform-origin: left center;
+  transition: transform .15s ease-out;
+}
 /* hidden state for content is not necessary for React, added in exception for Design system website */
