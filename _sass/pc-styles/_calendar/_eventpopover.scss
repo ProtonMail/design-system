@@ -4,8 +4,7 @@
 	width: 400px;
 	max-width: 100%;
 	max-height: 70%;
-	padding: 1.5em;
-	padding-top: 2em;
+	padding: 2em 1.5em;
 	overflow: auto;
 	transform-origin: 50%;
 	border-radius: $global-border-radius;
@@ -29,25 +28,6 @@
 		width: 100%;
 		height: 100%;
 		max-height: 100%;
-	}
-
-	&--mini {
-		[id='startDate'] {
-			flex: 2;
-		}
-		[id='startTime'] {
-			flex: 1;
-		}
-		[id='endTime'] {
-			flex: 1;
-		}
-		footer {
-			padding: 0.5em 0;
-			justify-content: flex-end;
-		}
-		& > div {
-			padding: 0;
-		}
 	}
 
 	// special fixes for recurring frequency ------------------
