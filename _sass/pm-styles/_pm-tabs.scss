@@ -36,6 +36,7 @@
 
 [aria-selected="true"].tabs-list-link {
   border-bottom: 2px solid $pm-primary;
+  color: var(--main-bg-color, $pm-global-grey);
 }
 
 .tabs ul {
