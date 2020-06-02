@@ -45,7 +45,7 @@ body {
 }
 .logo-link {
   position: relative;
-  padding: .75em .5em 1em;
+  padding: .625em .5em .875em;
   box-sizing: initial;
   border-radius: $global-border-radius;
 
@@ -57,9 +57,10 @@ body {
 
   .plan {
     position: absolute;
-    bottom: 0;
+    bottom: .125em;
     left: 3rem;
-    font-size: 1rem;
+	font-size: 1rem;
+	line-height: 1;
   }
 }
 .logo {
