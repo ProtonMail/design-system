@@ -36,10 +36,10 @@
 
 [aria-selected="true"].tabs-list-link {
   border-bottom: 2px solid $pm-primary;
-  color: var(--main-bg-color, $pm-global-grey);
+  color: var(--color-main-area, $pm-global-grey);
 }
 
-.tabs ul {
+.tabs-list {
   @extend .relative;
   user-select: none;
 }
