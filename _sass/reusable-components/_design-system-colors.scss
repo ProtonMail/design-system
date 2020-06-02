@@ -280,8 +280,8 @@
 .color-pm-blue-light {
   color: $pm-blue-light;
 }
-.color-text-sub-header {
-  color: $text-sub-header;
+.color-subheader {
+  color: var(--bgcolor-subheader, $text-sub-header);
 }
 
 .color-pv-green {

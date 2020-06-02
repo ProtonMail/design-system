@@ -7,7 +7,7 @@
 
 .tabs-list-item {
   margin-right: 1rem;
-  color: $text-sub-header;
+  color: var(--text-sub-header, $text-sub-header);
 }
 
 .tabs-list-link {
@@ -68,7 +68,7 @@
   .tabs-tabcontent {
     padding-left: var(--margin-modal, $modal-margin);
     padding-right: var(--margin-modal, $modal-margin);
-    background-color: var(--bordercolor-input, $pm-input-background);
+    background-color: var(--bgcolor-subnav, $pm-input-background);
     border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
   }
 }
