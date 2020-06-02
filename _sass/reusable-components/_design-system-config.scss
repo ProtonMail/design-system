@@ -62,6 +62,7 @@ $plan-logo-color       : #8ed60f !default;
 $conversation-selected-bg: rgba($pm-blue, .5) !default;
 $input-shadow-color    : rgba(0, 0, 0, 0.16) !default;
 $autocomplete-bg-color-hover : #f4f4f4 !default;
+$text-sub-header       : #767676 !default; 
 
 // needed for darkmode
 $pm-secondary-grey     : #2e323d !default;
@@ -138,6 +139,7 @@ $header-height         : 8rem !default;
 $width-sidebar         : 24rem !default; // main navigation
 $toolbar-height        : 5rem !default;
 $subnav-width          : 25rem !default; // quick nav on the right
+$modal-margin          : 1.5em !default;
 
 $conversations-column-width: 35% !default;  // used also to align search bar on top
 
