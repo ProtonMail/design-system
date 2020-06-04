@@ -3,6 +3,9 @@
   padding: 0;
   @extend .unstyled;
   @extend .flex;
+  @extend .relative;
+  user-select: none;
+  white-space: nowrap;
 }
 
 .tabs-list-item {
@@ -20,7 +23,6 @@
   @extend .relative;
   top: 1px;
   transition: color 0.15s ease-out, border-bottom 0.15s ease-out;
-  min-width: min-content;
   &:focus,
   &:hover {
     color: var(--color-main-area, $pm-global-grey);
@@ -39,12 +41,6 @@
 [aria-selected="true"].tabs-list-link {
   border-bottom: 2px solid $pm-primary;
   color: var(--color-main-area, $pm-global-grey);
-}
-
-.tabs-list {
-  @extend .relative;
-  user-select: none;
-  white-space: nowrap;
 }
 
 .tabs-container {
