@@ -8,6 +8,7 @@
 .tabs-list-item {
   margin-right: 1rem;
   color: var(--text-sub-header, $text-sub-header);
+  min-width: auto;
 }
 
 .tabs-list-link {
@@ -18,7 +19,8 @@
   @extend .nodecoration;
   @extend .relative;
   top: 1px;
-  transition: color .15s ease-out, border-bottom .15s ease-out;
+  transition: color 0.15s ease-out, border-bottom 0.15s ease-out;
+  min-width: min-content;
   &:focus,
   &:hover {
     color: var(--color-main-area, $pm-global-grey);
@@ -42,6 +44,7 @@
 .tabs-list {
   @extend .relative;
   user-select: none;
+  white-space: nowrap;
 }
 
 .tabs-container {
@@ -58,6 +61,7 @@
   right: 0;
   transform-origin: left center;
   transition: transform .15s ease-out;
+  transform: translateX(var(--translate)) scaleX(var(--scale));
 }
 
 .tabs--extended {
