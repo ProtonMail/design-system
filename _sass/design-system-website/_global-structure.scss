@@ -24,6 +24,7 @@ body {
 .header {
   padding: 1rem 2rem 1rem 0;
   height: $header-height;
+  flex-shrink: 0;
 }
 
 @if $rtl-option == true {
