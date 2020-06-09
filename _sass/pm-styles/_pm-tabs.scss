@@ -24,16 +24,14 @@
   transition: color 0.15s ease-out, border-bottom 0.15s ease-out;
   &:focus,
   &:hover {
-    color: var(--color-main-area, $pm-global-grey);
     @extend .nodecoration;
+    color: var(--color-main-area, $pm-global-grey);
+    border-bottom: 2px solid var(--bordercolor-input, $pm-global-border);
   }
   &[disabled] {
     opacity: .4;
     cursor: default;
     pointer-events: none;
-  }
-  &:hover {
-    border-bottom: 2px solid var(--bordercolor-input, $pm-global-border);
   }
 }
 
