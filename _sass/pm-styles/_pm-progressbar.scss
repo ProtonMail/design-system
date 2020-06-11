@@ -41,7 +41,7 @@
 	}
 
 	@each $variant, $color in (
-		disabled : darken($pm-global-muted, 20%),
+		disabled : darken($pm-global-muted, 25%),
 		running  : $pm-global-info,
 		success  : $pm-global-success,
 		warning  : $pm-global-attention,
