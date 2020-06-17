@@ -85,7 +85,7 @@ $padding-left-link: 2rem !default;
   background: $pm-primary;
   color: $white;
   font-size: 1.1rem;
-  padding: .1em .5em;
+  padding: 0.2rem .4em 0; // em value for top gives non rounded value, so rem
   border-radius: 1.1rem;
   line-height: 1;
   height: 1.6rem;
