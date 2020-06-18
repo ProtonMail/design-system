@@ -22,7 +22,7 @@
 }
 
 // hide the thing on desktop devices supporting media query 4 spec
-@media screen and (pointer: fine) {
+@media (pointer: fine) {
 	.is-day-view,
 	.is-week-view,
 	.is-month-view {
