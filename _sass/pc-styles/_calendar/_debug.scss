@@ -20,3 +20,13 @@
 		}
 	}
 }
+
+@media (pointer: fine) {
+	.is-day-view,
+	.is-week-view,
+	.is-month-view {
+		&::after {
+			display: none;
+		}
+	}
+}
