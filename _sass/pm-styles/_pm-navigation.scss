@@ -32,12 +32,12 @@ $padding-left-link: 2rem !default;
 
 .navigation__link:focus,
 .navigation__link:hover {
-  background: rgba(255,255,255,.05);
+  background: $navigation-hover-bg-color;
   color: var(--color-nav-link, $pm-global-light);
   text-decoration: none;
 }
 [aria-current="page"].navigation__link {
-  background: var(--main-bg-color, $pm-global-grey);
+  background: $navigation-hover-bg-color;
   color: var(--color-nav-active, $white);
   font-weight: bold;
 
@@ -140,7 +140,7 @@ $padding-left-link: 2rem !default;
   color:  var(--color-nav-link, $white);
   &:focus,
   &:hover {
-    background: rgba(255,255,255,.05);
+    background: $navigation-hover-bg-color;
     color:  var(--color-nav-link, $pm-global-light);
     text-decoration: none;
   }
