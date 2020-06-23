@@ -215,26 +215,6 @@ $modal-smaller-width: 28em !default;
   }
 }
 
-// scroll inside
-.scrollShadowTop,
-.scrollShadowBottom {
-	height: 3px;
-	background-size: calc(100% - 20px) 3px;
-	z-index: 300;
-}
-
-.scrollShadowTop {
-	background-image: radial-gradient(farthest-side at 50% 0,var(--bordercolor-input, #acb0bf),transparent);
-	background-position: 50% 0;
-	top: 0;
-}
-.scrollShadowBottom {
-	background-image: radial-gradient(farthest-side at 50% 100%,var(--bordercolor-input, #acb0bf),transparent);
-	background-position: 0 100%;
-	bottom: 0;
-}
-
-
 // adaptation for labels
 $pm-label-shorter-width: 10em !default;
 .pm-modal--shorterLabels .pm-label {
@@ -259,7 +239,6 @@ $pm-label-shorter-width: 10em !default;
     }
   }
 }
-
 
 @media (max-height: $breakpoint-low-height-modal) {
   .pm-modal {
