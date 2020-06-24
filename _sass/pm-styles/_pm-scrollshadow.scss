@@ -1,38 +1,37 @@
 $scrollshadow-height: .5rem !default;
-$scrollshadow-margin: 1rem !default;
 
-.scrollshadow-sticky {
-	position: sticky;
-	display: block;
-	height: $scrollshadow-height;
+.scrollshadow {
+
+	&-sticky {
+		position: sticky;
+		display: block;
+		height: $scrollshadow-height;
+
+		&--top {
+			top: 0;
+			background-image: radial-gradient(farthest-side at 50% 0, var(--bordercolor-input, #acb0bf), transparent);
+		}
+
+		&--bottom {
+			bottom: 0;
+			background-image: radial-gradient(farthest-side at 50% 100%, var(--bordercolor-input, #acb0bf), transparent);
+		}
+	}
+
+	&-static {
+		position: absolute;
+		display: block;
+		left: 0;
+		right: 0;
+		height: $scrollshadow-height;
+		background: var(--bgcolor-main-area, #fff);
+
+		&--top {
+			top: 0;
+		}
+
+		&--bottom {
+			bottom: 0;
+		}
+	}
 }
-
-.scrollshadow-sticky--top {
-	top: 0;
-	background-image: radial-gradient(farthest-side at 50% 0, var(--bordercolor-input, #acb0bf), transparent);
-}
-
-.scrollshadow-sticky--bottom {
-	bottom: 0;
-	background-image: radial-gradient(farthest-side at 50% 100%, var(--bordercolor-input, #acb0bf), transparent);
-}
-
-.scrollshadow-static {
-	position: absolute;
-	display: block;
-	left: 0;
-	right: 0;
-	height: $scrollshadow-margin;
-	background: linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
-}
-
-.scrollshadow-static--top {
-	top: 0;
-	background: linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
-}
-
-.scrollshadow-static--bottom {
-	bottom: 0;
-	background: linear-gradient(to top, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%);
-}
-
