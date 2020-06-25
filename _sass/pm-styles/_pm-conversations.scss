@@ -65,7 +65,7 @@ $item-container-padding-left-right: em(12) !default;
 	}
 	.item-firstline,
 	.item-secondline {
-		margin-bottom: .1em;
+		margin: 0;
 	}
 	.is-hidden-when-compact {
 		display: none;
