@@ -56,8 +56,11 @@ body {
 
   &:hover,
   &:focus {
-    background-color: $navigation-hover-bg-color;
     color: inherit;
+  }
+
+  &:focus {
+    background-color: $navigation-hover-bg-color;
   }
 
   .plan {
