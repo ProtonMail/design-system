@@ -38,7 +38,17 @@ $item-container-padding-left-right: em(12) !default;
 .item-container-row {
 	padding: $item-container-padding-top-bottom $item-container-padding-left-right; // design wants ~64 height
 	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
-	background: var(--bgcolor-item-column-list, $pm-global-muted);
+	background-color: var(--bgcolor-item-column-list, $pm-global-muted);
+	animation: itemFadeIn .5s easing(easeOutSine);
+
+	@keyframes itemFadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
 }
 
 .item-container {
@@ -77,16 +87,16 @@ $item-container-padding-left-right: em(12) !default;
 
 .item-is-selected,
 .item-container.active { // alias for Angular
-	background: var(--bgcolor-item-column-active, $conversation-selected-bg);
+	background-color: var(--bgcolor-item-column-active, $conversation-selected-bg);
 }
 
 .item-container:not(.item-is-selected):not(.read):not(.active),
 .item-container-row:not(.item-is-selected):not(.read):not(.active) {
-	background: var(--bgcolor-unread-item-column-list, $white);
+	background-color: var(--bgcolor-unread-item-column-list, $white);
 }
 
 .item-is-loading {
-	background: var(--bgcolor-main-area, white);
+	background-color: var(--bgcolor-main-area, white);
 	pointer-events: none;
 
 	@keyframes loadingItem {
@@ -94,17 +104,25 @@ $item-container-padding-left-right: em(12) !default;
 			opacity: .05;
 		}
 		to {
-			opacity: .2;
+			opacity: .15;
+		}
+	}
+
+	@for $i from 1 to 51 {
+		&:nth-child(#{$i}) {
+			--delay: #{$i * 20ms};
 		}
 	}
 
 	.item-checkbox::before,
 	.item-icon-compact::before,
 	.item-senders::before,
-	.item-date::before,
+	.item-senddate-col::before,
+	.item-senddate-row::before,
+	.item-weight::before,
 	.item-star,
-	.item-secondline-left::before {
-		animation: loadingItem .5s easing(easeOutSine) infinite alternate;
+	.item-subject::before {
+		animation: loadingItem .5s var(--delay, 0s) easing(easeOutSine) infinite alternate;
 	}
 
 	.item-checkbox,
@@ -121,6 +139,7 @@ $item-container-padding-left-right: em(12) !default;
 			z-index: 1;
 			border-radius: 50%;
 			background-color: currentColor;
+			opacity: 0;
 		}
 
 		.item-icon {
@@ -133,14 +152,17 @@ $item-container-padding-left-right: em(12) !default;
 	}
 
 	.item-senders,
-	.item-date,
-	.item-secondline-left {
+	.item-senddate-col,
+	.item-senddate-row,
+	.item-weight,
+	.item-subject {
 		&::before {
 			content: '\00a0';
 			display: inline-block;
 			border-radius: $global-border-radius;
 			background-color: currentColor;
 			line-height: 1.2;
+			opacity: 0;
 		}
 	}
 
@@ -150,7 +172,7 @@ $item-container-padding-left-right: em(12) !default;
 		}
 	}
 
-	.item-date {
+	.item-senddate-col {
 		min-width: 8em;
 
 		&::before {
@@ -158,7 +180,22 @@ $item-container-padding-left-right: em(12) !default;
 		}
 	}
 
-	.item-secondline-left {
+	.item-senddate-row {
+
+		&::before {
+			width: 70%;
+		}
+	}
+
+	.item-weight {
+		min-width: 4em;
+
+		&::before {
+			width: 100%;
+		}
+	}
+
+	.item-subject {
 		&::before {
 			width: 60%;
 		}
