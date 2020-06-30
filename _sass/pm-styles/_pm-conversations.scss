@@ -108,12 +108,6 @@ $item-container-padding-left-right: em(12) !default;
 		}
 	}
 
-	@for $i from 1 to 51 {
-		&:nth-child(#{$i}) {
-			--delay: #{$i * 20ms};
-		}
-	}
-
 	.item-checkbox::before,
 	.item-icon-compact::before,
 	.item-senders::before,
@@ -122,7 +116,7 @@ $item-container-padding-left-right: em(12) !default;
 	.item-weight::before,
 	.item-star,
 	.item-subject::before {
-		animation: loadingItem .5s var(--delay, 0s) easing(easeOutSine) infinite alternate;
+		animation: loadingItem .5s calc(var(--index, 0) * 20ms) easing(easeOutSine) infinite alternate;
 	}
 
 	.item-checkbox,
@@ -173,7 +167,7 @@ $item-container-padding-left-right: em(12) !default;
 	}
 
 	.item-senddate-col {
-		min-width: 8em;
+		min-width: 6em;
 
 		&::before {
 			width: 100%;
