@@ -108,7 +108,7 @@ $item-container-padding-left-right: em(12) !default;
 		}
 	}
 
-	.item-checkbox::before,
+	.item-checkbox-label::before,
 	.item-icon-compact::before,
 	.item-senders::before,
 	.item-senddate-col::before,
@@ -119,7 +119,7 @@ $item-container-padding-left-right: em(12) !default;
 		animation: loadingItem .5s calc(var(--index, 0) * 20ms) easing(easeOutSine) infinite alternate;
 	}
 
-	.item-checkbox,
+	.item-checkbox-label,
 	.item-icon-compact {
 		position: relative;
 
@@ -136,10 +136,7 @@ $item-container-padding-left-right: em(12) !default;
 			opacity: 0;
 		}
 
-		.item-icon {
-			border-color: transparent;
-		}
-
+		.item-icon,
 		.pm-checkbox-fakecheck {
 			opacity: 0;
 		}
