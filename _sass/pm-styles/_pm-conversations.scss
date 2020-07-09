@@ -380,14 +380,19 @@ $conversation-icon-size: 3.2rem !default;
 
 // hide extra container when there is nothing inside
 .message-header-extra:empty {
-		display: none;
+	display: none;
 }
 
 // when expanded but no full details
 .message-header-expanded {
 	padding: .6em .6em 0 .6em;
+
+	.message-show-hide-link {
+		padding: 0;
+	}
+
 	@include respond-to($breakpoint-small) {
-		.message-show-hide-link,
+		.message-show-hide-link-container,
 		.message-header-expanded-label-container {
 			padding-left: $container-to-width;
 		}
@@ -396,7 +401,7 @@ $conversation-icon-size: 3.2rem !default;
 
 // alignements when expanded/details
 .message-header--showDetails {
-		.message-show-hide-link {
+	.message-show-hide-link-container {
 		padding: .25em 0 .4em $container-to-width*2;
 		margin-top: .5em;
 	}
