@@ -17,6 +17,29 @@
 	grid-column-start: span 3;
 }
 
+.calendar-select-inline-icon {
+	position: absolute;
+	top: 40%;
+	left: 0.5em;
+}
+
+.frequency-selector {
+	label {
+		font-size: 12px;
+		line-height: 20px;
+		padding-bottom: 3px;
+	}
+	.max-content {
+		width: max-content;
+	}
+	.interval-input {
+		width: 6em;
+	}
+}
+.flex-fluid-nogrow {
+	flex: 0 1 auto;
+}
+
 @include respond-to($breakpoint-small) {
 
 	// we show abbreviated version only on week/month view

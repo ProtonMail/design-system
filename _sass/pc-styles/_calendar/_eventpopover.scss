@@ -28,6 +28,42 @@
 		max-height: 100%;
 	}
 
+	&--simple {
+		select.pm-field {
+			height: unset;
+		}
+		input, select {
+			padding: 0.8em 2em 0.9em 1em;
+		}
+		.pm-label {
+			width: 2.4em;
+			padding-top: 0.8em;
+		}
+		.pm-field {
+			&:focus,
+			&:focus-within {
+				background-color: var(--bgcolor-input, $pm-input-background);
+				box-shadow: unset;
+				border: 1px solid $pm-blue;
+			}
+		}
+		.item + .item {
+			margin-top: 1em;
+		}
+		.pm-button--link {
+			text-decoration: none;
+			&.add-notification {
+				height: 3em;
+			}
+			&.remove-notification {
+				color: unset;
+			}
+		}
+		*::placeholder {
+			color: $cloudy-blue;
+		}
+	}
+
 	// special fixes for recurring frequency ------------------
 	.noInEventPopover {
 		display: none;
