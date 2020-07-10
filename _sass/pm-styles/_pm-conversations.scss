@@ -1,4 +1,35 @@
 /*
+ * Shared for placeholder loading
+ */
+@keyframes loadingItem {
+	from { opacity: .05; }
+	to   { opacity: .15; }
+}
+
+%item-loading-pseudo {
+	content: '\00a0';
+	display: inline-block;
+	border-radius: $global-border-radius;
+	background-color: currentColor;
+	line-height: 1.2;
+	opacity: 0;
+}
+
+%appearing-container {
+	animation: itemFadeIn .5s easing(easeOutQuint);
+}
+
+%placeholder-loading {
+	animation: loadingItem .5s calc(var(--index, 0) * 20ms) easing(easeOutSine) infinite alternate;
+}
+
+@keyframes itemFadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+
+/*
  * items (conversations/contacts lists)
  */
 $container-to-width: 3em !default;
@@ -42,20 +73,10 @@ $item-container-padding-left-right: em(12) !default;
 
 .item-container,
 .item-container-row {
+	@extend %appearing-container;
 	padding: $item-container-padding-top-bottom $item-container-padding-left-right; // design wants ~64 height
 	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 	background-color: var(--bgcolor-item-column-list, $pm-global-muted);
-	animation: itemFadeIn .5s easing(easeOutSine);
-
-	@keyframes itemFadeIn {
-		from {
-			opacity: 0;
-		}
-
-		to {
-			opacity: 1;
-		}
-	}
 }
 
 .item-container {
@@ -113,16 +134,6 @@ $item-container-padding-left-right: em(12) !default;
 	background-color: var(--bgcolor-main-area, white);
 	pointer-events: none;
 
-	@keyframes loadingItem {
-		from {
-			opacity: .05;
-		}
-
-		to {
-			opacity: .15;
-		}
-	}
-
 	.item-checkbox-label::before,
 	.item-icon-compact::before,
 	.item-senders::before,
@@ -131,7 +142,7 @@ $item-container-padding-left-right: em(12) !default;
 	.item-weight::before,
 	.item-star,
 	.item-subject::before {
-		animation: loadingItem .5s calc(var(--index, 0) * 20ms) easing(easeOutSine) infinite alternate;
+		@extend %placeholder-loading;
 	}
 
 	.item-checkbox-label,
@@ -163,12 +174,7 @@ $item-container-padding-left-right: em(12) !default;
 	.item-weight,
 	.item-subject {
 		&::before {
-			content: '\00a0';
-			display: inline-block;
-			border-radius: $global-border-radius;
-			background-color: currentColor;
-			line-height: 1.2;
-			opacity: 0;
+			@extend %item-loading-pseudo;
 		}
 	}
 
@@ -389,6 +395,42 @@ $conversation-icon-size: 3.2rem !default;
 /*
  * view messages
  */
+.message-conversation-summary {
+	.is-appearing-content {
+		@extend %appearing-container;
+	}
+
+	&-is-loading {
+		pointer-events: none;
+	}
+
+	&-is-loading &-header,
+	&-is-loading &-stat {
+		position: relative;
+
+		&::before {
+			@extend %item-loading-pseudo;
+			@extend %placeholder-loading;
+		}
+	}
+
+	&-is-loading &-header {
+		&::before {
+			width: 25%;
+		}
+	}
+
+	&-is-loading &-stat {
+		&::before {
+			width: 2em;
+		}
+	}
+
+	&-is-loading &-star {
+		@extend %placeholder-loading;
+	}
+}
+
 .trashed-messages,
 .message-header {
 	background-color: var(--bgcolor-item-column-list, $pm-global-muted);
@@ -397,18 +439,79 @@ $conversation-icon-size: 3.2rem !default;
 .message-container {
 	border: 1px solid var(--bordercolor-input, $pm-global-border);
 	border-radius: $global-border-radius;
+	@extend %appearing-container;
 }
 
 .message-header {
 	border-radius: $global-border-radius; // Can't overflow 'cause of ::before, so repeat radius
 	padding: .6em;
 
-	&.unread {
+	.is-appearing-content {
+		@extend %appearing-container;
+	}
+
+	&.is-unread {
 		background: var(--bgcolor-unread-item-column-list, $white);
 		box-shadow: 2px 2px 3px 0px $input-shadow-color;
 		font-weight: bold;
 	}
 
+	&.is-loading {
+		pointer-events: none;
+	}
+
+	&.is-loading .message-recipient-item-icon,
+	&.is-loading &-star {
+		@extend %placeholder-loading;
+	}
+
+	&.is-loading .message-recipient-item-icon {
+		background-color: currentColor;
+		opacity: 0;
+	}
+
+	&.is-loading .message-recipient-item-label,
+	&.is-loading &-metas,
+	&.is-loading &-to,
+	&.is-loading &-contact,
+	&.is-loading .message-show-hide-link-container {
+		position: relative;
+
+		&::before {
+			@extend %item-loading-pseudo;
+			@extend %placeholder-loading;
+		}
+	}
+
+	&.is-loading .message-recipient-item-label {
+		&::before {
+			width: 10em;
+		}
+	}
+
+	&.is-loading &-metas {
+		&::before {
+			width: 10em;
+		}
+	}
+
+	&.is-loading &-to {
+		&::before {
+			width: 1.25em;
+		}
+	}
+
+	&.is-loading &-contact {
+		&::before {
+			width: 10em;
+		}
+	}
+
+	&.is-loading .message-show-hide-link-container {
+		&::before {
+			width: 6em;
+		}
+	}
 }
 
 // hide extra container when there is nothing inside
@@ -488,6 +591,21 @@ $conversation-icon-size: 3.2rem !default;
 .message-container--hasAttachment {
 	.message-content {
 		border-radius: 0;
+	}
+}
+
+.message-content {
+	transition: .5s easing(easeOutSine);
+	transition-property: background-color, color;
+
+	&-loading-placeholder {
+		position: relative;
+
+		&::before {
+			@extend %item-loading-pseudo;
+			@extend %placeholder-loading;
+			width: 20em;
+		}
 	}
 }
 
