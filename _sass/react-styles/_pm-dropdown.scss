@@ -1,6 +1,4 @@
 .dropDown {
-	--dropdown-border-color: var(--bordercolor-input, transparent);
-
 	position: fixed;
 	z-index: 666;
 	color: var(--color-main-area, $pm-global-grey);
@@ -53,8 +51,7 @@
 		left: calc(var(--left) * 1px);
 		transform: scale(1);
 		border-radius: $global-border-radius;
-		box-shadow: 0 0.5rem 1.5rem 0
-			var(--dropdown-box-shadow, $input-shadow-color);
+		box-shadow: 0 0 1.5rem 0.3rem $input-shadow-color;
 		background: var(--bgcolor-main-area, $white);
 		animation-name: dropdownInLarge;
 
@@ -67,21 +64,6 @@
 				transform: scale(1);
 				opacity: 1;
 			}
-		}
-
-		// Add border in a layer under the dropdown in order to deal with arrow easily
-		&::after {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			z-index: -2;
-			margin: -1px;
-			border: 1px solid var(--dropdown-border-color);
-			border-radius: $global-border-radius;
-			pointer-events: none;
 		}
 
 		// Out animation
@@ -150,7 +132,6 @@
 
 	/* Scrollable insides of the dropdown */
 	&-content {
-		height: calc(var(--height) * 1px);
 		min-height: 1em;
 		overflow: auto;
 		border-radius: $global-border-radius;
@@ -172,13 +153,11 @@
 			position: relative;
 			z-index: 1;
 			width: 100%;
-			box-shadow: 0 0 5rem 0 rgba(black, 0.3); // Same as popins
+			box-shadow: 0 0 5rem 0 rgba(black, 0.3);
 			transition: transform 0.1s ease-out;
 		}
 
 		@include respond-to($breakpoint-small, "min") {
-			width: calc(var(--width) * 1px);
-
 			&#{&}--noMaxSize {
 				min-width: 1.5em;
 			}
@@ -190,14 +169,13 @@
 			}
 		}
 
-		&::before,
-		&::after {
+		&:not(#{&}--noCaret)::before,
+		&:not(#{&}--noCaret)::after {
 			content: "";
 			position: relative;
 			z-index: 1;
 			display: block;
 			height: 0.3rem;
-			flex: 0 0 0.3rem;
 			background: var(--bgcolor-main-area, $white);
 		}
 
@@ -260,7 +238,6 @@
 			}
 		}
 
-		& [aria-current="true"],
 		& &--isSelected {
 			// Specificity -_-v
 			&,
@@ -291,9 +268,7 @@
 			width: var(--size);
 			height: var(--size);
 			transform: rotate(45deg);
-			border: 1px solid var(--dropdown-border-color);
 			background-color: var(--bgcolor-main-area, $white);
-			pointer-events: none;
 		}
 
 		&--top,
