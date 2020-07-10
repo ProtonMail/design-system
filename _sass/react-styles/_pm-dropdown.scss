@@ -1,10 +1,12 @@
 .dropDown {
+	--dropdown-border-color: var(--bordercolor-input, transparent);
+
 	position: fixed;
 	z-index: 666;
 	color: var(--color-main-area, $pm-global-grey);
-	animation: 0.15s ease-out both;
+	animation: .15s ease-out both;
 
-	@include respond-to($breakpoint-small, "max") {
+	@include respond-to($breakpoint-small, 'max') {
 		top: 0;
 		right: 0;
 		bottom: 0;
@@ -15,7 +17,7 @@
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
-		background-color: rgba(black, 0.4);
+		background-color: rgba(black, .4);
 		animation-name: dropdownInSmall;
 
 		@keyframes dropdownInSmall {
@@ -42,28 +44,43 @@
 		}
 	}
 
-	@include respond-to($breakpoint-tiny, "max") {
+	@include respond-to($breakpoint-tiny, 'max') {
 		padding: 15%;
 	}
 
-	@include respond-to($breakpoint-small, "min") {
+	@include respond-to($breakpoint-small, 'min') {
 		top: calc(var(--top) * 1px);
 		left: calc(var(--left) * 1px);
 		transform: scale(1);
 		border-radius: $global-border-radius;
-		box-shadow: 0 0 1.5rem 0.3rem $input-shadow-color;
+		box-shadow: 0 .5rem 1.5rem 0 var(--dropdown-box-shadow, $input-shadow-color);
 		background: var(--bgcolor-main-area, $white);
 		animation-name: dropdownInLarge;
 
 		@keyframes dropdownInLarge {
 			from {
-				transform: scale(0.75);
+				transform: scale(.75);
 				opacity: 0;
 			}
 			to {
 				transform: scale(1);
 				opacity: 1;
 			}
+		}
+
+		// Add border in a layer under the dropdown in order to deal with arrow easily
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -2;
+			margin: -1px;
+			border: 1px solid var(--dropdown-border-color);
+			border-radius: $global-border-radius;
+			pointer-events: none;
 		}
 
 		// Out animation
@@ -76,30 +93,27 @@
 					opacity: 1;
 				}
 				to {
-					transform: scale(0.75);
+					transform: scale(.75);
 					opacity: 0;
 				}
 			}
 		}
 
 		// Transform origins regarding dropDown position
-		@each $position,
-			$origin
-				in (
-					(top, bottom center),
-					(top-left, bottom left),
-					(top-right, bottom right),
-					(bottom, top center),
-					(bottom-left, top left),
-					(bottom-right, top right),
-					(left, right center),
-					(left-bottom, right bottom),
-					(left-top, right top),
-					(right, left center),
-					(right-bottom, left bottom),
-					(right-top, left top)
-				)
-		{
+		@each $position, $origin in (
+			(top         , bottom center),
+			(top-left    , bottom left),
+			(top-right   , bottom right),
+			(bottom      , top center),
+			(bottom-left , top left),
+			(bottom-right, top right),
+			(left        , right center),
+			(left-bottom , right bottom),
+			(left-top    , right top),
+			(right       , left center),
+			(right-bottom, left bottom),
+			(right-top   , left top)
+		) {
 			&--#{$position} {
 				transform-origin: $origin;
 			}
@@ -108,7 +122,7 @@
 
 	/* Backdrop button, meant to override 'autoClose' option on mobile */
 	&-backdrop {
-		@include respond-to($breakpoint-small, "max") {
+		@include respond-to($breakpoint-small, 'max') {
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -125,39 +139,43 @@
 			background: none;
 		}
 
-		@include respond-to($breakpoint-small, "min") {
+		@include respond-to($breakpoint-small, 'min') {
 			display: none;
 		}
 	}
 
 	/* Scrollable insides of the dropdown */
 	&-content {
+		height: calc(var(--height) * 1px);
 		min-height: 1em;
 		overflow: auto;
 		border-radius: $global-border-radius;
 		background: var(--bgcolor-main-area, $white) no-repeat;
-		background-image: radial-gradient(
+		background-image:
+			radial-gradient(
 				farthest-side at 50% 0,
-				rgba(black, 0.25),
+				rgba(black, .25),
 				transparent
 			),
 			radial-gradient(
 				farthest-side at 50% 100%,
-				rgba(black, 0.25),
+				rgba(black, .25),
 				transparent
 			);
 		background-position: 50% 0, 0 100%;
-		background-size: calc(100% - 2rem) 0.3rem;
+		background-size: calc(100% - 2rem) .3rem;
 
-		@include respond-to($breakpoint-small, "max") {
+		@include respond-to($breakpoint-small, 'max') {
 			position: relative;
 			z-index: 1;
 			width: 100%;
-			box-shadow: 0 0 5rem 0 rgba(black, 0.3);
-			transition: transform 0.1s ease-out;
+			box-shadow: 0 0 5rem 0 rgba(black, .3); // Same as popins
+			transition: transform .1s ease-out;
 		}
 
-		@include respond-to($breakpoint-small, "min") {
+		@include respond-to($breakpoint-small, 'min') {
+			width: calc(var(--width) * 1px);
+
 			&#{&}--noMaxSize {
 				min-width: 1.5em;
 			}
@@ -169,13 +187,14 @@
 			}
 		}
 
-		&:not(#{&}--noCaret)::before,
-		&:not(#{&}--noCaret)::after {
-			content: "";
+		&::before,
+		&::after {
+			content: '';
 			position: relative;
 			z-index: 1;
 			display: block;
-			height: 0.3rem;
+			height: .3rem;
+			flex: 0 0 .3rem;
 			background: var(--bgcolor-main-area, $white);
 		}
 
@@ -184,13 +203,13 @@
 		}
 	}
 
-	@include respond-to($breakpoint-small, "max") {
+	@include respond-to($breakpoint-small, 'max') {
 		&-content {
-			animation: dropdownContentScaleIn 0.15s ease-out both;
+			animation: dropdownContentScaleIn .15s ease-out both;
 
 			@keyframes dropdownContentScaleIn {
 				from {
-					transform: scale(0.8);
+					transform: scale(.8);
 				}
 				to {
 					transform: scale(1);
@@ -206,7 +225,7 @@
 					transform: scale(1);
 				}
 				to {
-					transform: scale(0.8);
+					transform: scale(.8);
 				}
 			}
 		}
@@ -238,8 +257,8 @@
 			}
 		}
 
-		& &--isSelected {
-			// Specificity -_-v
+		& [aria-current='true'],
+		& &--isSelected { // Specificity -_-v
 			&,
 			&:hover,
 			&:focus,
@@ -256,19 +275,23 @@
 		border-top: 1px solid var(--bordercolor-input, $pm-global-border);
 	}
 
+
 	/* Arrow for wide screens */
-	@include respond-to($breakpoint-small, "min") {
+	@include respond-to($breakpoint-small, 'min') {
+
 		&:not(#{&}--noCaret)::before {
 			--size: 1.5rem;
 			--offset: #{2.12rem - 1.5rem}; // Pythagore powa for middle line alignement!
 
-			content: "";
+			content: '';
 			position: absolute;
 			z-index: -1;
 			width: var(--size);
 			height: var(--size);
 			transform: rotate(45deg);
+			border: 1px solid var(--dropdown-border-color);
 			background-color: var(--bgcolor-main-area, $white);
+			pointer-events: none;
 		}
 
 		&--top,
@@ -339,6 +362,7 @@
 		}
 	}
 }
+
 
 /* TODO: REMOVE THIS!! */
 /* TODO: REMOVE THIS!! */
