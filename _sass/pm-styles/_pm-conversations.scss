@@ -417,6 +417,10 @@ $conversation-icon-size: 3.2rem !default;
 	&-is-loading &-header {
 		&::before {
 			width: 25%;
+
+			@include respond-to($breakpoint-small) {
+				width: 50%;
+			}
 		}
 	}
 
@@ -471,6 +475,7 @@ $conversation-icon-size: 3.2rem !default;
 	}
 
 	&.is-loading .message-recipient-item-label,
+	&.is-loading .message-recipient-item-address,
 	&.is-loading &-metas,
 	&.is-loading &-to,
 	&.is-loading &-contact,
@@ -484,8 +489,20 @@ $conversation-icon-size: 3.2rem !default;
 	}
 
 	&.is-loading .message-recipient-item-label {
+		width: 100%;
+		max-width: 7.5em;
+
 		&::before {
-			width: 10em;
+			width: 100%;
+		}
+	}
+
+	&.is-loading .message-recipient-item-address {
+		width: 100%;
+		max-width: 12.5em;
+
+		&::before {
+			width: 100%;
 		}
 	}
 
@@ -503,7 +520,7 @@ $conversation-icon-size: 3.2rem !default;
 
 	&.is-loading &-contact {
 		&::before {
-			width: 10em;
+			width: 7.5em;
 		}
 	}
 
@@ -604,7 +621,8 @@ $conversation-icon-size: 3.2rem !default;
 		&::before {
 			@extend %item-loading-pseudo;
 			@extend %placeholder-loading;
-			width: 20em;
+			width: 100%;
+			max-width: 20em;
 		}
 	}
 }
