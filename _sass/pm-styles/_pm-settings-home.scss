@@ -3,10 +3,11 @@
  */
 .settings-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px,1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
 }
 .setting-grid {
   padding-right: 1em;
+  padding-bottom: 1em;
 }
 .setting-grid--tall {
    grid-row: span 2;
