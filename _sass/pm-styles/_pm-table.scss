@@ -55,6 +55,7 @@
 			top: 0;
 			background: var(--bgcolor-main-area, $white);
 			z-index: 1;
+			background-clip: padding-box;
 
 			&::after {
 				content: '';
