@@ -532,7 +532,10 @@ $list-paddings-values: 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4 !default; // sp
     margin: -1px;
     overflow: hidden;
     padding: 0;
-    position: absolute;
+	position: static;
+	transform: scale(0);
+	display: inline-block;
+	white-space: nowrap;
     width: 1px;
 }
 
