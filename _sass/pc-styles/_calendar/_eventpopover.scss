@@ -32,12 +32,9 @@
 		select.pm-field {
 			height: unset;
 		}
-		input, select {
-			padding: 0.8em 2em 0.9em 1em;
-		}
 		.pm-label {
 			width: 2.4em;
-			padding-top: 0.8em;
+			padding: 0.4em 0 0 0.4em;
 		}
 		.pm-field {
 			&:focus,
