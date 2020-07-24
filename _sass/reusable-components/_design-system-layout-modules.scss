@@ -369,10 +369,6 @@ svg {
     width: 100%;
 }
 
-.w-unset.w-unset.w-unset {
-    width: unset;
-}
-
 /* here you may add px widths */
 $list-width-px: 40, 50, 70, 150, 200, 500 !default;
 // ex .w500p { width: 500px; }
