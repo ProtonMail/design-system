@@ -1,4 +1,78 @@
 /*
+  Appearance factorization
+*/
+
+.calendar-dayeventcell,
+.calendar-eventcell {
+	--opacity: 1;
+}
+
+.calendar-dayeventcell-inner,
+.calendar-eventcell {
+	border-left: $calendar-event-border;
+	border-radius: $calendar-event-border-radius;
+	background-color: $calendar-event-loading-color;
+	color: $black;
+	cursor: pointer;
+	opacity: var(--opacity);
+	transition: all 50ms ease-out, opacity .5s ease-out, background-color .15s ease-in-out;
+	animation: loadingEvent 1s easing(easeInQuint) infinite alternate;
+
+	&.isLoaded {
+		background-color: var(--background);
+		color: var(--foreground);
+		animation: none;
+	}
+
+	&.isPast {
+		background: var(--bgcolor-highlight, $pm-global-muted);
+		color: inherit;
+	}
+	&.isPast > * {
+		opacity: .5;
+	}
+
+	&.isDeclined,
+	&.isCancelled {
+		border-color: var(--background);
+		background: var(--bgcolor-highlight, $pm-global-muted);
+		color: inherit;
+		text-decoration: line-through;
+	}
+	&.isDeclined,
+	&.isCancelled {
+		& > * {
+			opacity: .5;
+		}
+	}
+
+	&.isUnanswered {
+		border-color: var(--background);
+		background-color: var(--bgcolor-main-area, #{$white});
+		background-image: linear-gradient(105deg, transparent 38%, var(--bordercolor-input, $pm-global-border) 42%, var(--bordercolor-input, $pm-global-border) 48%, transparent 52%, transparent 88%, var(--bordercolor-input, $pm-global-border) 92%, var(--bordercolor-input, $pm-global-border) 100%);
+		background-size: 5.18px 19.32px;
+		color: var(--background);
+	}
+
+	&.isSelected {
+		z-index: 6;
+		border-color: $calendar-event-selected-border-color;
+		box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .25);
+		//filter: brightness(105%);
+	}
+}
+
+@keyframes loadingEvent {
+	from {
+		opacity: var(--opacity);
+	}
+	to {
+		opacity: calc(var(--opacity) - .4);
+	}
+}
+
+
+/*
   Full day event
 */
 
@@ -12,17 +86,14 @@
 		position: relative;
 		min-height: 100%;
 		padding: 0 .5em;
-		background-color: $calendar-event-loading-color;
-		border: $calendar-event-border;
-		border-radius: $calendar-event-border-radius;
-		color: $black;
-		cursor: pointer;
 
-		&--isNotAllDay#{&},
-		&--isNotAllDay#{&}--isLoaded {
-			background: none;
+		&.isNotAllDay {
 			border: none;
-			color: inherit;
+
+			&:not(.isUnanswered) {
+				background: none;
+				color: inherit;
+			}
 
 			&:hover,
 			&:focus {
@@ -31,21 +102,25 @@
 		}
 	}
 
-	&--isOutsideStart &-inner {
+	&.isOutsideStart &-inner {
 		padding-left: 0;
 	}
 
-	&--isOutsideEnd,
-	&--isOutsideEnd &-inner {
+	&.isOutsideEnd,
+	&.isOutsideEnd &-inner {
 		padding-right: 0;
 	}
 
 	&-circle {
 		color: $calendar-event-loading-color;
 	}
-
-	&-inner--isLoaded &-circle {
+	&-inner.isLoaded &-circle {
+		margin-right: .5em;
 		color: var(--background);
+	}
+	&-inner.isPast &-circle {
+		color: currentColor;
+		opacity: .75;
 	}
 }
 
@@ -57,59 +132,11 @@
 .calendar-eventcell {
 	position: absolute;
 	z-index: 5;
-	border: $calendar-event-border;
-	border-radius: $calendar-event-border-radius;
-	background: $calendar-event-loading-color;
-	color: $black;
-	cursor: pointer;
 
 	@include respond-to($breakpoint-small) {
 		&-title,
 		&-timestring {
 			font-size: 1.2rem;
 		}
-	}
-}
-
-
-/*
-  Appearance factorization
-*/
-
-.calendar-dayeventcell,
-.calendar-eventcell {
-	--opacity: 1;
-
-	&--isBefore {
-		--opacity: .6;
-	}
-}
-
-.calendar-dayeventcell-inner,
-.calendar-eventcell {
-	opacity: var(--opacity);
-	transition: all 50ms ease-out, opacity .5s ease-out, background-color .15s ease-in-out;
-	animation: loadingEvent 1s easing(easeInQuint) infinite alternate;
-
-	&--isLoaded {
-		background-color: var(--background);
-		color: var(--foreground);
-		animation: none;
-	}
-
-	&--isSelected {
-		z-index: 6;
-		border-color: $calendar-event-selected-border-color;
-		box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .25);
-		filter: brightness(105%);
-	}
-}
-
-@keyframes loadingEvent {
-	from {
-		opacity: var(--opacity);
-	}
-	to {
-		opacity: calc(var(--opacity) - .4);
 	}
 }

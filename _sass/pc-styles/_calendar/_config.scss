@@ -5,6 +5,6 @@ $calendar-grid-border                : var(--bordercolor-input, $calendar-grid-c
 $calendar-gridcell-margin            : 1rem !default;
 $calendar-gridcell-gutter            : .3rem !default;
 $calendar-event-border-radius        : .3rem !default;
-$calendar-event-border               : 1px solid rgba(black, .15) !default;
-$calendar-event-selected-border-color: rgba(black, .3) !default;
+$calendar-event-border               : 3px solid rgba(black, .2) !default;
+$calendar-event-selected-border-color: rgba(black, .5) !default;
 $calendar-event-loading-color        : rgba(lighten($pm-global-altgrey, 30%), .5);
