@@ -23,9 +23,6 @@
 		line-height: 2rem;
 	}
 }
-.flex-fluid-nogrow {
-	flex: 0 1 auto;
-}
 
 @include respond-to($breakpoint-small) {
 
