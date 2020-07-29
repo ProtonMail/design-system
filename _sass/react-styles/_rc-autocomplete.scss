@@ -20,7 +20,7 @@
 	transition: transform 100ms ease-out, opacity 100ms ease-out 50ms;
 	div {
 		&.selected, &:hover, &:active, &:focus {
-			background: $pm-blue;
+			background: $pm-primary;
 		}
 	}
 	.pm-button.pm-button--link {
