@@ -17,6 +17,15 @@
 	grid-column-start: span 3;
 }
 
+.address-item {
+	background: var(--bordercolor-input, $pm-global-light);
+	border-radius: 5px;
+	padding: 0.5em 0.8em 0.7em;
+	&.invalid {
+		background: $pm-global-warning;
+	}
+}
+
 @include respond-to($breakpoint-small) {
 
 	// we show abbreviated version only on week/month view
