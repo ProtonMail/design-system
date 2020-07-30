@@ -23,6 +23,11 @@
 			background: $pm-primary;
 		}
 	}
+	&:hover {
+		.selected:not(:hover) {
+			background: initial;
+		}
+	}
 	.pm-button.pm-button--link {
 		color: var(--color-input, $pm-global-grey);
 	}
