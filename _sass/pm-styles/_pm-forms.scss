@@ -365,7 +365,6 @@ $width: 5.5em !default;
     }
   }
   &:checked + .pm-toggle-label--theme-toggle { // Theme toggle inside user dropdown
-    border-color: rgba(white, .75);
     & > .pm-toggle-label-text:last-child .pm-toggle-label-img {
       fill: #fce988;
     }
