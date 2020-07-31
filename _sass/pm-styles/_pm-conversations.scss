@@ -71,15 +71,27 @@ $item-container-padding-left-right: em(12) !default;
 .item-container,
 .item-container-row {
 	@extend %appearing-container;
+	position: relative;
 	padding: $item-container-padding-top-bottom $item-container-padding-left-right; // design wants ~64 height
 	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
 	background-color: var(--bgcolor-item-column-list, $pm-global-muted);
-	transition: .15s easing(easeOutQuart);
 
-	&:hover {
+	&::before {
+		content: '';
+		position: absolute;
+		top: -1px;
+		right: -1px;
+		bottom: 0;
+		left: -1px;
 		z-index: 1;
-		box-shadow: 0 0 0 1px $pm-primary-light inset,
-		            0 .125em .25em 0 var(--dropdown-box-shadow, $input-shadow-color);
+		pointer-events: none;
+		border: 1px solid transparent;
+		transition: .15s easing(easeOutQuart);
+	}
+
+	&:hover::before {
+		border-color: $pm-primary-light;
+		box-shadow: 0 .125em .25em 0 var(--dropdown-box-shadow, $input-shadow-color);
 	}
 }
 
