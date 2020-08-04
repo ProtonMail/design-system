@@ -20,7 +20,7 @@
 .address-item {
 	background: var(--bordercolor-input, $pm-global-light);
 	border-radius: 5px;
-	padding: 0.5em 0.8em 0.7em;
+	padding: 0.5em 0.8em;
 	&.invalid {
 		background: $pm-global-warning;
 	}
