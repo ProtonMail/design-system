@@ -2,6 +2,10 @@
  * Choose account SSO
  */
 
+.button-account-container {
+	border: 1px solid var(--bordercolor-input, $pm-global-muted); // inconsistent with borders...
+}
+
 .button-account {
 
     &-login {
