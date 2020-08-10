@@ -2,18 +2,20 @@
 	--item-wide: 10em;
 	--item-narrow: 1.375em;
 
+	margin: -.125em;
+
 	&-item {
 		max-width: var(--item-wide);
 		padding: 0 .25em;
-		margin: 0 .125em;
+		margin: .125em;
 		border-radius: 1em;
 		background-color: var(--color, currentColor);
 		line-height: 1.25;
-		transition: .4s .25s easing(easeInOutQuart), border-radius 0s;
+		transition: .25s .5s easing(easeOutQuart), box-shadow 0s;
 
 		&:hover,
 		&:focus-within {
-			box-shadow: 0 0 em(5) 0 rgba(black, .2);
+			box-shadow: 0 0 em(5) 0 rgba(black, .2); // Same hover style than buttons
 		}
 
 		&-button,
@@ -54,6 +56,7 @@
 	}
 
 	&.is-stacked {
+		flex-wrap: nowrap;
 
 		&:hover,
 		&:focus-within {
