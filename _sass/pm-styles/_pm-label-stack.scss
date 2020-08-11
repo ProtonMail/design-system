@@ -1,7 +1,7 @@
 .label-stack {
 	--item-wide: 10em;
 	--item-narrow: 1.375em;
-
+	--item-scale: .7;
 	margin: -.125em;
 
 	&-item {
@@ -15,12 +15,13 @@
 
 		&:hover,
 		&:focus-within {
-			box-shadow: 0 0 em(5) 0 rgba(black, .2); // Same hover style than buttons
+			transition-delay: 0s;
 		}
 
 		&-button,
 		&-delete {
 			color: white;
+			opacity: var(--button-opacity, 1);
 			transition: inherit;
 		}
 
@@ -38,56 +39,46 @@
 		}
 	}
 
-	%minimized { // For factorization
-		transform: scale(.7);
-
-		&:not(:first-child) {
-			padding-left: 0;
-		}
-
-		&:not(:last-child) {
-			padding-right: 0;
-		}
-
-		.label-stack-item-button,
-		.label-stack-item-delete {
-			opacity: 0;
+	&:not(.is-stacked) {
+		.label-stack-item {
+			&:hover,
+			&:focus-within {
+				box-shadow: 0 0 em(5) 0 rgba(black, .2); // Same hover style than buttons
+			}
 		}
 	}
 
 	&.is-stacked {
+		margin: 0;
+		overflow: hidden;
 		flex-wrap: nowrap;
-
-		&:hover,
-		&:focus-within {
-			.label-stack-item {
-				&:not(:hover):not(:focus-within) {
-					max-width: var(--item-narrow);
-					@extend %minimized;
-				}
-			}
-		}
-
-		&:not(:hover):not(:focus-within) {
-			.label-stack-item {
-				max-width: var(--item-narrow);
-
-				&:first-child {
-					max-width: var(--item-wide);
-				}
-
-				&:not(:first-child) {
-					@extend %minimized;
-				}
-			}
-		}
 
 		.label-stack-item {
 			margin: 0;
+			&:not(:first-child) {
+				--button-opacity: 0;
+				max-width: var(--item-narrow);
+				transform: scale(var(--item-scale));
+			}
+		}
 
+		@include respond-to($breakpoint-small, 'min') {
 			&:hover,
 			&:focus-within {
-				transition-delay: 0s;
+				.label-stack-item {
+					&:first-child {
+						--button-opacity: 0;
+						max-width: var(--item-narrow);
+						transform: scale(var(--item-scale));
+					}
+
+					&:hover,
+					&:focus-within {
+						--button-opacity: 1;
+						max-width: var(--item-wide);
+						transform: scale(1);
+					}
+				}
 			}
 		}
 	}
