@@ -13,13 +13,15 @@
 	border-radius: $calendar-event-border-radius;
 	background-color: $calendar-event-loading-color;
 	color: $black;
+	font-weight: 500;
 	cursor: pointer;
 	opacity: var(--opacity);
 	transition: all 50ms ease-out, opacity .5s ease-out, background-color .15s ease-in-out;
 	animation: loadingEvent 1s easing(easeInQuint) infinite alternate;
 
 	&.isLoaded {
-		background-color: var(--background);
+		border-color: var(--color-alt);
+		background-color: var(--color-main);
 		color: var(--foreground);
 		animation: none;
 	}
@@ -34,7 +36,7 @@
 
 	&.isDeclined,
 	&.isCancelled {
-		border-color: var(--background);
+		border-color: var(--color-alt);
 		background: var(--bgcolor-highlight, $pm-global-muted);
 		color: inherit;
 		text-decoration: line-through;
@@ -47,11 +49,11 @@
 	}
 
 	&.isUnanswered {
-		border-color: var(--background);
+		border-color: var(--color-alt);
 		background-color: var(--bgcolor-main-area, #{$white});
-		background-image: linear-gradient(105deg, transparent 38%, var(--bordercolor-input, $pm-global-border) 42%, var(--bordercolor-input, $pm-global-border) 48%, transparent 52%, transparent 88%, var(--bordercolor-input, $pm-global-border) 92%, var(--bordercolor-input, $pm-global-border) 100%);
+		background-image: linear-gradient(105deg, transparent 38%, var(--color-alpha) 42%, var(--color-alpha) 48%, transparent 52%, transparent 88%, var(--color-alpha) 92%, var(--color-alpha) 100%);
 		background-size: 5.18px 19.32px;
-		color: var(--background);
+		color: var(--color-alt);
 	}
 
 	&.isSelected {
@@ -116,7 +118,7 @@
 	}
 	&-inner.isLoaded &-circle {
 		margin-right: .5em;
-		color: var(--background);
+		color: var(--color-main);
 	}
 	&-inner.isPast &-circle {
 		color: currentColor;
