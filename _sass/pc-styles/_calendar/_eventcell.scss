@@ -59,16 +59,20 @@
 		border-left-color: var(--color-alt);
 		background: var(--bgcolor-highlight, $pm-global-muted);
 		color: inherit;
-	}
-	&.isPast:not(.isSelected) > * {
-		opacity: .5;
+
+		&:not(.isSelected) > * {
+			opacity: .5;
+		}
 	}
 
 	&.isSelected {
 		z-index: 6;
 		border-color: rgba(black, .4);
-		border-left-color: var(--color-alt);
 		box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .25);
+
+		&.isPast {
+			border-left-color: var(--color-alt);
+		}
 	}
 }
 
