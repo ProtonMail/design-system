@@ -52,11 +52,6 @@
 
 @include respond-to($breakpoint-tiny) {
 
-	.day-icon {
-		width: 3rem;
-		height: 3rem;
-	}
-
 	.calendar-recurringFrequencyEnd-grid {
 		grid-template-columns: auto auto auto;
 	}
