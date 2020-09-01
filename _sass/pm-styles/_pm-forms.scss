@@ -140,7 +140,9 @@ select.pm-field {
 }
 
 
-
+textarea {
+	min-height: 2.5em; // Equals pm-field inputs height
+}
 
 /* firefox bug */
 textarea[required].pm-field.field-pristine:invalid {
