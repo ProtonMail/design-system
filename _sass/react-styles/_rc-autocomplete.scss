@@ -5,6 +5,8 @@
 	left: 0.35em;
 	right: 0.35em;
 	min-height: 80%;
+	max-height: calc(5 * 2.3em);
+	overflow: scroll;
 	background-color: var(--bgcolor-input, $pm-input-background);
 	box-shadow: 0 0 10px 0 $input-shadow-color;
 	border: 1px solid var(--bordercolor-input, $input-defaut-border);
