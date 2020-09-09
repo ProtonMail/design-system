@@ -28,6 +28,13 @@
 		max-height: 100%;
 	}
 
+	.partstatIcon {
+		border: 1px solid transparent;
+		&.needsAction {
+			border-color: $pm-global-grey;
+		}
+	}
+
 	// special fixes for recurring frequency ------------------
 	.noInEventPopover {
 		display: none;
