@@ -2,24 +2,23 @@
 	border-radius: $global-border-radius;
 	color: var(--color-nav-link, $white);
 
-	.expand-caret {
-		display: flex;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		opacity: 0;
-	}
-
 	&:focus,
 	&:hover,
 	&[aria-expanded="true"] {
 		background-color: $navigation-hover-bg-color;
 
+	}
+
+	&:focus,
+	&:hover {
 		.dropDown-logout-initials {
-			background-color: $pm-global-light;
-			color: $pm-global-grey;
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	&[aria-expanded="true"] {
+		.dropDown-logout-initials {
+			background-color: rgba(0, 0, 0, 0.5);
 		}
 	}
 }
@@ -41,9 +40,10 @@
 }
 
 .dropDown-logout-initials {
-	background-color: $pm-global-altgrey;
 	min-width: 2.5em;
 	min-height: 2.5em;
+	border: 1px solid var(--bordercolor-input, $pm-global-border);
+	color: $white;
 }
 
 @if $rtl-option == true {
