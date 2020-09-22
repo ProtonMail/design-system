@@ -31,7 +31,7 @@
 	.partstatIcon {
 		border: 1px solid transparent;
 		&.needsAction {
-			border-color: $pm-global-grey;
+			border-color: var(--color-main-area, $pm-global-grey);
 		}
 	}
 
