@@ -12,6 +12,8 @@ $size-h4               : 18 !default;
 $size-h5               : 17 !default;
 $size-h6               : 16 !default;
 
+$use-other-typo-helpers: true !default;
+$use-other-line-height-helpers: true !default;
 $size-smallest         : 9 !default;
 $size-smaller          : 10 !default;
 $size-small            : 12 !default;
@@ -133,6 +135,9 @@ $root-equiv-10-px      : true !default;
 // basic premise: default user setting for font size is at 16 pixels in the browser
 // you should NEVER update this value, however… who can predict the future…
 $root-default-font-size: 16 !default;
+
+// applies main colors on body tag
+$apply-body-styles     : true !default;
 
 // others
 $use-reset-button      : true !default;

@@ -1,0 +1,24 @@
+$custom-scroll: false;
+$root-equiv-10-px: false;
+$use-reset-button: false;
+$apply-body-styles: false;
+$use-old-ie-fallbacks : false;
+$use-height-auto-img: false;
+$use-height-auto-td: false;
+$use-height-auto-table: false;
+
+@import "../reusable-components/design-system-config";
+
+@import "../reusable-components/design-system-reset";
+[hidden] {
+    display: none;
+}
+
+body {
+	font-size: 100%;
+	width: 100%;
+}
+
+$use-other-typo-helpers: false;
+$use-other-line-height-helpers: false;
+@import "../design-system-website/webfonts-hx";
