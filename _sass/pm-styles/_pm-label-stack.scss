@@ -1,19 +1,22 @@
 .label-stack {
 	--item-wide: 10em;
-	--item-narrow: 1.375em;
+	--item-narrow: 1.25em;
 	--item-scale: .7;
-	margin: -.125em;
 
 	&.mw100 {
 		--item-wide: 100%;
 	}
 
+	&-item,
+	&-overflow-count {
+		border-radius: 1em;
+		background-color: var(--color, currentColor);
+		line-height: 1;
+	}
+
 	&-item {
 		max-width: var(--item-wide);
 		margin: .125em;
-		border-radius: 1em;
-		background-color: var(--color, currentColor);
-		line-height: 1.25;
 
 		&-button,
 		&-delete {
@@ -21,7 +24,7 @@
 		}
 
 		&-button {
-			padding: 0 .5em .175em;
+			padding: .125em .5em;
 		}
 
 		&-delete {
@@ -34,10 +37,18 @@
 	}
 
 	&-overflow-count {
-		cursor: help;
+		margin-left: .125em;
+
+		& > * {
+			display: block;
+			padding: .125em .375em .125em .25em;
+			color: white;
+		}
 	}
 
 	&:not(.is-stacked) {
+		margin: -.125em;
+
 		.label-stack-item {
 			&:hover,
 			&:focus-within {
@@ -47,7 +58,6 @@
 	}
 
 	&.is-stacked {
-		margin: 0;
 		overflow: hidden;
 		align-items: baseline;
 		flex-wrap: nowrap;
