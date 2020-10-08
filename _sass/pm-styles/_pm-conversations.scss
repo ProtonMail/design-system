@@ -416,6 +416,17 @@ $conversation-icon-size: 3.2rem !default;
 	}
 }
 
+.pill-icon {
+	display: inline-block;
+	padding: .072em .5em;
+	border-radius: 1em;
+	line-height: 1;
+
+	& > * {
+		color: white;
+	}
+}
+
 /*
  * view messages
  */
