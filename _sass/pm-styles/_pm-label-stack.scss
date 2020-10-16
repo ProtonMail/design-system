@@ -3,6 +3,8 @@
 	--item-narrow: 1.25em;
 	--item-scale: .7;
 
+	font-weight: normal; // Overrides when unread email context
+
 	&.mw100 {
 		--item-wide: 100%;
 	}
@@ -10,13 +12,13 @@
 	&-item,
 	&-overflow-count {
 		border-radius: 1em;
-		background-color: var(--color, currentColor);
 		line-height: 1;
 	}
 
 	&-item {
 		max-width: var(--item-wide);
 		margin: .125em;
+		background-color: var(--color, currentColor);
 
 		&-button,
 		&-delete {
@@ -25,6 +27,7 @@
 
 		&-button {
 			padding: .125em .5em;
+			text-align: left;
 		}
 
 		&-delete {
@@ -37,7 +40,9 @@
 	}
 
 	&-overflow-count {
+		background-color: black;
 		margin-left: .125em;
+		cursor: pointer;
 
 		& > * {
 			display: block;

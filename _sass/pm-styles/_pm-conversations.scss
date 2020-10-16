@@ -215,7 +215,7 @@ $item-container-row-height-compact-mode: 4rem !default;
 
 	.item-senders {
 		&::before {
-			width: 25%;
+			width: 35%;
 		}
 	}
 
@@ -383,6 +383,10 @@ $conversation-icon-size: 3.2rem !default;
 	font-size: em(12);
 }
 
+.message-header-metas-container {
+	height: $conversation-icon-size;
+}
+
 .starbutton {
 	color: var(--color-main-area, $pm-global-grey);
 	width: 1.6rem;
@@ -417,8 +421,8 @@ $conversation-icon-size: 3.2rem !default;
 }
 
 .pill-icon {
-	display: inline-block;
-	padding: .072em .5em;
+	display: inline-flex;
+	padding: .125em .5em;
 	border-radius: 1em;
 	line-height: 1;
 
@@ -578,21 +582,12 @@ $conversation-icon-size: 3.2rem !default;
 	.message-show-hide-link {
 		padding: 0;
 	}
-
-	@include respond-to($breakpoint-small) {
-		.message-show-hide-link-container,
-		.message-header-expanded-label-container {
-			padding-left: $container-to-width;
-			order: 10;
-		}
-	}
 }
 
 // alignements when expanded/details
 .message-header--showDetails {
 	.message-show-hide-link-container {
-		padding: .25em 0 .4em $container-to-width*2;
-		margin-top: .5em;
+		padding-left: calc(#{$container-to-width} + #{$conversation-icon-size} + .75em);
 	}
 
 	// show/hide details should go below otherwise it will be strangely place depending of recipients
@@ -605,19 +600,12 @@ $conversation-icon-size: 3.2rem !default;
 		}
 	}
 
-	> :not(.message-detailed-header-extra) {
-		.container-to:not(.container-to--item) {
-			margin-top: .35em;
-
-			@include respond-to($breakpoint-small) {
-				margin-top: .6em;
-			}
-
-		}
-	}
-
 	.message-recipient-item-expanded {
-		margin-top: .5em;
+		margin-top: .25em;
+
+		@include respond-to($breakpoint-small) {
+			margin-top: .5em;
+		}
 
 		.message-recipient-item:not(:first-child) {
 			margin-top: .25em;
@@ -635,11 +623,7 @@ $conversation-icon-size: 3.2rem !default;
 	}
 	.message-recipient-item-lockIcon {
 		align-self: flex-end;
-		margin-bottom: .25em;
 	}
-
-
-
 }
 
 .message-detailed-header-extra {
