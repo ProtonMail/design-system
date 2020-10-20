@@ -6,10 +6,12 @@ $use-old-ie-fallbacks : false;
 $use-height-auto-img: false;
 $use-height-auto-td: false;
 $use-height-auto-table: false;
+$use-color-reset-mark: false;
 
 @import "../reusable-components/design-system-config";
 
 @import "../reusable-components/design-system-reset";
+
 [hidden] {
     display: none;
 }
@@ -17,8 +19,44 @@ $use-height-auto-table: false;
 body {
 	font-size: 100%;
 	width: 100%;
+	font-family: $font-family;
 }
 
 $use-other-typo-helpers: false;
 $use-other-line-height-helpers: false;
 @import "../design-system-website/webfonts-hx";
+
+@import "../reusable-components/_includes/_resets/typo-sub-sup";
+
+// specific to Android/iOS
+q {
+	quotes: none;
+	&::after,
+	&::before {
+		content: none;
+	}
+}
+a {
+	&:focus {
+		outline: dotted thin;
+	}
+	&:active,
+	&:hover {
+		outline: 0;
+	}
+}
+
+/* styling quotes */
+/* actually strange stuff on web for quotes/blockquote = grey/blue??? */
+blockquote {
+    padding: 0 0 0 rem(10) !important;
+	/*margin: 1em 0 2em 0 !important;*/
+	margin: 0 !important; // actually on web
+    border: 1px solid var(--bordercolor-input, $pm-global-border) !important;
+    border-width: 0 0 0 1px !important;
+}
+/* do we keep this limit? not present on the web */
+blockquote blockquote blockquote {
+    padding: 0 !important;
+    border: none !important;
+}

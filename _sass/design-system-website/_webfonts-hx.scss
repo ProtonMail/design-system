@@ -35,8 +35,8 @@ h6,
   font-weight: normal;
 }
 
-/* other useful classes */
 @if $use-other-typo-helpers == true {
+	/* other useful classes */
 	.smallest {
 	@include flow-other($size-smallest);
 	}
