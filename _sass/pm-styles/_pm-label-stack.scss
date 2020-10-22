@@ -85,12 +85,12 @@
 				transform: scale(var(--item-scale));
 			}
 
-			&-button-text,
+			&-button,
 			&-delete-icon {
 				transition: opacity .2s .1s easing(easeOutQuart);
 			}
 
-			&-button-text {
+			&-button {
 				opacity: var(--button-opacity, 1);
 			}
 
