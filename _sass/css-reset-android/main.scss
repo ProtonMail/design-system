@@ -49,17 +49,19 @@ a {
 	}
 }
 
-/* styling quotes */
-/* actually strange stuff on web for quotes/blockquote = grey/blue??? */
+img {
+    border: 0;
+	max-width: 100%;
+}
+table img {
+    max-width: none;
+}
+
+/* styling quotes for messages */
 blockquote {
-    padding: 0 0 0 rem(10) !important;
+    padding: 0.2em 1.2em !important;
 	/*margin: 1em 0 2em 0 !important;*/
 	margin: 0 !important; // actually on web
-    border: 1px solid var(--bordercolor-input, $pm-global-border) !important;
-    border-width: 0 0 0 1px !important;
-}
-/* do we keep this limit? not present on the web */
-blockquote blockquote blockquote {
-    padding: 0 !important;
-    border: none !important;
+    border: 3px solid $pm-primary !important;
+	border-width: 0 0 0 3px !important;
 }
