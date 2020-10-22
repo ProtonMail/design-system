@@ -621,8 +621,11 @@ $conversation-icon-size: 3.2rem !default;
 			display: block;
 		}
 	}
-	.message-recipient-item-lockIcon {
-		align-self: flex-end;
+	.message-recipient-item-lockIcon::before {
+		@include respond-to($breakpoint-small) {
+			content: '\00a0';
+			width: 100%;
+		}
 	}
 }
 
@@ -711,14 +714,16 @@ $message-attachment-icon-width: 2.6em !default;
 .container-to {
 	min-width: $container-to-width;
 
-	&:focus,
-	&:hover {
-		.item-abbr {
-			display: none;
-		}
+	.item-icon {
+		&:focus,
+		&:hover {
+			.item-abbr {
+				display: none;
+			}
 
-		.item-caret {
-			display: block;
+			.item-caret {
+				display: block;
+			}
 		}
 	}
 }
