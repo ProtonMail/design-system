@@ -101,6 +101,7 @@
 		&.isNotAllDay {
 			border: none;
 
+			&.isPast,
 			&:not(.isUnanswered) {
 				background: none;
 				color: inherit;
