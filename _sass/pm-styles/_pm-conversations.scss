@@ -429,6 +429,11 @@ $conversation-icon-size: 3.2rem !default;
 	& > * {
 		color: white;
 	}
+
+	&-attachment {
+		background-color: rgba(black, .5);
+		// Plus some adaptations for dark theme in _pm-dark-theme.scss
+	}
 }
 
 /*
