@@ -124,7 +124,7 @@ $default-bgColor-mark  : #ff0 !default;
 
 
 // vertical rythm
-// possible values     : 'double_top_single_bottom',  'single_top', 'single_bottom'
+// possible values     : 'double_top_single_bottom', 'single_top_single_bottom', 'single_top', 'single_bottom'
 $vertical-rythm        : 'single_bottom' !default;
 
 // units for typo
@@ -210,6 +210,9 @@ $pm-label-width: 18em !default;
 
   @if $type-vr == 'double_top_single_bottom' {
      @return ( ($margin * $other_coef)*1em 0 ( ($margin/2) * $other_coef) *1em 0 );
+  }
+  @if $type-vr == 'single_top_single_bottom' {
+	@return ( ( ($margin/2) * $other_coef) *1em 0 );
   }
   @else if $type-vr == 'single_bottom' {
      @return ( 0 0 ( ($margin/2) * $other_coef) *1em 0 );

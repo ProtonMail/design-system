@@ -27,6 +27,17 @@ body {
 
 $use-other-typo-helpers: false;
 $use-other-line-height-helpers: false;
+
+$base-font             : 16;
+$typo-unit             : 'use_em';
+$vertical-rythm        : 'single_top_single_bottom';
+$size-h1               : 32;
+$size-h2               : 24;
+$size-h3               : 19;
+$size-h4               : 16;
+$size-h5               : 13;
+$size-h6               : 12;
+
 @import "../design-system-website/webfonts-hx";
 
 @import "../reusable-components/_includes/_resets/typo-sub-sup";
@@ -59,7 +70,7 @@ table img {
 
 /* styling quotes for messages */
 blockquote {
-    padding: 0.2em 1.2em !important;
+    padding: .2em 1.2em !important;
 	/*margin: 1em 0 2em 0 !important;*/
 	margin: 0 !important; // actually on web
     border: 3px solid $pm-primary !important;
