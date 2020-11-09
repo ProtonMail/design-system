@@ -1,6 +1,6 @@
 {
   "name": "design-system",
-  "version": "1.8.6",
+  "version": "1.8.4",
   "description": "Proton Design system, for all Proton Projects: https://design-system.protontech.ch/",
   "main": "index.js",
   "scripts": {
