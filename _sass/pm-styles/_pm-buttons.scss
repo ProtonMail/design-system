@@ -62,9 +62,10 @@
 	@extend .rotateX-180;
   }
 
-  .pm-select {
+  &.pm-select {
 	  padding-right: .6rem;
 	  .mauto {
+		  display: flex;
 		  width: 100%;
 	  }
 	  .mr0-5 {
