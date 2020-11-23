@@ -21,7 +21,18 @@
 	& > svg {
 		fill: var(--fillcolor-icons, $white);
 	}
+	&--blackfriday:before {
+		content: '';
+		position: absolute;
+		width: 7px;
+		height: 7px;
+		background: $pm-global-warning;
+		border-radius: 50%;
+		left: calc(1.75rem + 15px);
+		top: calc(50% - 14px);
+	}
 }
+
 
 @if $rtl-option == true {
 	[dir="rtl"] {
@@ -95,12 +106,18 @@
 		width: 24px;
 		height: 24px;
 	}
+	.topnav-link--blackfriday:before {
+		left: calc(1.75rem + 21px);
+	}
 }
 
 @include respond-to($breakpoint-tiny) {
 	.topnav-link {
 		padding-left: .5rem;
 		padding-right: .5rem;
+	}
+	.topnav-link--blackfriday:before {
+		left: calc(1.75rem + 10px);
 	}
 }
 
