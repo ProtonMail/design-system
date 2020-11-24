@@ -81,6 +81,18 @@
 	}
 }
 
+@include respond-to(870) {
+	.topnav-list--four-elements {
+
+		.topnav-link {
+			padding-left: .5rem;
+			padding-right: .5rem;
+		}
+		.topnav-link--blackfriday:before {
+			left: calc(.5rem + 15px);
+		}
+	}
+}
 
 @include respond-to(1100) {
 	.navigation-title {
@@ -106,18 +118,26 @@
 		width: 24px;
 		height: 24px;
 	}
+	.topnav-list--four-elements .topnav-link {
+		padding-left: 1.75rem;
+		padding-right: 1.75rem;
+	}
+	.topnav-list--four-elements .topnav-link--blackfriday:before,
 	.topnav-link--blackfriday:before {
-		left: calc(1.75rem + 21px);
+		left: calc(1.75rem + 22px);
+		top: calc(50% - 18px);
 	}
 }
 
 @include respond-to($breakpoint-tiny) {
+	.topnav-list--four-elements .topnav-link,
 	.topnav-link {
 		padding-left: .5rem;
 		padding-right: .5rem;
 	}
+	.topnav-list--four-elements .topnav-link--blackfriday:before,
 	.topnav-link--blackfriday:before {
-		left: calc(1.75rem + 10px);
+		left: calc(.5rem + 22px);
 	}
 }
 
