@@ -124,6 +124,7 @@
 	border-width: 1px;
 	text-decoration: none;
 	transition: 0.15s easing(easeOutQuint), background-position 0s;
+	outline: 0;
 
 	& > button {
 		// this is for drop down buttons
@@ -136,6 +137,17 @@
 	&:active {
 		text-decoration: none;
 	}
+
+	&:focus-visible {
+		outline: 4px dashed $pm-primary;
+	}
+	&:-moz-focusring {
+		outline: 4px dashed $pm-primary;
+	}
+	&:focus:not(:-moz-focusring) {
+		outline: 0;
+	}
+
 }
 
 .button {

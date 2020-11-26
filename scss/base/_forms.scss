@@ -95,6 +95,18 @@ $field-container: 26rem !default;
 			@extend .text-ellipsis;
 		}
 	}
+	&:focus-visible {
+		outline: 4px dashed $pm-primary;
+	}
+	&:-moz-focusring {
+	  outline: 4px dashed $pm-primary;
+	}
+	/*
+	Does not work
+	&:focus:not(:-moz-focusring) {
+	  outline: 0;
+	}*/
+
 }
 
 @if $rtl-option==true {
