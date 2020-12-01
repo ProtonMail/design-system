@@ -19,5 +19,6 @@
     "SVG"
   ],
   "author": "Proton Technologies AG",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {}
 }
