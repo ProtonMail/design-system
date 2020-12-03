@@ -720,7 +720,20 @@ $conversation-icon-size: 3.2rem !default;
         .message-attachmentSecondaryAction {
             border: 0;
         }
-    }
+	}
+
+	@include respond-to($breakpoint-tiny) {
+		width: 100%;
+		&:nth-child(even),
+		&:nth-child(odd) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		&:nth-child(2) {
+			margin-top: .5em;
+		}
+	}
+
 }
 
 
