@@ -680,6 +680,25 @@ $conversation-icon-size: 3.2rem !default;
 	font-size: 1.4rem;
 }
 
+.message-attachmentPrimaryAction,
+.message-attachmentSecondaryAction {
+	&:hover,
+	&:focus-within {
+		box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+	}
+}
+.isDarkMode {
+	.message-attachmentPrimaryAction,
+	.message-attachmentSecondaryAction {
+		background-color: $pm-global-grey;
+		&:hover,
+		&:focus-within {
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+	}
+}
+
+
 .message-attachmentSecondaryAction {
 	svg[aria-busy="true"] {
 		background-size: 16px;
@@ -697,9 +716,9 @@ $conversation-icon-size: 3.2rem !default;
 	}
 }
 
-.message-attachmentList-item {
+.message-attachmentList-item-container {
     margin-top: .5em;
-    width: 50%;
+	width: 50%;
 
     &:first-child,
     &:nth-child(2) {
@@ -716,12 +735,6 @@ $conversation-icon-size: 3.2rem !default;
         padding-bottom: 0.5em;
     }
 
-    &--uploadInProgress {
-        .message-attachmentSecondaryAction {
-            border: 0;
-        }
-	}
-
 	@include respond-to($breakpoint-tiny) {
 		width: 100%;
 		&:nth-child(even),
@@ -734,6 +747,19 @@ $conversation-icon-size: 3.2rem !default;
 		}
 	}
 
+}
+
+
+.message-attachmentList-item {
+	&--uploadInProgress {
+		background-color: var(--bordercolor-input, $pm-global-muted);
+		.message-attachmentSecondaryAction {
+			border: 0;
+		}
+	}
+	&--loading {
+		background: var(--bordercolor-input, $pm-global-muted);
+	}
 }
 
 
