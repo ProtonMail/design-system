@@ -27,9 +27,9 @@
     "stylelint": "^13.8.0"
   },
   "lint-staged": {
-    "(*.scss)": [
-      "prettier --write",
-      "eslint"
+    "*.scss": [
+      "stylelint --syntax=scss --fix",
+      "prettier --write"
     ]
   },
   "husky": {
