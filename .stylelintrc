@@ -46,7 +46,7 @@
 		"function-name-case": "lower",
 		"function-url-quotes": "never",
 		"number-no-trailing-zeros": true,
-		"string-quotes": "single",
+		"string-quotes": null,
 		"unit-case": "lower",
 		"value-keyword-case": null,
 		"property-case": "lower",
