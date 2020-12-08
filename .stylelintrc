@@ -1,4 +1,7 @@
 {
+	"extends": [
+		"stylelint-config-prettier"
+	],
 	"rules": {
 		"color-no-invalid-hex": true,
 		"font-family-no-duplicate-names": true,
@@ -42,17 +45,7 @@
 		"property-no-vendor-prefix": true,
 		"selector-pseudo-element-colon-notation": "double",
 
-		"color-hex-case": "lower",
 		"function-name-case": "lower",
-		"function-url-quotes": "never",
-		"number-no-trailing-zeros": true,
-		"string-quotes": null,
-		"unit-case": "lower",
-		"value-keyword-case": null,
-		"property-case": "lower",
-		"selector-attribute-quotes": "always",
-		"selector-pseudo-element-case": "lower",
-		"media-feature-name-case": "lower",
-		"at-rule-name-case": "lower"
+		"function-url-quotes": "never"
 	}
 }

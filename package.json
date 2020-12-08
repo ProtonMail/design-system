@@ -21,14 +21,15 @@
 	"author": "Proton Technologies AG",
 	"license": "ISC",
 	"devDependencies": {
-		"husky": "^4.3.0",
+		"husky": "^4.3.5",
 		"lint-staged": "^10.5.3",
 		"prettier": "^2.2.1",
-		"stylelint": "^13.8.0"
+		"stylelint": "^13.8.0",
+		"stylelint-config-prettier": "^8.0.2"
 	},
 	"lint-staged": {
 		"*.scss": "stylelint --syntax=scss",
-		"*": "prettier --write"
+		"*.{scss,json}": "prettier --write"
 	},
 	"husky": {
 		"hooks": {
