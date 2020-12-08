@@ -1,40 +1,38 @@
 {
-  "name": "design-system",
-  "version": "1.8.4",
-  "description": "Proton Design system, for all Proton Projects: https://design-system.protontech.ch/",
-  "main": "index.js",
-  "scripts": {
-    "lint": "stylelint '**/*.scss' --fix --cache"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:ProtonMail/design-system.git"
-  },
-  "keywords": [
-    "Design System",
-    "CSS guidelines",
-    "Flexbox",
-    "a11y",
-    "ProtonMail",
-    "SVG"
-  ],
-  "author": "Proton Technologies AG",
-  "license": "ISC",
-  "devDependencies": {
-    "husky": "^4.3.0",
-    "lint-staged": "^10.5.3",
-    "prettier": "^2.2.1",
-    "stylelint": "^13.8.0"
-  },
-  "lint-staged": {
-    "*.scss": [
-      "stylelint --syntax=scss --fix",
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
+	"name": "design-system",
+	"version": "1.8.4",
+	"description": "Proton Design system, for all Proton Projects: https://design-system.protontech.ch/",
+	"main": "index.js",
+	"scripts": {
+		"lint": "stylelint --syntax=scss '**/*.scss'"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:ProtonMail/design-system.git"
+	},
+	"keywords": [
+		"Design System",
+		"CSS guidelines",
+		"Flexbox",
+		"a11y",
+		"ProtonMail",
+		"SVG"
+	],
+	"author": "Proton Technologies AG",
+	"license": "ISC",
+	"devDependencies": {
+		"husky": "^4.3.0",
+		"lint-staged": "^10.5.3",
+		"prettier": "^2.2.1",
+		"stylelint": "^13.8.0"
+	},
+	"lint-staged": {
+		"*.scss": "stylelint --syntax=scss",
+		"*": "prettier --write"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	}
 }
