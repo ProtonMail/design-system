@@ -4,7 +4,8 @@
 	"description": "Proton Design system, for all Proton Projects: https://design-system.protontech.ch/",
 	"main": "index.js",
 	"scripts": {
-		"lint": "stylelint --syntax=scss '**/*.scss'"
+		"lint:scss": "stylelint --syntax=scss '**/*.scss'",
+		"build:reset": "sass --no-source-map --style=expanded scss/specifics/android-reset.scss assets/css/android-reset.css"
 	},
 	"repository": {
 		"type": "git",
@@ -20,10 +21,12 @@
 	],
 	"author": "Proton Technologies AG",
 	"license": "ISC",
+	"dependencies": {},
 	"devDependencies": {
 		"husky": "^4.3.5",
 		"lint-staged": "^10.5.3",
 		"prettier": "^2.2.1",
+		"sass": "^1.30.0",
 		"stylelint": "^13.8.0",
 		"stylelint-config-prettier": "^8.0.2"
 	},
