@@ -7,5 +7,5 @@ stages:
 lint:
     stage: test
     script:
-        - ./tasks/lint.sh
+        - npm run lint:scss
 
