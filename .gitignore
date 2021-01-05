@@ -1,6 +1,5 @@
-_site
 .sass-cache
-.jekyll-metadata
-node_modules
-Gemfile.lock
 .DS_Store
+desktop.ini
+/node_modules
+.stylelintcache
