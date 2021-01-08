@@ -71,25 +71,25 @@ a,
 	}
 }
 
-.pm-field {
+.field {
 	&[type='search'] {
 		background-image: url('#{$path-images}sprite-for-css-only.svg#css-search-white');
 	}
 }
 @if $rtl-option == true {
 	[dir='rtl'] {
-		[type='search'].pm-field {
+		[type='search'].field {
 			background-image: url('#{$path-images}sprite-for-css-only.svg#css-search-rtl-white');
 		}
 	}
 }
 
-.pm-field[disabled] {
+.field[disabled] {
 	color: #{rgba($white, 0.5)};
 	opacity: 0.6;
 }
 
-select.pm-field {
+select.field {
 	background-image: url('#{$path-images}sprite-for-css-only.svg#css-caret-white');
 }
 .pm-checkbox {
