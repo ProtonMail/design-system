@@ -97,13 +97,13 @@ select.field {
 		background-image: url('#{$path-images}sprite-for-css-only.svg#css-dash-white');
 	}
 }
-.pm-toggle-checkbox {
-	&[aria-busy='true'] + .pm-toggle-label {
+.toggle-checkbox {
+	&[aria-busy='true'] + .toggle-label {
 		&::before {
 			background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
 		}
 	}
-	&[disabled] + .pm-toggle-label {
+	&[disabled] + .toggle-label {
 		background-color: transparent;
 		opacity: 0.6;
 	}
@@ -113,8 +113,8 @@ select.field {
 	background-image: none;
 }
 
-.pm-toggle-label {
-	& > .pm-toggle-label-text:first-child .pm-toggle-label-img {
+.toggle-label {
+	& > .toggle-label-text:first-child .toggle-label-img {
 		fill: $white;
 	}
 }

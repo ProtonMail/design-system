@@ -317,7 +317,7 @@ textarea[required].field.field-pristine:invalid {
 /* toggle */
 $width: 5.5em !default;
 
-.pm-toggle-label {
+.toggle-label {
 	margin-top: 0.15em;
 	// height: 2em;
 	width: $width;
@@ -344,7 +344,7 @@ $width: 5.5em !default;
 		border: 1px solid var(--bordercolor-input, $pm-global-border);
 	}
 
-	& > .pm-toggle-label-text {
+	& > .toggle-label-text {
 		align-self: center;
 		margin: 0;
 		text-align: center;
@@ -355,7 +355,7 @@ $width: 5.5em !default;
 		z-index: 2;
 		display: inline-flex;
 
-		& .pm-toggle-label-img {
+		& .toggle-label-img {
 			transition: fill 0.1s steps(1, end);
 		}
 	}
@@ -363,7 +363,7 @@ $width: 5.5em !default;
 
 @if $rtl-option==true {
 	[dir='rtl'] {
-		.pm-toggle-label {
+		.toggle-label {
 			&::before {
 				left: auto;
 				right: 0;
@@ -373,27 +373,27 @@ $width: 5.5em !default;
 	}
 }
 
-.pm-toggle-label-img {
+.toggle-label-img {
 	margin: auto;
 	width: 1.6rem;
 	height: 1.6rem;
 	fill: var(--bordercolor-input, $black);
 
-	.pm-toggle-label--theme-toggle & {
+	.toggle-label--theme-toggle & {
 		fill: black;
 	}
 }
 
 // checked state
-.pm-toggle-checkbox {
+.toggle-checkbox {
 	@extend .invisible;
 
-	&:checked + .pm-toggle-label {
-		& > .pm-toggle-label-text:first-child .pm-toggle-label-img {
+	&:checked + .toggle-label {
+		& > .toggle-label-text:first-child .toggle-label-img {
 			fill: var(--bordercolor-input, $black);
 		}
 
-		& > .pm-toggle-label-text:last-child .pm-toggle-label-img {
+		& > .toggle-label-text:last-child .toggle-label-img {
 			fill: $white;
 		}
 
@@ -405,9 +405,9 @@ $width: 5.5em !default;
 		}
 	}
 
-	&:checked + .pm-toggle-label--theme-toggle {
+	&:checked + .toggle-label--theme-toggle {
 		// Theme toggle inside user dropdown
-		& > .pm-toggle-label-text:last-child .pm-toggle-label-img {
+		& > .toggle-label-text:last-child .toggle-label-img {
 			fill: #fce988;
 		}
 
@@ -417,19 +417,19 @@ $width: 5.5em !default;
 		}
 	}
 
-	&:focus + .pm-toggle-label {
+	&:focus + .toggle-label {
 		box-shadow: 0 0 10px 0 $input-shadow-color;
 	}
 
-	&[disabled] + .pm-toggle-label {
+	&[disabled] + .toggle-label {
 		background: #{rgba($pm-global-muted, 0.6)};
 
-		.pm-toggle-label-text {
+		.toggle-label-text {
 			opacity: 0.3;
 		}
 	}
 
-	&[aria-busy='true'] + .pm-toggle-label {
+	&[aria-busy='true'] + .toggle-label {
 		border-color: $pm-global-border;
 
 		&::before {
@@ -439,7 +439,7 @@ $width: 5.5em !default;
 				50% 50% no-repeat;
 		}
 
-		& > .pm-toggle-label-text {
+		& > .toggle-label-text {
 			opacity: 0;
 		}
 	}
@@ -447,14 +447,14 @@ $width: 5.5em !default;
 
 @if $rtl-option==true {
 	[dir='rtl'] {
-		.pm-toggle-checkbox {
-			&:checked + .pm-toggle-label {
+		.toggle-checkbox {
+			&:checked + .toggle-label {
 				&::before {
 					transform: translateX(-#{$width/2}) translateX(2px);
 				}
 			}
 
-			&[aria-busy='true'] + .pm-toggle-label {
+			&[aria-busy='true'] + .toggle-label {
 				&::before {
 					//background-color: $pm-primary;
 					transform: translateX(-#{$width/4}) translateX(2px);
@@ -464,11 +464,11 @@ $width: 5.5em !default;
 	}
 }
 
-.pm-toggle-label--small {
+.toggle-label--small {
 	margin-top: 0.25em;
 	font-size: 0.8em;
 
-	& .pm-toggle-label-img {
+	& .toggle-label-img {
 		width: 1.3rem;
 		height: 1.3rem;
 	}
