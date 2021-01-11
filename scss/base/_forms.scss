@@ -215,7 +215,7 @@ textarea[required].field.field-pristine:invalid {
 }
 
 /* checkboxes */
-.pm-checkbox-fakecheck {
+.checkbox-fakecheck {
 	display: inline-flex;
 	border: 1px solid var(--bordercolor-input, $pm-global-border);
 	border-radius: 2px;
@@ -225,37 +225,37 @@ textarea[required].field.field-pristine:invalid {
 	margin: auto 0.5rem auto 0;
 }
 
-.item-icon-compact .pm-checkbox-fakecheck {
+.item-icon-compact .checkbox-fakecheck {
 	margin: auto;
 	background: var(--bgcolor-input, $white);
 }
 
-.pm-checkbox-fakecheck-img {
+.checkbox-fakecheck-img {
 	margin: auto;
 	// width: 1rem;
 	transform: scale(0);
 	transition: 0.15s transform linear;
 }
 
-.pm-checkbox {
+.checkbox {
 	@extend .sr-only;
 
-	&:checked + .pm-checkbox-fakecheck {
-		.pm-checkbox-fakecheck-img {
+	&:checked + .checkbox-fakecheck {
+		.checkbox-fakecheck-img {
 			transform: scale(1);
 		}
 	}
 
-	&:focus + .pm-checkbox-fakecheck {
+	&:focus + .checkbox-fakecheck {
 		box-shadow: 0 0 10px 0 $input-shadow-color;
 	}
 
-	&[disabled] + .pm-checkbox-fakecheck,
-	&:indeterminate + .pm-checkbox-fakecheck {
+	&[disabled] + .checkbox-fakecheck,
+	&:indeterminate + .checkbox-fakecheck {
 		background: var(--bgcolor-disabled-checkboxes-radios, $pm-global-muted);
 	}
 
-	&:indeterminate + .pm-checkbox-fakecheck {
+	&:indeterminate + .checkbox-fakecheck {
 		content: '';
 		width: 1.6rem;
 		height: 1.6rem;
@@ -266,19 +266,19 @@ textarea[required].field.field-pristine:invalid {
 
 // exception for toolbar
 .pm-select-all {
-	.pm-checkbox-fakecheck {
+	.checkbox-fakecheck {
 		border: 1px solid #585c67;
 		background-color: var(--bgcolor-aside-link, #484e59);
 	}
 
-	.pm-checkbox-fakecheck-img {
+	.checkbox-fakecheck-img {
 		fill: var(--fillcolor-icons, $white);
 	}
 }
 
 /* radios */
 .pm-radio-fakeradio {
-	@extend .pm-checkbox-fakecheck;
+	@extend .checkbox-fakecheck;
 	border-radius: 50%;
 }
 

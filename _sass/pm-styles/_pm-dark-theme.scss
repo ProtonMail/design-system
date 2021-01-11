@@ -92,8 +92,8 @@ a,
 select.field {
 	background-image: url('#{$path-images}sprite-for-css-only.svg#css-caret-white');
 }
-.pm-checkbox {
-	&:indeterminate + .pm-checkbox-fakecheck {
+.checkbox {
+	&:indeterminate + .checkbox-fakecheck {
 		background-image: url('#{$path-images}sprite-for-css-only.svg#css-dash-white');
 	}
 }
