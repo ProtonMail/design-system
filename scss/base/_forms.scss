@@ -265,7 +265,7 @@ textarea[required].field.field-pristine:invalid {
 }
 
 // exception for toolbar
-.pm-select-all {
+.select-all {
 	.checkbox-fakecheck {
 		border: 1px solid #585c67;
 		background-color: var(--bgcolor-aside-link, #484e59);
@@ -277,16 +277,16 @@ textarea[required].field.field-pristine:invalid {
 }
 
 /* radios */
-.pm-radio-fakeradio {
+.radio-fakeradio {
 	@extend .checkbox-fakecheck;
 	border-radius: 50%;
 }
 
-.pm-radio--onTop .pm-radio-fakeradio {
+.radio--onTop .radio-fakeradio {
 	margin-top: 0.25em;
 }
 
-.pm-radio-fakeradio::before {
+.radio-fakeradio::before {
 	content: '';
 	margin: auto;
 	width: 0.8rem;
@@ -297,19 +297,19 @@ textarea[required].field.field-pristine:invalid {
 	transition: 0.15s transform linear;
 }
 
-.pm-radio {
+.radio {
 	@extend .sr-only;
 
-	&:checked + .pm-radio-fakeradio::before {
+	&:checked + .radio-fakeradio::before {
 		background: $pm-primary;
 		transform: scale(1);
 	}
 
-	&:focus + .pm-radio-fakeradio {
+	&:focus + .radio-fakeradio {
 		box-shadow: 0 0 10px 0 $input-shadow-color;
 	}
 
-	&[disabled] + .pm-radio-fakeradio {
+	&[disabled] + .radio-fakeradio {
 		background: var(--bgcolor-disabled-checkboxes-radios, $pm-global-muted);
 	}
 }
