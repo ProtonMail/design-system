@@ -231,12 +231,12 @@ $modal-smaller-width: 28em !default;
 // adaptation for labels
 $pm-label-shorter-width: 10em !default;
 
-.pm-modal--shorterLabels .pm-label {
+.pm-modal--shorterLabels .label {
 	width: var(--label-shorter-width, $pm-label-shorter-width);
 }
 
 @include respond-to($breakpoint-small) {
-	.pm-modal--shorterLabels .onmobile-flex-column .pm-label {
+	.pm-modal--shorterLabels .onmobile-flex-column .label {
 		width: 100%;
 	}
 }

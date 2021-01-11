@@ -1,7 +1,3 @@
-.label {
-	display: inline-block;
-}
-
 .placeholder,
 ::placeholder {
 	color: var(--color-input, #{rgba($pm-global-grey, 0.65)});
@@ -476,7 +472,7 @@ $width: 5.5em !default;
 
 /* label */
 // $pm-label-width defined in global vars
-.pm-label {
+.label {
 	padding-top: 0.5em;
 	width: var(--label-width, $pm-label-width);
 	padding-right: 0.5em;
@@ -500,7 +496,7 @@ $width: 5.5em !default;
 // case for forms labelled only with icons (calendar popover, etc.)
 $pm-label-icon-width: 2.4em !default;
 
-.pm-form--iconLabels .pm-label {
+.pm-form--iconLabels .label {
 	width: $pm-label-icon-width;
 }
 
