@@ -502,7 +502,7 @@ $pm-label-icon-width: 2.4em !default;
 
 /* @protonmail.com field */
 .field--username,
-.signLayout-container .field--username.field--username {
+.sign-layout-container .field--username.field--username {
 	padding-right: var(--padding-right-field-above, 9em);
 }
 
@@ -532,7 +532,7 @@ $pm-label-icon-width: 2.4em !default;
 /* end special case */
 
 /* special stupid case for signup iframe challenge... not using same styles for the moment */
-.signLayout-container {
+.sign-layout-container {
 	.field--username {
 		padding: em(10) em(16); // design want 42px height (actually 41 to avoid .5px)
 	}
