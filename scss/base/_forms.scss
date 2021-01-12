@@ -506,31 +506,6 @@ $pm-label-icon-width: 2.4em !default;
 	padding-right: var(--padding-right-field-above, 9em);
 }
 
-/* special case for very large inputs in modals, like rich text editor */
-.pm-modalContainer .field-container--full {
-	width: calc(100% - var(--label-width, #{$pm-label-width}));
-}
-
-@include respond-to(1360) {
-	.pm-modalContainer .field-container--full {
-		width: $field-container;
-	}
-}
-
-@include respond-to(830) {
-	.pm-modalContainer .field-container--full {
-		width: calc(100% - var(--label-width, #{$pm-label-width}));
-	}
-}
-
-@include respond-to($breakpoint-small) {
-	.pm-modalContainer .field-container--full {
-		width: 100%;
-	}
-}
-
-/* end special case */
-
 /* special stupid case for signup iframe challenge... not using same styles for the moment */
 .sign-layout-container {
 	.field--username {

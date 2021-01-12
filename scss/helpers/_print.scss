@@ -60,24 +60,22 @@
 	}
 
 	.is-printed-version {
-		.pm-modalContainer,
-		.pm-modal,
-		.pm-modalContentInner,
-		.pm-modalContent {
+		.modal-container,
+		.modal,
+		.modal-content-inner,
+		.modal-content {
 			@extend .reset4print;
 		}
 
-		.pm-modalContentInner::before,
-		.pm-modalContentInner::after {
+		.modal-content-inner::before,
+		.modal-content-inner::after {
 			content: none;
 		}
 
 		.app-root,
-		.pm-modalOverlay,
-		.pm-modalHeader,
-		.pm-modalFooter,
-		.pm-modalContentInnerTopShadow,
-		.pm-modalContentInnerBottomShadow,
+		.modal-overlay,
+		.modal-header,
+		.modal-footer,
 		.item-icon,
 		[class^='scrollshadow-'] {
 			@extend .noprint;
