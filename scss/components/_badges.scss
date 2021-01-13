@@ -42,7 +42,7 @@ $border-width: 2px !default;
 }
 
 .badge-label--grey {
-	@extend .bg-global--grey;
+	@extend .bg-global-grey;
 	border-color: $pm-global-grey;
 }
 
