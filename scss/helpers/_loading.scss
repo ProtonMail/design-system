@@ -73,11 +73,11 @@ svg[aria-busy='true'] {
 		left: 0;
 		bottom: 0;
 		background-image: none;
-		animation: backgroundLoading 1s linear infinite alternate;
+		animation: anime-background-loading 1s linear infinite alternate;
 	}
 }
 
-@keyframes backgroundLoading {
+@keyframes anime-background-loading {
 	0% {
 		background-color: $white;
 	}

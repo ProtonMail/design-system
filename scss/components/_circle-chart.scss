@@ -20,7 +20,7 @@ $stroke-width: 3px !default;
 		stroke: $pm-global-success;
 		stroke-width: $stroke-width;
 		fill: transparent;
-		animation: circle-chart-fill 2s reverse;
+		animation: anime-circle-chart-fill 2s reverse;
 		transform: rotate(-90deg);
 		transform-origin: center;
 	}
@@ -42,7 +42,7 @@ $stroke-width: 3px !default;
 	}
 }
 
-@keyframes circle-chart-fill {
+@keyframes anime-circle-chart-fill {
 	to {
 		stroke-dasharray: 0 100;
 	}

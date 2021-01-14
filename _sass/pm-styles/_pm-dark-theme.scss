@@ -142,11 +142,11 @@ td[aria-busy='true'] {
 
 .progressive[aria-busy='true'] {
 	&::before {
-		animation-name: backgroundLoading-dark;
+		animation-name: anime-background-loading-dark;
 	}
 }
 
-@keyframes backgroundLoading-dark {
+@keyframes anime-background-loading-dark {
 	0% {
 		background-color: $pm-secondary-grey;
 	}
