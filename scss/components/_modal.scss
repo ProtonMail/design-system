@@ -24,7 +24,7 @@ $modal-smaller-width: 28em !default;
 	left: 0;
 	background: rgb(0 0 0 / 0.4);
 	z-index: 666;
-	animation: modalOverlayIn ease 0.5s 1 normal;
+	animation: anime-modal-overlay-in ease 0.5s 1 normal;
 }
 
 .modal-container {
@@ -62,11 +62,11 @@ $modal-smaller-width: 28em !default;
 }
 
 .modal-overlay--out {
-	animation: modalOverlayOut ease 0.5s 1 normal;
+	animation: anime-modal-overlay-out ease 0.5s 1 normal;
 	animation-fill-mode: forwards;
 }
 
-@keyframes modalOverlayIn {
+@keyframes anime-modal-overlay-in {
 	0% {
 		background: rgb(0 0 0 / 0);
 	}
@@ -76,7 +76,7 @@ $modal-smaller-width: 28em !default;
 	}
 }
 
-@keyframes modalOverlayOut {
+@keyframes anime-modal-overlay-out {
 	0% {
 		background: rgb(0 0 0 / 0.4);
 	}
@@ -97,7 +97,7 @@ $modal-smaller-width: 28em !default;
 	overflow: hidden;
 	border-radius: $global-border-radius;
 	box-shadow: 0 0 50px 0 rgb(0 0 0 / 0.3);
-	animation: modalIn ease 0.15s 1 normal;
+	animation: anime-modal-in ease 0.15s 1 normal;
 	animation-fill-mode: both;
 	animation-delay: 0.1s; // stupid fix for Safari crazy display bug
 	margin: auto;
@@ -106,7 +106,7 @@ $modal-smaller-width: 28em !default;
 	cursor: default;
 }
 
-@keyframes modalIn {
+@keyframes anime-modal-in {
 	0% {
 		opacity: 0;
 		transform: scale(0.8);
@@ -118,7 +118,7 @@ $modal-smaller-width: 28em !default;
 	}
 }
 
-@keyframes modalOut {
+@keyframes anime-modal-out {
 	0% {
 		opacity: 1;
 		transform: scale(1);
@@ -131,7 +131,7 @@ $modal-smaller-width: 28em !default;
 }
 
 .modal--out {
-	animation: modalOut ease 0.15s 1 normal;
+	animation: anime-modal-out ease 0.15s 1 normal;
 	animation-fill-mode: both;
 }
 
