@@ -9,7 +9,7 @@ $stroke-map: (
 	xbold: 15,
 ) !default;
 
-.loadingAnimation {
+.full-loader {
 	// We need a different duration than each circle for the whole loader
 	// to have an animation that seems visually "random", so here, duration +20% and ease.
 	animation: anime-loader-rotation #{$animation-duration * 1.2} ease-in-out infinite;
