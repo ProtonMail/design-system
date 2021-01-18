@@ -8,11 +8,11 @@ $sticky-title-height: 10rem !default;
 	background: inherit;
 	z-index: 11;
 
-	&--onTop {
+	&--on-top {
 		box-shadow: none;
 	}
 
-	&--noPadding {
+	&--no-padding {
 		padding: 0;
 	}
 }
@@ -27,7 +27,7 @@ $sticky-title-height: 10rem !default;
 		max-width: 75vw;
 	}
 
-	&--fullwidth {
+	&--full-width {
 		max-width: none;
 	}
 
