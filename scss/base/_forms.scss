@@ -10,7 +10,7 @@ $field-container: 26rem !default;
 .field-container {
 	width: $field-container;
 	@extend .mw100;
-	@extend .inbl;
+	@extend .inline-block;
 	@extend .relative;
 
 	&.auto {

@@ -1,5 +1,8 @@
-/* general case */
 @include body-before('desktop', true);
+
+.nodesktop {
+	display: none;
+}
 
 /**
  * medium/tablet landscape minor breakpoint
