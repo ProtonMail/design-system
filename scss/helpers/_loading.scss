@@ -11,15 +11,14 @@ button[aria-busy='true'] {
 	background-repeat: no-repeat;
 }
 
-.pm-button[aria-busy="true"] {
+.pm-button[aria-busy='true'] {
 	padding-left: em(5);
 	padding-right: em(27);
 }
 
-.dropDown-item-button[aria-busy="true"] {
+.dropdown-item-button[aria-busy='true'] {
 	padding-right: em(27);
 }
-
 
 .pm-button--small[aria-busy='true'] {
 	padding-left: em(2);
