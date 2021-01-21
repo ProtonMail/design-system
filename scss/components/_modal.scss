@@ -253,7 +253,7 @@ $pm-label-shorter-width: 10em !default;
 }
 
 @include respond-to($breakpoint-small) {
-	.modal--shorter-labels .onmobile-flex-column .label {
+	.modal--shorter-labels .on-mobile-flex-column .label {
 		width: 100%;
 	}
 }

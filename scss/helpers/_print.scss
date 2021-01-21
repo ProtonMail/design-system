@@ -55,7 +55,7 @@
 	}
 
 	/* hide unnecessary elements */
-	.noprint {
+	.no-print {
 		display: none;
 	}
 
@@ -78,12 +78,12 @@
 		.modal-footer,
 		.item-icon,
 		[class^='scrollshadow-'] {
-			@extend .noprint;
+			@extend .no-print;
 		}
 	}
 
 	/* display specific elements for print */
-	.onprint {
+	.on-print {
 		display: block;
 	}
 
