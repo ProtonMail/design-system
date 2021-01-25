@@ -69,6 +69,7 @@
 	pointer-events: none;
 }
 
+// old select
 .toolbar-select {
 	padding-left: em(16, $base-font);
 	padding-right: em(16, $base-font);
@@ -80,6 +81,14 @@
 
 .toolbar-select option {
 	color: $black; // for Chrome bug
+}
+
+// new select
+.toolbar .pm-select {
+	background: unset;
+	border: unset;
+	color: currentColor;
+	height: auto;
 }
 
 .isDarkMode {
