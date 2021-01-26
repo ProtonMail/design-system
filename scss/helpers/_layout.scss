@@ -124,7 +124,7 @@
 /* grid = element of inline-grid */
 .grid {
 	@extend .inline-block;
-	@extend .aligntop;
+	@extend .align-top;
 }
 
 .inline-grid-container {

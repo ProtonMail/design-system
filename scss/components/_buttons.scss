@@ -194,7 +194,7 @@
 		}
 		.mr0-5 {
 			flex: 1 1 0px;
-			@extend .ellipsis;
+			@extend .text-ellipsis;
 		}
 	}
 }
@@ -503,7 +503,7 @@
 		background-color: transparent; // to avoid heriting from other classes
 	}
 
-	&.nodecoration {
+	&.text-no-decoration {
 		text-decoration: none;
 	}
 

@@ -14,20 +14,20 @@
 	}
 
 	th:not(#{&}-row-th) {
-		@extend .uppercase;
-		@extend .alignleft;
+		@extend .text-uppercase;
+		@extend .text-left;
 
-		&.aligncenter {
-			@extend .aligncenter;
+		&.text-center {
+			@extend .text-center;
 		}
 
-		&.alignright {
-			@extend .alignright;
+		&.text-right {
+			@extend .text-right;
 		}
 
 		@include respond-to($breakpoint-small) {
-			&.on-mobile-aligncenter {
-				@extend .on-mobile-aligncenter;
+			&.on-mobile-text-center {
+				@extend .on-mobile-text-center;
 			}
 		}
 	}

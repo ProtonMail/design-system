@@ -1,7 +1,7 @@
 $border-width: 2px !default;
 
 [class*='badge-label'] {
-	@extend .uppercase;
+	@extend .text-uppercase;
 	@extend .inline-flex;
 	font-size: rem(11); // to be sure this is the same height everywhere
 	padding: 0 em(2) em(1);

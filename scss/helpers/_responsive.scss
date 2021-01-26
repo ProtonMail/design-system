@@ -70,15 +70,15 @@
 	);
 
 	.on-tablet {
-		&-alignleft {
+		&-text-left {
 			text-align: left;
 		}
 
-		&-aligncenter {
+		&-text-center {
 			text-align: center;
 		}
 
-		&-alignright {
+		&-text-right {
 			text-align: right;
 		}
 
@@ -161,15 +161,15 @@
 	);
 
 	.on-mobile {
-		&-alignleft {
+		&-text-left {
 			text-align: left;
 		}
 
-		&-aligncenter {
+		&-text-center {
 			text-align: center;
 		}
 
-		&-alignright {
+		&-text-right {
 			text-align: right;
 		}
 
