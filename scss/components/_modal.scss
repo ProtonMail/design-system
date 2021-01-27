@@ -221,7 +221,7 @@ $modal-smaller-width: 28em !default;
 
 	min-height: 7.9rem; // only for Safari the ugly
 
-	[class*='pm-button'] {
+	[class*='button'] {
 		// only for Safari the ugly
 		min-height: 3.4rem;
 	}
@@ -264,13 +264,13 @@ $pm-label-shorter-width: 10em !default;
 }
 
 // single button on right
-.modal-footer [class*='pm-button']:only-child {
+.modal-footer [class*='button']:only-child {
 	margin-left: auto;
 }
 
 @if $rtl-option==true {
 	[dir='rtl'] {
-		.modal-footer [class*='pm-button']:only-child {
+		.modal-footer [class*='button']:only-child {
 			margin-right: auto;
 			margin-left: 0;
 		}
