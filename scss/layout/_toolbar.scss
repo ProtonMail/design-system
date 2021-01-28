@@ -24,7 +24,9 @@
 	padding-right: var(--padding-toolbar-button);
 	display: flex; // alignment fix on Chrome
 
-	&:hover {
+	&:hover,
+	&:focus,
+	&:focus-within {
 		box-shadow: unset;
 		background-color: var(--bgcolor-spacebar, #505560);
 	}

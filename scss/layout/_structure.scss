@@ -186,6 +186,9 @@ $height-for-mobile: 8em !default;
 }
 
 @include respond-to($breakpoint-small) {
+	.main-area {
+		border-top-left-radius: 0;
+	}
 	.main-area--paddingFix {
 		padding-bottom: $height-for-mobile;
 		// thanks Apple for the fixed toolbar at the bottom
