@@ -119,8 +119,8 @@ select.field {
 	}
 }
 
-.pm-checkbox:focus + .pm-checkbox-fakecheck,
-.pm-radio:focus + .pm-radio-fakeradio {
+.checkbox:focus + .checkbox-fakecheck,
+.radio:focus + .radio-fakeradio {
 	box-shadow: 0 0 10px 0 $input-shadow-color-darkmode;
 }
 
