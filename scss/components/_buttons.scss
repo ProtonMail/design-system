@@ -595,6 +595,7 @@
 
 .button--transparent {
 	/* When using currentColor, you need to set the color you want on a container */
+	@extend %button;
 	border: 1px solid currentColor;
 	color: currentColor;
 
