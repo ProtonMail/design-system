@@ -138,16 +138,23 @@
 		text-decoration: none;
 	}
 
-	&:focus-visible {
-		outline: 4px dashed $pm-primary;
-	}
-	&:-moz-focusring {
-		outline: 4px dashed $pm-primary;
-	}
-	&:focus:not(:-moz-focusring) {
+	@supports selector(:focus-visible) {
+		// remove standard focus
 		outline: 0;
+		// then make a focus style only for keyboard users
+		&:focus-visible {
+			outline: 4px dashed $pm-primary;
+		}
 	}
-
+	// &:focus-visible {
+	// 	outline: 4px dashed $pm-primary;
+	// }
+	// &:-moz-focusring {
+	// 	outline: 4px dashed $pm-primary;
+	// }
+	// &:focus:not(:-moz-focusring) {
+	// 	outline: 0;
+	// }
 }
 
 .button {
