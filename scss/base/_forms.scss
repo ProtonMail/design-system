@@ -525,3 +525,74 @@ $pm-label-icon-width: 2.4em !default;
 		padding: em(10) em(16); // design want 42px height (actually 41 to avoid .5px)
 	}
 }
+
+/**
+ * New input form
+ */
+$inputform-border-color: #b5bac4 !default;
+$inputform-border-color-hover: #989da9 !default;
+$inputform-border-color-focus: $pm-primary !default;
+$inputform-default-spacing-text: 0.3rem !default;
+
+.inputform {
+	&-container {
+		@extend .field-container;
+	}
+
+	&-label,
+	&-assist {
+		font-size: 1.2rem;
+	}
+	&-label {
+		padding-bottom: $inputform-default-spacing-text;
+	}
+
+	&-assist {
+		min-height: 1.8em;
+		padding-top: $inputform-default-spacing-text;
+	}
+
+	&-label-text {
+		font-weight: 600;
+	}
+
+	&-field {
+		filter: none; // fixes Firefox autofill color
+		border: 1px solid var(--bordercolor-input, $inputform-border-color);
+		padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
+		background-color: var(--bgcolor-input, $white);
+		border-radius: $global-border-radius;
+		color: var(--color-input, $pm-global-grey);
+		outline: 0;
+		height: $default-height-fields-inputforms;
+
+		&:hover,
+		&.hover {
+			border-color: $inputform-border-color-hover;
+		}
+
+		&:focus,
+		&.focus,
+		&:focus-within {
+			border-color: $inputform-border-color-focus;
+		}
+
+		&:-moz-ui-invalid {
+			// fixes some Firefox issues with HTML5 validation
+			box-shadow: none;
+		}
+	}
+
+	// global hover state on container ?
+
+	// global error state on container
+	&-container--invalid {
+		.inputform {
+			&-label-text,
+			&-assist {
+				color: red;
+				font-weight: 600;
+			}
+		}
+	}
+}
