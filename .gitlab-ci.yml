@@ -4,9 +4,13 @@ default:
 stages:
   - test
 
-lint:
+lint:scss:
   stage: test
   script:
     - npm ci
     - npm run lint:scss
+
+lint:svg:
+  stage: test
+  script:
     - ./tasks/lint-svg.sh
