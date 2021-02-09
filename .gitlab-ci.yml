@@ -1,12 +1,12 @@
 default:
-    image: node:lts-slim
+	image: node:lts-slim
 
 stages:
-    - test
+	- test
 
 lint:
-    stage: test
-    script:
-        - npm ci
-        - npm run lint:scss
-
+	stage: test
+	script:
+		- npm ci
+		- npm run lint:scss
+		- ./tasks/lint-svg.sh
