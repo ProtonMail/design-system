@@ -6,11 +6,17 @@ stages:
 
 lint:scss:
   stage: test
+  interruptible: true
   script:
     - npm ci
     - npm run lint:scss
 
 lint:svg:
   stage: test
+  tags:
+    - medium
+  interruptible: true
+  variables:
+    NODE_OPTIONS: '--max_old_space_size=4000'
   script:
     - ./tasks/lint-svg.sh
