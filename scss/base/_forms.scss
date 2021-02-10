@@ -532,9 +532,10 @@ $pm-label-icon-width: 2.4em !default;
 $inputform-border-color: #b5bac4 !default;
 $inputform-border-color-hover: #989da9 !default;
 $inputform-assistive-color: #6b7180 !default;
+$inputform-suffix-color: #6b7180 !default;
 $inputform-bg-color: $white !default;
 $inputform-border-color-focus: $pm-primary !default;
-$inputform-default-spacing-text: 0.3rem !default;
+$inputform-default-spacing-text: 4px !default;
 
 .inputform {
 	&-container {
@@ -560,6 +561,10 @@ $inputform-default-spacing-text: 0.3rem !default;
 		font-weight: 600;
 	}
 
+	&-suffix {
+		color: $inputform-suffix-color;
+	}
+
 	&-field {
 		filter: none; // fixes Firefox autofill color
 		border: 1px solid var(--bordercolor-input, $inputform-border-color);
@@ -569,6 +574,10 @@ $inputform-default-spacing-text: 0.3rem !default;
 		color: var(--color-input, $pm-global-grey);
 		outline: 0;
 		height: $default-height-fields-inputforms;
+
+		&.error {
+			border-color: $pm-global-warning;
+		}
 
 		&:hover,
 		&.hover {
@@ -628,6 +637,9 @@ $inputform-default-spacing-text: 0.3rem !default;
 			&-assist {
 				color: $pm-global-warning;
 				font-weight: 600;
+			}
+			&-field {
+				border-color: $pm-global-warning;
 			}
 		}
 	}
