@@ -6,26 +6,9 @@ $minicalendar-bg-color-range-selection: #51555f !default;
 
 .minicalendar {
 	font-size: $minicalendar-fontsize;
-
-	// ranges
-	.minicalendar-day--range-bound-begin,
-	.minicalendar-day--range-bound-begin:hover,
-	.minicalendar-day--range-bound-begin:focus {
-		border-top-left-radius: 40%;
-		border-bottom-left-radius: 40%;
-	}
-	.minicalendar-day--range-bound-end,
-	.minicalendar-day--range-bound-end:hover,
-	.minicalendar-day--range-bound-end:focus {
-		border-top-right-radius: 40%;
-		border-bottom-right-radius: 40%;
-	}
-	.minicalendar-day--range-bound-begin.minicalendar-day--range-bound-end {
-		border-radius: 50%;
-	}
 }
 
-.minicalendar-grid--displayWeekNumber {
+.minicalendar-grid--display-week-number {
 	display: grid;
 	grid-template-columns: 30px auto;
 	grid-template-rows: auto;
@@ -86,7 +69,7 @@ $minicalendar-bg-color-range-selection: #51555f !default;
 	transform: scale(0.7);
 }
 
-.minicalendar-grid--displayWeekNumber .minicalendar-day {
+.minicalendar-grid--display-week-number .minicalendar-day {
 	min-width: $minicalendar-cell-size;
 	min-height: $minicalendar-cell-size;
 
@@ -119,7 +102,7 @@ $mini-calendar-currentDay-size: 2.5em !default;
 	max-width: $mini-calendar-currentDay-size;
 }
 
-.minicalendar--onDarkBackground {
+.minicalendar--on-dark-background {
 	.minicalendar-day {
 		color: $minicalendar-day-color-on-dark-background;
 		&:focus,
@@ -164,9 +147,16 @@ $minicalendar-day-marker-size: 3px !default;
 	background: $pm-primary;
 }
 
-.minicalendar-day--range[aria-pressed='true'],
-.minicalendar-day--range[aria-pressed='true']:hover,
-.minicalendar-day--range[aria-pressed='true']:focus {
+.minicalendar-day--range[aria-pressed='true'] {
 	background: $minicalendar-bg-color-range-selection;
-	border-radius: 0;
+
+	&:not(.minicalendar-day--range-bound-begin) {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	&:not(.minicalendar-day--range-bound-end) {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
 }
