@@ -658,7 +658,6 @@ $inputform-default-spacing-text: 4px !default;
 			}
 		}
 
-		&,
 		&-empty {
 			// for drive, to keep the same height
 			min-height: calc(#{$default-height-fields-inputforms} + 2px);
@@ -676,8 +675,8 @@ $inputform-default-spacing-text: 4px !default;
 
 	// bigger inputs
 	&-container--bigger {
-		.inputform-field,
-		.right-icon {
+		.right-icon,
+		.inputform-icon-container {
 			height: $bigger-height-fields-inputforms;
 		}
 		.inputform-field {
@@ -687,10 +686,12 @@ $inputform-default-spacing-text: 4px !default;
 			}
 		}
 		.inputform-icon-container {
-			&,
 			&-empty {
 				// for drive, to keep the same height
 				min-height: calc(#{$bigger-height-fields-inputforms} + 2px);
+			}
+			.inputform-field {
+				height: 100%;
 			}
 		}
 	}
