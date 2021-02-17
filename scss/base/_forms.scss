@@ -676,6 +676,7 @@ $inputform-default-spacing-text: 4px !default;
 	// bigger inputs
 	&-container--bigger {
 		.right-icon,
+		.inputform-field,
 		.inputform-icon-container {
 			height: $bigger-height-fields-inputforms;
 		}
