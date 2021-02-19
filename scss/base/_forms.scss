@@ -671,6 +671,10 @@ $inputform-default-spacing-text: 4px !default;
 				border: 0;
 			}
 		}
+
+		.inputform-field {
+			height: 100%;
+		}
 	}
 
 	// bigger inputs
@@ -690,9 +694,6 @@ $inputform-default-spacing-text: 4px !default;
 			&-empty {
 				// for drive, to keep the same height
 				min-height: calc(#{$bigger-height-fields-inputforms} + 2px);
-			}
-			.inputform-field {
-				height: 100%;
 			}
 		}
 	}
