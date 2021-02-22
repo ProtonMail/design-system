@@ -31,7 +31,7 @@
 }
 
 // .w500r { width: 500rem; }
-@each $width in (33) {
+@each $width in (16, 33) {
 	.w#{$width}r {
 		width: #{$width}rem;
 	}
