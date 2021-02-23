@@ -287,63 +287,66 @@ textarea[required].field.field-pristine:invalid {
 }
 
 /* toggle */
-$width: 5.5em !default;
+$toggle-width: em(40) !default;
+$toggle-width-button: em(24) !default;
+$toggle-bg: #e7e9ee !default;
+$toggle-bg-loading: #6b7180 !default;
+$toggle-unactive-bg: #b5bac4 !default;
+$toggle-active-bg: $pm-blue !default;
+$toggle-active-focus-bg: #5064b6 !default;
 
 .toggle-label {
-	margin-top: 0.15em;
+	margin-top: 0.5em;
 	// height: 2em;
-	width: $width;
+	width: $toggle-width;
 	display: inline-flex;
-	border: 1px solid var(--bordercolor-input, $pm-global-border);
-	background: var(--bgcolor-view-column-detail, $pm-input-background);
-	border-radius: 2rem;
-	padding: 2px;
+	background: $toggle-bg;
+	border-radius: #{$toggle-width/2};
 	position: relative;
-	transition: border-color 0.15s ease-out;
+	//transition: background-color 0.15s ease-out 1s;
 
 	&::before {
 		content: '';
 		position: absolute;
-		width: calc(#{$width/2} - 2px);
-		transition: transform 0.25s ease, background-color 0.25s ease,
-			border-color 0.25s linear;
-		border-radius: 2rem;
-		background: var(--bgcolor-context-bar, $pm-global-muted);
-		top: 2px;
+		width: #{$toggle-width-button};
+		transition: transform 0.25s ease, background-color 0.25s ease;
+		border-radius: $toggle-width-button;
+		background: var(--bgcolor-context-bar, $toggle-unactive-bg);
+		top: 0;
 		left: 0;
-		bottom: 2px;
-		transform: translateX(2px);
-		border: 1px solid var(--bordercolor-input, $pm-global-border);
+		bottom: 0;
+		transform: translateX(0);
 	}
 
 	& > .toggle-label-text {
+		min-height: $toggle-width-button;
 		align-self: center;
 		margin: 0;
 		text-align: center;
-		border-radius: 2rem;
-		padding: em(6) 0;
-		width: #{$width/2};
+		border-radius: $toggle-width-button;
+		width: $toggle-width-button;
 		position: relative;
 		z-index: 2;
+		left: #{$toggle-width - $toggle-width-button};
 		display: inline-flex;
 
 		& .toggle-label-img {
 			transition: fill 0.1s steps(1, end);
+			fill: transparent;
 		}
 	}
 }
 
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.toggle-label {
-			&::before {
-				left: auto;
-				right: 0;
-				transform: translateX(-2px);
-			}
-		}
-	}
-}
+// @if $rtl-option==true {
+// 	[dir='rtl'] {
+// 		.toggle-label {
+// 			&::before {
+// 				left: auto;
+// 				right: 0;
+// 			}
+// 		}
+// 	}
+// }
 
 .toggle-label-img {
 	margin: auto;
@@ -358,7 +361,7 @@ $width: 5.5em !default;
 
 // checked state
 .toggle-checkbox {
-	@extend .invisible;
+	@extend .sr-only;
 
 	&:checked + .toggle-label {
 		& > .toggle-label-text:first-child .toggle-label-img {
@@ -370,10 +373,10 @@ $width: 5.5em !default;
 		}
 
 		&::before {
-			background: $pm-primary;
-			transform: translateX(#{$width/2}) translateX(-2px);
+			//background: $toggle-active-bg;
+			transform: translateX(#{$toggle-width - $toggle-width-button});
 			// transform: translateX( calc( 2.5rem - 2px) ); does NOT work in IE11
-			border-color: $pm-primary-dark;
+			background-color: $pm-primary-dark;
 		}
 	}
 
@@ -389,52 +392,66 @@ $width: 5.5em !default;
 		}
 	}
 
-	&:focus + .toggle-label {
-		box-shadow: 0 0 10px 0 $input-shadow-color;
-	}
-
 	&[disabled] + .toggle-label {
-		background: #{rgba($pm-global-muted, 0.6)};
-
-		.toggle-label-text {
-			opacity: 0.3;
-		}
+		opacity: 0.5;
 	}
 
-	&[aria-busy='true'] + .toggle-label {
-		border-color: $pm-global-border;
+	&[aria-busy='true'][disabled] {
+		// because aria-busy and disabled
 
-		&::before {
-			border-color: transparent;
-			transform: translateX(#{$width/4}) translateX(-2px);
-			background: transparent url(#{$path-images}loading-atom-smaller.svg)
-				50% 50% no-repeat;
-		}
+		+ .toggle-label {
+			opacity: 1;
 
-		& > .toggle-label-text {
-			opacity: 0;
-		}
-	}
-}
-
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.toggle-checkbox {
-			&:checked + .toggle-label {
-				&::before {
-					transform: translateX(-#{$width/2}) translateX(2px);
-				}
+			&::before {
+				//transform: translateX(#{$width/4});
+				background-color: $toggle-bg-loading;
+				background-image: url(#{$path-images}infinite-loader.svg);
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				background-size: em(14);
 			}
 
-			&[aria-busy='true'] + .toggle-label {
+			& > .toggle-label-text {
+				opacity: 0;
+			}
+		}
+
+		&:checked {
+			+ .toggle-label {
 				&::before {
-					//background-color: $pm-primary;
-					transform: translateX(-#{$width/4}) translateX(2px);
+					background-color: $toggle-active-bg;
 				}
 			}
 		}
 	}
+
+	&:focus {
+		+ .toggle-label {
+			&::before {
+				background-color: $toggle-bg-loading;
+			}
+		}
+	}
+	&:checked:focus {
+		+ .toggle-label {
+			&::before {
+				background-color: $toggle-active-focus-bg;
+			}
+		}
+	}
 }
+
+// @if $rtl-option==true {
+// 	[dir='rtl'] {
+// 		.toggle-checkbox {
+// 			&:checked + .toggle-label {
+// 				&::before {
+// 					transform: translateX(-#{$toggle-width/2});
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 .toggle-label--small {
 	margin-top: 0.25em;
