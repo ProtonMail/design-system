@@ -60,6 +60,15 @@
 	&[aria-expanded='true'] .caret-like {
 		@extend .rotateX-180;
 	}
+
+	@supports selector(:focus-visible) {
+		// remove standard focus
+		outline: 0;
+		// then make a focus style only for keyboard users
+		&:focus-visible {
+			outline: 4px dashed var(--primary);
+		}
+	}
 }
 
 /*
