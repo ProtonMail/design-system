@@ -297,13 +297,12 @@ $toggle-active-focus-bg: #5064b6 !default;
 
 .toggle-label {
 	margin-top: 0.5em;
-	// height: 2em;
+	min-height: $toggle-width-button;
 	width: $toggle-width;
 	display: inline-flex;
 	background: $toggle-bg;
 	border-radius: #{$toggle-width/2};
 	position: relative;
-	//transition: background-color 0.15s ease-out 1s;
 
 	&::before {
 		content: '';
@@ -319,43 +318,27 @@ $toggle-active-focus-bg: #5064b6 !default;
 	}
 
 	& > .toggle-label-text {
-		min-height: $toggle-width-button;
-		align-self: center;
-		margin: 0;
-		text-align: center;
+		// align-items: center;
+		// text-align: center;
 		border-radius: $toggle-width-button;
 		width: $toggle-width-button;
-		position: relative;
+		position: absolute;
 		z-index: 2;
-		left: #{$toggle-width - $toggle-width-button};
+		left: 0;
+		top: 0;
+		bottom: 0;
 		display: inline-flex;
 
 		& .toggle-label-img {
 			transition: fill 0.1s steps(1, end);
 			fill: transparent;
+			margin: auto;
 		}
-	}
-}
 
-// @if $rtl-option==true {
-// 	[dir='rtl'] {
-// 		.toggle-label {
-// 			&::before {
-// 				left: auto;
-// 				right: 0;
-// 			}
-// 		}
-// 	}
-// }
-
-.toggle-label-img {
-	margin: auto;
-	width: 1.6rem;
-	height: 1.6rem;
-	fill: var(--bordercolor-input, $black);
-
-	.toggle-label--theme-toggle & {
-		fill: black;
+		+ .toggle-label-text {
+			right: 0;
+			left: auto;
+		}
 	}
 }
 
@@ -364,31 +347,13 @@ $toggle-active-focus-bg: #5064b6 !default;
 	@extend .sr-only;
 
 	&:checked + .toggle-label {
-		& > .toggle-label-text:first-child .toggle-label-img {
-			fill: var(--bordercolor-input, $black);
-		}
-
 		& > .toggle-label-text:last-child .toggle-label-img {
 			fill: $white;
 		}
 
 		&::before {
-			//background: $toggle-active-bg;
 			transform: translateX(#{$toggle-width - $toggle-width-button});
-			// transform: translateX( calc( 2.5rem - 2px) ); does NOT work in IE11
 			background-color: $pm-primary-dark;
-		}
-	}
-
-	&:checked + .toggle-label--theme-toggle {
-		// Theme toggle inside user dropdown
-		& > .toggle-label-text:last-child .toggle-label-img {
-			fill: #fce988;
-		}
-
-		&::before {
-			background: rgb(0 0 0 / 0.75);
-			border-color: rgb(255 255 255 / 0.25);
 		}
 	}
 
@@ -439,19 +404,23 @@ $toggle-active-focus-bg: #5064b6 !default;
 			}
 		}
 	}
-}
 
-// @if $rtl-option==true {
-// 	[dir='rtl'] {
-// 		.toggle-checkbox {
-// 			&:checked + .toggle-label {
-// 				&::before {
-// 					transform: translateX(-#{$toggle-width/2});
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+	// Theme toggle inside user dropdown
+	// &--theme-toggle & {
+	// 	fill: black;
+	// }
+	&:checked + .toggle-label--theme-toggle {
+		// Theme toggle inside user dropdown
+		& > .toggle-label-text:last-child .toggle-label-img {
+			fill: #fce988;
+		}
+
+		// &::before {
+		// 	background: rgb(0 0 0 / 0.75);
+		// 	border-color: rgb(255 255 255 / 0.25);
+		// }
+	}
+}
 
 .toggle-label--small {
 	margin-top: 0.25em;
