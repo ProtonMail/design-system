@@ -337,6 +337,7 @@ $toggle-active-focus-bg: #5064b6 !default;
 		top: 0;
 		bottom: 0;
 		display: inline-flex;
+
 		&:first-child {
 			z-index: 3;
 		}
@@ -345,7 +346,7 @@ $toggle-active-focus-bg: #5064b6 !default;
 		}
 
 		& .toggle-label-img {
-			transition: fill 0.1s steps(1, end);
+			transition: 0s; // transition for disappear
 			fill: transparent;
 			margin: auto;
 		}
@@ -367,13 +368,16 @@ $toggle-active-focus-bg: #5064b6 !default;
 	@extend .sr-only;
 
 	&:checked + .toggle-label {
-		& > .toggle-label-text:first-child {
-			z-index: 1;
-		}
-		& > .toggle-label-text:last-child {
-			z-index: 3;
-			.toggle-label-img {
-				fill: $white;
+		& > .toggle-label-text {
+			&:first-child {
+				z-index: 1;
+			}
+			&:last-child {
+				z-index: 3;
+				.toggle-label-img {
+					fill: $white;
+					transition: fill 0.1s steps(1, end) 0.1s; // transition for appear
+				}
 			}
 		}
 
