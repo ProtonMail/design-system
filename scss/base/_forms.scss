@@ -305,15 +305,6 @@ $toggle-bg-disabled: var(
 $toggle-active-bg: $pm-blue !default;
 $toggle-active-focus-bg: #5064b6 !default;
 
-/*
-bg reste le même en disabled
-
-bouboule : $toggle-bg-default  b5bac4
-bouboule hover : 989da9 -> 6b7180
-bouboule disabled: d7d9e0  -> 494e5b494e5b
-bouboule
-*/
-
 .toggle-label {
 	margin-top: 0.5em;
 	min-height: $toggle-width-button;
@@ -338,8 +329,6 @@ bouboule
 	}
 
 	& > .toggle-label-text {
-		// align-items: center;
-		// text-align: center;
 		border-radius: $toggle-width-button;
 		width: $toggle-width-button;
 		position: absolute;
