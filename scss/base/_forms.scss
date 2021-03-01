@@ -286,31 +286,51 @@ textarea[required].field.field-pristine:invalid {
 	}
 }
 
-/* toggle */
+/* New toggle */
 $toggle-width: em(40) !default;
 $toggle-width-button: em(24) !default;
-$toggle-bg: #e7e9ee !default;
-$toggle-bg-loading: #6b7180 !default;
-$toggle-unactive-bg: #b5bac4 !default;
+$toggle-bg-container: var(
+	--toggle-bg-container,
+	#e7e9ee
+) !default; // dark mode 3c414e
+$toggle-bg-loading: #989da9 !default;
+$toggle-bg-default: var(
+	--toggle-bg-default,
+	#b5bac4
+) !default; // dark mode 5c6270
+$toggle-bg-disabled: var(
+	--toggle-bg-disabled,
+	#d7d9e0
+) !default; // dark mode 494e5b
 $toggle-active-bg: $pm-blue !default;
 $toggle-active-focus-bg: #5064b6 !default;
+
+/*
+bg reste le même en disabled
+
+bouboule : $toggle-bg-default  b5bac4
+bouboule hover : 989da9 -> 6b7180
+bouboule disabled: d7d9e0  -> 494e5b494e5b
+bouboule
+*/
 
 .toggle-label {
 	margin-top: 0.5em;
 	min-height: $toggle-width-button;
 	width: $toggle-width;
 	display: inline-flex;
-	background: $toggle-bg;
+	background: $toggle-bg-container;
 	border-radius: #{$toggle-width/2};
 	position: relative;
 
 	&::before {
 		content: '';
+		z-index: 2;
 		position: absolute;
 		width: #{$toggle-width-button};
 		transition: transform 0.25s ease, background-color 0.25s ease;
 		border-radius: $toggle-width-button;
-		background: var(--bgcolor-context-bar, $toggle-unactive-bg);
+		background: $toggle-bg-default;
 		top: 0;
 		left: 0;
 		bottom: 0;
@@ -328,6 +348,12 @@ $toggle-active-focus-bg: #5064b6 !default;
 		top: 0;
 		bottom: 0;
 		display: inline-flex;
+		&:first-child {
+			z-index: 3;
+		}
+		&:last-child {
+			z-index: 1;
+		}
 
 		& .toggle-label-img {
 			transition: fill 0.1s steps(1, end);
@@ -340,6 +366,11 @@ $toggle-active-focus-bg: #5064b6 !default;
 			left: auto;
 		}
 	}
+
+	// will be done later
+	// &--with-icons {
+
+	// }
 }
 
 // checked state
@@ -347,8 +378,14 @@ $toggle-active-focus-bg: #5064b6 !default;
 	@extend .sr-only;
 
 	&:checked + .toggle-label {
-		& > .toggle-label-text:last-child .toggle-label-img {
-			fill: $white;
+		& > .toggle-label-text:first-child {
+			z-index: 1;
+		}
+		& > .toggle-label-text:last-child {
+			z-index: 3;
+			.toggle-label-img {
+				fill: $white;
+			}
 		}
 
 		&::before {
@@ -358,7 +395,9 @@ $toggle-active-focus-bg: #5064b6 !default;
 	}
 
 	&[disabled] + .toggle-label {
-		opacity: 0.5;
+		&::before {
+			background-color: $toggle-bg-disabled;
+		}
 	}
 
 	&[aria-busy='true'][disabled] {
@@ -368,7 +407,6 @@ $toggle-active-focus-bg: #5064b6 !default;
 			opacity: 1;
 
 			&::before {
-				//transform: translateX(#{$width/4});
 				background-color: $toggle-bg-loading;
 				background-image: url(#{$path-images}infinite-loader.svg);
 				background-position: 50% 50%;
@@ -390,35 +428,31 @@ $toggle-active-focus-bg: #5064b6 !default;
 		}
 	}
 
-	&:focus {
+	&:focus,
+	&:hover {
 		+ .toggle-label {
 			&::before {
 				background-color: $toggle-bg-loading;
 			}
 		}
 	}
-	&:checked:focus {
+	&:checked:focus,
+	&:checked:hover {
 		+ .toggle-label {
 			&::before {
 				background-color: $toggle-active-focus-bg;
 			}
 		}
 	}
-
-	// Theme toggle inside user dropdown
-	// &--theme-toggle & {
-	// 	fill: black;
-	// }
-	&:checked + .toggle-label--theme-toggle {
-		// Theme toggle inside user dropdown
-		& > .toggle-label-text:last-child .toggle-label-img {
-			fill: #fce988;
-		}
-
-		// &::before {
-		// 	background: rgb(0 0 0 / 0.75);
-		// 	border-color: rgb(255 255 255 / 0.25);
-		// }
+}
+/*
+ * TO REMOVE WITH COLOR REWORK !!!!
+ */
+.isDarkMode {
+	.toggle-label {
+		--toggle-bg-container: #3c414e;
+		--toggle-bg-default: #5c6270;
+		--toggle-bg-disabled: #494e5b;
 	}
 }
 
