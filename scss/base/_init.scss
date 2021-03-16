@@ -120,7 +120,7 @@ svg {
 }
 
 textarea {
-	min-height: $default-height-fields; // Equals field inputs height
+	min-height: #{rem($default-height-fields)}; // Equals field inputs height
 }
 
 /*
@@ -226,7 +226,13 @@ details {
 }
 
 summary {
+<<<<<<< HEAD
 	padding: 0.5em 0;
+=======
+	padding: 0.5em 0 0.5em rem(20);
+	background: url(#{$path-images}sprite-for-css-only.svg#css-caret) 0 50%
+		no-repeat;
+>>>>>>> Feat - remove root reset
 	list-style: none;
 	border: 0;
 	cursor: pointer;

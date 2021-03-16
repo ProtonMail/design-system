@@ -9,7 +9,7 @@ $container-to-width: 3em !default;
 	width: var(
 		--width-conversation-column,
 		calc(
-			(100% + var(--width-sidebar, #{$width-sidebar})) * #{$conversations-column-width/1%/100}
+			(100% + var(--width-sidebar, #{rem($width-sidebar)})) * #{$conversations-column-width/1%/100}
 		)
 	);
 }
