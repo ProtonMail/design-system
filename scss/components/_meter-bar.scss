@@ -1,4 +1,4 @@
-@mixin meter-bar-size($size: 1.5rem) {
+@mixin meter-bar-size($size: #{rem(15)}) {
 	height: $size;
 	border-radius: #{$size/2};
 

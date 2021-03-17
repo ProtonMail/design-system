@@ -6,8 +6,8 @@ body {
 
 @include respond-to($breakpoint-large, 'min') {
 	:root {
-		--width-sidebar: 25rem;
-		--width-context-bar: 45rem;
+		--width-sidebar: #{rem(250)};
+		--width-context-bar: #{rem(450)};
 	}
 }
 
@@ -58,7 +58,7 @@ html,
 }
 
 .header {
-	padding: 1rem 1.5rem 1rem 0;
+	padding: rem(10) rem(15) rem(10) 0;
 	height: rem($header-height);
 	flex-shrink: 0;
 	background-color: var(--header-background-color, var(--background-norm));
@@ -68,7 +68,7 @@ html,
 @if $rtl-option==true {
 	[dir='rtl'] {
 		.header {
-			padding: 1rem 0 1rem 2rem;
+			padding: rem(10) 0 rem(10) rem(15);
 		}
 	}
 }
@@ -125,14 +125,14 @@ html,
 	.plan {
 		position: absolute;
 		bottom: 0.5em;
-		left: 3.2rem;
-		font-size: 1rem;
+		left: rem(32);
+		font-size: rem(10);
 		line-height: 1;
 	}
 }
 
 .logo {
-	height: 2.2rem;
+	height: rem(22);
 }
 
 .logo g {
