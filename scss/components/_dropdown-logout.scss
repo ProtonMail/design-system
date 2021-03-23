@@ -18,6 +18,10 @@
 		font-size: 1rem;
 	}
 
+	&-initials--no-bg {
+		min-width: 2.5em;
+		min-height: 2.5em;
+	}
 	&-initials {
 		&#{&} {
 			// Specificity -_-v
