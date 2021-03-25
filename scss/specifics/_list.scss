@@ -76,7 +76,7 @@ $item-container-row-height-compact-mode: 4rem !default;
 	&.read {
 		background-color: var(
 			--email-item-read-background-color,
-			var(--interaction-default)
+			var(--background-weak)
 		);
 
 		.item-senddate-col,
@@ -103,10 +103,7 @@ $item-container-row-height-compact-mode: 4rem !default;
 	}
 
 	&:hover::after {
-		border-left-color: var(
-			--email-item-hover-marker-color,
-			var(--interaction-norm)
-		);
+		box-shadow: var(--shadow-norm);
 	}
 
 	&:focus::after,
@@ -124,13 +121,6 @@ $item-container-row-height-compact-mode: 4rem !default;
 			--email-item-selected-background-color,
 			var(--background-strong)
 		);
-
-		&::after {
-			border-left-color: var(
-				--email-item-selected-marker-color,
-				var(--interaction-norm)
-			);
-		}
 	}
 }
 
