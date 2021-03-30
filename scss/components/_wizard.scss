@@ -6,16 +6,7 @@ $size-current-pin: 16px !default;
 	display: flex;
 
 	&-container {
-		position: relative;
-		padding-top: 1.5em;
 		padding-left: 2px; // "optical" alignment, difficult to align text and circle ^^
-		padding-top: 0;
-		padding-bottom: 1em;
-		margin-bottom: 1em;
-
-		&--no-text-displayed {
-			padding-top: 0;
-		}
 	}
 
 	&-marker {
