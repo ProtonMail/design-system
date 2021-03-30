@@ -425,8 +425,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 }
 
 .starbutton {
-	width: 1.6rem;
-	height: 1.6rem;
+	width: rem(16);
+	height: rem(16);
 	color: var(--text-weak);
 
 	&:focus,

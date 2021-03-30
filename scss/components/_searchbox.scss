@@ -35,9 +35,9 @@
 	}
 
 	&-field[type='search'] {
-		height: 4rem;
-		padding-left: calc(2em + 2rem);
-		padding-right: 4rem;
+		height: rem(40);
+		padding-left: calc(2em + #{rem(20)});
+		padding-right: rem(40);
 		background-color: var(--searchbox-background-color, transparent);
 		background-image: none;
 		color: var(--searchbox-text-color, var(--text-norm));
@@ -74,8 +74,8 @@
 @if $rtl-option==true {
 	[dir='rtl'] {
 		.searchbox-field[type='search'] {
-			padding-right: calc(2em + 2rem);
-			padding-left: 4rem;
+			padding-right: calc(2em + #{rem(20)});
+			padding-left: rem(40);
 		}
 
 		.searchbox-search-button-icon {
@@ -94,13 +94,13 @@
 
 		.searchbox-container--reset-advanced {
 			.searchbox-field[type='search'] {
-				padding-right: calc(2em + 2rem);
-				padding-left: 6rem;
+				padding-right: calc(2em + #{rem(20)});
+				padding-left: rem(60);
 			}
 
 			.searchbox-advanced-search-button {
 				right: auto;
-				left: 2.5rem;
+				left: rem(25);
 			}
 		}
 	}

@@ -193,8 +193,8 @@
 			position: relative;
 			z-index: 1;
 			display: block;
-			height: 0.3rem;
-			flex: 0 0 0.3rem;
+			height: rem(3);
+			flex: 0 0 rem(3);
 			background: var(--background-norm);
 		}
 	}
