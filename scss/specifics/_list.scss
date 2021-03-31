@@ -283,8 +283,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 }
 
 .item-icon-compact {
-	width: $conversation-icon-size;
-	height: $conversation-icon-size;
+	width: rem($conversation-icon-size);
+	height: rem($conversation-icon-size);
 	border-radius: 50%;
 	font-size: rem(12);
 	transition: background 0.25s ease;
