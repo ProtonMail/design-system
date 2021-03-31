@@ -203,7 +203,7 @@ textarea.field {
 	&,
 	&-empty {
 		// for drive, to keep the same height
-		min-height: calc(#{$default-height-fields} + 2px);
+		min-height: calc(#{rem($default-height-fields)} + 2px);
 	}
 
 	&:focus-within {
