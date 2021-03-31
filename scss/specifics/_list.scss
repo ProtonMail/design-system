@@ -177,11 +177,10 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 	.item-container-row {
 		height: $item-container-row-height-compact-mode;
-	}
-
-	.item-icon-compact {
-		&::after {
-			height: $item-container-row-height-compact-mode;
+		.item-icon-compact {
+			&::after {
+				height: $item-container-row-height-compact-mode;
+			}
 		}
 	}
 
@@ -298,8 +297,13 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		position: absolute;
 		left: -#{em(12)};
 		right: -#{em(12)};
-		top: -#{($item-container-height-compact-mode - $conversation-icon-size) /
-			2};
+		top: calc(
+			-1 * (
+					#{$item-container-height-compact-mode} - #{rem(
+							$conversation-icon-size
+						)}
+				) / 2
+		);
 		height: $item-container-height-compact-mode;
 	}
 
