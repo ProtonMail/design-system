@@ -3,7 +3,7 @@
  */
 :root,
 .ui-standard {
-	--primary: #657ee4;
+	--primary: #9397cd;
 	--primary-contrast: white;
 
 	--signal-danger: #d42f34;
@@ -21,7 +21,7 @@
 	--signal-success-active: #0f6b4c;
 	--signal-success-contrast: white;
 
-	--signal-info: #1578cf;
+	--signal-info: #e3e4f2;
 	--signal-info-hover: #0e6dc2;
 	--signal-info-active: #0764b5;
 	--signal-info-contrast: white;
@@ -36,15 +36,15 @@
 	--field-hover: #a4a9b5;
 	--field-disabled: #d0d3da;
 
-	--border-norm: #d0d3da;
-	--border-weak: #e7e9ec;
+	--border-norm: #acb0bf;
+	--border-weak: #acb0bf;
 
 	--background-norm: white;
-	--background-weak: #f3f4f6;
+	--background-weak: #e6eaf0;
 	--background-strong: #e7e9ec;
 
-	--interaction-norm: #657ee4;
-	--interaction-norm-hover: #5064b6;
+	--interaction-norm: #9397cd;
+	--interaction-norm-hover: #8286c5;
 	--interaction-norm-active: #3c4b88;
 	--interaction-norm-contrast: white;
 
@@ -67,6 +67,85 @@
 	--scrollbar-thumb-hover-color: #babec7;
 
 	--main-border-color: transparent;
+	--toolbar-text-color: #666;
+
+	--toolbar-background-color: #fff;
+	--toolbar-separator-color: transparent;
+	--searchbox-background-color: hsla(0, 0%, 90.2%, 0.2);
+
+	//--header-background-color: #6a6f7c; // need a gradient or something else
+
+	--email-item-selected-background-color: #828895;
+	--favorite-icon-color: #dfdf19;
+
+	--select-all-border: #acb0bf;
+	--select-all-background: #fff;
+	--select-all-background-hover: #ededee;
+	--select-all-background-checked-hover: #acb0bf;
+
+	--message-header-extra-background: #d9dfe8;
+
+	/*
+	--header-background-color
+	--sidebar-background-color
+	--navigation-current-item-marker-color
+	--navigation-current-item-background-color
+	--navigation-current-item-text-color
+	--main-box-shadow
+	--main-border-color
+	--navigation-item-count-background-color
+	--navigation-item-count-text-color
+	--toolbar-background-color
+	--toolbar-text-color
+	--toolbar-separator-color
+	--scrollbar-thumb-color
+	--scrollbar-thumb-hover-color
+	--tooltip-background-color
+	--tooltip-text-color
+	--email-item-read-background-color
+	--email-item-unread-background-color
+	--email-item-selected-background-color
+	--email-item-focus-marker-color
+	--field-background-color
+	--field-text-color
+	--field-placeholder-color
+	--field-hover-background-color
+	--field-hover-text-color
+	--field-focus-background-color
+	--field-focus-text-color
+	--field-disabled-background-color
+	--field-disabled-text-color
+	--favorite-icon-color
+	--mark-background-color
+	--mark-text-color
+	--mark-font-weight
+	--modal-background-color
+	--modal-text-color
+	--file-preview-text-color
+	--file-preview-background-color
+
+	--select-all-border
+	--select-all-background
+	--select-all-background-hover
+	--select-all-background-checked-hover
+
+	--message-header-extra-background
+	--message-header-extra-color
+	*/
+}
+
+// need a special custom prop for this one
+
+.item-container.item-is-selected {
+	&,
+	.item-subject,
+	.item-senddate-col {
+		color: #fff !important;
+	}
+}
+
+.toolbar {
+	border-bottom: 1px solid #acb0bf;
 }
 
 // Prominent UI specifics
@@ -89,9 +168,9 @@
 	--background-weak: #212946;
 	--background-strong: #272f4f;
 
-	--interaction-norm: #657ee4;
-	--interaction-norm-hover: #7d92e8;
-	--interaction-norm-active: #98a9ee;
+	--interaction-norm: #9397cd;
+	--interaction-norm-hover: #8286c5;
+	--interaction-norm-active: #3c4b88;
 	--interaction-norm-contrast: white;
 
 	--interaction-weak: #353e60;

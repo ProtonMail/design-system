@@ -46,6 +46,39 @@
 	height: auto;
 }
 
+.select-all {
+	.checkbox {
+		&-fakecheck {
+			border-color: var(--select-all-border);
+			background: var(--select-all-background);
+
+			&:hover {
+				background: var(--select-all-background-hover);
+			}
+		}
+
+		&:focus + .checkbox-fakecheck,
+		&:checked:focus + .checkbox-fakecheck {
+			border-color: var(--select-all-border);
+			background: var(--select-all-background-hover);
+		}
+
+		&:checked:focus + .checkbox-fakecheck {
+			&,
+			&:hover {
+				background: var(--select-all-background-checked-hover);
+			}
+		}
+
+		&:checked + .checkbox-fakecheck {
+			&:hover,
+			&:focus {
+				background: var(--select-all-background-checked-hover);
+			}
+		}
+	}
+}
+
 .toolbar--heavy {
 	@include respond-to(1100) {
 		--padding-toolbar-button: #{em(12, $base-font-size)};
