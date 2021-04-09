@@ -1,3 +1,8 @@
+include:
+  - project: 'deploy-app/fe-scripts'
+    ref: master
+    file: '/jobs/shared-jobs/run-linked-branch-pipelines.gitlab-ci.yml'
+
 default:
   image: node:lts-slim
 
@@ -7,12 +12,18 @@ stages:
 lint:scss:
   stage: test
   interruptible: true
+  only:
+    - master
+    - merge_requests
   script:
     - npm ci
     - npm run lint:scss
 
 lint:svg:
   stage: test
+  only:
+    - master
+    - merge_requests
   tags:
     - medium
   interruptible: true
@@ -20,3 +31,8 @@ lint:svg:
     NODE_OPTIONS: '--max_old_space_size=4000'
   script:
     - ./tasks/lint-svg.sh
+
+
+run-app-pipeline:
+  extends: .run-linked-branch-pipelines-shared
+  stage: test
