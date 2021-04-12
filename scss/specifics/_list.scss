@@ -36,7 +36,10 @@ $container-to-width: 3em !default;
 }
 
 .view-column-detail {
-	background: var(--bg-norm);
+	background-color: var(
+		--email-message-view-background-color,
+		var(--background-norm)
+	);
 }
 
 $item-container-height: rem(64) !default;
