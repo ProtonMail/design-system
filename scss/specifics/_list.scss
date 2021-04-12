@@ -138,6 +138,14 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			var(--interaction-norm-contrast)
 		);
 
+		&:focus::after,
+		&.item-is-focused::after {
+			border-left-color: var(
+				--email-item-focus-marker-color,
+				var(--interaction-norm-hover)
+			);
+		}
+
 		.item-icon {
 			background-color: var(
 				--email-item-selected-icon-background-color,
