@@ -2,6 +2,7 @@ $scrollshadow-height: rem(5) !default;
 
 .scrollshadow {
 	&-sticky {
+		border: 1px solid green;
 		position: sticky;
 		display: block;
 		height: $scrollshadow-height;
@@ -23,9 +24,32 @@ $scrollshadow-height: rem(5) !default;
 				transparent
 			);
 		}
+
+		&--left {
+			left: 0;
+			height: 100%;
+			width: $scrollshadow-height;
+			background-image: radial-gradient(
+				farthest-side at 0 50%,
+				var(--background-strong),
+				transparent
+			);
+		}
+
+		&--right {
+			right: 0;
+			height: 100%;
+			width: $scrollshadow-height;
+			background-image: radial-gradient(
+				farthest-side at 100% 50%,
+				var(--background-strong),
+				transparent
+			);
+		}
 	}
 
 	&-static {
+		border: 1px solid red;
 		position: absolute;
 		display: block;
 		left: 0;
@@ -39,6 +63,24 @@ $scrollshadow-height: rem(5) !default;
 
 		&--bottom {
 			bottom: 0;
+		}
+
+		&--left {
+			left: 0;
+			bottom: 0;
+			top: 0;
+			right: auto;
+			height: auto;
+			width: $scrollshadow-height;
+		}
+
+		&--right {
+			right: 0;
+			bottom: 0;
+			top: 0;
+			left: auto;
+			height: auto;
+			width: $scrollshadow-height;
 		}
 	}
 }
