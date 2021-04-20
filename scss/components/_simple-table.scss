@@ -2,6 +2,7 @@
 	@extend .border-collapse;
 	@extend .no-border;
 	width: 100%;
+	table-layout: auto;
 
 	caption {
 		transform: scale(0);
