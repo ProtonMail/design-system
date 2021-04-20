@@ -53,7 +53,8 @@
 		.modal-header,
 		.modal-footer,
 		.item-icon,
-		[class^='scrollshadow-'] {
+		.scroll-start-shadow,
+		.scroll-end-shadow {
 			@extend .no-print;
 		}
 	}
