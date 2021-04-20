@@ -12,11 +12,11 @@
 	}
 
 	&-item {
-		padding: em(6) em(8) em(5);
+		padding: em(5.5) em(8) em(5.5);
 		border-radius: $global-border-radius / 2;
 
 		&.button-for-icon {
-			padding: em(6) em(6) em(5);
+			padding: em(5.5) em(6) em(5.5);
 		}
 
 		&.is-selected {
@@ -26,6 +26,6 @@
 	}
 
 	.vr {
-		margin: em(1) em(3);
+		margin: em(2) em(3);
 	}
 }
