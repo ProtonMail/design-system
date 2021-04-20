@@ -1,6 +1,7 @@
 .button-group {
 	@extend .inline-flex;
 	@extend .flex-nowrap;
+	@extend .flex-align-items-stretch;
 
 	padding: em(3);
 	border: 1px solid transparent;
