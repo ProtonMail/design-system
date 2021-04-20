@@ -141,24 +141,13 @@
 
 	/* Scrollable insides of the dropdown */
 	&-content {
+		/* this is for the scroll to take up all the space */
+		display: flex;
 		height: calc(var(--height) * 1px);
 		min-height: 1em;
-		overflow: auto;
+		overflow: hidden;
 		border-radius: $global-border-radius;
 		background-color: var(--background-norm);
-		background-image: radial-gradient(
-				farthest-side at 50% 0,
-				var(--backdrop-norm),
-				transparent
-			),
-			radial-gradient(
-				farthest-side at 50% 100%,
-				var(--backdrop-norm),
-				transparent
-			);
-		background-position: 50% 0, 0 100%;
-		background-size: calc(100% - #{rem(20)}) rem(3);
-		background-repeat: no-repeat;
 
 		@include respond-to($breakpoint-small, 'max') {
 			position: relative;
@@ -174,17 +163,11 @@
 			max-width: var(--max-width, unset);
 			max-height: var(--max-height, unset);
 		}
+	}
 
-		&::before,
-		&::after {
-			content: '';
-			position: relative;
-			z-index: 1;
-			display: block;
-			height: rem(3);
-			flex: 0 0 rem(3);
-			background: var(--background-norm);
-		}
+	&-scroll {
+		width: 100%;
+		height: unset;
 	}
 
 	@include respond-to($breakpoint-small, 'max') {
