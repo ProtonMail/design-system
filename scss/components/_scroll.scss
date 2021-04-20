@@ -31,13 +31,17 @@ $scrollshadow-size: rem(5) !default;
 				overflow-x: auto;
 			}
 
-			.scroll-start-shadow {
+			.scroll-start-shadow,
+			.scroll-end-shadow {
 				z-index: 1;
 				position: absolute;
 				top: 0;
-				left: 0;
 				bottom: 0;
 				width: $scrollshadow-size;
+			}
+
+			.scroll-start-shadow {
+				left: 0;
 				background-image: radial-gradient(
 					farthest-side at 0 50%,
 					rgb(0 0 0 / var(--shadow-norm-opacity)),
@@ -46,12 +50,7 @@ $scrollshadow-size: rem(5) !default;
 			}
 
 			.scroll-end-shadow {
-				z-index: 1;
-				position: absolute;
-				top: 0;
 				right: 0;
-				bottom: 0;
-				width: $scrollshadow-size;
 				background-image: radial-gradient(
 					farthest-side at 100% 50%,
 					rgb(0 0 0 / var(--shadow-norm-opacity)),
@@ -69,13 +68,17 @@ $scrollshadow-size: rem(5) !default;
 				overflow-y: auto;
 			}
 
-			.scroll-start-shadow {
+			.scroll-start-shadow,
+			.scroll-end-shadow {
 				z-index: 1;
 				position: absolute;
-				top: 0;
 				left: 0;
 				right: 0;
 				height: $scrollshadow-size;
+			}
+
+			.scroll-start-shadow {
+				top: 0;
 				background-image: radial-gradient(
 					farthest-side at 50% 0,
 					rgb(0 0 0 / var(--shadow-norm-opacity)),
@@ -84,12 +87,7 @@ $scrollshadow-size: rem(5) !default;
 			}
 
 			.scroll-end-shadow {
-				z-index: 1;
-				position: absolute;
 				bottom: 0;
-				left: 0;
-				right: 0;
-				height: $scrollshadow-size;
 				background-image: radial-gradient(
 					farthest-side at 50% 100%,
 					rgb(0 0 0 / var(--shadow-norm-opacity)),
