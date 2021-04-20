@@ -2,7 +2,25 @@ $scrollshadow-size: rem(5) !default;
 
 .scroll {
 	&-child {
+		/*
+		 * the reason this is using inline-block is because
+		 * we need direct access to a child element of the scroll
+		 * container in order to know when the edges of these two
+		 * elements overlap (that way we can tell that the scroll
+		 * is either at the very start, at the very end or somewhere
+		 * in the middle)
+		 *
+		 * however, a block element always takes the width of their
+		 * parent, whereas an inline-block element will take the width
+		 * of their child, which would be the overflowing scrollable
+		 * content in this case
+		 *
+		 * "width: 100%" in order to maintain a block element behaviour
+		 * even though using "display: inline-block"
+		 * 
+		 */
 		display: inline-block;
+		width: 100%;
 	}
 
 	&-outer {
