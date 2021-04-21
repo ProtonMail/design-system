@@ -155,7 +155,7 @@ html,
 .main {
 	overflow: hidden;
 	border-top-left-radius: 4px;
-	border: solid var(--main-border-color, var(--border-weak));
+	border: solid var(--main-border-color, var(--border-norm));
 	border-width: 1px 0 0 1px;
 	box-shadow: var(--main-box-shadow, none);
 
