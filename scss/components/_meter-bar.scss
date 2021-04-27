@@ -10,7 +10,7 @@
 		height: var(--size);
 	}
 
-	&:not(.is-squared) &,
+	&:not(.is-squared),
 	&:not(.is-squared) &-thumb {
 		border-radius: calc(var(--size) / 2);
 	}
