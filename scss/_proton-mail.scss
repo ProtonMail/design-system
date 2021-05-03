@@ -18,3 +18,39 @@ $use-height-auto-table: false;
 
 // Helpers
 @import 'helpers/';
+
+@media (spanning: single-fold-vertical) {
+	:root {
+		--width-sidebar: 13rem;
+	}
+	.searchbox-container {
+		width: 30%;
+	}
+	.items-column-list.items-column-list {
+		width: var(
+			--width-conversation-column,
+			calc((100% + var(--width-sidebar, 15rem)) * 0.3)
+		);
+	}
+
+	.toolbar {
+		> div:first-child {
+			span:last-of-type {
+				&.vr {
+					margin-right: 3rem;
+				}
+			}
+		}
+	}
+
+	.message-conversation-summary {
+		padding-left: 1rem;
+		padding-right: 0;
+	}
+	.message-container {
+		margin-left: 1rem;
+	}
+	.composer.composer {
+		width: 500px;
+	}
+}
