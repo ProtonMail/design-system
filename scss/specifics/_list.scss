@@ -58,6 +58,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	padding: $item-container-padding-top-bottom
 		$item-container-padding-left-right; // design wants ~64 height
 	border-bottom: 1px solid var(--border-weak);
+	scroll-margin-top: $item-container-height;
 
 	// no transition, otherwhise there's a flash on page loading
 	// because of theme file loading after applying default theme colors
@@ -180,7 +181,6 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 .item-container {
 	height: $item-container-height;
-	scroll-margin-top: $item-container-height;
 }
 
 .item-checkbox-label {
