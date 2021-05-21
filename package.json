@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"lint:scss": "stylelint --syntax=scss '**/*.scss'",
-		"build:reset": "sass --no-source-map --style=compressed scss/specifics/android-reset.scss assets/css/android-reset.css"
+		"build:reset": "sass --no-source-map --style=compressed scss/specifics/android-reset.scss assets/css/android-reset.css; sass --no-source-map --style=compressed scss/specifics/android-dark-mode.scss assets/css/android-dark-mode.css"
 	},
 	"repository": {
 		"type": "git",
