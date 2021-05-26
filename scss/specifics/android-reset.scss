@@ -90,11 +90,11 @@ iframe {
 ul,
 ol,
 menu {
-	padding-left: 2em;
+	padding-inline-start: 2em;
 }
 
 dd {
-	margin-left: 2em;
+	margin-inline-start: 2em;
 }
 
 b,
@@ -145,7 +145,7 @@ audio:not([controls]) {
 /* important, abbr are good */
 /* only those with a title are shown */
 abbr[title] {
-	border-bottom: dotted 1px;
+	border-block-end: dotted 1px;
 	cursor: help;
 	text-decoration: none;
 	/* color inherited from text */

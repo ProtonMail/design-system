@@ -19,9 +19,8 @@ $toggle-width-button: em(24) !default;
 	&::before {
 		content: '';
 		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
+		inset-block: 0;
+		inset-inline-start: 0;
 		z-index: 2;
 		width: #{$toggle-width-button};
 		transform: translateX(0);
@@ -33,8 +32,7 @@ $toggle-width-button: em(24) !default;
 
 	& > .toggle-label-text {
 		position: absolute;
-		top: 0;
-		bottom: 0;
+		inset-block: 0;
 		z-index: 2;
 		display: inline-flex;
 		border-radius: $toggle-width-button;
@@ -42,13 +40,13 @@ $toggle-width-button: em(24) !default;
 
 		&:first-child {
 			z-index: 3;
-			left: 0;
+			inset-inline-start: 0;
 			color: var(--text-norm);
 		}
 
 		&:last-child {
 			z-index: 1;
-			right: 0;
+			inset-inline-end: 0;
 			color: var(--interaction-norm-contrast);
 		}
 
@@ -60,10 +58,7 @@ $toggle-width-button: em(24) !default;
 
 		.toggle-label-loader {
 			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
+			inset: 0;
 			z-index: 1;
 			display: flex;
 			animation: 0.25s easing(easeOutCubic) forwards
@@ -111,6 +106,13 @@ $toggle-width-button: em(24) !default;
 
 		&::before {
 			transform: translateX(#{$toggle-width - $toggle-width-button});
+			@at-root {
+				[dir='rtl'] & {
+					transform: translateX(
+						-#{$toggle-width - $toggle-width-button}
+					);
+				}
+			}
 			background-color: var(--interaction-norm);
 		}
 	}
@@ -192,7 +194,7 @@ $toggle-width-button: em(24) !default;
 	 * Sizes
 	 */
 	&--small {
-		margin-top: 0.25em;
+		margin-block-start: 0.25em;
 		font-size: 0.8em;
 
 		.toggle-label-img {

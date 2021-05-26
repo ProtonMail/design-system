@@ -5,8 +5,8 @@
 	position: relative;
 	z-index: 1;
 	height: rem($toolbar-height);
-	border-bottom: 1px solid
-		var(--toolbar-border-bottom-color, var(--border-norm));
+	border-block-end: 1px solid
+		var(--toolbar-border-block-end-color, var(--border-norm));
 	background-color: var(--toolbar-background-color, var(--background-weak));
 	color: var(--toolbar-text-color, var(--text-norm));
 }
@@ -14,14 +14,14 @@
 .toolbar-button {
 	@extend .interactive;
 
-	padding-left: var(--padding-toolbar-button);
-	padding-right: var(--padding-toolbar-button);
+	padding-inline-start: var(--padding-toolbar-button);
+	padding-inline-end: var(--padding-toolbar-button);
 	display: flex; // alignment fix on Chrome
 }
 
 .toolbar-button--dropdown {
-	padding-left: var(--padding-toolbar-button-dropdown);
-	padding-right: var(--padding-toolbar-button-dropdown);
+	padding-inline-start: var(--padding-toolbar-button-dropdown);
+	padding-inline-end: var(--padding-toolbar-button-dropdown);
 }
 
 .toolbar-separator {

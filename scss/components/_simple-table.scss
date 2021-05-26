@@ -10,7 +10,7 @@
 	td,
 	th {
 		padding: em(9);
-		border-bottom: 1px solid var(--border-norm);
+		border-block-end: 1px solid var(--border-norm);
 	}
 
 	th:not(#{&}-row-th) {
@@ -132,12 +132,12 @@
 		}
 		// radiuses
 		> :first-child {
-			border-top-left-radius: $global-bigger-border-radius;
-			border-bottom-left-radius: $global-bigger-border-radius;
+			border-block-start-left-radius: $global-bigger-border-radius;
+			border-block-end-left-radius: $global-bigger-border-radius;
 		}
 		> :last-child {
-			border-top-right-radius: $global-bigger-border-radius;
-			border-bottom-right-radius: $global-bigger-border-radius;
+			border-block-start-right-radius: $global-bigger-border-radius;
+			border-block-end-right-radius: $global-bigger-border-radius;
 		}
 	}
 }

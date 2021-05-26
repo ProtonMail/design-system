@@ -11,12 +11,12 @@
 }
 
 .unstyled {
-	padding-left: 0;
+	padding-inline-start: 0;
 	list-style-type: none;
 
 	@if $rtl-option==true {
 		[dir='rtl'] & {
-			padding-right: 0;
+			padding-inline-end: 0;
 		}
 	}
 }
@@ -75,7 +75,7 @@
 /* RTL/others */
 .mirror,
 [dir='rtl'] .on-rtl-mirror {
-	transform: rotateZ(180deg);
+	transform: rotateY(180deg);
 }
 
 .rotateX-180 {

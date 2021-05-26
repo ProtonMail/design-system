@@ -67,8 +67,7 @@
 
 .inline-flex-vcenter > *,
 .flex-item-centered-vert {
-	margin-top: auto;
-	margin-bottom: auto;
+	margin-block: auto;
 	align-self: center;
 }
 
@@ -111,9 +110,10 @@
 
 .flex-autogrid-item {
 	@extend .flex-item-fluid;
-	padding: 0 0.5em 1em;
+	padding-block: 0 1em;
+	padding-inline: 0.5em;
 
 	&.pb0 {
-		padding-bottom: 0;
+		padding-block-end: 0;
 	}
 }

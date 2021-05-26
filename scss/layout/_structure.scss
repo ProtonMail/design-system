@@ -51,7 +51,8 @@ html,
 }
 
 .header {
-	padding: rem(10) rem(15) rem(10) 0;
+	padding-block: rem(10);
+	padding-inline-end: rem(15);
 	height: rem($header-height);
 	flex-shrink: 0;
 	background-color: var(--header-background-color, var(--background-norm));
@@ -86,7 +87,7 @@ html,
 		width: 100%;
 		max-width: 100%;
 		max-height: none;
-		padding-top: 1em;
+		padding-block-start: 1em;
 		transform-origin: 0 50%;
 		transition: 0s visibility ease, 0.25s transform ease;
 		transition-delay: 0s;
@@ -142,26 +143,26 @@ html,
 .topnav-container {
 	@include respond-to($breakpoint-small) {
 		flex-shrink: 0; // this has to stay
-		margin-left: auto; // case of mail display
+		margin-inline-start: auto; // case of mail display
 	}
 }
 
 .main {
 	overflow: hidden;
-	border-top-left-radius: 4px;
+	border-block-start-left-radius: 4px;
 	border: solid var(--main-border-color, var(--border-norm));
 	border-width: 1px 0 0 1px;
 	box-shadow: var(--main-box-shadow, none);
 
 	@include respond-to($breakpoint-small) {
-		margin-right: 0;
+		margin-inline-end: 0;
 		border-radius: 0;
 	}
 
 	@if $rtl-option==true {
 		[dir='rtl'] & {
-			border-top-left-radius: 0;
-			border-top-right-radius: 4px;
+			border-block-start-left-radius: 0;
+			border-block-start-right-radius: 4px;
 		}
 	}
 }
@@ -186,7 +187,7 @@ $height-for-tablet: 5em !default;
 $height-for-mobile: 8em !default;
 
 .main-area--padding-fix {
-	padding-bottom: $height-for-tablet;
+	padding-block-end: $height-for-tablet;
 }
 
 .main-area-content--padding-fix::after {
@@ -198,7 +199,7 @@ $height-for-mobile: 8em !default;
 
 @include respond-to($breakpoint-small) {
 	.main-area--padding-fix {
-		padding-bottom: $height-for-mobile;
+		padding-block-end: $height-for-mobile;
 		// thanks Apple for the fixed toolbar at the bottom
 	}
 

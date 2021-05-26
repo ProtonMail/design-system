@@ -20,7 +20,7 @@ $container-to-width: 3em !default;
 
 .items-column-list-inner,
 .ReactVirtualized__Grid__innerScrollContainer {
-	border-right: 1px solid var(--border-weak);
+	border-inline-end: 1px solid var(--border-weak);
 	min-height: 100%;
 }
 
@@ -49,8 +49,8 @@ $container-to-width: 3em !default;
 }
 
 $item-container-height: rem(64) !default;
-$item-container-padding-top-bottom: em(8.5) !default;
-$item-container-padding-left-right: em(12) !default;
+$item-container-padding-block: em(8.5) !default;
+$item-container-padding-inline: em(12) !default;
 
 $item-container-height-compact-mode: rem(48) !default;
 $item-container-row-height-compact-mode: rem(40) !default;
@@ -59,10 +59,9 @@ $item-container-row-height-compact-mode: rem(40) !default;
 .item-container-row {
 	@extend %appearing-container;
 	position: relative;
-	padding: $item-container-padding-top-bottom
-		$item-container-padding-left-right; // design wants ~64 height
-	border-bottom: 1px solid var(--border-weak);
-	scroll-margin-top: $item-container-height;
+	padding: $item-container-padding-block $item-container-padding-inline; // design wants ~64 height
+	border-block-end: 1px solid var(--border-weak);
+	scroll-margin-block-start: $item-container-height;
 
 	// no transition, otherwhise there's a flash on page loading
 	// because of theme file loading after applying default theme colors
@@ -77,7 +76,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		z-index: 1;
 		pointer-events: none;
 		transition: 0.15s easing(easeOutQuart);
-		border-left: 5px solid transparent;
+		border-inline-start: 5px solid transparent;
 	}
 
 	&:focus {
@@ -130,7 +129,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 	&:focus::after,
 	&.item-is-focused::after {
-		border-left-color: var(
+		border-inline-start-color: var(
 			--email-item-focus-marker-color,
 			var(--interaction-norm)
 		);
@@ -150,7 +149,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 		&:focus::after,
 		&.item-is-focused::after {
-			border-left-color: var(
+			border-inline-start-color: var(
 				--email-item-focus-marker-color,
 				var(--interaction-norm-hover)
 			);
@@ -231,7 +230,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	.item-container,
 	.item-container-row {
 		height: $item-container-height-compact-mode;
-		scroll-margin-top: $item-container-height-compact-mode;
+		scroll-margin-block-start: $item-container-height-compact-mode;
 
 		.item-container-inner {
 			padding: em(0) em(12);
@@ -240,7 +239,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 	.item-container-row {
 		height: $item-container-row-height-compact-mode;
-		scroll-margin-top: $item-container-row-height-compact-mode;
+		scroll-margin-block-start: $item-container-row-height-compact-mode;
 		.item-icon-compact {
 			&::after {
 				height: $item-container-row-height-compact-mode;
@@ -392,7 +391,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		);
 		left: em(-12);
 		width: calc(
-			#{rem($conversation-icon-size)} + #{$item-container-padding-left-right} +
+			#{rem($conversation-icon-size)} + #{$item-container-padding-inline} +
 				#{rem(5)}
 		);
 		// icon size + padding container + tiny margin for comfort
@@ -453,8 +452,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 .item-container-row {
 	.item-checkbox {
 		&::after {
-			top: -#{$item-container-padding-top-bottom};
-			bottom: -#{$item-container-padding-top-bottom};
+			top: -#{$item-container-padding-block};
+			bottom: -#{$item-container-padding-block};
 		}
 	}
 

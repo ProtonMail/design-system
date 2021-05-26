@@ -39,7 +39,7 @@
 - added negative margin helpers: `mt-0-5` and `mb-0-5`
 - added `on-tinymobile-p(l/r/b/t)0`, `on-tinymobile-w100` `on-tinymobile-text-left` helpers
 - added `flex-item-grow-1-8` helper
-- added `border-bottom-children` helper
+- added `border-block-end-children` helper
 - added `absolute-only` helper
 
 ## Updated/fixes
@@ -363,7 +363,7 @@
 - add placeholder images
 - revamped sections and FE helpers
 - add `ratio-container-5-1` helper and improved doc for it
-- add `border-bottom--currentColor` helper
+- add `border-block-end--currentColor` helper
 - add dark-mode friendly bank logos/icons
 - add `fill-white-dm` and `fill-global-highlight` aliases (dark mode)
 - refactor `<Icon/>` fill
@@ -468,7 +468,7 @@
 - added `minus` icon
 - padding fix for settings/calendar
 - added `pm-form--iconLabels` modifier (for Calendar)
-- added `border-top--dashed` modifier
+- added `border-block-start--dashed` modifier
 - added `fixed` (`position: fixed`)
 - added `onmobile-static` (`position: static` on… mobile!!!)
 - added `lock-alone`, `lock-check`, `lock-warning`, `lock-write`, `pen` icons (for composer)
@@ -559,7 +559,7 @@
 - add protoncontacts icon
 - new icons
 - added new responsive navigation styles
-- added rem margin-top helper (will enhance it later)
+- added rem margin-block-start helper (will enhance it later)
 - added FAB styles
 - added option on `respond-to` (`$query-type == "height"`)
 - added `plus` icon
@@ -695,7 +695,7 @@
 - if `searchbox-container` is empty, set up its `width` to 0
 - removed `z-index` from active `pm-group-button`
 - fixed badge `font-size` to use rem to avoid inheritance on mail
-- fixed `padding-right` value on `navigation__link` (alignment with compose button)
+- fixed `padding-inline-end` value on `navigation__link` (alignment with compose button)
 - fixed navigation icons/display
 - fixed star button color
 - fixed a bug for `caption` tag on Firefox
@@ -789,7 +789,7 @@
 - fixed some button designs for more stability for hover states
 - fixed notification container positionning
 - updated top nav responsive behaviour for better matching v4’s one.
-- removed `padding-left/right` for `pm-button--link`
+- removed `padding-inline-start/right` for `pm-button--link`
 
 
 ## Misc
@@ -852,7 +852,7 @@
 
 ## New
 
-- added `border-bottom--dashed` modifier
+- added `border-block-end--dashed` modifier
 - added helper `underline`
 - added `icon-w40p` size
 - added cursor helper classes
@@ -1031,7 +1031,7 @@ Bonuses:
 ### Others:
 
 - added `no-pointer-events` helper class
-- added `border-bottom` helper class
+- added `border-block-end` helper class
 
 
 # [1.6.3] - 2019-05-03

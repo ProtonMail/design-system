@@ -1,7 +1,7 @@
 .user-dropdown {
 	&-button {
 		@include respond-to(1500) {
-			margin-left: 0.5em;
+			margin-inline-start: 0.5em;
 		}
 
 		.user-initials {

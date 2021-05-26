@@ -274,7 +274,7 @@
 	&-item-hr {
 		height: 0;
 		box-sizing: content-box;
-		border-top: 1px solid var(--border-norm);
+		border-block-start: 1px solid var(--border-norm);
 	}
 
 	&-search {

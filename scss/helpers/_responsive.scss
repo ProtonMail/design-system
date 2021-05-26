@@ -174,8 +174,8 @@
 		}
 
 		&-center {
-			margin-left: auto;
-			margin-right: auto;
+			margin-inline-start: auto;
+			margin-inline-end: auto;
 		}
 
 		&-flex-column {
@@ -190,7 +190,7 @@
 				margin: 0;
 
 				&.mb1 {
-					margin-bottom: 1em;
+					margin-block-end: 1em;
 				}
 			}
 

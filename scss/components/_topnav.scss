@@ -12,16 +12,16 @@
 }
 
 .topnav-list > li:not(:last-child) {
-	margin-right: 0.25em;
+	margin-inline-end: 0.25em;
 
 	/* Decrease margins (was 1em) */
 	@include respond-to(1500) {
-		margin-right: 1px;
+		margin-inline-end: 1px;
 	}
 }
 
 .topnav-icon {
-	margin-right: 0.5em;
+	margin-inline-end: 0.5em;
 }
 
 .topnav-vr {
@@ -45,10 +45,10 @@
 		}
 
 		.topnav-icon {
-			margin-right: 0;
+			margin-inline-end: 0;
 
 			&.expand-caret {
-				margin-left: 0.25em;
+				margin-inline-start: 0.25em;
 			}
 		}
 	}
@@ -57,8 +57,8 @@
 @include respond-to(870) {
 	.topnav-list--four-elements {
 		.topnav-link {
-			padding-left: rem(5);
-			padding-right: rem(5);
+			padding-inline-start: rem(5);
+			padding-inline-end: rem(5);
 		}
 
 		.topnav-link--blackfriday::before {
@@ -83,7 +83,7 @@
 	.topnav-icon {
 		// Specificity -_-v
 		&#{&} {
-			margin-right: 0;
+			margin-inline-end: 0;
 		}
 	}
 }
@@ -98,8 +98,8 @@
 	}
 
 	.topnav-list--four-elements .topnav-link {
-		padding-left: rem(10);
-		padding-right: rem(10);
+		padding-inline-start: rem(10);
+		padding-inline-end: rem(10);
 	}
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
@@ -112,8 +112,8 @@
 @include respond-to($breakpoint-tiny) {
 	.topnav-list--four-elements .topnav-link,
 	.topnav-link {
-		padding-left: rem(2);
-		padding-right: rem(2);
+		padding-inline-start: rem(2);
+		padding-inline-end: rem(2);
 	}
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,

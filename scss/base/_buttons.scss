@@ -248,33 +248,32 @@
 	&:not(.button-for-icon) {
 		&:not(.w100) {
 			&:not(.button-small, .button-large) {
-				padding-right: em(40);
+				padding-inline-end: em(40);
 			}
 
 			&.button-small {
-				padding-right: em(36);
+				padding-inline-end: em(36);
 			}
 
 			&.button-large {
-				padding-right: em(44);
+				padding-inline-end: em(44);
 			}
 		}
 
 		.loader-container {
-			top: 0;
-			bottom: 0;
+			inset-block: 0;
 		}
 
 		&:not(.button-small, .button-large) .loader-container {
-			right: em(16);
+			inset-inline-end: em(16);
 		}
 
 		&.button-small .loader-container {
-			right: em(12);
+			inset-inline-end: em(12);
 		}
 
 		&.button-large .loader-container {
-			right: em(20);
+			inset-inline-end: em(20);
 		}
 	}
 
@@ -284,10 +283,7 @@
 		}
 
 		.loader-container {
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
+			inset: 0;
 		}
 	}
 }

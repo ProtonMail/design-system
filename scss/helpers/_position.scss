@@ -15,68 +15,56 @@
 /* to centered absolute */
 .centered-absolute {
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	inset-block-start: 50%;
+	inset-inline-start: 50%;
 	transform: translate(-50%, -50%);
 }
 
 .centered-absolute-horizontal {
-	left: 50%;
+	inset-inline-start: 50%;
 	transform: translate(-50%, 0%);
 }
 
 .covered-absolute {
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	inset: 0;
 }
 
 /* to top right */
 .top-right {
-	top: 0;
-	right: 0;
+	inset-block-start: 0;
+	inset-inline-end: 0;
 }
 .top-left {
-	top: 0;
-	left: 0;
+	inset-block-start: 0;
+	inset-inline-start: 0;
 }
 
 .bottom {
-	bottom: 0;
-}
-
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.top-right {
-			left: 0;
-			right: auto;
-		}
-	}
+	inset-block-end: 0;
 }
 
 .right-icon,
 .right-text,
 .left-icon {
-	top: 0;
+	inset-block-start: 0;
 	height: #{rem($default-height-fields)}; // height of field
 	align-content: center;
 }
 
 .right-icon {
-	right: 0.5em;
+	inset-inline-end: 0.5em;
 }
 .right-text {
-	right: 1em;
+	inset-inline-end: 1em;
 
 	&-inner {
-		padding-bottom: rem(2);
+		padding-block-end: rem(2);
 	}
 }
 
 .left-icon {
-	left: 0.5em;
+	inset-inline-end: 0.5em;
 }
 
 .fixed {
@@ -91,11 +79,11 @@
 	}
 
 	&-top {
-		top: 0;
+		inset-block-start: 0;
 	}
 
 	&-bottom {
-		bottom: 0;
+		inset-block-end: 0;
 	}
 }
 

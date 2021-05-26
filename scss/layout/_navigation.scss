@@ -1,8 +1,8 @@
-$padding-left-link: rem(20) !default;
+$padding-inline-start-link: rem(20) !default;
 
 .navigation-link,
 .navigation-link-header-group {
-	padding: rem(9.5) 1em rem(9.5) $padding-left-link;
+	padding: rem(9.5) 1em rem(9.5) $padding-inline-start-link;
 	text-decoration: none;
 	display: block;
 }
@@ -30,7 +30,7 @@ $padding-left-link: rem(20) !default;
 		z-index: 1;
 		pointer-events: none;
 		transition: 0.15s easing(easeOutQuart);
-		border-left: 4px solid transparent;
+		border-inline-start: 4px solid transparent;
 	}
 
 	&:hover,
@@ -39,7 +39,7 @@ $padding-left-link: rem(20) !default;
 	}
 
 	&:focus::after {
-		border-left: 4px solid
+		border-inline-start: 4px solid
 			var(--navigation-current-item-marker-color, var(--interaction-norm));
 	}
 }
@@ -122,17 +122,17 @@ $padding-left-link: rem(20) !default;
 /* Sub folders */
 .navigation-item {
 	[data-level='1'] {
-		padding-left: 1em;
+		padding-inline-start: 1em;
 	}
 
 	[data-level='2'] {
-		padding-left: 2em;
+		padding-inline-start: 2em;
 	}
 }
 
 /* Sub-navigation */
 .navigation-sublist {
-	margin-left: $padding-left-link;
+	margin-inline-start: $padding-inline-start-link;
 	overflow: hidden;
 	opacity: 1;
 	transition: visibility 0s ease, transform 0.5s ease, opacity 0.5s ease,
@@ -155,13 +155,13 @@ $padding-left-link: rem(20) !default;
 }
 
 .navigation-subitem {
-	margin-left: rem(7);
+	margin-inline-start: rem(7);
 }
 
 .navigation-sublink {
 	@extend .interactive;
 
-	border-left: 2px solid var(--border-norm);
+	border-inline-start: 2px solid var(--border-norm);
 	display: block;
 	padding: rem(7.5) rem(10) rem(7.5) rem(15);
 	text-decoration: none;
@@ -172,7 +172,7 @@ $padding-left-link: rem(20) !default;
 			var(--interaction-default-hover)
 		);
 		color: var(--navigation-current-item-text-color, var(--text-norm));
-		border-left: 2px solid
+		border-inline-start: 2px solid
 			var(--navigation-current-item-marker-color, var(--interaction-norm));
 		font-weight: bold;
 	}

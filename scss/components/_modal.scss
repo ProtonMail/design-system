@@ -169,8 +169,8 @@ $modal-tiny-width: em(288) !default;
 .modal--height-auto {
 	height: auto;
 	max-height: $modal-full-dimension;
-	margin-top: 1%;
-	margin-bottom: 1%;
+	margin-block-start: 1%;
+	margin-block-end: 1%;
 }
 
 .modal-close {
@@ -217,7 +217,7 @@ $modal-tiny-width: em(288) !default;
 .modal-title {
 	font-size: rem(22);
 	line-height: 1.5;
-	margin-bottom: 0;
+	margin-block-end: 0;
 }
 
 .modal-footer {
@@ -232,13 +232,13 @@ $modal-tiny-width: em(288) !default;
 
 	// single button on right
 	[class*='button']:only-child {
-		margin-left: auto;
+		margin-inline-start: auto;
 	}
 
 	// for vertically displayed buttons
 	&.flex-column {
 		[class*='button'] + [class*='button'] {
-			margin-top: 0.5em;
+			margin-block-start: 0.5em;
 		}
 	}
 }
@@ -253,11 +253,11 @@ $modal-tiny-width: em(288) !default;
 	background: var(--background-norm) no-repeat;
 
 	& > p:first-child {
-		margin-top: 0;
+		margin-block-start: 0;
 	}
 
 	& > p:last-child {
-		margin-bottom: 0;
+		margin-block-end: 0;
 	}
 }
 
@@ -276,14 +276,14 @@ $label-shorter-width: 10em !default;
 
 // modal with title visually hidden
 .modal-header--no-title {
-	padding-top: rem(20);
+	padding-block-start: rem(20);
 }
 
 @if $rtl-option==true {
 	[dir='rtl'] {
 		.modal-footer [class*='button']:only-child {
-			margin-right: auto;
-			margin-left: 0;
+			margin-inline-end: auto;
+			margin-inline-start: 0;
 		}
 	}
 }
@@ -294,13 +294,13 @@ $label-shorter-width: 10em !default;
 	}
 
 	.modal-footer {
-		padding-bottom: rem(10);
+		padding-block-end: rem(10);
 		min-height: rem(59); // only for Safari the ugly
 	}
 
 	.modal-header {
-		padding-top: rem(10);
-		padding-bottom: rem(5);
+		padding-block-start: rem(10);
+		padding-block-end: rem(5);
 	}
 }
 
@@ -323,7 +323,7 @@ $label-shorter-width: 10em !default;
 @include respond-to($breakpoint-large, 'min') {
 	.modal--full {
 		max-width: $modal-full-max-width;
-		margin-left: auto;
-		margin-right: auto;
+		margin-inline-start: auto;
+		margin-inline-end: auto;
 	}
 }

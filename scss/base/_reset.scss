@@ -158,11 +158,11 @@ dialog {
 ul,
 ol,
 menu {
-	padding-left: 2em;
+	padding-inline-start: 2em;
 }
 
 dd {
-	margin-left: 2em;
+	margin-inline-start: 2em;
 }
 
 // Right to left resets
@@ -171,13 +171,13 @@ dd {
 	[dir='rtl'] {
 		ul,
 		ol {
-			padding-left: 0;
-			padding-right: 2em;
+			padding-inline-start: 0;
+			padding-inline-end: 2em;
 		}
 
 		dd {
-			margin-left: 0;
-			margin-right: 2em;
+			margin-inline-start: 0;
+			margin-inline-end: 2em;
 		}
 	}
 }
@@ -229,7 +229,7 @@ audio:not([controls]) {
 /* important, abbr are good */
 /* only those with a title are shown */
 abbr[title] {
-	border-bottom: dotted 1px;
+	border-block-end: dotted 1px;
 	cursor: help;
 	text-decoration: none;
 	/* color inherited from text */

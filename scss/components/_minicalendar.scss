@@ -2,8 +2,8 @@
 	// Size of each cell width and height when `fixedSize`property is set.
 	--fixed-cell-size: #{em(34)};
 
-	min-width: rem(150);
-	max-width: rem(400);
+	min-inline-size: rem(150);
+	max-inline-size: rem(400);
 	font-size: rem(12);
 
 	&-grid,
@@ -21,8 +21,8 @@
 
 		& > * {
 			display: flex;
-			width: var(--cell-width);
-			height: var(--cell-height);
+			inline-size: var(--cell-width);
+			block-size: var(--cell-height);
 			justify-content: center;
 			align-items: stretch;
 		}
@@ -103,7 +103,7 @@
 	&-day {
 		@extend .interactive;
 
-		width: 100%;
+		inline-size: 100%;
 		border-radius: $global-border-radius;
 
 		&[aria-pressed='true'] {
@@ -119,10 +119,7 @@
 		&::before {
 			content: '';
 			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
+			inset: 0;
 			z-index: 0;
 			background: var(--primary);
 			border-radius: $global-border-radius;

@@ -89,7 +89,7 @@ $field-container: rem(260) !default;
 	}
 
 	&[type='search'] {
-		padding-left: 2em;
+		padding-inline-start: 2em;
 
 		&::-webkit-search-cancel-button {
 			display: none;
@@ -97,12 +97,12 @@ $field-container: rem(260) !default;
 	}
 
 	&[type='number'] {
-		padding-right: 0.25em;
+		padding-inline-end: 0.25em;
 	}
 
 	&.select {
 		@extend .field;
-		padding-right: rem(6);
+		padding-inline-end: rem(6);
 		.mauto {
 			display: flex;
 			width: 100%;
@@ -130,8 +130,8 @@ select:-webkit-autofill {
 @if $rtl-option==true {
 	[dir='rtl'] {
 		[type='search'].field {
-			padding-left: 0;
-			padding-right: 2em;
+			padding-inline-start: 0;
+			padding-inline-end: 2em;
 		}
 	}
 }
@@ -142,8 +142,8 @@ select.field {
 		var(--field-background-color, var(--background-norm))
 	);
 	background-size: rem(15);
-	padding-left: 1em;
-	padding-right: rem(20);
+	padding-inline-start: 1em;
+	padding-inline-end: rem(20);
 	text-overflow: ellipsis;
 	overflow: hidden;
 	cursor: pointer;
@@ -240,7 +240,7 @@ textarea.field {
 /* @protonmail.com field */
 .field--username,
 .sign-layout-container .field--username.field--username {
-	padding-right: var(--padding-right-field-above, 9em);
+	padding-inline-end: var(--padding-inline-end-field-above, 9em);
 }
 
 /* special stupid case for signup iframe challenge... not using same styles for the moment */

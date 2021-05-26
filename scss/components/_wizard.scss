@@ -7,7 +7,7 @@ $size-current-pin: rem(16) !default;
 	display: flex;
 
 	&-container {
-		padding-left: rem(
+		padding-inline-start: rem(
 			2
 		); // "optical" alignment, difficult to align text and circle ^^
 	}
@@ -16,7 +16,7 @@ $size-current-pin: rem(16) !default;
 		display: flex;
 		width: $size-current-pin;
 		height: $size-current-pin;
-		margin-left: -1px; // trick for high zoom level ^^
+		margin-inline-start: -1px; // trick for high zoom level ^^
 		border-radius: 50%;
 		position: relative;
 		top: -#{$height-wizard - rem(1)};

@@ -3,8 +3,8 @@ $treeview-border-width: 1px !default;
 $treeview-indentation-margin: rem(30) !default;
 
 .treeview-item {
-	border-bottom: $treeview-border-width solid var(--border-norm);
-	margin-bottom: -$treeview-border-width;
+	border-block-end: $treeview-border-width solid var(--border-norm);
+	margin-block-end: -$treeview-border-width;
 
 	$arrow-width: rem(9) !default;
 	$arrow-height: rem(7) !default;
@@ -27,8 +27,8 @@ $treeview-indentation-margin: rem(30) !default;
 			height: 0;
 			width: 0;
 			border: $arrow-height solid transparent;
-			border-left-color: var(--interaction-norm);
-			border-left-width: $arrow-width;
+			border-inline-start-color: var(--interaction-norm);
+			border-inline-start-width: $arrow-width;
 		}
 	}
 
@@ -46,7 +46,7 @@ $treeview-indentation-margin: rem(30) !default;
 	&--move-inside#{&}--self-grabbed {
 		// no primary color on the self grabbed element
 		&::before {
-			border-left-color: var(--border-norm);
+			border-inline-start-color: var(--border-norm);
 		}
 	}
 
@@ -77,7 +77,7 @@ $treeview-indentation-margin: rem(30) !default;
 	}
 
 	.treeview-item .treeview-item {
-		padding-left: $treeview-indentation-margin;
+		padding-inline-start: $treeview-indentation-margin;
 
 		&.treeview-item--move-inside {
 			background: linear-gradient(
