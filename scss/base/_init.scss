@@ -183,8 +183,8 @@ mark {
 li {
 	p,
 	ul {
-		margin-block-end: 0;
-		margin-block-start: 0;
+		margin-bottom: 0;
+		margin-top: 0;
 	}
 }
 
@@ -204,19 +204,19 @@ hr {
 }
 
 table {
-	margin-block-end: 1.5em;
+	margin-bottom: 1.5em;
 	table-layout: fixed;
 }
 
 details {
-	border-block-end: 1px solid var(--border-norm);
+	border-bottom: 1px solid var(--border-norm);
 
 	& > summary::-webkit-details-marker {
 		display: none;
 	}
 
 	&:first-child {
-		border-block-start: 1px solid var(--border-norm);
+		border-top: 1px solid var(--border-norm);
 	}
 
 	&[open] > summary {

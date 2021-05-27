@@ -25,7 +25,7 @@
 			}
 
 			[type='reset'].searchbox-advanced-search-button {
-				right: rem(32);
+				inset-inline-end: rem(32);
 			}
 		}
 	}
@@ -41,22 +41,22 @@
 
 	&-search-button {
 		position: absolute;
-		left: 0.25em;
-		top: 0;
-		bottom: 0;
+		inset-inline-start: 0.25em;
+		inset-block: 0;
 		padding-block-start: 0.125em;
 		padding-block-end: 0;
-		margin: 0.25em 0;
+		margin-block: 0.25em;
+		margin-inline: 0;
 	}
 
 	&-advanced-search-button {
 		position: absolute;
-		right: 0.25em;
-		top: 0;
-		bottom: 0;
+		inset-inline-end: 0.25em;
+		inset-block: 0;
 		width: rem(28);
 		padding: 0;
-		margin: 0.25em 0;
+		margin-block: 0.25em;
+		margin-inline: 0;
 
 		@include respond-to($breakpoint-small) {
 			position: static;

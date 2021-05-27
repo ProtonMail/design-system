@@ -149,21 +149,16 @@ html,
 
 .main {
 	overflow: hidden;
-	border-block-start-left-radius: 4px;
+	border-start-start-radius: 4px;
 	border: solid var(--main-border-color, var(--border-norm));
 	border-width: 1px 0 0 1px;
+	border-block-width: 1px 0;
+	border-inline-width: 1px 0;
 	box-shadow: var(--main-box-shadow, none);
 
 	@include respond-to($breakpoint-small) {
 		margin-inline-end: 0;
 		border-radius: 0;
-	}
-
-	@if $rtl-option==true {
-		[dir='rtl'] & {
-			border-block-start-left-radius: 0;
-			border-block-start-right-radius: 4px;
-		}
 	}
 }
 

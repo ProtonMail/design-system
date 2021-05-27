@@ -6,7 +6,8 @@
 		min-width: em(20);
 		width: em(20);
 		height: em(20);
-		margin: auto 0.5em auto 0;
+		margin-block: auto;
+		margin-inline: 0 0.5em;
 		border-radius: $global-border-radius;
 
 		border: 1px solid var(--field-norm);

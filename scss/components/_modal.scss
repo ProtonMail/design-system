@@ -20,10 +20,7 @@ $modal-tiny-width: em(288) !default;
 /* overlay covers everything */
 .modal-overlay {
 	position: fixed;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
+	inset: 0;
 	background: var(--backdrop-norm);
 	z-index: 666;
 	animation: anime-modal-overlay-in ease 0.5s 1 normal;
@@ -31,10 +28,7 @@ $modal-tiny-width: em(288) !default;
 
 .modal-container {
 	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+	inset: 0;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -175,8 +169,8 @@ $modal-tiny-width: em(288) !default;
 
 .modal-close {
 	position: absolute;
-	right: 0;
-	top: 0;
+	inset-block-start: 0;
+	inset-inline-end: 0;
 	@extend .flex;
 	overflow: hidden;
 	font-size: 1.25em;
@@ -191,14 +185,6 @@ $modal-tiny-width: em(288) !default;
 // .modal-close:hover,
 // .modal-close:active {
 // }
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.modal-close {
-			left: rem(5);
-			right: auto;
-		}
-	}
-}
 
 .modal-content {
 	display: flex;
@@ -209,7 +195,8 @@ $modal-tiny-width: em(288) !default;
 }
 
 .modal-header {
-	padding: rem(30) rem(30) rem(15) rem(30);
+	padding-block: rem(30) rem(15);
+	padding-inline: rem(30);
 	flex: 0;
 	flex-shrink: 0;
 }
@@ -221,7 +208,8 @@ $modal-tiny-width: em(288) !default;
 }
 
 .modal-footer {
-	padding: rem(15) rem(30) rem(30);
+	padding-block: rem(15) rem(30);
+	padding-inline: rem(30);
 	flex: 0;
 	flex-shrink: 0;
 
@@ -248,7 +236,8 @@ $modal-tiny-width: em(288) !default;
 	overflow-x: hidden;
 	overflow-y: auto;
 	flex: 1 1 auto;
-	padding: 0 rem(30);
+	padding-block: 0;
+	padding-inline: rem(30);
 
 	background: var(--background-norm) no-repeat;
 
@@ -277,15 +266,6 @@ $label-shorter-width: 10em !default;
 // modal with title visually hidden
 .modal-header--no-title {
 	padding-block-start: rem(20);
-}
-
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.modal-footer [class*='button']:only-child {
-			margin-inline-end: auto;
-			margin-inline-start: 0;
-		}
-	}
 }
 
 @media (max-height: $breakpoint-low-height-modal) {

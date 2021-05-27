@@ -36,6 +36,12 @@ $field-container: rem(260) !default;
 	filter: none; // fixes Firefox autofill color
 	transition: 0.15s easing(easeOutQuint), background-position 0s;
 
+	@at-root {
+		details & {
+			height: auto;
+		}
+	}
+
 	&.field--tiny,
 	&.field--small,
 	&.field--large {
@@ -127,15 +133,6 @@ select:-webkit-autofill {
 	) !important;
 }
 
-@if $rtl-option==true {
-	[dir='rtl'] {
-		[type='search'].field {
-			padding-inline-start: 0;
-			padding-inline-end: 2em;
-		}
-	}
-}
-
 select.field {
 	background: var(
 		--select-background-color,
@@ -190,11 +187,15 @@ textarea.field {
 }
 
 .field--small {
-	padding: em(2) em(16); // design want 26px height (actually 27 to avoid .5px)
+	padding-block: em(2); // design want 26px height (actually 27 to avoid .5px)
+	padding-inline: em(16);
 }
 
 .field--large {
-	padding: em(10) em(16); // design want 42px height (actually 43 to avoid .5px)
+	padding-block: em(
+		10
+	); // design want 42px height (actually 43 to avoid .5px)
+	padding-inline: em(16);
 }
 
 .field--highlight {
@@ -246,6 +247,9 @@ textarea.field {
 /* special stupid case for signup iframe challenge... not using same styles for the moment */
 .sign-layout-container {
 	.field--username {
-		padding: em(10) em(16); // design want 42px height (actually 41 to avoid .5px)
+		padding-block: em(10);
+		padding-inline: em(
+			16
+		); // design want 42px height (actually 41 to avoid .5px)
 	}
 }
