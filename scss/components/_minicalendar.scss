@@ -1,51 +1,80 @@
 @use "sass:math";
-$minicalendar-fontsize: rem(12) !default;
 $minicalendar-cell-size: 2em !default;
 
 .minicalendar {
-	font-size: $minicalendar-fontsize;
+	font-size: rem(12);
+
+	&-grid,
+	&-weeknumbers,
+	&-weekdays,
+	&-monthdays {
+		display: grid;
+	}
+
+	&-grid {
+		grid-gap: 1px;
+
+		&:not(.with-weeknumbers) {
+			grid-template-columns: 7fr; // Well… just for you to understand ^^
+			grid-template-rows: auto;
+			grid-template-areas:
+				'weekdays'
+				'monthdays';
+		}
+
+		&.with-weeknumbers {
+			grid-template-columns: 1fr 7fr;
+			grid-template-rows: auto;
+			grid-template-areas:
+				'weeknumbers weekdays'
+				'weeknumbers monthdays';
+		}
+	}
+
+	&-weeknumbers {
+		grid-area: weeknumbers;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(var(--week-count, 4), 1fr);
+		border-right: 1px solid var(--border-norm);
+	}
+
+	&-weekdays {
+		grid-area: weekdays;
+		grid-template-columns: repeat(var(--weekdays-count, 7), 1fr);
+		grid-template-rows: auto;
+	}
+
+	&-monthdays {
+		grid-area: monthdays;
+		grid-template-columns: repeat(var(--cols, 7), 1fr);
+		grid-template-rows: repeat(var(--rows, 4), 1fr);
+	}
+
+	&-weeknumbers,
+	&-weekdays,
+	&-monthdays {
+		grid-gap: 1px 0px;
+		user-select: none;
+
+		& > * {
+			display: flex;
+			justify-content: center;
+			align-items: stretch;
+			aspect-ratio: 1 / 1;
+		}
+	}
+
+	&-day {
+		@extend .interactive;
+
+		position: relative;
+		width: 100%;
+		border-radius: $global-border-radius;
+		color: var(--text-norm);
+	}
 }
 
-.minicalendar-grid--display-week-number {
-	display: grid;
-	grid-template-columns: rem(30) auto;
-	grid-template-rows: auto;
-}
-
-.minicalendar-weekdays {
-	display: grid;
-	grid-template-columns: repeat(
-		var(--minicalendar-weekdays-numberOfDaysInWeek, 7),
-		1fr
-	);
-	grid-template-rows: 1fr;
-	border-bottom: 1px solid var(--border-weak);
-}
-
-.minicalendar-days {
-	display: grid;
-	grid-template-columns: repeat(
-		var(--minicalendar-days-numberOfDays, 7),
-		1fr
-	);
-	grid-template-rows: repeat(
-		var(----minicalendar-days-numberOfWeeks, 4),
-		1fr
-	);
-	grid-gap: 1px 0px;
-	user-select: none;
-}
-
-.minicalendar-day {
-	@extend .interactive;
-
-	position: relative;
-	min-width: #{$minicalendar-cell-size + 0.35em};
-	min-height: #{$minicalendar-cell-size + 0.35em};
-	border-radius: $global-border-radius;
-	color: var(--text-norm);
-}
-
+/*
 .minicalendar-weeknumbers > span {
 	&:first-of-type {
 		border-bottom: 1px solid var(--border-weak);
@@ -67,6 +96,8 @@ $minicalendar-cell-size: 2em !default;
 		line-height: 2;
 	}
 }
+
+*/
 
 .minicalendar-day--selected::before {
 	content: attr(data-current-day);
