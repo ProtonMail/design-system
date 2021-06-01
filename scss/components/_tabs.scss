@@ -56,9 +56,13 @@
 	content: '';
 	height: 0;
 	bottom: -1px;
-	left: 0;
-	right: 0;
+	inset-inline: 0;
 	transform-origin: left center;
+	@at-root {
+		[dir='rtl'] & {
+			transform-origin: right center;
+		}
+	}
 	transition: transform 0.15s ease-out;
 	transform: translateX(var(--translate)) scaleX(var(--scale));
 }
