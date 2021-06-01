@@ -1,53 +1,11 @@
-@use "sass:math";
-$minicalendar-cell-size: 2em !default;
-
 .minicalendar {
-	font-size: rem(12);
+	font-size: rem(14);
 
 	&-grid,
 	&-weeknumbers,
 	&-weekdays,
 	&-monthdays {
 		display: grid;
-	}
-
-	&-grid {
-		grid-gap: 1px;
-
-		&:not(.with-weeknumbers) {
-			grid-template-columns: 7fr; // Well… just for you to understand ^^
-			grid-template-rows: auto;
-			grid-template-areas:
-				'weekdays'
-				'monthdays';
-		}
-
-		&.with-weeknumbers {
-			grid-template-columns: 1fr 7fr;
-			grid-template-rows: auto;
-			grid-template-areas:
-				'weeknumbers weekdays'
-				'weeknumbers monthdays';
-		}
-	}
-
-	&-weeknumbers {
-		grid-area: weeknumbers;
-		grid-template-columns: 1fr;
-		grid-template-rows: repeat(var(--week-count, 4), 1fr);
-		border-right: 1px solid var(--border-norm);
-	}
-
-	&-weekdays {
-		grid-area: weekdays;
-		grid-template-columns: repeat(var(--weekdays-count, 7), 1fr);
-		grid-template-rows: auto;
-	}
-
-	&-monthdays {
-		grid-area: monthdays;
-		grid-template-columns: repeat(var(--cols, 7), 1fr);
-		grid-template-rows: repeat(var(--rows, 4), 1fr);
 	}
 
 	&-weeknumbers,
@@ -58,132 +16,128 @@ $minicalendar-cell-size: 2em !default;
 
 		& > * {
 			display: flex;
+			height: var(
+				--cell-width,
+				2em
+			); // Ensure the aspect ratio while waiting for aspect-ratio property
 			justify-content: center;
 			align-items: stretch;
-			aspect-ratio: 1 / 1;
+		}
+	}
+
+	&-grid {
+		grid-gap: 1px;
+
+		&:not(.with-weeknumbers) {
+			grid-template-columns: 7fr; // It could be 1fr, but well… just for you to understand ^^
+			grid-template-rows: auto;
+			grid-template-areas:
+				'weekdays'
+				'monthdays';
+		}
+
+		&.with-weeknumbers {
+			grid-template-columns: 1fr 1px 7fr;
+			grid-template-rows: auto;
+			grid-template-areas:
+				'weeknumbers rule weekdays'
+				'weeknumbers rule monthdays';
+		}
+	}
+
+	&-weeknumbers {
+		grid-area: weeknumbers;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(var(--week-count, 4), 1fr);
+		color: var(--text-weak);
+	}
+
+	// Use a vertical rule instead of a border the use the grid gaps for spacing
+	&-vr {
+		grid-area: rule;
+	}
+
+	&-weekdays {
+		grid-area: weekdays;
+		grid-template-columns: repeat(var(--weekdays-count, 7), 1fr);
+		grid-template-rows: auto;
+		color: var(--text-weak);
+
+		& > * {
+			// No buttons for weekdays, so no need to stretch
+			align-items: center;
+		}
+	}
+
+	&-monthdays {
+		grid-area: monthdays;
+		grid-template-columns: repeat(var(--cols, 7), 1fr);
+		grid-template-rows: repeat(var(--rows, 4), 1fr);
+	}
+
+	&-weeknumber,
+	&-day {
+		@extend .interactive;
+
+		width: 100%;
+		border-radius: $global-border-radius;
+
+		&[aria-pressed='true'] {
+			background: var(--interaction-weak);
+			color: var(--text-norm);
 		}
 	}
 
 	&-day {
-		@extend .interactive;
-
 		position: relative;
-		width: 100%;
-		border-radius: $global-border-radius;
-		color: var(--text-norm);
+
+		// This is the today marker, placed below the number by z-index
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 0;
+			background: var(--primary);
+			border-radius: $global-border-radius;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.15s easing(easeOutQuad);
+		}
+
+		&-number {
+			position: relative;
+			z-index: 1;
+		}
+
+		&--selected::before {
+			opacity: 1;
+		}
+
+		&--selected &-number {
+			color: var(--primary-contrast);
+			font-weight: bold;
+		}
+
+		&[aria-current='date'] {
+			font-weight: bold;
+			color: var(--primary);
+		}
+
+		&--out-of-month {
+			color: var(--text-weak);
+		}
+
+		&--range:not(#{&}--range-bound-start) {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		&--range:not(#{&}--range-bound-end) {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
 	}
-}
-
-/*
-.minicalendar-weeknumbers > span {
-	&:first-of-type {
-		border-bottom: 1px solid var(--border-weak);
-	}
-	&:not(:first-of-type) {
-		min-height: $minicalendar-cell-size;
-	}
-}
-.minicalendar-weeknumbers-heading {
-	display: inline-block;
-	transform: scale(0.7);
-}
-
-.minicalendar-grid--display-week-number .minicalendar-day {
-	min-width: $minicalendar-cell-size;
-	min-height: $minicalendar-cell-size;
-
-	&[aria-current='date']::before {
-		line-height: 2;
-	}
-}
-
-*/
-
-.minicalendar-day--selected::before {
-	content: attr(data-current-day);
-	speak: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-weight: bold;
-	color: var(--primary-contrast);
-	background: var(--primary);
-	border-radius: $global-border-radius;
-}
-
-/*
-.minicalendar-day[aria-current='date'][aria-pressed='true']::before {
-
-}
-*/
-
-// fix in case of range selection in responsive view
-$mini-calendar-currentDay-size: 2.5em !default;
-.minicalendar-day--range.minicalendar-day[aria-current='date']::before {
-	left: calc(50% - #{math.div($mini-calendar-currentDay-size, 2)});
-	max-width: $mini-calendar-currentDay-size;
-}
-
-.minicalendar-day[aria-pressed='true'] {
-	background: var(--interaction-weak);
-	color: var(--text-norm);
-}
-
-.minicalendar-day[aria-current='date'] {
-	font-weight: bold;
-	color: var(--primary);
-}
-
-$minicalendar-day-marker-size: 3px !default;
-.minicalendar-day--marker {
-	position: absolute;
-	bottom: 1px;
-	left: calc(50% - #{math.div($minicalendar-day-marker-size, 2)});
-	height: $minicalendar-day-marker-size;
-	width: $minicalendar-day-marker-size;
-	background-color: var(--primary);
-	border-radius: $global-border-radius;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.minicalendar-day[aria-pressed='true'],
-.minicalendar-day[aria-pressed='date'] {
-	.minicalendar-day--marker {
-		background-color: var(--primary-contrast);
-	}
-}
-
-.minicalendar-day--range {
-	width: 100%;
-}
-
-.minicalendar-day--range-bound {
-	background: var(--primary);
-}
-
-.minicalendar-day--range[aria-pressed='true'] {
-	background-color: var(--interaction-weak);
-
-	&:not(.minicalendar-day--range-bound-begin) {
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-	}
-
-	&:not(.minicalendar-day--range-bound-end) {
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-}
-
-.minicalendar-weekdays,
-.minicalendar-weeknumbers,
-.minicalendar-day--inactive-month {
-	color: var(--text-weak);
 }
