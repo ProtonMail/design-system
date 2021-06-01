@@ -5,12 +5,15 @@
 		--max-height: 20em;
 	}
 
+	&--no-max-size {
+		--max-height: calc(100vh - (var(--top) * 1px) - 2px);
+		--max-width: calc(100vw - (var(--left) * 1px) - 2px);
+	}
+
 	position: fixed;
 	z-index: 666;
 	color: var(--text-norm);
 	animation: 0.15s ease-out both;
-	// max-height: calc(100% - (var(--top) * 1px) - 2px);
-	// max-width: calc(100% - (var(--left) * 1px) - 2px);
 
 	@include respond-to($breakpoint-small, 'max') {
 		top: 0;
@@ -172,6 +175,7 @@
 			width: calc(var(--width) * 1px);
 			min-width: var(--min-width, 1.5em);
 			max-width: var(--max-width, unset);
+			min-height: var(--min-height, unset);
 			max-height: var(--max-height, unset);
 		}
 
