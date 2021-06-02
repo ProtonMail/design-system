@@ -5,9 +5,12 @@
 		--max-height: 20em;
 	}
 
+	--max-height-bounds: calc(100vh - (var(--top) * 1px) - 2px);
+	--max-width-bounds: calc(100vw - (var(--top) * 1px) - 2px);
+
 	&--no-max-size {
-		--max-height: calc(100vh - (var(--top) * 1px) - 2px);
-		--max-width: calc(100vw - (var(--left) * 1px) - 2px);
+		--max-height: var(--max-height-bounds);
+		--max-width: var(--max-width-bounds);
 	}
 
 	position: fixed;
@@ -145,7 +148,9 @@
 	/* Scrollable insides of the dropdown */
 	&-content {
 		height: calc(var(--height) * 1px);
-		min-height: 1em;
+		// The min size can't be greater than the remaining space when the dropdown is positioned
+		min-width: min(var(--min-width, 1.5em), var(--max-width-bounds));
+		min-height: min(var(--min-height, 1em), var(--max-height-bounds));
 		overflow: auto;
 		border-radius: $global-border-radius;
 		background-color: var(--background-norm);
@@ -173,9 +178,7 @@
 
 		@include respond-to($breakpoint-small, 'min') {
 			width: calc(var(--width) * 1px);
-			min-width: var(--min-width, 1.5em);
 			max-width: var(--max-width, unset);
-			min-height: var(--min-height, unset);
 			max-height: var(--max-height, unset);
 		}
 
