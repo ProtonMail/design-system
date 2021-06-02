@@ -1,4 +1,9 @@
 .minicalendar {
+	// Size of each cell width and height when `fixedSize`property is set.
+	--fixed-cell-size: 2em;
+
+	min-width: rem(150);
+	max-width: rem(400);
 	font-size: rem(14);
 
 	&-grid,
@@ -16,10 +21,8 @@
 
 		& > * {
 			display: flex;
-			height: var(
-				--cell-width,
-				2em
-			); // Ensure the aspect ratio while waiting for aspect-ratio property
+			width: var(--cell-width);
+			height: var(--cell-height);
 			justify-content: center;
 			align-items: stretch;
 		}
@@ -43,13 +46,23 @@
 				'weeknumbers rule weekdays'
 				'weeknumbers rule monthdays';
 		}
+
+		&:not(.is-fixed-size) {
+			// Ensure the aspect ratio while waiting for aspect-ratio property
+			--cell-width: auto;
+			--cell-height: var(--computed-cell-width, var(--fixed-cell-size));
+		}
+
+		&.is-fixed-size {
+			--cell-width: var(--fixed-cell-size);
+			--cell-height: var(--fixed-cell-size);
+		}
 	}
 
 	&-weeknumbers {
 		grid-area: weeknumbers;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(var(--week-count, 4), 1fr);
-		color: var(--text-weak);
 	}
 
 	// Use a vertical rule instead of a border the use the grid gaps for spacing
