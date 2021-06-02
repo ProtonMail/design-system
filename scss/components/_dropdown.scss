@@ -1,12 +1,12 @@
 .dropdown {
+	--max-height-bounds: calc(100vh - (var(--top) * 1px) - 2px);
+	--max-width-bounds: calc(100vw - (var(--left) * 1px) - 2px);
+
 	&:not(#{&}--no-max-size) {
 		--min-width: 10em;
-		--max-width: 20em;
-		--max-height: 20em;
+		--max-width: min(20em, var(--max-width-bounds));
+		--max-height: min(20em, var(--max-height-bounds));
 	}
-
-	--max-height-bounds: calc(100vh - (var(--top) * 1px) - 2px);
-	--max-width-bounds: calc(100vw - (var(--top) * 1px) - 2px);
 
 	&--no-max-size {
 		--max-height: var(--max-height-bounds);
