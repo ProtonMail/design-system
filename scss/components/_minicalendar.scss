@@ -104,7 +104,7 @@
 	&-day {
 		position: relative;
 
-		// This is the today marker, placed below the number by z-index
+		// This is the 'selected' marker, placed below the number by z-index
 		&::before {
 			content: '';
 			position: absolute;
@@ -130,8 +130,8 @@
 		}
 
 		&--selected &-number {
-			color: var(--primary-contrast);
 			font-weight: bold;
+			color: var(--primary-contrast);
 		}
 
 		&[aria-current='date'] {
