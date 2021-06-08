@@ -141,6 +141,11 @@
 
 		&--out-of-month {
 			color: var(--text-weak);
+
+			&[aria-pressed='true'] {
+				background: var(--background-weak);
+				color: var(--text-weak);
+			}
 		}
 
 		&--range:not(#{&}--range-bound-start) {
