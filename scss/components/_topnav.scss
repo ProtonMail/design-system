@@ -2,12 +2,12 @@
 	&--blackfriday::before {
 		content: '';
 		position: absolute;
-		width: rem(7);
-		height: rem(7);
+		inline-size: rem(7);
+		block-size: rem(7);
 		background: var(--signal-danger);
 		border-radius: 50%;
-		left: calc(#{rem(17.5)} + #{rem(15)});
-		top: calc(50% - #{rem(14)});
+		inset-inline-start: calc(#{rem(17.5)} + #{rem(15)});
+		inset-block-start: calc(50% - #{rem(14)});
 	}
 }
 
@@ -36,12 +36,12 @@
 			// equivalent of .sr-only, but impossible to extend in a breakpoint
 			border: 0;
 			clip: rect(0 0 0 0);
-			height: 1px;
+			block-size: 1px;
 			margin: -1px;
 			overflow: hidden;
 			padding: 0;
 			position: absolute;
-			width: 1px;
+			inline-size: 1px;
 		}
 
 		.topnav-icon {
@@ -62,7 +62,7 @@
 		}
 
 		.topnav-link--blackfriday::before {
-			left: calc(#{rem(5)} + #{rem(15)});
+			inset-inline-start: calc(#{rem(5)} + #{rem(15)});
 		}
 	}
 }
@@ -72,12 +72,12 @@
 		// equivalent of .sr-only, but impossible to extend in a breakpoint
 		border: 0;
 		clip: rect(0 0 0 0);
-		height: 1px;
+		block-size: 1px;
 		margin: -1px;
 		overflow: hidden;
 		padding: 0;
 		position: absolute;
-		width: 1px;
+		inline-size: 1px;
 	}
 
 	.topnav-icon {
@@ -92,8 +92,8 @@
 	.topnav-icon {
 		// Specificity -_-v
 		&#{&} {
-			width: rem(24);
-			height: rem(24);
+			inline-size: rem(24);
+			block-size: rem(24);
 		}
 	}
 
@@ -104,8 +104,13 @@
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
 	.topnav-link--blackfriday::before {
+<<<<<<< HEAD
 		left: calc(#{rem(10)} + #{rem(22)});
 		top: calc(50% - #{rem(18)});
+=======
+		inset-inline-start: calc(#{rem(17.5)} + #{rem(22)});
+		inset-block-start: calc(50% - #{rem(18)});
+>>>>>>> Fix - logical all the things git add .!
 	}
 }
 
@@ -118,6 +123,6 @@
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
 	.topnav-link--blackfriday::before {
-		left: calc(#{rem(5)} + #{rem(22)});
+		inset-inline-start: calc(#{rem(5)} + #{rem(22)});
 	}
 }

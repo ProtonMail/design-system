@@ -16,7 +16,7 @@
 	}
 
 	&-item {
-		max-width: var(--item-wide);
+		max-inline-size: var(--item-wide);
 		margin: 0.125em;
 		background-color: var(--color, currentColor);
 
@@ -26,8 +26,9 @@
 		}
 
 		&-button {
-			padding: 0.125em 0.5em;
-			text-align: left;
+			padding-block: 0.125em;
+			padding-inline: 0.5em;
+			text-align: start;
 		}
 
 		&-delete {
@@ -46,7 +47,8 @@
 
 		& > * {
 			display: block;
-			padding: 0.125em 0.375em 0.125em 0.25em;
+			padding-block: 0.125em;
+			padding-inline: 0.375em 0.25em;
 			color: white;
 		}
 	}
@@ -81,7 +83,7 @@
 
 			&:not(:first-child) {
 				--button-opacity: 0;
-				max-width: var(--item-narrow);
+				max-inline-size: var(--item-narrow);
 				transform: scale(var(--item-scale));
 			}
 
@@ -116,7 +118,7 @@
 					// Avoid gitch effect on first-child
 					&:first-child:not(:hover):not(:focus-within) {
 						--button-opacity: 0;
-						max-width: var(--item-narrow);
+						max-inline-size: var(--item-narrow);
 						transform: scale(var(--item-scale));
 						transition-delay: 0.2s, 0s;
 					}
@@ -124,7 +126,7 @@
 					&:not(:first-child):hover,
 					&:not(:first-child):focus-within {
 						--button-opacity: 1;
-						max-width: var(--item-wide);
+						max-inline-size: var(--item-wide);
 						transform: scale(1);
 					}
 				}

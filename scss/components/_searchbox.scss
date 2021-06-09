@@ -1,9 +1,9 @@
 .searchbox {
 	&-container {
-		width: $conversations-column-width;
+		inline-size: $conversations-column-width;
 
 		&:empty {
-			width: 0;
+			inline-size: 0;
 
 			// if there is no search bar, the next element (navigation) is pushed to the right (VPN/settings/etc.)
 			/*
@@ -31,7 +31,7 @@
 	}
 
 	&-field[type='search'] {
-		height: rem(35);
+		block-size: rem(35);
 		padding-inline-start: calc(2em + #{rem(20)});
 		padding-inline-end: rem(40);
 		background-color: var(--searchbox-background-color, transparent);
@@ -53,7 +53,7 @@
 		position: absolute;
 		inset-inline-end: 0.25em;
 		inset-block: 0;
-		width: rem(28);
+		inline-size: rem(28);
 		padding: 0;
 		margin-block: 0.25em;
 		margin-inline: 0;

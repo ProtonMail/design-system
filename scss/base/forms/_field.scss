@@ -8,7 +8,7 @@
 $field-container: rem(260) !default;
 
 .field-container {
-	width: $field-container;
+	inline-size: $field-container;
 	@extend .max-w100;
 	@extend .inline-block;
 	@extend .relative;
@@ -19,15 +19,15 @@ $field-container: rem(260) !default;
 }
 
 .field {
-	height: rem($default-height-fields);
+	block-size: rem($default-height-fields);
 
 	@at-root {
 		details & {
-			height: auto; // crazy chrome bug in details (share drive modal)
+			block-size: auto; // crazy chrome bug in details (share drive modal)
 		}
 	}
-
-	padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
+	padding-inline: em(16);
+	padding-block: em(6); // design want 34px height (actually 35 to avoid .5px)
 	border-radius: $global-border-radius;
 	border: 1px solid var(--field-norm);
 	background-color: var(--field-background-color, var(--background-norm));
@@ -38,14 +38,14 @@ $field-container: rem(260) !default;
 
 	@at-root {
 		details & {
-			height: auto;
+			block-size: auto;
 		}
 	}
 
 	&.field--tiny,
 	&.field--small,
 	&.field--large {
-		height: auto;
+		block-size: auto;
 	}
 
 	&:hover {
@@ -87,11 +87,11 @@ $field-container: rem(260) !default;
 	}
 
 	&.w100 {
-		width: 100%;
+		inline-size: 100%;
 	}
 
 	&.wauto {
-		width: auto;
+		inline-size: auto;
 	}
 
 	&[type='search'] {
@@ -111,7 +111,7 @@ $field-container: rem(260) !default;
 		padding-inline-end: rem(6);
 		.mauto {
 			display: flex;
-			width: 100%;
+			inline-size: 100%;
 		}
 		.mr0-5 {
 			flex: 1 1 0px;
@@ -160,7 +160,7 @@ select.text-center {
 }
 
 textarea.field {
-	height: auto;
+	block-size: auto;
 }
 
 /* errors */
@@ -178,7 +178,7 @@ textarea.field {
 .field-icon-container:focus-within + .error-zone,
 .field:focus + .error-zone {
 	transform: scaleY(0);
-	max-height: 0;
+	max-block-size: 0;
 }
 
 /* sizes/other modifiers */
@@ -210,12 +210,12 @@ textarea.field {
 
 	> .field {
 		border: 0;
-		width: calc(100% - 1.5em);
+		inline-size: calc(100% - 1.5em);
 	}
 	&,
 	&-empty {
 		// for drive, to keep the same height
-		min-height: calc(#{rem($default-height-fields)} + 2px);
+		min-block-size: calc(#{rem($default-height-fields)} + 2px);
 	}
 
 	&:focus-within {

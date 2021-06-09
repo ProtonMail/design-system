@@ -28,7 +28,7 @@ select {
 		); // just to compensate the difference of text size
 	}
 	&-assist {
-		min-height: 1.9em;
+		min-block-size: 1.9em;
 		padding-block-start: $inputform-default-spacing-text;
 	}
 	&-label-text {
@@ -41,8 +41,11 @@ select {
 	}
 
 	&-field {
-		height: rem($default-height-fields-inputforms);
-		padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
+		block-size: rem($default-height-fields-inputforms);
+		padding-block: em(
+			6
+		); // design want 34px height (actually 35 to avoid .5px)
+		padding-inline: em(16);
 		border-radius: $global-border-radius;
 		border: 1px solid var(--field-norm);
 		background-color: var(--field-background-color, var(--background-norm));
@@ -107,7 +110,7 @@ select {
 	}
 
 	& &-prefix-phone {
-		height: $inputform-height-phone-prefix; // no variation for bigger - select of content needs to be "fixed"
+		block-size: $inputform-height-phone-prefix; // no variation for bigger - select of content needs to be "fixed"
 	}
 
 	// global error state on container
@@ -131,24 +134,26 @@ select {
 		padding: 0;
 
 		.inputform-field {
-			height: 100%;
+			block-size: 100%;
 
 			&,
 			&:focus {
 				border: 0;
-				width: calc(100% - 1.5em);
+				inline-size: calc(100% - 1.5em);
 				outline: 0;
 			}
 
 			&[type='tel'] {
-				width: 100%;
+				inline-size: 100%;
 				padding-inline-start: 0.5em;
 			}
 		}
 
 		&-empty {
 			// for drive, to keep the same height
-			min-height: calc(#{rem($default-height-fields-inputforms)} + 2px);
+			min-block-size: calc(
+				#{rem($default-height-fields-inputforms)} + 2px
+			);
 		}
 
 		&:focus-within {
@@ -166,7 +171,7 @@ select {
 		.right-icon,
 		.inputform-field,
 		.inputform-icon-container {
-			height: rem($bigger-height-fields-inputforms);
+			block-size: rem($bigger-height-fields-inputforms);
 		}
 		.inputform-field {
 			&[type='search'] {
@@ -177,12 +182,12 @@ select {
 		.inputform-icon-container {
 			&-empty {
 				// for drive, to keep the same height
-				min-height: calc(
+				min-block-size: calc(
 					#{rem($bigger-height-fields-inputforms)} + 2px
 				);
 			}
 			.inputform-field {
-				height: 100%;
+				block-size: 100%;
 			}
 		}
 	}

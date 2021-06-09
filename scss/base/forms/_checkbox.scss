@@ -3,9 +3,9 @@
 
 	&-fakecheck {
 		display: inline-flex;
-		min-width: em(20);
-		width: em(20);
-		height: em(20);
+		min-inline-size: em(20);
+		inline-size: em(20);
+		block-size: em(20);
 		margin-block: auto;
 		margin-inline: 0 0.5em;
 		border-radius: $global-border-radius;

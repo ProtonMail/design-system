@@ -70,7 +70,7 @@ $breakpoint-2-columns: 1180 !default;
 
 		& > * {
 			margin-block-end: 1em;
-			width: 100%;
+			inline-size: 100%;
 			flex-basis: auto;
 		}
 	}
@@ -101,11 +101,11 @@ $breakpoint-2-columns: 1180 !default;
 }
 
 .rounded0-left {
-	border-block-start-left-radius: 0;
-	border-block-end-left-radius: 0;
+	border-start-start-radius: 0;
+	border-end-start-radius: 0;
 }
 
 .rounded0-right {
-	border-block-start-right-radius: 0;
-	border-block-end-right-radius: 0;
+	border-start-end-radius: 0;
+	border-end-end-radius: 0;
 }

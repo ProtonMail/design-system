@@ -8,9 +8,9 @@ $toggle-width-button: em(24) !default;
 		position: relative;
 		z-index: 0; // Create stacking context
 		display: inline-flex;
-		width: $toggle-width;
-		min-height: $toggle-width-button;
-		max-height: $toggle-width-button;
+		inline-size: $toggle-width;
+		min-block-size: $toggle-width-button;
+		max-block-size: $toggle-width-button;
 		box-shadow: inset 0 0 0 1px var(--field-norm);
 		border-radius: #{math.div($toggle-width, 2)};
 		background-color: var(--background-norm);
@@ -198,8 +198,8 @@ $toggle-width-button: em(24) !default;
 		font-size: 0.8em;
 
 		.toggle-label-img {
-			width: rem(13);
-			height: rem(13);
+			inline-size: rem(13);
+			block-size: rem(13);
 		}
 	}
 }

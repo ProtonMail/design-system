@@ -115,7 +115,7 @@ input[type='reset'][disabled] {
 
 /* avoid dummy resize */
 textarea {
-	resize: vertical;
+	resize: block;
 	cursor: auto; // fixes an issue on Chrome using CSS custom scroll
 }
 
@@ -165,23 +165,6 @@ dd {
 	margin-inline-start: 2em;
 }
 
-// Right to left resets
-@if $rtl-option==true {
-	/* RTL */
-	[dir='rtl'] {
-		ul,
-		ol {
-			padding-inline-start: 0;
-			padding-inline-end: 2em;
-		}
-
-		dd {
-			margin-inline-start: 0;
-			margin-inline-end: 2em;
-		}
-	}
-}
-
 b,
 strong {
 	font-weight: bold;
@@ -223,7 +206,7 @@ img {
 /* tiny control */
 audio:not([controls]) {
 	display: none;
-	height: 0;
+	block-size: 0;
 }
 
 /* important, abbr are good */

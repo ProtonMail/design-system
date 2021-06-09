@@ -10,7 +10,7 @@
 .tabs-list-item {
 	margin-inline-end: rem(10);
 	color: var(--text-weak);
-	min-width: auto;
+	min-inline-size: auto;
 }
 
 .tabs-list-link {
@@ -20,7 +20,7 @@
 	padding: 0.5em;
 	@extend .text-no-decoration;
 	@extend .relative;
-	top: 1px;
+	inset-block-start: 1px;
 	transition: color 0.15s ease-out, border-block-end 0.15s ease-out;
 
 	&:focus,
@@ -54,8 +54,8 @@
 	position: absolute;
 	border-block-end: 2px solid var(--interaction-norm);
 	content: '';
-	height: 0;
-	bottom: -1px;
+	block-size: 0;
+	inset-block-end: -1px;
 	inset-inline: 0;
 	transform-origin: left center;
 	@at-root {

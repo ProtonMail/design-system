@@ -3,6 +3,8 @@
 	@extend .inline-flex;
 	font-size: rem(11); // to be sure this is the same height everywhere
 	padding: em(2) em(4) em(3);
+	padding-block: em(2) em(3);
+	padding-inline: em(4);
 	line-height: 1;
 	border-radius: $global-border-radius;
 }

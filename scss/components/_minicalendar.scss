@@ -103,7 +103,7 @@
 	&-day {
 		@extend .interactive;
 
-		inline-size: 100%;
+		width: 100%;
 		border-radius: $global-border-radius;
 
 		&[aria-pressed='true'] {

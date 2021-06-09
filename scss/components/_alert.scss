@@ -1,7 +1,8 @@
 $alert-block-border-width: 3px !default;
 
 [class*='alert-block'] {
-	padding: 0.2em 1.2em;
+	padding-block: 0.2em;
+	padding-inline: 1.2em;
 	color: var(--text-norm);
 	border-inline-start-width: $alert-block-border-width;
 	border-inline-start-style: solid;

@@ -37,18 +37,18 @@ $modal-tiny-width: em(288) !default;
 
 	/* for very large inputs in modals, like rich text editor */
 	.field-container--full {
-		width: calc(100% - var(--label-width, #{$label-width}));
+		inline-size: calc(100% - var(--label-width, #{$label-width}));
 
 		@include respond-to(1360) {
-			width: $field-container;
+			inline-size: $field-container;
 		}
 
 		@include respond-to(830) {
-			width: calc(100% - var(--label-width, #{$label-width}));
+			inline-size: calc(100% - var(--label-width, #{$label-width}));
 		}
 
 		@include respond-to($breakpoint-small) {
-			width: 100%;
+			inline-size: 100%;
 		}
 	}
 }
@@ -84,9 +84,9 @@ $modal-tiny-width: em(288) !default;
 
 .modal {
 	position: relative;
-	width: $modal-max-width;
-	max-height: $modal-max-height;
-	max-width: $modal-max-width;
+	inline-size: $modal-max-width;
+	max-block-size: $modal-max-height;
+	max-inline-size: $modal-max-width;
 	background: var(--background-norm);
 	color: var(--text-norm);
 	padding: 0;
@@ -132,37 +132,37 @@ $modal-tiny-width: em(288) !default;
 }
 
 .modal--auto {
-	width: auto;
+	inline-size: auto;
 }
 
 .modal--intermediate {
-	width: $modal-intermediate-width;
+	inline-size: $modal-intermediate-width;
 }
 
 .modal--smaller {
-	width: $modal-smaller-width;
+	inline-size: $modal-smaller-width;
 }
 .modal--tiny {
-	width: $modal-tiny-width;
+	inline-size: $modal-tiny-width;
 	border-radius: $global-bigger-border-radius;
 }
 
 .modal--wider {
-	width: $modal-wider-width;
-	max-width: $modal-wider-max-width;
+	inline-size: $modal-wider-width;
+	max-inline-size: $modal-wider-max-width;
 }
 
 .modal--full {
-	width: $modal-full-dimension;
-	max-width: $modal-full-dimension;
-	height: $modal-full-dimension;
-	max-height: $modal-full-dimension;
+	inline-size: $modal-full-dimension;
+	max-inline-size: $modal-full-dimension;
+	block-size: $modal-full-dimension;
+	max-block-size: $modal-full-dimension;
 	margin: 1%;
 }
 
 .modal--height-auto {
-	height: auto;
-	max-height: $modal-full-dimension;
+	block-size: auto;
+	max-block-size: $modal-full-dimension;
 	margin-block-start: 1%;
 	margin-block-end: 1%;
 }
@@ -215,7 +215,7 @@ $modal-tiny-width: em(288) !default;
 
 	[class*='button'] {
 		// only for Safari the ugly
-		min-height: rem(34);
+		min-block-size: rem(34);
 	}
 
 	// single button on right
@@ -254,12 +254,12 @@ $modal-tiny-width: em(288) !default;
 $label-shorter-width: 10em !default;
 
 .modal--shorter-labels .label {
-	width: var(--label-shorter-width, $label-shorter-width);
+	inline-size: var(--label-shorter-width, $label-shorter-width);
 }
 
 @include respond-to($breakpoint-small) {
 	.modal--shorter-labels .on-mobile-flex-column .label {
-		width: 100%;
+		inline-size: 100%;
 	}
 }
 
@@ -275,7 +275,7 @@ $label-shorter-width: 10em !default;
 
 	.modal-footer {
 		padding-block-end: rem(10);
-		min-height: rem(59); // only for Safari the ugly
+		min-block-size: rem(59); // only for Safari the ugly
 	}
 
 	.modal-header {
@@ -288,21 +288,21 @@ $label-shorter-width: 10em !default;
 @media (max-width: $modal-breakpoint-width) {
 	.modal:not(.modal--tiny) {
 		margin: 1%;
-		min-width: 0;
-		width: 98%;
-		max-width: 98%;
-		max-height: 98%;
+		min-inline-size: 0;
+		inline-size: 98%;
+		max-inline-size: 98%;
+		max-block-size: 98%;
 		align-self: center;
 	}
 	.modal--tiny {
-		max-width: 95%;
-		max-height: 95%;
+		max-inline-size: 95%;
+		max-block-size: 95%;
 	}
 }
 
 @include respond-to($breakpoint-large, 'min') {
 	.modal--full {
-		max-width: $modal-full-max-width;
+		max-inline-size: $modal-full-max-width;
 		margin-inline-start: auto;
 		margin-inline-end: auto;
 	}

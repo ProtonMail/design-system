@@ -7,12 +7,13 @@ $tooltip-text-color: var(--tooltip-text-color, white);
 .tooltip {
 	position: fixed;
 	z-index: 666;
-	min-width: $arrow-width;
-	max-width: $tooltip-width;
+	min-inline-size: $arrow-width;
+	max-inline-size: $tooltip-width;
 	border-radius: $global-border-radius;
 	background: $tooltip-bg-color;
 	color: $tooltip-text-color;
-	padding: 0.5em 0.75em;
+	padding-block: 0.5em;
+	padding-inline: 0.7em;
 	text-align: center;
 	word-break: break-word;
 
@@ -36,35 +37,35 @@ $tooltip-text-color: var(--tooltip-text-color, white);
 	// Placement
 
 	&--top-left {
-		border-block-end-left-radius: 0;
+		border-end-start-radius: 0;
 	}
 
 	&--top-right {
-		border-block-end-right-radius: 0;
+		border-end-end-radius: 0;
 	}
 
 	&--bottom-left {
-		border-block-start-left-radius: 0;
+		border-start-start-radius: 0;
 	}
 
 	&--bottom-right {
-		border-block-start-right-radius: 0;
+		border-start-end-radius: 0;
 	}
 
 	&--left-bottom {
-		border-block-end-right-radius: 0;
+		border-end-end-radius: 0;
 	}
 
 	&--right-bottom {
-		border-block-end-left-radius: 0;
+		border-end-start-radius: 0;
 	}
 
 	&--left-top {
-		border-block-start-right-radius: 0;
+		border-start-end-radius: 0;
 	}
 
 	&--right-top {
-		border-block-start-left-radius: 0;
+		border-start-start-radius: 0;
 	}
 
 	/* pseudo-element to make arrows */
@@ -73,8 +74,8 @@ $tooltip-text-color: var(--tooltip-text-color, white);
 		speak: none;
 		position: absolute;
 		z-index: 666;
-		width: $arrow-width;
-		height: $arrow-width;
+		inline-size: $arrow-width;
+		block-size: $arrow-width;
 		pointer-events: none;
 		border: $arrow-width solid transparent;
 	}
@@ -82,58 +83,58 @@ $tooltip-text-color: var(--tooltip-text-color, white);
 	&--top::before,
 	&--top-left::before,
 	&--top-right::before {
-		top: 100%;
+		inset-block-start: 100%;
 		border-block-start: $arrow-width solid $tooltip-bg-color;
 	}
 
 	&--bottom::before,
 	&--bottom-left::before,
 	&--bottom-right::before {
-		bottom: 100%;
+		inset-block-end: 100%;
 		border-block-end: $arrow-width solid $tooltip-bg-color;
 	}
 
 	&--right::before,
 	&--right-top::before,
 	&--right-bottom::before {
-		left: -#{$arrow-width * 2};
+		inset-inline-start: -#{$arrow-width * 2};
 		border-inline-end: $arrow-width solid $tooltip-bg-color;
 	}
 
 	&--left::before,
 	&--left-top::before,
 	&--left-bottom::before {
-		right: -#{$arrow-width * 2};
+		inset-inline-end: -#{$arrow-width * 2};
 		border-inline-start: $arrow-width solid $tooltip-bg-color;
 	}
 
 	&--top::before,
 	&--bottom::before {
-		left: calc(50% - #{$arrow-width});
+		inset-inline-start: calc(50% - #{$arrow-width});
 	}
 
 	&--top-left::before,
 	&--bottom-left::before {
-		left: 0;
+		inset-inline-start: 0;
 	}
 
 	&--top-right::before,
 	&--bottom-right::before {
-		right: 0;
+		inset-inline-end: 0;
 	}
 
 	&--left::before,
 	&--right::before {
-		top: calc(50% - #{$arrow-width});
+		inset-block-start: calc(50% - #{$arrow-width});
 	}
 
 	&--left-top::before,
 	&--right-top::before {
-		top: 0;
+		inset-block-start: 0;
 	}
 
 	&--left-bottom::before,
 	&--right-bottom::before {
-		bottom: 0;
+		inset-block-end: 0;
 	}
 }

@@ -54,8 +54,8 @@
 /* fix aspect ratio */
 .flex > *,
 .no-min-dimensions {
-	min-height: 0;
-	min-width: 0;
+	min-block-size: 0;
+	min-inline-size: 0;
 }
 
 .flex-flex-children > * {
@@ -105,7 +105,8 @@
 .flex-autogrid {
 	@extend .flex;
 	@extend .flex-justify-space-between;
-	margin: 0 -0.5em;
+	margin-block: 0;
+	margin-inline: -0.5em;
 }
 
 .flex-autogrid-item {

@@ -48,7 +48,7 @@
 .right-text,
 .left-icon {
 	inset-block-start: 0;
-	height: #{rem($default-height-fields)}; // height of field
+	block-size: #{rem($default-height-fields)}; // height of field
 	align-content: center;
 }
 

@@ -4,7 +4,7 @@
 
 	position: relative;
 	z-index: 1;
-	height: rem($toolbar-height);
+	block-size: rem($toolbar-height);
 	border-block-end: 1px solid
 		var(--toolbar-border-block-end-color, var(--border-norm));
 	background-color: var(--toolbar-background-color, var(--background-weak));
@@ -25,7 +25,7 @@
 }
 
 .toolbar-separator {
-	width: 1px;
+	inline-size: 1px;
 	background: var(--toolbar-separator-color, var(--border-norm));
 }
 
@@ -43,7 +43,7 @@
 	border-radius: unset;
 	background-color: unset;
 	color: currentColor;
-	height: auto;
+	block-size: auto;
 }
 
 .toolbar--heavy {

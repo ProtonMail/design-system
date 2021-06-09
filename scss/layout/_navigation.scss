@@ -2,7 +2,8 @@ $padding-inline-start-link: rem(20) !default;
 
 .navigation-link,
 .navigation-link-header-group {
-	padding: rem(9.5) 1em rem(9.5) $padding-inline-start-link;
+	padding-block: rem(9.5);
+	padding-inline: 1em $padding-inline-start-link;
 	text-decoration: none;
 	display: block;
 }
@@ -23,10 +24,7 @@ $padding-inline-start-link: rem(20) !default;
 	&::after {
 		content: '';
 		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
+		inset: 0;
 		z-index: 1;
 		pointer-events: none;
 		transition: 0.15s easing(easeOutQuart);
@@ -108,10 +106,11 @@ $padding-inline-start-link: rem(20) !default;
 	background: var(--navigation-item-count-background-color, var(--primary));
 	color: var(--navigation-item-count-text-color, var(--primary-contrast));
 	font-size: rem(11);
-	padding: rem(2) 0.4em 0; // em value for top gives non rounded value, so rem
+	padding-block: rem(2) 0; // em value for top gives non rounded value, so rem
+	padding-inline: 0.4em;
 	border-radius: rem(11);
 	line-height: 1;
-	height: rem(16);
+	block-size: rem(16);
 	font-variant: tabular-nums;
 
 	&:empty {
@@ -139,14 +138,14 @@ $padding-inline-start-link: rem(20) !default;
 		max-height 0.5s ease;
 	transform-origin: top center;
 	transform: scale(1, 1);
-	max-height: 44em;
+	max-block-size: 44em;
 	visibility: visible;
 	transition-delay: 0s;
 
 	&[aria-hidden='true'] {
 		display: block;
 		opacity: 0;
-		max-height: 0;
+		max-block-size: 0;
 		visibility: hidden;
 		transform: scale(1, 0);
 		transition-duration: 0s, 0.25s, 0.25s, 0.25s;
@@ -163,7 +162,8 @@ $padding-inline-start-link: rem(20) !default;
 
 	border-inline-start: 2px solid var(--border-norm);
 	display: block;
-	padding: rem(7.5) rem(10) rem(7.5) rem(15);
+	padding-block: rem(7.5);
+	padding-inline: rem(10) rem(15);
 	text-decoration: none;
 
 	&[aria-current='true'] {

@@ -1,7 +1,7 @@
 .simple-table {
 	@extend .border-collapse;
 	@extend .no-border;
-	width: 100%;
+	inline-size: 100%;
 
 	caption {
 		transform: scale(0);
@@ -54,18 +54,17 @@
 		td,
 		th {
 			position: sticky;
-			top: 0;
+			inset-block-start: 0;
 			background: var(--background-norm);
 			z-index: 1;
 
 			&::after {
 				content: '';
 				position: absolute;
-				top: 100%;
-				left: 0;
-				right: 0;
+				inset-block-start: 100%;
+				inset-inline: 0;
 				z-index: -1;
-				height: rem(10);
+				block-size: rem(10);
 				background: linear-gradient(
 					to bottom,
 					rgb(0 0 0 / var(--shadow-norm-opacity)) 0%,
@@ -101,7 +100,7 @@
 			td,
 			th {
 				&:last-child {
-					text-align: right;
+					text-align: end;
 				}
 			}
 		}
@@ -110,13 +109,13 @@
 	/* simple dirty fix */
 	a svg {
 		@extend .relative;
-		top: -0.15em;
+		inset-block-start: -0.15em;
 	}
 }
 
 .alternate-table-bg-row-rounded {
 	@extend .no-border;
-	width: 100%;
+	inline-size: 100%;
 	border-spacing: 0; // no border-collapse for radius ^^
 
 	td,
@@ -132,12 +131,12 @@
 		}
 		// radiuses
 		> :first-child {
-			border-block-start-left-radius: $global-bigger-border-radius;
-			border-block-end-left-radius: $global-bigger-border-radius;
+			border-start-start-radius: $global-bigger-border-radius;
+			border-end-start-radius: $global-bigger-border-radius;
 		}
 		> :last-child {
-			border-block-start-right-radius: $global-bigger-border-radius;
-			border-block-end-right-radius: $global-bigger-border-radius;
+			border-start-end-radius: $global-bigger-border-radius;
+			border-end-end-radius: $global-bigger-border-radius;
 		}
 	}
 }

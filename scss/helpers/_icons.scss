@@ -30,16 +30,16 @@
 {
 	.icon-#{$width}p {
 		@extend %icon; // 🤔
-		width: rem($width);
-		height: rem($width);
+		inline-size: rem($width);
+		block-size: rem($width);
 	}
 }
 
 @each $width in (50) {
 	.icon-#{$width} {
 		@extend %icon; // 🤔
-		width: percentage(math.div($width, 100));
-		height: percentage(math.div($width, 100));
+		inline-size: percentage(math.div($width, 100));
+		block-size: percentage(math.div($width, 100));
 	}
 }
 
