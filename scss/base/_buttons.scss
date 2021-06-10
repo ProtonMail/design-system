@@ -11,7 +11,6 @@
 
 	border: none;
 	border-radius: $global-border-radius;
-	outline: none; // be careful of a11y
 	background-color: var(--button-default-background-color, transparent);
 	color: var(--button-default-text-color, inherit);
 	text-align: center;
@@ -300,7 +299,6 @@
  * Interactive gives only default colors on every states
  */
 .interactive {
-	outline: none; // be careful of a11y
 	background-color: var(--interaction-default);
 	color: inherit;
 	transition: 0.15s easing(easeOutQuint), background-position 0s;

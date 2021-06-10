@@ -76,6 +76,13 @@ a {
 	}
 }
 
+a,
+button {
+	&:focus:not(:focus-visible) {
+		outline: 0;
+	}
+}
+
 /* it depends, it exceeds (french joke) */
 %reset-responsive-height-max-width {
 	height: auto;
