@@ -76,10 +76,13 @@ a {
 	}
 }
 
-a,
-button {
-	&:focus:not(:focus-visible) {
-		outline: 0;
+@supports selector(:focus-visible) {
+	// had to do this because of Safari
+	a,
+	button {
+		&:focus:not(:focus-visible) {
+			outline: 0;
+		}
 	}
 }
 
