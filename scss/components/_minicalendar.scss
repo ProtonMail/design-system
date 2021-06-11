@@ -28,6 +28,7 @@
 		}
 	}
 
+<<<<<<< HEAD
 	&-grid {
 		grid-gap: 1px;
 
@@ -69,6 +70,36 @@
 			}
 		}
 	}
+=======
+.minicalendar-day--selected::before {
+	content: attr(data-current-day);
+	speak: none;
+	position: absolute;
+	inset: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	color: var(--primary-contrast);
+	background: var(--primary);
+	border-radius: $global-border-radius;
+}
+
+/*
+.minicalendar-day[aria-current='date'][aria-pressed='true']::before {
+
+}
+*/
+
+// fix in case of range selection in responsive view
+$mini-calendar-currentDay-size: 2.5em !default;
+.minicalendar-day--range.minicalendar-day[aria-current='date']::before {
+	inset-inline-start: calc(
+		50% - #{math.div($mini-calendar-currentDay-size, 2)}
+	);
+	max-inline-size: $mini-calendar-currentDay-size;
+}
+>>>>>>> Fix - rebases mistakes ^^
 
 	&-weeknumbers {
 		grid-area: weeknumbers;
@@ -81,11 +112,29 @@
 		grid-area: rule;
 	}
 
+<<<<<<< HEAD
 	&-weekdays {
 		grid-area: weekdays;
 		grid-template-columns: repeat(var(--weekdays-count, 7), 1fr);
 		grid-template-rows: auto;
 		color: var(--text-weak);
+=======
+$minicalendar-day-marker-size: 3px !default;
+.minicalendar-day--marker {
+	position: absolute;
+	inset-block-end: 1px;
+	inset-inline-start: calc(
+		50% - #{math.div($minicalendar-day-marker-size, 2)}
+	);
+	block-size: $minicalendar-day-marker-size;
+	inline-size: $minicalendar-day-marker-size;
+	background-color: var(--primary);
+	border-radius: $global-border-radius;
+	display: block;
+	margin-inline-start: auto;
+	margin-inline-end: auto;
+}
+>>>>>>> Fix - rebases mistakes ^^
 
 		& > * {
 			// No buttons for weekdays, so no need to stretch

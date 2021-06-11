@@ -104,13 +104,8 @@
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
 	.topnav-link--blackfriday::before {
-<<<<<<< HEAD
-		left: calc(#{rem(10)} + #{rem(22)});
-		top: calc(50% - #{rem(18)});
-=======
-		inset-inline-start: calc(#{rem(17.5)} + #{rem(22)});
+		inset-inline-start: calc(#{rem(10)} + #{rem(22)});
 		inset-block-start: calc(50% - #{rem(18)});
->>>>>>> Fix - logical all the things git add .!
 	}
 }
 
