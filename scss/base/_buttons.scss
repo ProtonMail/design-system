@@ -11,9 +11,10 @@
 
 	border: none;
 	border-radius: $global-border-radius;
-	@supports not selector(:focus-visible) {
+	outline: none;
+	@supports selector(:focus-visible) {
 		// had to do this because of Safari
-		outline: 0;
+		outline: unset;
 	}
 	background-color: var(--button-default-background-color, transparent);
 	color: var(--button-default-text-color, inherit);
@@ -303,9 +304,10 @@
  * Interactive gives only default colors on every states
  */
 .interactive {
-	@supports not selector(:focus-visible) {
+	outline: none; // be careful of a11y
+	@supports selector(:focus-visible) {
 		// had to do this because of Safari
-		outline: 0;
+		outline: unset;
 	}
 	background-color: var(--interaction-default);
 	color: inherit;
